@@ -1,0 +1,36 @@
+name: Luau and Rojo
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pinned build tools
+        run: |
+          mkdir -p /tmp/double-life-tools
+          cd /tmp/double-life-tools
+          curl -fL --retry 3 -o luau.zip https://github.com/luau-lang/luau/releases/download/0.745/luau-ubuntu.zip
+          curl -fL --retry 3 -o rojo.zip https://github.com/rojo-rbx/rojo/releases/download/v7.7.1/rojo-7.7.1-linux-x86_64.zip
+          echo '186e5ddaa2b048ebc7390c11ed1b00c04e7d3beaffed429250329e3575d2ece2  luau.zip' | sha256sum -c -
+          echo '00feb4fa0829a1dd72b49df2639da519a352bfe13cadcd83969e2ba2bb5693c4  rojo.zip' | sha256sum -c -
+          unzip -q luau.zip
+          unzip -q rojo.zip
+          chmod +x luau luau-compile luau-analyze rojo
+          echo /tmp/double-life-tools >> "$GITHUB_PATH"
+      - name: Policies, syntax and type analysis
+        run: |
+          luau tests/run.luau
+          luau tests/rounds.luau
+          find src tests -name '*.luau' -print0 | xargs -0 luau-compile --null
+          luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau tests/run.luau tests/rounds.luau
+      - name: Build and inspect artifacts
+        run: |
+          rojo build default.project.json -o DoubleLife-M2.rbxlx
+          rojo build studio-tests.project.json -o DoubleLife-M2-tests.rbxlx
+          python3 tests/check-build.py DoubleLife-M2.rbxlx
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DoubleLife-M2
+          path: '*.rbxlx'

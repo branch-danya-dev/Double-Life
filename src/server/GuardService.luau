@@ -3,27 +3,30 @@ local Mover = require(script.Parent.NpcMover)
 local Guard = {}
 Guard.__index = Guard
 
-function Guard.start(world, config)
-    local self = setmetatable({policy = Policy.new(config), routes = {
+function Guard.start(world, config, scope)
+    local self = setmetatable({scope = scope, policy = Policy.new(config), routes = {
         Corridor = {Vector3.new(0, 3.5, 33), Vector3.new(0, 3.5, 23), Vector3.new(12, 3.5, 17)},
         Foyer = {Vector3.new(12, 3.5, 17), Vector3.new(15, 3.5, -15), Vector3.new(-14, 3.5, -6)},
     }}, Guard)
-    self.mover = Mover.new(world.map, "Guard", Vector3.new(0, 3.5, 23), Color3.fromRGB(48, 68, 105))
+    self.mover = Mover.new(world.map, "Guard", Vector3.new(0, 3.5, 23), Color3.fromRGB(48, 68, 105), scope)
     self.lastSafe = self.mover.root.Position
-    task.spawn(function()
+    self.worker = task.spawn(function()
         local index = 1
-        while self.mover.model.Parent do
+        while scope.alive and self.mover.model.Parent do
+            if not self.mover:waitRunning() then break end
+            self.lastTick = scope:now()
             local ok, err = pcall(function()
                 local policy = self.policy
                 local revision = policy.revision
-                local function cancelled() return revision ~= policy.revision end
+                local function cancelled() return not scope.alive or revision ~= policy.revision end
                 self.mover.model:SetAttribute("State", policy.state) -- NPC state only, no player identity.
                 self.mover.model:SetAttribute("PatrolZone", policy.zone)
                 if policy.state == "Investigate" then
                     self.mover.label.Text = "Охрана · проверяет место"
                     self.mover:move(policy.target, policy.deadline, cancelled)
-                    while not cancelled() and os.clock() < policy.deadline do task.wait(0.2) end
-                    policy:beginReturn(os.clock())
+                    while not cancelled() and scope:now() < policy.deadline do task.wait(0.2) end
+                    if cancelled() then return end
+                    policy:beginReturn(scope:now())
                 elseif policy.state == "Return" then
                     self.mover.label.Text = "Охрана · возвращается"
                     local route = self.routes[policy.zone]
@@ -39,13 +42,13 @@ function Guard.start(world, config)
                             break
                         end
                     end
-                    if not arrived then self.mover:move(self.lastSafe, os.clock() + 4, cancelled) end
-                    policy:resume(os.clock())
+                    if not arrived then self.mover:move(self.lastSafe, scope:now() + 4, cancelled) end
+                    if not cancelled() then policy:resume(scope:now()) end
                 else
                     self.mover.label.Text = "Охрана · патруль"
                     local route = self.routes[policy.zone]
                     local point = route[index]
-                    if self.mover:move(point, os.clock() + 10, cancelled) then self.lastSafe = point end
+                    if self.mover:move(point, scope:now() + 10, cancelled) then self.lastSafe = point end
                     index = index % #route + 1
                     task.wait(0.5)
                 end
@@ -53,7 +56,7 @@ function Guard.start(world, config)
             if not ok then
                 warn("Guard recovery:", err)
                 self.mover:stop()
-                self.policy:beginReturn(os.clock())
+                self.policy:beginReturn(scope:now())
                 task.wait(1)
             end
         end
@@ -62,11 +65,11 @@ function Guard.start(world, config)
 end
 
 function Guard:react(source, position)
-    return self.policy:investigate(source, position, os.clock(), false)
+    return self.policy:investigate(source, position, self.scope:now(), false)
 end
 
 function Guard:command(kind, value)
-    return self.policy:command(kind, value, os.clock())
+    return self.policy:command(kind, value, self.scope:now())
 end
 
 return Guard

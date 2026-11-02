@@ -2,7 +2,7 @@ local PathfindingService = game:GetService("PathfindingService")
 local Mover = {}
 Mover.__index = Mover
 
-function Mover.new(parent, name, position, color)
+function Mover.new(parent, name, position, color, scope)
     local model = Instance.new("Model")
     model.Name = name
     local root = Instance.new("Part")
@@ -39,10 +39,11 @@ function Mover.new(parent, name, position, color)
     label.Size, label.BackgroundTransparency = UDim2.fromScale(1, 1), 1
     label.TextColor3, label.TextSize, label.TextWrapped = Color3.new(1, 1, 1), 14, true
     label.Parent = sign
-    return setmetatable({model = model, root = root, humanoid = humanoid, label = label}, Mover)
+    return setmetatable({model = model, root = root, humanoid = humanoid, label = label, scope = scope}, Mover)
 end
 
 function Mover:stop()
+    self.destination = nil
     if self.root.Parent then self.humanoid:MoveTo(self.root.Position) end
 end
 
@@ -51,10 +52,21 @@ function Mover:near(position, radius)
     return Vector2.new(delta.X, delta.Z).Magnitude <= radius and math.abs(delta.Y) < 5
 end
 
+function Mover:waitRunning()
+    local paused = false
+    while self.scope.alive and not self.scope.running do
+        paused = true
+        if self.root.Parent then self.humanoid:MoveTo(self.root.Position) end
+        task.wait(0.1)
+    end
+    if paused and self.scope.alive and self.root.Parent and self.destination then self.humanoid:MoveTo(self.destination) end
+    return self.scope.alive
+end
+
 function Mover:move(position, deadline, cancelled)
     local function valid()
-        return self.root.Parent ~= nil and self.humanoid.Health > 0
-            and os.clock() < deadline and not cancelled()
+        return self:waitRunning() and self.root.Parent ~= nil and self.humanoid.Health > 0
+            and self.scope:now() < deadline and not cancelled()
     end
     for _ = 1, 2 do
         if not valid() then self:stop(); return false end
@@ -70,8 +82,8 @@ function Mover:move(position, deadline, cancelled)
             self.computing, done = false, true
             if abandoned then path:Destroy() end
         end)
-        local computeDeadline = math.min(deadline, os.clock() + 3)
-        while not done and valid() and os.clock() < computeDeadline do task.wait(0.1) end
+        local computeDeadline = math.min(deadline, self.scope:now() + 3)
+        while not done and valid() and self.scope:now() < computeDeadline do task.wait(0.1) end
         if not done then abandoned = true; self:stop(); return false end
         if computed and path.Status == Enum.PathStatus.Success and valid() then
             local blocked, current = false, 1
@@ -83,10 +95,11 @@ function Mover:move(position, deadline, cancelled)
                 current = index
                 if not valid() or blocked then arrived = false; break end
                 if waypoint.Action == Enum.PathWaypointAction.Jump then self.humanoid.Jump = true end
+                self.destination = waypoint.Position
                 self.humanoid:MoveTo(waypoint.Position)
-                local waypointDeadline = math.min(deadline, os.clock() + 3)
+                local waypointDeadline = math.min(deadline, self.scope:now() + 3)
                 while valid() and not blocked and not self:near(waypoint.Position, 2)
-                    and os.clock() < waypointDeadline do task.wait(0.1) end
+                    and self.scope:now() < waypointDeadline do task.wait(0.1) end
                 if not valid() or blocked or not self:near(waypoint.Position, 2.5) then arrived = false; break end
             end
             connection:Disconnect()

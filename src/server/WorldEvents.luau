@@ -1,13 +1,13 @@
 local Events = {}
 
-function Events.start(world, roles, interactions, guard, tell, config)
+function Events.start(world, roles, interactions, guard, tell, config, scope)
     local tokens, ready, closesAt = {}, {}, {}
     local function open(part, seconds)
-        closesAt[part] = math.max(closesAt[part] or 0, os.clock() + seconds)
+        closesAt[part] = math.max(closesAt[part] or 0, scope:now() + seconds)
         tokens[part] = (tokens[part] or 0) + 1
         local token = tokens[part]
         part.Transparency, part.CanCollide = 0.8, false
-        task.delay(closesAt[part] - os.clock(), function()
+        scope:delay(closesAt[part] - scope:now(), function()
             if tokens[part] ~= token then return end
             part.CanCollide = true
             part.Transparency = if part == world.studyWindow then 0.3 else 0
@@ -16,7 +16,7 @@ function Events.start(world, roles, interactions, guard, tell, config)
     local function bind(part, action, object, hold, callback, key)
         local p = interactions.prompt(part, action, object, hold)
         if key then p.KeyboardKeyCode = key end
-        interactions:bind(p, callback)
+        interactions:bind(p, callback, part.Name == "BreakableGlass")
         return p
     end
     local function owner(player)
@@ -46,20 +46,20 @@ function Events.start(world, roles, interactions, guard, tell, config)
     end, Enum.KeyCode.X)
     bind(world.studyWindow, "Открыть окно", "Боковой вход", 5, function(player)
         if roles:get(player) ~= config.ROLE_SPY then tell(player, "Окно заперто. Нужен специальный инструмент."); return end
-        local now = os.clock()
+        local now = scope:now()
         if now < (ready.window or 0) then tell(player, "Механизм окна ещё заклинен. Подождите."); return end
         ready.window = now + config.NOISE_SOURCE_COOLDOWN
         open(world.studyWindow, config.WINDOW_SECONDS)
         guard:react("Window", Vector3.new(-23, 3.5, 58))
         world.studyWindow.Color = Color3.fromRGB(130, 142, 146)
-        task.delay(35, function() world.studyWindow.Color = Color3.fromRGB(69, 107, 124) end)
+        scope:delay(35, function() world.studyWindow.Color = Color3.fromRGB(69, 107, 124) end)
         tell(player, "Окно открыто ненадолго. Остались следы на раме.")
     end)
     local glass = world.block("BreakableGlass", Vector3.new(0.8, 1.4, 0.8), Vector3.new(21, 2, -17), Color3.fromRGB(165, 209, 221), Enum.Material.Glass)
     glass.Transparency = 0.25
     local glassPrompt
     glassPrompt = bind(glass, "Уронить бокал", "Столик с соком", 1, function()
-        local now = os.clock()
+        local now = scope:now()
         if now < (ready.glass or 0) then return end
         ready.glass = now + config.NOISE_SOURCE_COOLDOWN
         glassPrompt.Enabled, glass.Transparency = false, 1
@@ -70,7 +70,7 @@ function Events.start(world, roles, interactions, guard, tell, config)
             table.insert(shards, shard)
         end
         guard:react("Glass", Vector3.new(18, 3.5, -17))
-        task.delay(config.NOISE_SOURCE_COOLDOWN, function()
+        scope:delay(config.NOISE_SOURCE_COOLDOWN, function()
             for _, shard in ipairs(shards) do shard:Destroy() end
             glassPrompt.Enabled, glass.Transparency = true, 0.25
         end)
