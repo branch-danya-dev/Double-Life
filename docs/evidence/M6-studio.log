@@ -1,0 +1,152 @@
+2026-11-02T22:21:35.588Z,25.588631,403c,6,Info [FLog::CreatorOutput] M6 PASS five real clients initial cohort
+2026-11-02T22:21:35.706Z,25.706091,76fc,6,Info [FLog::CreatorOutput] M6 PASS shop off; no real storage/payment APIs
+2026-11-02T22:21:35.821Z,25.821903,5374,6,Info [FLog::CreatorOutput] M6 PASS closed study has no free navigation bypass
+2026-11-02T22:21:39.321Z,29.321911,5374,6,Info [FLog::CreatorOutput] M6 WALK Player1 Painting1 3.45s 48.5studs
+2026-11-02T22:21:42.288Z,32.288857,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Painting2 1.02s 14.3studs
+2026-11-02T22:21:45.489Z,35.489094,5374,6,Info [FLog::CreatorOutput] M6 WALK Player1 Painting3 1.27s 16.6studs
+2026-11-02T22:21:54.404Z,44.404984,5374,6,Info [FLog::CreatorOutput] M6 WALK Player1 Service.Pantry 6.90s 105.9studs
+2026-11-02T22:21:58.538Z,48.538631,55a8,6,Info [FLog::CreatorOutput] M6 WALK Player1 Service.Target1 4.05s 60.0studs
+2026-11-02T22:22:09.253Z,59.253983,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Service.Target2 10.65s 162.0studs
+2026-11-02T22:22:13.304Z,63.304005,93d0,6,Info [FLog::CreatorOutput] M6 WALK Player1 Social.TraceSpot 3.98s 60.9studs
+2026-11-02T22:22:13.854Z,63.854019,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Guard.Window 0.48s 5.0studs
+2026-11-02T22:22:22.404Z,72.404030,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Events.Console 8.43s 121.7studs
+2026-11-02T22:22:24.520Z,74.520905,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Events.Bell 2.03s 27.7studs
+2026-11-02T22:22:29.469Z,79.469627,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Social.Delivery 4.87s 73.7studs
+2026-11-02T22:22:32.036Z,82.036850,93d0,6,Info [FLog::CreatorOutput] M6 WALK Player1 Relic.Reading 2.52s 35.7studs
+2026-11-02T22:22:38.619Z,88.619972,403c,6,Info [FLog::CreatorOutput] M6 WALK Player1 MainExit 6.50s 100.2studs
+2026-11-02T22:22:38.619Z,88.619972,403c,6,Info [FLog::CreatorOutput] M6 PASS all paintings reachable and interactive while waiting
+2026-11-02T22:22:48.620Z,98.620132,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Service.Target2 9.95s 154.5studs
+2026-11-02T22:22:50.486Z,100.486160,93d0,6,Info [FLog::CreatorOutput] M6 PASS upstairs request accepted through real prompt
+2026-11-02T22:22:50.486Z,100.486160,93d0,6,Info [FLog::CreatorOutput] M6 NPC ROUTE 34.32820510864258, 3.499999761581421, 39.97774887084961 {"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0} {"state":"Queued","expires":184.75658587098588,"id":1,"queuedAt":94.75658587098588,"userId":-1,"target":2}
+2026-11-02T22:22:55.502Z,105.502380,69f4,6,Info [FLog::CreatorOutput] M6 NPC ROUTE 34.32820510864258, 3.499999761581421, 39.97774887084961 {"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0} {"state":"Queued","expires":184.75658587098588,"id":1,"queuedAt":94.75658587098588,"userId":-1,"target":2}
+2026-11-02T22:23:00.518Z,110.518860,76fc,6,Info [FLog::CreatorOutput] M6 NPC ROUTE 7.312812805175781, 3.499999761581421, 38.14892578125 {"timeouts":0,"computes":1,"arrivals":0,"failures":0,"computeSeconds":0.11629639996681363} {"state":"Carrying","target":2,"expires":184.75658587098588,"id":1,"queuedAt":94.75658587098588,"userId":-1,"executor":0}
+2026-11-02T22:23:05.518Z,115.518837,403c,6,Info [FLog::CreatorOutput] M6 NPC ROUTE -38.60927963256836, 3.499999761581421, 15.489675521850586 {"timeouts":0,"computes":1,"arrivals":0,"failures":0,"computeSeconds":0.11629639996681363} {"state":"Carrying","target":2,"expires":184.75658587098588,"id":1,"queuedAt":94.75658587098588,"userId":-1,"executor":0}
+2026-11-02T22:23:10.535Z,120.535988,8cb0,6,Info [FLog::CreatorOutput] M6 NPC ROUTE -57.96870040893555, 16.848024368286133, 47.044219970703125 {"timeouts":0,"computes":1,"arrivals":0,"failures":0,"computeSeconds":0.11629639996681363} {"state":"Carrying","target":2,"expires":184.75658587098588,"id":1,"queuedAt":94.75658587098588,"userId":-1,"executor":0}
+2026-11-02T22:23:14.018Z,124.018799,69f4,6,Info [FLog::CreatorOutput] M6 PASS NPC physically delivered upstairs
+2026-11-02T22:23:14.018Z,124.018799,69f4,6,Info [FLog::CreatorOutput] M6 METRICS Waiting topology {"players":5,"service":{"timeouts":0,"computes":2,"arrivals":1,"failures":0,"computeSeconds":0.11629639996681363},"instances":482,"world":{"resets":1,"buildMs":12.851099949330092,"lastResetMs":0.6561000482179225},"game":{"maxRebuildMs":17.66210002824664,"maxHeartbeatMs":623.8205432891846},"guard":{"timeouts":0,"computes":22,"arrivals":21,"failures":0,"computeSeconds":2.2505258000455798},"parts":277}
+2026-11-02T22:23:26.085Z,136.085098,93d0,6,Info [FLog::CreatorOutput] M6 PASS static identity preserved; old round destroyed
+2026-11-02T22:23:26.201Z,136.201477,69f4,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player1
+2026-11-02T22:23:26.317Z,136.317871,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player2
+2026-11-02T22:23:26.417Z,136.417709,5374,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player3
+2026-11-02T22:23:26.534Z,136.534973,93d0,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player4
+2026-11-02T22:23:26.651Z,136.651505,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player5
+2026-11-02T22:23:31.935Z,141.935089,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player4 Service.Pantry 5.18s 76.2studs
+2026-11-02T22:23:32.917Z,142.917801,4a90,6,Info [FLog::CreatorOutput] M6 WALK Player2 Social.Cloth 6.15s 90.7studs
+2026-11-02T22:23:35.900Z,145.900726,55a8,6,Info [FLog::CreatorOutput] M6 WALK Player3 Service.Target2 9.18s 140.1studs
+2026-11-02T22:23:39.101Z,149.101105,403c,6,Info [FLog::CreatorOutput] M6 WALK Player1 OwnerConsole 12.35s 189.5studs
+2026-11-02T22:23:39.217Z,149.217911,403c,6,Info [FLog::CreatorOutput] M6 WALK Player5 Social.PassReader 12.47s 191.8studs
+2026-11-02T22:23:41.351Z,151.351059,76fc,6,Info [FLog::CreatorOutput] M6 PASS owner sends patrol between floors
+2026-11-02T22:23:44.267Z,154.267365,403c,6,Info [FLog::CreatorOutput] M6 PASS named pass opens legal route
+2026-11-02T22:23:46.135Z,156.135071,69f4,6,Info [FLog::CreatorOutput] M6 PASS staff customer request accepted
+2026-11-02T22:23:46.350Z,156.350647,5374,6,Info [FLog::CreatorOutput] M6 WALK Player5 Social.ParcelHome 2.02s 27.5studs
+2026-11-02T22:23:47.983Z,157.983429,76fc,6,Info [FLog::CreatorOutput] M6 PASS staff accepts order before NPC
+2026-11-02T22:23:48.434Z,158.434189,76fc,6,Info [FLog::CreatorOutput] M6 PASS guest enters and takes physical collection
+2026-11-02T22:23:49.201Z,159.201126,93d0,6,Info [FLog::CreatorOutput] M6 PASS parcel drops on actual upper floor
+2026-11-02T22:23:49.850Z,159.850525,76fc,6,Info [FLog::CreatorOutput] M6 PASS staff picks up physical tray
+2026-11-02T22:23:50.400Z,160.400253,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player3 Service.Target2 0.47s 4.3studs
+2026-11-02T22:23:54.016Z,164.016724,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player5 Social.Egress 1.32s 17.8studs
+2026-11-02T22:24:02.382Z,172.382950,55a8,6,Info [FLog::CreatorOutput] M6 WALK Player2 Social.TraceSpot 9.70s 148.8studs
+2026-11-02T22:24:03.550Z,173.550827,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player4 Service.Target2 10.83s 169.4studs
+2026-11-02T22:24:09.065Z,179.065659,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player5 Social.Delivery 12.82s 190.8studs
+2026-11-02T22:24:12.232Z,182.232559,76fc,6,Info [FLog::CreatorOutput] M6 PASS collection carried downstairs within 45 active seconds
+2026-11-02T22:24:12.232Z,182.232559,76fc,6,Info [FLog::CreatorOutput] M6 PASS staff walked multi-level delivery
+2026-11-02T22:24:12.232Z,182.232559,76fc,6,Info [FLog::CreatorOutput] M6 PASS cloth physically planted on terrace
+2026-11-02T22:24:15.599Z,185.599976,403c,6,Info [FLog::CreatorOutput] M6 WALK Player3 Social.PassReader 3.27s 46.5studs
+2026-11-02T22:24:24.348Z,194.348969,403c,6,Info [FLog::CreatorOutput] M6 WALK Player3 Social.TraceSpot 6.50s 100.4studs
+2026-11-02T22:24:27.216Z,197.216125,76fc,6,Info [FLog::CreatorOutput] M6 PASS no-chat sign in new scene
+2026-11-02T22:24:31.847Z,201.847961,403c,6,Info [FLog::CreatorOutput] M6 WALK Player5 Events.Stage 4.53s 67.4studs
+2026-11-02T22:24:36.382Z,206.382187,403c,6,Info [FLog::CreatorOutput] M6 WALK Player1 Events.Console 9.05s 134.6studs
+2026-11-02T22:25:04.479Z,234.479553,76fc,6,Info [FLog::CreatorOutput] M6 PASS music event on physical floor
+2026-11-02T22:25:05.246Z,235.246872,403c,6,Info [FLog::CreatorOutput] M6 WALK Player2 StudyWindow 0.68s 8.6studs
+2026-11-02T22:25:12.731Z,242.731079,403c,6,Info [FLog::CreatorOutput] M6 WALK Player2 Safe 1.25s 17.1studs
+2026-11-02T22:25:15.895Z,245.895447,76fc,6,Info [FLog::CreatorOutput] M6 PASS solo spy entered independent window
+2026-11-02T22:25:17.730Z,247.730621,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player3 ForensicLog 1.75s 24.6studs
+2026-11-02T22:25:20.413Z,250.413696,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player3 Evidence.Home 0.50s 5.2studs
+2026-11-02T22:25:22.313Z,252.313080,76fc,6,Info [FLog::CreatorOutput] M6 PASS agent physically collects seal upstairs
+2026-11-02T22:25:22.963Z,252.963226,403c,6,Info [FLog::CreatorOutput] M6 WALK Player3 ForensicLog 0.53s 5.2studs
+2026-11-02T22:25:23.513Z,253.513794,76fc,6,Info [FLog::CreatorOutput] M6 PASS seal drops on actual upper floor rather than old bounds
+2026-11-02T22:25:24.631Z,254.631134,403c,6,Info [FLog::CreatorOutput] M6 WALK Player2 Social.Egress 1.03s 12.9studs
+2026-11-02T22:25:41.212Z,271.212738,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player2 MainExit 14.37s 218.4studs
+2026-11-02T22:25:43.846Z,273.846161,76fc,6,Info [FLog::CreatorOutput] M6 DOSSIER WALK extraction 27.95s; window-to-exit 32.42s
+2026-11-02T22:25:43.846Z,273.846161,76fc,6,Info [FLog::CreatorOutput] M6 PASS outcome Spy
+2026-11-02T22:25:43.846Z,273.846161,76fc,6,Info [FLog::CreatorOutput] M6 METRICS Spy {"players":5,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":483,"world":{"resets":2,"buildMs":12.851099949330092,"lastResetMs":1.8159000319428743},"game":{"maxRebuildMs":17.66210002824664,"maxHeartbeatMs":623.8205432891846},"guard":{"timeouts":0,"computes":14,"arrivals":11,"failures":0,"computeSeconds":1.189087700098753},"parts":277}
+2026-11-02T22:25:55.098Z,285.098999,76fc,6,Info [FLog::CreatorOutput] M6 PASS round reset without rebuilding level
+2026-11-02T22:25:55.098Z,285.098999,76fc,6,Info [FLog::CreatorOutput] M6 FIVE CLIENTS PASS; add clients for EIGHT+ round now
+2026-11-02T22:27:17.392Z,367.392700,48b0,6,Info [FLog::CreatorOutput] M6 PASS static identity preserved; old round destroyed
+2026-11-02T22:27:17.509Z,367.509094,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player1
+2026-11-02T22:27:17.626Z,367.626007,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player2
+2026-11-02T22:27:17.742Z,367.742706,69f4,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player3
+2026-11-02T22:27:17.860Z,367.860077,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player4
+2026-11-02T22:27:17.976Z,367.976074,93d0,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player5
+2026-11-02T22:27:18.076Z,368.076080,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player6
+2026-11-02T22:27:18.191Z,368.191895,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player7
+2026-11-02T22:27:18.291Z,368.291931,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player8
+2026-11-02T22:27:18.393Z,368.393005,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player9
+2026-11-02T22:27:18.508Z,368.508514,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player10
+2026-11-02T22:27:18.508Z,368.508514,76fc,6,Info [FLog::CreatorOutput] M6 PASS two spies and two agents in live large round
+2026-11-02T22:27:22.942Z,372.942719,8cb0,6,Info [FLog::CreatorOutput] M6 WALK Player1 Events.Console 4.33s 65.0studs
+2026-11-02T22:27:28.158Z,378.158875,69f4,6,Info [FLog::CreatorOutput] M6 WALK Player8 Relic.Archive 9.55s 145.3studs
+2026-11-02T22:27:30.408Z,380.408813,403c,6,Info [FLog::CreatorOutput] M6 WALK Player2 StudyWindow 11.82s 181.8studs
+2026-11-02T22:27:30.525Z,380.525146,403c,6,Info [FLog::CreatorOutput] M6 WALK Player4 OwnerConsole 11.95s 182.5studs
+2026-11-02T22:27:51.107Z,401.107574,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player8 Events.Pedestal 11.62s 172.3studs
+2026-11-02T22:27:52.990Z,402.990356,403c,6,Info [FLog::CreatorOutput] M6 PASS relic walked downstairs before timeout
+2026-11-02T22:27:52.990Z,402.990356,403c,6,Info [FLog::CreatorOutput] M6 RELIC WALK 13.60s
+2026-11-02T22:28:00.475Z,410.475098,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player2 Safe 1.27s 17.1studs
+2026-11-02T22:28:03.657Z,413.657837,76fc,6,Info [FLog::CreatorOutput] M6 PASS dossier before council
+2026-11-02T22:28:12.440Z,422.440094,403c,6,Info [FLog::CreatorOutput] M6 WALK Player1 OwnerConsole 8.73s 134.4studs
+2026-11-02T22:28:14.607Z,424.607025,403c,6,Info [FLog::CreatorOutput] M6 PASS real owner console calls council
+2026-11-02T22:28:17.624Z,427.624115,76fc,6,Info [FLog::CreatorOutput] M6 PASS council pauses carry, world and NPCs
+2026-11-02T22:28:38.822Z,448.822723,69f4,6,Info [FLog::CreatorOutput] M6 PASS majority search recovers dossier without elimination
+2026-11-02T22:28:49.972Z,459.972076,403c,6,Info [FLog::CreatorOutput] M6 WALK Player4 Events.Bell 11.10s 154.5studs
+2026-11-02T22:29:01.321Z,471.321869,403c,6,Info [FLog::CreatorOutput] M6 WALK Player4 Service.Target2 11.32s 175.3studs
+2026-11-02T22:29:01.321Z,471.321869,403c,6,Info [FLog::CreatorOutput] M6 PASS blackout retains permanent route lights across both floors
+2026-11-02T22:29:28.786Z,498.786896,76fc,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 314
+2026-11-02T22:29:59.068Z,529.068787,76fc,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 284
+2026-11-02T22:30:29.417Z,559.417114,69f4,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 253
+2026-11-02T22:30:59.749Z,589.749634,76fc,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 223
+2026-11-02T22:31:29.981Z,619.981506,76fc,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 193
+2026-11-02T22:32:00.231Z,650.231018,76fc,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 163
+2026-11-02T22:32:30.547Z,680.547424,76fc,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 132
+2026-11-02T22:33:00.860Z,710.860535,403c,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 102
+2026-11-02T22:33:31.143Z,741.143982,403c,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 72
+2026-11-02T22:34:01.442Z,771.442566,76fc,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 41
+2026-11-02T22:34:31.791Z,801.791138,69f4,6,Info [FLog::CreatorOutput] M6 DEFENDERS WAIT 11
+2026-11-02T22:34:42.908Z,812.908203,76fc,6,Info [FLog::CreatorOutput] M6 PASS outcome Defenders
+2026-11-02T22:34:42.908Z,812.908203,76fc,6,Info [FLog::CreatorOutput] M6 METRICS Defenders {"players":10,"service":{"timeouts":0,"computes":2,"arrivals":2,"failures":0,"computeSeconds":0.16440539999166504},"instances":483,"world":{"resets":4,"buildMs":12.851099949330092,"lastResetMs":2.1963000181131067},"game":{"maxRebuildMs":17.66210002824664,"maxHeartbeatMs":623.8205432891846},"guard":{"timeouts":0,"computes":66,"arrivals":61,"failures":1,"computeSeconds":5.061391900060698},"parts":277}
+2026-11-02T22:34:54.456Z,824.456970,403c,6,Info [FLog::CreatorOutput] M6 PASS round reset without rebuilding level
+2026-11-02T22:34:54.456Z,824.456970,403c,6,Info [FLog::CreatorOutput] M6 LARGE CLIENTS PASS 10 two sequential natural rounds; both outcomes
+2026-11-02T22:34:54.458Z,824.458008,403c,6,Info [FLog::CreatorOutput] M6 OPTIONAL LOAD: add to 12-15 clients within 180 seconds
+2026-11-02T22:36:15.623Z,905.623901,76fc,6,Info [FLog::CreatorOutput] M6 PASS static identity preserved; old round destroyed
+2026-11-02T22:36:15.737Z,905.737854,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player1
+2026-11-02T22:36:15.839Z,905.839844,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player2
+2026-11-02T22:36:15.954Z,905.954590,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player3
+2026-11-02T22:36:16.070Z,906.070801,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player4
+2026-11-02T22:36:16.172Z,906.172180,93d0,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player5
+2026-11-02T22:36:16.271Z,906.271484,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player6
+2026-11-02T22:36:16.388Z,906.388062,93d0,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player7
+2026-11-02T22:36:16.489Z,906.489136,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player8
+2026-11-02T22:36:16.604Z,906.604553,93d0,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player9
+2026-11-02T22:36:16.721Z,906.721130,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player10
+2026-11-02T22:36:16.837Z,906.837952,93d0,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player11
+2026-11-02T22:36:17.386Z,907.386108,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player12
+2026-11-02T22:36:17.494Z,907.494629,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player13
+2026-11-02T22:36:17.603Z,907.603943,76fc,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player14
+2026-11-02T22:36:17.814Z,907.814941,403c,6,Info [FLog::CreatorOutput] M6 PASS real participant privacy Player15
+2026-11-02T22:36:26.421Z,916.421997,1db4,6,Info [FLog::CreatorOutput] M6 WALK Player6 Service.Target2 8.52s 127.7studs
+2026-11-02T22:36:26.421Z,916.421997,1db4,6,Info [FLog::CreatorOutput] M6 WALK Player12 Service.Target2 8.55s 127.0studs
+2026-11-02T22:36:26.970Z,916.970764,403c,6,Info [FLog::CreatorOutput] M6 WALK Player2 Service.Target2 9.10s 139.3studs
+2026-11-02T22:36:26.970Z,916.970764,403c,6,Info [FLog::CreatorOutput] M6 WALK Player8 Service.Target2 9.07s 140.0studs
+2026-11-02T22:36:27.639Z,917.639099,3f8c,6,Info [FLog::CreatorOutput] M6 WALK Player4 Service.Target2 9.72s 145.9studs
+2026-11-02T22:36:27.639Z,917.639099,3f8c,6,Info [FLog::CreatorOutput] M6 WALK Player10 Service.Target2 9.75s 147.8studs
+2026-11-02T22:36:28.288Z,918.288147,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player5 Social.TraceSpot 10.38s 160.4studs
+2026-11-02T22:36:28.619Z,918.619995,69f4,6,Info [FLog::CreatorOutput] M6 WALK Player13 Social.TraceSpot 10.77s 163.1studs
+2026-11-02T22:36:28.837Z,918.837158,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player9 Social.TraceSpot 10.90s 164.9studs
+2026-11-02T22:36:29.070Z,919.070312,69f4,6,Info [FLog::CreatorOutput] M6 WALK Player7 Social.TraceSpot 11.17s 171.1studs
+2026-11-02T22:36:29.254Z,919.254517,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player3 Social.TraceSpot 11.38s 174.5studs
+2026-11-02T22:36:29.287Z,919.287415,1db4,6,Info [FLog::CreatorOutput] M6 WALK Player11 Social.TraceSpot 11.40s 171.4studs
+2026-11-02T22:36:29.689Z,919.689148,76fc,6,Info [FLog::CreatorOutput] M6 WALK Player1 Social.TraceSpot 11.83s 180.6studs
+2026-11-02T22:36:31.820Z,921.820557,69f4,6,Info [FLog::CreatorOutput] M6 WALK Player14 Service.Target2 13.78s 142.3studs
+2026-11-02T22:36:34.519Z,924.519775,93d0,6,Info [FLog::CreatorOutput] M6 WALK Player15 Social.TraceSpot 16.63s 156.2studs
+2026-11-02T22:36:34.519Z,924.519775,93d0,6,Info [FLog::CreatorOutput] M6 METRICS 12-15 simultaneous routes {"players":15,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":481,"world":{"resets":6,"buildMs":12.851099949330092,"lastResetMs":3.5783000057563187},"game":{"maxRebuildMs":17.66210002824664,"maxHeartbeatMs":623.8205432891846},"guard":{"timeouts":0,"computes":4,"arrivals":3,"failures":0,"computeSeconds":0.27561519999289887},"parts":276}
+2026-11-02T22:36:34.519Z,924.519775,93d0,6,Info [FLog::CreatorOutput] M6 LOAD PASS 15
+2026-11-02T22:36:36.186Z,926.186646,69f4,6,Info [FLog::CreatorOutput] M6 STUDIO SUITE PASS; inspect first-person, J/K and touch emulation; then End Session

@@ -1,6 +1,6 @@
 local Dossier = {}
 function Dossier.start(world, roles, interactions, personalUpdate, tell, Config, finish, evidence, onTask, onActivity, scope, tool)
-    local safe, gold, block = world.safe, world.gold, world.block
+    local safe, gold = world.safe, world.gold
     local prompt = interactions.prompt
     local function usePrompt(p, f, neutral) interactions:bind(p, f, neutral) end
     local safePrompt = prompt(safe, "Осмотреть", "Сейф с документами", 2)
@@ -31,7 +31,7 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
             carrierId = player.UserId
             carryGeneration += 1
             local generation = carryGeneration
-            scope:delay(60, function()
+            scope:delay(Config.DOSSIER_CARRY_SECONDS, function()
                 if generation == carryGeneration and carrierId then
                     resetDossier()
                     tell(player, "Срок операции с досье истёк: оно возвращено в сейф. Попытку можно повторить.")
@@ -41,7 +41,7 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
             evidence:create()
             onTask(player, "Safe", 1)
             if dossierMissing then
-                tell(player, "Досье у вас. Доберитесь до выхода за 60 с активной игры; затем оно вернётся в сейф.")
+                tell(player, "Досье у вас. До выхода: " .. Config.DOSSIER_CARRY_SECONDS .. " с активной игры; затем возврат в сейф, даже если вы двигаетесь.")
             end
         else
             tell(player, "Документы на месте.")
@@ -66,8 +66,8 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
     end)
 
     -- Neutral guest activity: identical interactions for all roles, no role revelation.
-    for index, z in ipairs({ -15, 0, 15 }) do
-        local painting = block("Painting" .. index, Vector3.new(0.6, 4, 4), Vector3.new(-27.2, 5.5, z), Color3.fromRGB(100 + index * 25, 98, 87))
+    for index, id in ipairs(world.layout.groups.Paintings) do
+        local painting = world:object(id)
         local paintingPrompt = prompt(painting, "Осмотреть", "Картина " .. index, 0.75)
         usePrompt(paintingPrompt, function(player)
             local visited = seenPaintings[player.UserId]

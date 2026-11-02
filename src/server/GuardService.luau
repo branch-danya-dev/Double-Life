@@ -4,11 +4,13 @@ local Guard = {}
 Guard.__index = Guard
 
 function Guard.start(world, config, scope)
-    local self = setmetatable({scope = scope, policy = Policy.new(config), routes = {
-        Corridor = {Vector3.new(0, 3.5, 33), Vector3.new(0, 3.5, 23), Vector3.new(12, 3.5, 17)},
-        Foyer = {Vector3.new(12, 3.5, 17), Vector3.new(15, 3.5, -15), Vector3.new(-14, 3.5, -6)},
+    local navigationConfig = table.clone(config)
+    navigationConfig.INVESTIGATE_SECONDS = world.navigation.investigateSeconds
+    navigationConfig.RETURN_SECONDS = world.navigation.returnSeconds
+    local self = setmetatable({scope = scope, policy = Policy.new(navigationConfig), routes = {
+        Corridor = world:points("Patrol.Corridor"), Foyer = world:points("Patrol.Foyer"),
     }}, Guard)
-    self.mover = Mover.new(world.map, "Guard", Vector3.new(0, 3.5, 23), Color3.fromRGB(48, 68, 105), scope)
+    self.mover = Mover.new(world.npcs, "Guard", world:point("Guard.Spawn"), Color3.fromRGB(48, 68, 105), scope)
     self.lastSafe = self.mover.root.Position
     self.worker = task.spawn(function()
         local index = 1
@@ -48,7 +50,7 @@ function Guard.start(world, config, scope)
                     self.mover.label.Text = "Охрана · патруль"
                     local route = self.routes[policy.zone]
                     local point = route[index]
-                    if self.mover:move(point, scope:now() + 10, cancelled) then self.lastSafe = point end
+                    if self.mover:move(point, scope:now() + world.navigation.patrolSeconds, cancelled) then self.lastSafe = point end
                     index = index % #route + 1
                     task.wait(0.5)
                 end

@@ -7,20 +7,19 @@ Requests.__index = Requests
 function Requests.start(world, roles, interactions, guard, tell, update, config, scope, onTask, onActivity)
     local self = setmetatable({scope = scope, onTask = onTask, onActivity = onActivity, received = {}, ledger = Ledger.new(config), trays = {}, world = world,
         tell = tell, update = update, roles = roles, config = config, guard = guard}, Requests)
-    self.pantry = world.block("ServicePantry", Vector3.new(4, 3, 3), Vector3.new(-19, 2, 19), Color3.fromRGB(88, 133, 112))
-    self.home = Vector3.new(-15, 3.5, 19)
-    self.targets = {
-        {name = "Холл у восточного столика", position = Vector3.new(20, 3.5, -10)},
-        {name = "Холл у коридора", position = Vector3.new(-12, 3.5, 22)},
-    }
+    self.pantry = world:object("Service.Pantry")
+    self.home = world:point("Service.Home")
+    self.targets = {}
+    for index, id in ipairs(world.layout.groups["Service.Targets"]) do
+        table.insert(self.targets, {name = if index == 1 then "Бальный зал · этаж 1" else "Архив · этаж 2",
+            position = world:approach(id), approach = world:approach(id), part = world:object(id)})
+    end
     local function bind(part, action, name, callback, key)
         local p = interactions.prompt(part, action, name, 0.75)
         if key then p.KeyboardKeyCode = key end
         interactions:bind(p, callback, true)
     end
     for index, target in ipairs(self.targets) do
-        target.part = world.block("ServicePoint" .. index, Vector3.new(2, 2, 2), target.position - Vector3.new(0, 2, 0), Color3.fromRGB(120, 163, 144))
-        target.approach = target.position + Vector3.new(-3, 0, 0)
         bind(target.part, "Заказать сок сюда", target.name, function(player)
             local request, reason = self.ledger:create(player.UserId, index, scope:now())
             tell(player, if request then "Запрос принят: сок принесут к этому столику." else reason)
@@ -46,7 +45,7 @@ function Requests.start(world, roles, interactions, guard, tell, update, config,
             tell(player, "У вас уже есть сок для доставки.")
         end
     end)
-    self.npc = Mover.new(world.map, "ServiceAssistant", self.home, Color3.fromRGB(68, 129, 104), scope)
+    self.npc = Mover.new(world.npcs, "ServiceAssistant", self.home, Color3.fromRGB(68, 129, 104), scope)
     self.worker = task.spawn(function()
         while scope.alive and self.npc.model.Parent do
             if not self.npc:waitRunning() then break end
@@ -93,7 +92,7 @@ end
 
 function Requests:dispatch(request)
     -- A public service visit draws a routine guard check, with no criminal identity.
-    self.guard:react("Service" .. request.target, self.targets[request.target].approach + Vector3.new(0, 0, 4))
+    self.guard:react("Service" .. request.target, self.targets[request.target].approach)
 end
 
 function Requests:complete(request, executor)
@@ -123,7 +122,7 @@ end
 function Requests:runNpc()
     self.npc.label.Text = "Персонал · ожидает заказ"
     -- A failed return is retried physically; never pick up supplies from across the map.
-    if not self.npc:move(self.home, self.scope:now() + 14, function() return not self.scope.alive end) then return end
+    if not self.npc:move(self.home, self.scope:now() + self.world.navigation.serviceSeconds, function() return not self.scope.alive end) then return end
     local request = self.ledger:accept(0, self.scope:now(), true)
     if not request then return end
     self.npc.label.Text = "Персонал · несёт сок"
@@ -131,11 +130,11 @@ function Requests:runNpc()
     self:carry(0, self.npc.model)
     self:dispatch(request)
     local function cancelled() return not self.scope.alive or not self.ledger:active(request, self.scope:now()) or request.executor ~= 0 end
-    local reached = self.npc:move(self.targets[request.target].approach, math.min(request.expires, self.scope:now() + 20), cancelled)
+    local reached = self.npc:move(self.targets[request.target].approach, math.min(request.expires, self.scope:now() + self.world.navigation.serviceSeconds), cancelled)
     if reached and not cancelled() then self:complete(request, 0)
     else self.ledger:release(0, self.scope:now()); self:clearTray(0) end
     self.npc.label.Text = "Персонал · возвращается"
-    self.npc:move(self.home, self.scope:now() + 14, function() return not self.scope.alive end)
+    self.npc:move(self.home, self.scope:now() + self.world.navigation.serviceSeconds, function() return not self.scope.alive end)
 end
 
 function Requests:resetCharacter(player)

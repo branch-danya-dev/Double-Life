@@ -1,0 +1,14 @@
+{
+  "name": "DoubleLifeM6Tests",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {"DoubleLifeShared": {"$path": "src/shared"}},
+    "ServerScriptService": {
+      "DoubleLifeServer": {"$path": "src/server", "Main": {"$className": "Script", "$properties": {"Disabled": true}}},
+      "M6Tests": {"$path": "tests/m6", "MemoryStore": {"$path": "tests/MemoryStore.luau"}}
+    },
+    "StarterPlayer": {"$properties": {"CharacterWalkSpeed": 16}, "StarterPlayerScripts": {
+      "DoubleLifeClient": {"$path": "src/client"}, "M6ClientAudit": {"$path": "tests/M6Client.client.luau"}
+    }}
+  }
+}

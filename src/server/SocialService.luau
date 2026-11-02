@@ -10,12 +10,9 @@ function Service.new(rt, tell, onTask)
         part.CanCollide = false
         return part
     end
-    self.reader = block("PassReader", Vector3.new(3, 3, 39), Color3.fromRGB(72, 130, 143))
-    self.egress = block("StudyEgress", Vector3.new(3, 3, 42), Color3.fromRGB(72, 130, 143))
-    self.collection = block("CollectionLabel", Vector3.new(-8, 2, 64), Color3.fromRGB(176, 157, 114))
-    self.stand = block("ClothStand", Vector3.new(17, 2, 14), Color3.fromRGB(160, 161, 157))
-    self.delivery = block("CollectionDelivery", Vector3.new(-17, 2, 14), Color3.fromRGB(86, 157, 113))
-    self.plantSpot = block("FabricTrace", Vector3.new(-19, 0.7, 58), Color3.fromRGB(187, 180, 156))
+    self.reader, self.egress = w:object("Social.PassReader"), w:object("Social.Egress")
+    self.collection, self.stand = w:object("Social.ParcelHome"), w:object("Social.Cloth")
+    self.delivery, self.plantSpot = w:object("Social.Delivery"), w:object("Social.TraceSpot")
     self.parts, self.homes, self.prompts = {}, {}, {}
     local function bind(part, action, object, seconds, fn)
         local p = interactions.prompt(part, action, object, seconds)
@@ -28,7 +25,7 @@ function Service.new(rt, tell, onTask)
     for key, home in pairs({Parcel = self.collection, Cloth = self.stand}) do
         local part = block("Social" .. key, home.Position + Vector3.new(0, 1.3, 0), home.Color)
         self.parts[key], self.homes[key] = part, part.CFrame
-        self.prompts[key] = bind(part, "Подобрать", if key == "Parcel" then "Экспонат → зелёная стойка в холле" else "Нейтральная ткань → рама окна", 1, function(player)
+        self.prompts[key] = bind(part, "Подобрать", if key == "Parcel" then "Экспонат → служебный холл, этаж 1" else "Ткань → терраса, этаж 2", 1, function(player)
             if self.policy:pickup(player.UserId, key, rt.scope:now()) then self:tick() end
         end)
     end
@@ -111,7 +108,7 @@ end
 function Service:drop(player)
     local key = self.policy:drop(player.UserId, self.rt.scope:now())
     local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
-    if key then self.parts[key].CFrame = if root then CFrame.new(root.Position + Vector3.new(0, -1, 2)) else self.homes[key] end
+    if key then self.parts[key].CFrame = if root then CFrame.new(self.rt.world:dropPoint(root.Position, self.homes[key].Position, 0.55)) else self.homes[key] end
 end
 function Service:remove(player)
     self:drop(player)

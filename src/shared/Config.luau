@@ -12,6 +12,7 @@ Config.GUEST_PAINTINGS = 3
 Config.RESULT_RESET_SECONDS = 12
 Config.COUNTDOWN_SECONDS = 12
 Config.ROUND_SECONDS = 420
+Config.DOSSIER_CARRY_SECONDS = 60 -- Maximum active carrying time, not an AFK detector.
 Config.COUNCIL_DELAY = 30
 Config.COUNCIL_SECONDS = 25
 Config.SEARCH_SECONDS = 12
