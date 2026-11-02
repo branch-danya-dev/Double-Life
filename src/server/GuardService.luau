@@ -1,0 +1,72 @@
+local Policy = require(script.Parent.GuardPolicy)
+local Mover = require(script.Parent.NpcMover)
+local Guard = {}
+Guard.__index = Guard
+
+function Guard.start(world, config)
+    local self = setmetatable({policy = Policy.new(config), routes = {
+        Corridor = {Vector3.new(0, 3.5, 33), Vector3.new(0, 3.5, 23), Vector3.new(12, 3.5, 17)},
+        Foyer = {Vector3.new(12, 3.5, 17), Vector3.new(15, 3.5, -15), Vector3.new(-14, 3.5, -6)},
+    }}, Guard)
+    self.mover = Mover.new(world.map, "Guard", Vector3.new(0, 3.5, 23), Color3.fromRGB(48, 68, 105))
+    self.lastSafe = self.mover.root.Position
+    task.spawn(function()
+        local index = 1
+        while self.mover.model.Parent do
+            local ok, err = pcall(function()
+                local policy = self.policy
+                local revision = policy.revision
+                local function cancelled() return revision ~= policy.revision end
+                self.mover.model:SetAttribute("State", policy.state) -- NPC state only, no player identity.
+                self.mover.model:SetAttribute("PatrolZone", policy.zone)
+                if policy.state == "Investigate" then
+                    self.mover.label.Text = "Охрана · проверяет место"
+                    self.mover:move(policy.target, policy.deadline, cancelled)
+                    while not cancelled() and os.clock() < policy.deadline do task.wait(0.2) end
+                    policy:beginReturn(os.clock())
+                elseif policy.state == "Return" then
+                    self.mover.label.Text = "Охрана · возвращается"
+                    local route = self.routes[policy.zone]
+                    -- Pick the nearest reachable route point, not the safe or a doorway.
+                    local choices = table.clone(route)
+                    table.sort(choices, function(a, b)
+                        return (a - self.mover.root.Position).Magnitude < (b - self.mover.root.Position).Magnitude
+                    end)
+                    local arrived = false
+                    for _, point in ipairs(choices) do
+                        if self.mover:move(point, policy.deadline, cancelled) then
+                            self.lastSafe, arrived = point, true
+                            break
+                        end
+                    end
+                    if not arrived then self.mover:move(self.lastSafe, os.clock() + 4, cancelled) end
+                    policy:resume(os.clock())
+                else
+                    self.mover.label.Text = "Охрана · патруль"
+                    local route = self.routes[policy.zone]
+                    local point = route[index]
+                    if self.mover:move(point, os.clock() + 10, cancelled) then self.lastSafe = point end
+                    index = index % #route + 1
+                    task.wait(0.5)
+                end
+            end)
+            if not ok then
+                warn("Guard recovery:", err)
+                self.mover:stop()
+                self.policy:beginReturn(os.clock())
+                task.wait(1)
+            end
+        end
+    end)
+    return self
+end
+
+function Guard:react(source, position)
+    return self.policy:investigate(source, position, os.clock(), false)
+end
+
+function Guard:command(kind, value)
+    return self.policy:command(kind, value, os.clock())
+end
+
+return Guard
