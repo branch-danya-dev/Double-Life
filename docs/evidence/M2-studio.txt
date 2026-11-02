@@ -1,0 +1,82 @@
+Roblox Studio 0.745.462.7451125 — selected game markers, 2026-11-02 UTC.
+Final complete replay after NPC ownership fix; excludes command source and unrelated app logs.
+
+2026-11-02T13:41:04.299Z,403.299347,15bc,6,Info [FLog::CreatorOutput] M2 OWNERSHIP BEFORE Guard nil false suspended
+2026-11-02T13:41:04.299Z,403.299347,15bc,6,Info [FLog::CreatorOutput] M2 OWNERSHIP BEFORE ServiceAssistant Player4 true suspended
+2026-11-02T13:41:06.313Z,405.313568,15bc,6,Info [FLog::CreatorOutput] M2 OWNERSHIP AFTER Guard nil false
+2026-11-02T13:41:06.313Z,405.313568,15bc,6,Info [FLog::CreatorOutput] M2 OWNERSHIP AFTER ServiceAssistant nil false
+2026-11-02T13:41:23.546Z,422.546417,2cd8,6,Info [FLog::CreatorOutput] M2 PASS five real clients participate
+2026-11-02T13:41:23.762Z,422.762054,2cd8,6,Info [FLog::CreatorOutput] M2 PASS own-role-only client snapshot Player1
+2026-11-02T13:41:23.962Z,422.962250,2cd8,6,Info [FLog::CreatorOutput] M2 PASS own-role-only client snapshot Player2
+2026-11-02T13:41:24.180Z,423.180756,2cd8,6,Info [FLog::CreatorOutput] M2 PASS own-role-only client snapshot Player3
+2026-11-02T13:41:24.396Z,423.396698,2cd8,6,Info [FLog::CreatorOutput] M2 PASS own-role-only client snapshot Player4
+2026-11-02T13:41:24.611Z,423.611511,7da8,6,Info [FLog::CreatorOutput] M2 PASS own-role-only client snapshot Player5
+2026-11-02T13:41:40.645Z,439.645538,2cd8,6,Info [FLog::CreatorOutput] M2 PASS window reached by physical walking and opened
+2026-11-02T13:41:45.878Z,444.878052,2cd8,6,Info [FLog::CreatorOutput] M2 PASS theft has no automatic owner alert
+2026-11-02T13:41:46.295Z,445.295624,2114,6,Info [FLog::CreatorOutput] M2 PASS carrier information private
+2026-11-02T13:41:46.295Z,445.295624,2114,6,Info [FLog::CreatorOutput] M2 WALK TO DOSSIER SECONDS 21.68263629998546
+2026-11-02T13:41:48.628Z,447.628326,2cd8,6,Info [FLog::CreatorOutput] M2 PASS physical evidence collected by ordinary guest
+2026-11-02T13:41:49.061Z,448.061096,2114,6,Info [FLog::CreatorOutput] M2 PASS evidence can be dropped
+2026-11-02T13:41:51.361Z,450.361481,15bc,6,Info [FLog::CreatorOutput] M2 PASS dropped evidence picked up
+2026-11-02T13:41:56.194Z,455.194702,2cd8,6,Info [FLog::CreatorOutput] M2 PASS owner summons via real prompt
+2026-11-02T13:41:58.511Z,457.511200,2cd8,6,Info [FLog::CreatorOutput] M2 PASS duplicate vote cannot replace or multiply
+2026-11-02T13:41:58.511Z,457.511200,2cd8,6,Info [FLog::CreatorOutput] M2 PASS server-owned clue attached to accusation
+2026-11-02T13:41:58.511Z,457.511200,2cd8,6,Info [FLog::CreatorOutput] M2 PASS Council pauses active and request clocks
+2026-11-02T13:41:58.511Z,457.511200,2cd8,6,Info [FLog::CreatorOutput] M2 PASS Council freezes NPC in place
+2026-11-02T13:41:58.511Z,457.511200,2cd8,6,Info [FLog::CreatorOutput] M2 PASS critical actions denied during council
+2026-11-02T13:42:07.578Z,466.578705,8568,6,Info [FLog::CreatorOutput] M2 PASS correct search returns dossier without ending game
+2026-11-02T13:42:07.578Z,466.578705,8568,6,Info [FLog::CreatorOutput] M2 PASS bounded detention and one council only
+2026-11-02T13:42:19.610Z,478.610565,7da8,6,Info [FLog::CreatorOutput] M2 PASS suspect returns to play
+2026-11-02T13:42:19.611Z,478.611237,7da8,6,Info [FLog::CreatorOutput] M2 PASS NPC ownership remains on server after Council
+2026-11-02T13:42:34.210Z,493.210449,15bc,6,Info [FLog::CreatorOutput] M2 PASS spy extraction win
+2026-11-02T13:42:34.426Z,493.426697,2cd8,6,Info [FLog::CreatorOutput] M2 PASS roles revealed only at one result event
+2026-11-02T13:42:49.376Z,508.376770,15bc,6,Info [FLog::CreatorOutput] M2 PASS new round clears evidence, queue and scores
+2026-11-02T13:42:49.376Z,508.376770,15bc,6,Info [FLog::CreatorOutput] M2 PASS new round restores access and clears council
+2026-11-02T13:42:49.376Z,508.376770,15bc,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player1
+2026-11-02T13:42:49.376Z,508.376770,15bc,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player2
+2026-11-02T13:42:49.376Z,508.376770,15bc,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player3
+2026-11-02T13:42:49.377Z,508.377747,15bc,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player4
+2026-11-02T13:42:49.377Z,508.377747,15bc,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player5
+2026-11-02T13:42:49.377Z,508.377747,15bc,6,Info [FLog::CreatorOutput] M2 PASS stale round callback cannot affect new round
+2026-11-02T13:43:21.891Z,540.891235,2c24,6,Info [FLog::CreatorOutput] M2 PASS owner summons via real prompt
+2026-11-02T13:43:33.124Z,552.124146,2cd8,6,Info [FLog::CreatorOutput] M2 PASS innocent searched without elimination or role reveal
+2026-11-02T13:43:47.472Z,566.472900,2cd8,6,Info [FLog::CreatorOutput] M2 PASS innocent continues personal goals
+2026-11-02T13:43:56.772Z,575.772400,15bc,6,Info [FLog::CreatorOutput] M2 PASS M1 player delivery and server task hooks
+2026-11-02T13:43:59.073Z,578.073547,15bc,6,Info [FLog::CreatorOutput] M2 PASS no duplicate task reward
+2026-11-02T13:44:00.123Z,579.123596,15bc,6,Info [FLog::CreatorOutput] M2 PASS defenders win on timer exactly once
+2026-11-02T13:44:16.322Z,595.322510,2cd8,6,Info [FLog::CreatorOutput] M2 PASS new round clears evidence, queue and scores
+2026-11-02T13:44:16.322Z,595.322510,2cd8,6,Info [FLog::CreatorOutput] M2 PASS new round restores access and clears council
+2026-11-02T13:44:16.322Z,595.322510,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player1
+2026-11-02T13:44:16.322Z,595.322510,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player2
+2026-11-02T13:44:16.322Z,595.322510,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player3
+2026-11-02T13:44:16.322Z,595.322510,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player4
+2026-11-02T13:44:16.322Z,595.322510,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player5
+2026-11-02T13:44:48.803Z,627.803589,2cd8,6,Info [FLog::CreatorOutput] M2 PASS owner summons via real prompt
+2026-11-02T13:45:00.220Z,639.220581,2cd8,6,Info [FLog::CreatorOutput] M2 PASS no majority means no sanction
+2026-11-02T13:45:02.237Z,641.237488,7da8,6,Info [FLog::CreatorOutput] M2 PASS owner departure does not end or hang round
+2026-11-02T13:45:12.302Z,651.302795,2114,6,Info [FLog::CreatorOutput] M2 PASS NPC service recovers and delivers after consecutive rounds
+2026-11-02T13:45:13.337Z,652.337402,2c24,6,Info [FLog::CreatorOutput] M2 PASS spy departure awards defenders once
+2026-11-02T13:45:29.453Z,668.453491,2cd8,6,Info [FLog::CreatorOutput] M2 PASS new round clears evidence, queue and scores
+2026-11-02T13:45:29.453Z,668.453491,2cd8,6,Info [FLog::CreatorOutput] M2 PASS new round restores access and clears council
+2026-11-02T13:45:29.453Z,668.453491,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player3
+2026-11-02T13:45:29.453Z,668.453491,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player4
+2026-11-02T13:45:29.453Z,668.453491,2cd8,6,Info [FLog::CreatorOutput] M2 PASS fresh personal progress Player5
+2026-11-02T13:45:29.453Z,668.453491,2cd8,6,Info [FLog::CreatorOutput] M2 PASS next full match works with three clients
+2026-11-02T13:45:29.453Z,668.453491,2cd8,6,Info [FLog::CreatorOutput] M2 STUDIO SUITE PASS 3 clients remain; five at start; four consecutive rounds
+2026-11-02T13:45:30.070Z,669.070679,15bc,6,Info [FLog::CreatorOutput] M2 EDGE READY: add one client during Active
+2026-11-02T13:47:05.581Z,764.581848,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS late join waits without a hidden role
+2026-11-02T13:47:05.581Z,764.581848,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS late join preserves existing role
+2026-11-02T13:47:05.581Z,764.581848,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS late join preserves existing role
+2026-11-02T13:47:05.581Z,764.581848,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS late join preserves existing role
+2026-11-02T13:47:07.897Z,766.897949,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS late join cannot change active world
+2026-11-02T13:47:18.181Z,777.181396,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS disconnect scenario has a real dossier carrier
+2026-11-02T13:47:20.899Z,779.899170,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS edge council begins
+2026-11-02T13:47:21.331Z,780.331360,15bc,6,Info [FLog::CreatorOutput] M2 EDGE PASS late join has no vote
+2026-11-02T13:47:21.764Z,780.764343,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS owner has exactly one ordinary vote
+2026-11-02T13:47:22.832Z,781.832214,8568,6,Info [FLog::CreatorOutput] M2 EDGE PASS owner/voter departure removes vote but does not hang council
+2026-11-02T13:47:23.881Z,782.881775,15bc,6,Info [FLog::CreatorOutput] M2 EDGE PASS carrier departure in paused council gives defenders win
+2026-11-02T13:47:27.881Z,786.881042,2cd8,6,Info [FLog::CreatorOutput] M2 EDGE PASS under three returns to explicit neutral waiting
+2026-11-02T13:47:32.481Z,791.481140,2c24,6,Info [FLog::CreatorOutput] M2 EDGE PASS neutral request created
+2026-11-02T13:47:32.481Z,791.481140,2c24,6,Info [FLog::CreatorOutput] M2 NEUTRAL WORKER suspended 4.132800871506333 4.617020508274436
+2026-11-02T13:47:44.430Z,803.430603,15bc,6,Info [FLog::CreatorOutput] M2 EDGE PASS waiting supports paintings and autonomous service
+2026-11-02T13:47:44.430Z,803.430603,15bc,6,Info [FLog::CreatorOutput] M2 EDGE SUITE PASS 2 clients remain

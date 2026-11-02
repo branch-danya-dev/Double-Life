@@ -2,8 +2,8 @@ local Players = game:GetService("Players")
 local Interactions = {}
 Interactions.__index = Interactions
 
-function Interactions.new(state)
-    return setmetatable({state = state, last = {}, holds = {}}, Interactions)
+function Interactions.new(state, allow)
+    return setmetatable({state = state, allow = allow, last = {}, holds = {}, neutral = {}}, Interactions)
 end
 
 function Interactions.prompt(part, action, object, hold)
@@ -13,6 +13,15 @@ function Interactions.prompt(part, action, object, hold)
     p.MaxActivationDistance = 10
     p.RequiresLineOfSight = true
     p.Parent = part
+    local prompts = {}
+    for _, child in ipairs(part:GetChildren()) do
+        if child:IsA("ProximityPrompt") then table.insert(prompts, child) end
+    end
+    if #prompts > 1 then
+        for index, child in ipairs(prompts) do
+            child.UIOffset = Vector2.new(if index % 2 == 1 then -145 else 145, math.floor((index - 1) / 2) * 84)
+        end
+    end
     return p
 end
 
@@ -21,7 +30,8 @@ function Interactions:inReach(player, p)
     local root = character and character:FindFirstChild("HumanoidRootPart")
     local humanoid = character and character:FindFirstChildOfClass("Humanoid")
     local host = p.Parent
-    if self.state.finished or player.Parent ~= Players or not p.Enabled or not host
+    if self.state.finished or (self.allow and not self.allow(player, self.neutral[p]))
+        or player.Parent ~= Players or not p.Enabled or not host
         or not host:IsDescendantOf(workspace) or not root or not humanoid or humanoid.Health <= 0
         or (root.Position - host.Position).Magnitude > p.MaxActivationDistance + 1 then
         return false
@@ -34,9 +44,11 @@ function Interactions:inReach(player, p)
     return hit == nil or hit.Instance == host
 end
 
-function Interactions:bind(p, callback)
+function Interactions:bind(p, callback, neutral)
     local starts = {}
+    self.neutral[p] = neutral == true
     self.holds[p] = starts
+    p.Destroying:Connect(function() self.holds[p], self.neutral[p] = nil, nil end)
     p.PromptButtonHoldBegan:Connect(function(player)
         if self:inReach(player, p) then starts[player.UserId] = os.clock() end
     end)
@@ -58,4 +70,8 @@ function Interactions:remove(player)
     for _, holds in pairs(self.holds) do holds[player.UserId] = nil end
 end
 
+function Interactions:clear()
+    self.last = {}
+    for _, holds in pairs(self.holds) do table.clear(holds) end
+end
 return Interactions

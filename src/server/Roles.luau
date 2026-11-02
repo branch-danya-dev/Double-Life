@@ -1,40 +1,17 @@
--- This table lives only in ServerScriptService. Never add role attributes or teams.
+local Plan = require(script.Parent.RolePlan)
 local Roles = {}
 Roles.__index = Roles
-
 function Roles.new(config, update)
-    return setmetatable({values = {}, config = config, update = update}, Roles)
+    return setmetatable({values = {}, config = config, update = update, random = Random.new()}, Roles)
 end
-
-function Roles:get(player)
-    return self.values[player.UserId] or self.config.ROLE_GUEST
+function Roles:get(player) return self.values[player.UserId] or self.config.ROLE_GUEST end
+function Roles:assign(players)
+    local ids = {}
+    for _, player in ipairs(players) do table.insert(ids, player.UserId) end
+    self.values = Plan.assign(ids, function(n) return self.random:NextInteger(1, n) end)
+    for _, player in ipairs(players) do self.update:FireClient(player, "Role", self:get(player)) end
+    return ids
 end
-
-function Roles:add(player)
-    local c = self.config
-    local used = {}
-    for _, role in pairs(self.values) do used[role] = true end
-    local role = c.ROLE_GUEST
-    for _, candidate in ipairs({c.ROLE_OWNER, c.ROLE_SPY, c.ROLE_AGENT, c.ROLE_STAFF}) do
-        if not used[candidate] then role = candidate; break end
-    end
-    self.values[player.UserId] = role
-    self.update:FireClient(player, "Role", role)
-end
-
-function Roles:remove(player, remaining)
-    local vacant = self.values[player.UserId]
-    self.values[player.UserId] = nil
-    -- Preserve M0 guest promotion; existing special roles never change silently.
-    if vacant and vacant ~= self.config.ROLE_GUEST then
-        for _, other in ipairs(remaining) do
-            if other ~= player and self:get(other) == self.config.ROLE_GUEST then
-                self.values[other.UserId] = vacant
-                self.update:FireClient(other, "Role", vacant)
-                break
-            end
-        end
-    end
-end
-
+function Roles:remove(player) self.values[player.UserId] = nil end
+function Roles:clear() self.values = {} end
 return Roles
