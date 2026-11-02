@@ -9,11 +9,12 @@ required = {'Main', 'Game', 'Roles', 'World', 'Dossier', 'Interactions', 'GuardS
             'GuardPolicy', 'NpcMover', 'Requests', 'RequestLedger', 'WorldEvents', 'Hud', 'Config',
             'RoundPolicy', 'RoundService', 'RolePlan', 'SessionClock', 'Evidence',
             'EventDirector', 'EventPolicy', 'PracticePolicy', 'EventWorld',
-            'ProfileService', 'ProfileSchema', 'ProgressionPolicy', 'ProfileStore',
+            'ProfileService', 'ProfileSchema', 'ProgressionPolicy', 'ProfileStore', 'ProfileSessions',
             'ProgressionCatalog', 'DataStoreAdapter', 'PersistenceSettings'}
 assert required <= names, required - names
 assert not {'M1Tests', 'M1TestDriver', 'M1ClientAudit', 'M2Tests', 'M2TestDriver', 'M2ClientAudit', 'M3Tests', 'M3TestDriver', 'M3ClientAudit', 'Runner', 'Playthrough'} & names
 assert not {'M4Tests', 'M4TestDriver', 'M4ClientAudit', 'MemoryStore'} & names
+assert not {'M41Tests', 'M41TestDriver', 'M41ClientAudit'} & names
 server = next(i for i in items if i.get('class') == 'ServerScriptService')
 server_names = {i.findtext('Properties/string[@name="Name"]') for i in server.iter('Item')}
 assert required - {'Hud', 'Config'} <= server_names
@@ -21,6 +22,7 @@ sources = '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in it
 assert 'M2TestDriver' not in sources and 'M1TestDriver' not in sources
 assert 'M3TestDriver' not in sources
 assert 'M4TestDriver' not in sources and 'MarketplaceService' not in sources
+assert 'M41TestDriver' not in sources
 assert 'studioEnabled = false' in sources and 'studioUniverseId = 0' in sources
 assert 'store:UpdateAsync(key, transform)' in sources and 'SetAsync(' not in sources
 assert 'task.delay(' not in sources, 'gameplay delays must be cancellable round-local timers'

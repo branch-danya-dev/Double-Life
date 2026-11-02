@@ -1,0 +1,51 @@
+M4.1 final local verification — 2026-11-02; base 3850e3c982e136dc641bffdc66cfc464580df94c
+luau.exe tests/run.luau
+PASS: 46 M1 policy and request assertions
+Exit: 0
+luau.exe tests/rounds.luau
+PASS: 254 M2 round, vote, role and generation assertions
+Exit: 0
+luau.exe tests/events.luau
+PASS: 87 M3 event, incident and practice assertions
+Exit: 0
+luau.exe tests/progression.luau
+PASS: 99 M4 progression, schema and catalogue assertions
+Exit: 0
+luau.exe tests/persistence.luau
+PASS: 38 M4 storage, concurrency and failure assertions
+Exit: 0
+luau.exe tests/reconnect.luau
+REPRO failed close:	Unavailable	closing	true	queue	2	token	old-connection
+REPRO same-server reconnect:	Ready	token	new-connection
+PASS: 54 M4.1 reconnect, lifecycle and fencing assertions
+Exit: 0
+luau-compile.exe --null tests\studio\Runner.server.luau tests\studio\Playthrough.luau tests\run.luau tests\rounds.luau tests\reconnect.luau tests\progression.luau tests\persistence.luau tests\MemoryStore.luau tests\M4Client.client.luau tests\M41Client.client.luau src\shared\Config.luau tests\m41\Runner.server.luau tests\m4\StoreAudit.luau tests\m4\Runner.server.luau tests\M3Client.client.luau tests\m3\Runner.server.luau tests\M2Client.client.luau src\server\WorldEvents.luau src\server\World.luau src\server\SessionClock.luau src\server\RoundService.luau src\server\RoundPolicy.luau src\server\Roles.luau src\server\RolePlan.luau src\server\Requests.luau src\server\RequestLedger.luau src\server\ProgressionPolicy.luau src\server\ProgressionCatalog.luau src\server\ProfileStore.luau src\server\ProfileSessions.luau src\server\ProfileService.luau src\server\ProfileSchema.luau src\server\PracticePolicy.luau src\server\PersistenceSettings.luau src\server\NpcMover.luau src\server\Main.server.luau src\server\Interactions.luau src\server\GuardService.luau src\server\GuardPolicy.luau src\server\Game.luau src\server\Evidence.luau src\server\EventWorld.luau src\server\EventPolicy.luau src\server\EventDirector.luau src\server\Dossier.luau src\server\DataStoreAdapter.luau tests\m2\Runner.server.luau tests\m2\EdgeCases.luau tests\events.luau tests\ClientAudit.client.luau src\client\Hud.client.luau
+Compiled 4 KLOC into 305 KB bytecode (read 0.01s, parse 0.00s, compile 0.01s)
+Exit: 0
+luau-analyze.exe src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau src/server/ProfileSessions.luau tests/run.luau tests/rounds.luau tests/events.luau tests/progression.luau tests/persistence.luau tests/reconnect.luau tests/MemoryStore.luau
+
+Exit: 0
+rojo.exe build default.project.json -o ../../outputs/DoubleLife-M4.1.rbxlx
+Building project 'DoubleLife'
+Built project to DoubleLife-M4.1.rbxlx
+Exit: 0
+rojo.exe build studio-tests.project.json -o ../../outputs/DoubleLife-M4.1-tests.rbxlx
+Building project 'DoubleLifeM4Tests'
+Built project to DoubleLife-M4.1-tests.rbxlx
+Exit: 0
+rojo.exe build reconnect-tests.project.json -o ../../outputs/DoubleLife-M4.1-reconnect.rbxlx
+Building project 'DoubleLifeM41Reconnect'
+Built project to DoubleLife-M4.1-reconnect.rbxlx
+Exit: 0
+python.exe tests/check-build.py ../../outputs/DoubleLife-M4.1.rbxlx
+PASS: shipping artifact contains all services, keeps server modules private, excludes test fixtures
+Exit: 0
+git -c core.autocrlf=false diff --check
+
+Exit: 0
+
+After moving the new-module import below the baseline reproduction (no production change):
+REPRO failed close:	Unavailable	closing	true	queue	2	token	old-connection
+REPRO same-server reconnect:	Ready	token	new-connection
+PASS: 54 M4.1 reconnect, lifecycle and fencing assertions
+Reconnect + analysis Exit: 0

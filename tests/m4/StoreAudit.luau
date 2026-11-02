@@ -9,6 +9,8 @@ function Audit.run(rt)
         before[player.UserId] = {tokens = p.tokens, reputationXp = p.reputationXp, played = p.stats.played}
     end
     assert(rt.profiles:shutdown(), "shutdown must finish within its deadline")
+    local old = rt.profiles
+    rt.profiles = require(game.ServerScriptService.DoubleLifeServer.ProfileService).new(rt, old.tell, {adapter = old.adapter})
     for _, player in ipairs(Players:GetPlayers()) do
         assert(rt.profiles.adapter.data["User_" .. player.UserId].lease.expires == 0, "shutdown releases every lease")
         rt.profiles:add(player)
