@@ -1,0 +1,9 @@
+Baseline 3850e3c982e136dc641bffdc66cfc464580df94c; expected regression failure before M4.1 fix
+./tests/reconnect.luau:7: failed close -> same-server reconnect must acquire NEW token
+stacktrace:
+[C] function assert
+./tests/reconnect.luau:7 function check
+./tests/reconnect.luau:23
+REPRO failed close:	Unavailable	closing	true	queue	2	token	old-connection
+REPRO same-server reconnect:	Unavailable	token	old-connection
+Exit: 1

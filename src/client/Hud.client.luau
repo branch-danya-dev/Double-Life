@@ -82,7 +82,8 @@ local activityLabel = text(banner, "Activity", "", 8, 80, 14)
 local last, showRules, showEvents, eventNotice, attach, panelKey = nil, false, false, "", false, ""
 local showProfile = false
 local profileMessages = {Ready = "Сохранено", Saving = "Сохраняем…", Loading = "Загружаем профиль…",
-    Unavailable = "Сохранение недоступно; новые награды и покупки отключены.", Locked = "Профиль занят другой сессией. Повторите вход позже.",
+    Unavailable = "Сохранение недоступно; новые награды и покупки отключены.", Locked = "Профиль занят другой сессией; запись временно отключена.",
+    Recovering = "Восстанавливаем профиль автоматически. Можно играть; постоянные награды и покупки пока отключены.",
     LostLease = "Сессия сохранения завершилась. Повторите вход; до этого прогресс отключён.", Malformed = "Профиль требует восстановления. Данные не изменены.",
     UnsupportedVersion = "Профиль создан более новой версией игры. Запись отключена.",
     Purchased = "Предмет куплен", Owned = "Этот предмет уже ваш", Equipped = "Выбор сохранён", LockedItem = "Предмет пока закрыт",
@@ -101,6 +102,7 @@ local function renderPanel()
         .. ":" .. tostring(last.activities.owner and last.activities.owner.reason)
         .. ":" .. tostring(showProfile) .. ":" .. p.status .. ":" .. tostring(p.revision) .. ":" .. tostring(p.requestResult)
         .. ":" .. tostring(p.reward and p.reward.reason)
+        .. ":" .. tostring(p.retrying) .. ":" .. tostring(p.unconfirmed)
     panel.Visible = r.phase == "Council" or r.phase == "Results" or showRules or showEvents or showProfile
     local card = p.equipped and p.equipped.Card
     panel.BackgroundColor3 = if (showProfile or r.phase == "Results") and card == "TealCard" then Color3.fromRGB(23, 55, 57)
@@ -151,6 +153,10 @@ local function renderPanel()
     elseif showProfile then
         line("Профиль · репутация и Loadout", 28, 20)
         line(profileMessages[p.status] or "Сохранение временно недоступно. Повторите вход позже.", 48)
+        if p.retrying then line("Автоматическое восстановление продолжается, до 3 минут.", 36)
+        elseif p.status ~= "Ready" and p.status ~= "Saving" then line("Автоматические попытки завершены. Повторите вход позже.", 40) end
+        if (p.unconfirmed or 0) > 0 then line("Не подтверждены операции прошлого подключения: " .. p.unconfirmed
+            .. ". Они не повторялись после потери сессии. Проверьте баланс, коллекцию и историю.", 72) end
         if p.mode == "FakeMemory" then line("Тестовый профиль: данные живут только до закрытия тестового сервера.", 40, 12) end
         if p.reputationXp then
             line("Репутация " .. p.level .. "/10 · XP " .. p.reputationXp .. (if p.nextLevelXp then "/" .. p.nextLevelXp else " · максимум уровня")

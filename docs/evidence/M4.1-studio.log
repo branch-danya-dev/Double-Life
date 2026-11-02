@@ -1,0 +1,23 @@
+M4.1 FINAL targeted Studio integration, 2026-11-02 UTC. Real client, profile lifecycle reconnect simulated in-process; fake adapter only. Synthetic prior account, no full match. Filtered test markers and expected injected-failure warnings only.
+Test scene SHA256: 93237400716cedeeb4e781618af261228312cfd7d2f72c0e25861cd7a2e2185c
+2026-11-02T18:34:50.793Z,4.793159,6568,6,Info [FLog::CreatorOutput] M4.1 CLIENT READY
+2026-11-02T18:34:55.216Z,77.216690,5bb4,6,Info [FLog::CreatorOutput] M4.1 PASS seed isolated prior account
+2026-11-02T18:34:56.349Z,78.349564,332c,6,Info [FLog::CreatorOutput] M4.1 PASS real client reads own confirmed profile
+2026-11-02T18:35:02.515Z,84.515343,332c,6,Info [FLog::CreatorOutput] M4.1 PASS client sees automatic recovery, no false saved status
+2026-11-02T18:35:02.515Z,84.515343,332c,6,Info [FLog::CreatorOutput] M4.1 PASS purchase blocked during recovery
+2026-11-02T18:35:02.515Z,84.515343,332c,6,Info [FLog::CreatorOutput] M4.1 PASS failed close retains unconfirmed purchase
+2026-11-02T18:35:02.515Z,84.515343,332c,6,Info [FLog::CreatorOutput] M4.1 RECOVERY UI: outage remains for 15 seconds
+2026-11-02T18:35:02.766Z,84.766846,8154,6,Warning [FLog::CreatorWarning] Warning: M4.1 profile close unconfirmed Unavailable 1
+2026-11-02T18:35:19.498Z,101.498039,332c,6,Info [FLog::CreatorOutput] M4.1 PASS same-server recovery adopts fresh token and purchases exactly once
+2026-11-02T18:35:19.498Z,101.498039,332c,6,Info [FLog::CreatorOutput] M4.1 PASS role XP, equipped loadout and history retained
+2026-11-02T18:35:20.649Z,102.649521,7a38,6,Info [FLog::CreatorOutput] M4.1 PASS repeat client purchase cannot double debit
+2026-11-02T18:35:20.649Z,102.649521,7a38,6,Info [FLog::CreatorOutput] M4.1 PASS stale scheduled writer cannot close or overwrite fresh session
+2026-11-02T18:35:24.015Z,106.015686,7a38,6,Warning [FLog::CreatorWarning] Warning: M4.1 profile close unconfirmed Unavailable 0
+2026-11-02T18:35:28.331Z,110.331802,8154,6,Info [FLog::CreatorOutput] M4.1 PASS rapid third connection survives unknown release outcome
+2026-11-02T18:35:28.398Z,110.398933,763c,6,Info [FLog::CreatorOutput] M4.1 PASS real client receives recovered snapshot
+2026-11-02T18:35:28.399Z,110.399933,763c,6,Info [FLog::CreatorOutput] M4.1 RECOVERED UI: holding for 15 seconds
+2026-11-02T18:35:43.414Z,125.414635,1030,6,Info [FLog::CreatorOutput] M4.1 PASS BindToClose path finishes successfully
+2026-11-02T18:35:43.415Z,125.415634,1030,6,Info [FLog::CreatorOutput] M4.1 PASS shutdown released confirmed lease
+2026-11-02T18:35:43.415Z,125.415634,1030,6,Info [FLog::CreatorOutput] M4.1 PASS shutdown cancels profile reopening
+2026-11-02T18:35:43.480Z,125.480804,7a38,6,Info [FLog::CreatorOutput] M4.1 PASS client never sees Ready from a stopped connection
+2026-11-02T18:35:43.480Z,125.480804,7a38,6,Info [FLog::CreatorOutput] M4.1 STUDIO PASS: real client; simulated profile reconnect; injected failures; real DataStore NOT TESTED
