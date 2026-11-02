@@ -61,6 +61,7 @@ function Service:beginRound(roundId)
         local e, role = self:entry(player), self.runtime.roles:get(player)
         local ready = e and e.status == "Ready" and e.profile.lease.expires > os.time()
         local record = Policy.round(role, if ready then e.token else nil)
+        record.startPlayed = if ready then e.profile.stats.played else nil
         record.tool = if ready then e.profile.equipped[role] else Catalog.defaults[role]
         self.round[player.UserId] = record
     end

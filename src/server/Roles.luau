@@ -7,8 +7,8 @@ end
 function Roles:get(player) return self.values[player.UserId] or self.config.ROLE_GUEST end
 function Roles:assign(players)
     local ids = {}
-    for _, player in ipairs(players) do table.insert(ids, player.UserId) end
-    self.values = Plan.assign(ids, function(n) return self.random:NextInteger(1, n) end)
+    for index, player in ipairs(players) do if index <= 15 then table.insert(ids, player.UserId) end end
+    self.values = Plan.assign(ids, function(n) return self.random:NextInteger(1, n) end, "M5")
     for _, player in ipairs(players) do self.update:FireClient(player, "Role", self:get(player)) end
     return ids
 end

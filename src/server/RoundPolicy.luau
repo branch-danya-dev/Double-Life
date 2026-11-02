@@ -14,10 +14,16 @@ function Round:countdown()
     return true
 end
 function Round:activate(ids, spy)
-    if self.phase ~= "Countdown" or #ids < 3 or not table.find(ids, spy) then return false end
+    local spies = if type(spy) == "table" then spy else {spy}
+    if self.phase ~= "Countdown" or #ids < 3 or #ids > 15 or #spies < 1 or #spies > 2 then return false end
+    local team = {}
+    for _, id in ipairs(spies) do
+        if not table.find(ids, id) or team[id] then return false end
+        team[id] = true
+    end
     self.participants = {}
     for _, id in ipairs(ids) do self.participants[id] = true end
-    self.spy = spy
+    self.spy, self.spies = spies[1], team -- scalar retained for M0–M4 fixtures
     self.phase, self.remaining = "Active", self.config.ROUND_SECONDS
     return true
 end
@@ -28,7 +34,7 @@ function Round:finish(winner, reason)
     return true
 end
 function Round:extract(id)
-    if self.phase ~= "Active" or id ~= self.spy or not self.participants[id] then return false end
+    if self.phase ~= "Active" or not self.spies[id] or not self.participants[id] then return false end
     return self:finish("Spy", "Extraction")
 end
 function Round:council(id)
@@ -60,7 +66,10 @@ function Round:leave(id)
     if not self.participants[id] then return false end
     self.participants[id], self.votes[id] = nil, nil
     for voter, target in pairs(self.votes) do if target == id then self.votes[voter] = nil end end
-    if id == self.spy then return self:finish("Defenders", "SpyLeft") end
+    if self.spies[id] then
+        for member in pairs(self.spies) do if self.participants[member] then return false end end
+        return self:finish("Defenders", "SpyLeft")
+    end
     return false
 end
 function Round:tick(dt, population)

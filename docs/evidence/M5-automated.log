@@ -1,0 +1,70 @@
+M5 verification UTC 2026-11-02T19:41:55.2911522Z
+luau.exe tests/run.luau
+PASS: 46 M1 policy and request assertions
+EXIT 0
+luau.exe tests/rounds.luau
+PASS: 254 M2 round, vote, role and generation assertions
+EXIT 0
+luau.exe tests/events.luau
+PASS: 87 M3 event, incident and practice assertions
+EXIT 0
+luau.exe tests/progression.luau
+PASS: 99 M4 progression, schema and catalogue assertions
+EXIT 0
+luau.exe tests/persistence.luau
+PASS: 38 M4 storage, concurrency and failure assertions
+EXIT 0
+luau.exe tests/reconnect.luau
+REPRO failed close:	Unavailable	closing	true	queue	2	token	old-connection
+REPRO same-server reconnect:	Ready	token	new-connection
+PASS: 54 M4.1 reconnect, lifecycle and fencing assertions
+EXIT 0
+luau.exe tests/social.luau
+PASS: 736 M5 matrix, team, physical interaction and analytics assertions
+EXIT 0
+luau.exe tests/commerce.luau
+PASS: 138 M5 commerce, durable receipt and failure assertions
+EXIT 0
+luau-compile.exe --null src\shared\Config.luau tests\studio\Runner.server.luau tests\studio\Playthrough.luau tests\social.luau tests\run.luau tests\rounds.luau tests\reconnect.luau tests\progression.luau tests\persistence.luau tests\MemoryStore.luau tests\M5Client.client.luau tests\m5\Runner.server.luau tests\M4Client.client.luau tests\M41Client.client.luau src\server\WorldEvents.luau src\server\World.luau src\server\Telemetry.luau src\server\SocialService.luau src\server\SocialPolicy.luau src\server\SessionClock.luau src\server\RoundService.luau src\server\RoundPolicy.luau src\server\Roles.luau src\server\RolePlan.luau src\server\Requests.luau src\server\RequestLedger.luau src\server\ProgressionPolicy.luau src\server\ProgressionCatalog.luau src\server\ProfileStore.luau src\server\ProfileSessions.luau src\server\ProfileService.luau src\server\ProfileSchema.luau src\server\PracticePolicy.luau src\server\PersistenceSettings.luau src\server\NpcMover.luau src\server\MonetizationSettings.luau src\server\MarketplaceAdapter.luau src\server\Main.server.luau src\server\Interactions.luau src\server\GuardService.luau src\server\GuardPolicy.luau src\server\Game.luau src\server\Evidence.luau src\server\EventWorld.luau src\server\EventPolicy.luau src\server\EventDirector.luau src\server\Dossier.luau src\server\DataStoreAdapter.luau src\server\CommerceStore.luau src\server\CommerceService.luau src\server\CommercePolicy.luau src\server\CommerceCatalog.luau src\server\AnalyticsPolicy.luau tests\m41\Runner.server.luau src\client\SocialHud.client.luau src\client\Hud.client.luau tests\FakeMarketplace.luau tests\events.luau tests\commerce.luau tests\ClientAudit.client.luau tests\M2Client.client.luau tests\m4\StoreAudit.luau tests\m4\Runner.server.luau tests\M3Client.client.luau tests\m3\Runner.server.luau tests\m2\Runner.server.luau tests\m2\EdgeCases.luau
+Compiled 6 KLOC into 396 KB bytecode (read 0.01s, parse 0.00s, compile 0.01s)
+EXIT 0
+luau-analyze.exe src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau src/server/ProfileSessions.luau src/server/SocialPolicy.luau src/server/CommerceStore.luau src/server/CommercePolicy.luau src/server/CommerceCatalog.luau src/server/MonetizationSettings.luau src/server/AnalyticsPolicy.luau tests/run.luau tests/rounds.luau tests/events.luau tests/MemoryStore.luau tests/progression.luau tests/persistence.luau tests/reconnect.luau tests/FakeMarketplace.luau tests/social.luau tests/commerce.luau
+EXIT 0
+rojo.exe build default.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M5.rbxlx
+Building project 'DoubleLife'
+Built project to DoubleLife-M5.rbxlx
+EXIT 0
+rojo.exe build studio-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M5-regression.rbxlx
+Building project 'DoubleLifeM4Tests'
+Built project to DoubleLife-M5-regression.rbxlx
+EXIT 0
+rojo.exe build reconnect-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M5-reconnect.rbxlx
+Building project 'DoubleLifeM41Reconnect'
+Built project to DoubleLife-M5-reconnect.rbxlx
+EXIT 0
+rojo.exe build social-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M5-tests.rbxlx
+Building project 'DoubleLifeM5Tests'
+Built project to DoubleLife-M5-tests.rbxlx
+EXIT 0
+python.exe tests/check-build.py G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M5.rbxlx
+PASS: shipping artifact contains all services, keeps server modules private, excludes test fixtures
+EXIT 0
+git diff --exit-code 538c7a2 -- tests/run.luau tests/rounds.luau tests/events.luau tests/progression.luau tests/persistence.luau tests/reconnect.luau
+EXIT 0
+git diff --check
+warning: in the working copy of '.github/workflows/check.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/CONCEPT.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/client/Hud.client.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/Dossier.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/Game.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/ProfileService.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/ProgressionPolicy.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/RolePlan.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/Roles.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/RoundPolicy.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/RoundService.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/server/WorldEvents.luau', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/check-build.py', LF will be replaced by CRLF the next time Git touches it
+EXIT 0
+M5 LOCAL CHECKS PASS: 1452 assertions (578 unchanged + 736 social + 138 commerce), compile, analyze, four builds, audit.

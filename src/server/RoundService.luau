@@ -102,14 +102,16 @@ function RoundService:tick(dt)
     local action, target = self.policy:tick(dt, #players)
     if action == "Start" then
         local ids = self.roles:assign(players)
-        local spy
+        local spies = {}
         self.roster = {}
         for _, player in ipairs(players) do
             local role = self.roles:get(player)
-            if role == "Spy" then spy = player.UserId end
-            table.insert(self.roster, {id = player.UserId, name = player.Name, role = role})
+            if table.find(ids, player.UserId) then
+                if role == "Spy" then table.insert(spies, player.UserId) end
+                table.insert(self.roster, {id = player.UserId, name = player.Name, role = role})
+            end
         end
-        self.policy:activate(ids, spy)
+        self.policy:activate(ids, spies)
         self.rebuild(true)
     elseif action == "Search" then
         local player = target and Players:GetPlayerByUserId(target)

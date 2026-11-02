@@ -10,18 +10,27 @@ required = {'Main', 'Game', 'Roles', 'World', 'Dossier', 'Interactions', 'GuardS
             'RoundPolicy', 'RoundService', 'RolePlan', 'SessionClock', 'Evidence',
             'EventDirector', 'EventPolicy', 'PracticePolicy', 'EventWorld',
             'ProfileService', 'ProfileSchema', 'ProgressionPolicy', 'ProfileStore', 'ProfileSessions',
-            'ProgressionCatalog', 'DataStoreAdapter', 'PersistenceSettings'}
+            'ProgressionCatalog', 'DataStoreAdapter', 'PersistenceSettings', 'SocialHud',
+            'SocialService', 'SocialPolicy', 'CommerceService', 'CommerceStore', 'CommercePolicy',
+            'CommerceCatalog', 'MonetizationSettings', 'MarketplaceAdapter', 'Telemetry', 'AnalyticsPolicy'}
 assert required <= names, required - names
 assert not {'M1Tests', 'M1TestDriver', 'M1ClientAudit', 'M2Tests', 'M2TestDriver', 'M2ClientAudit', 'M3Tests', 'M3TestDriver', 'M3ClientAudit', 'Runner', 'Playthrough'} & names
 assert not {'M4Tests', 'M4TestDriver', 'M4ClientAudit', 'MemoryStore'} & names
 assert not {'M41Tests', 'M41TestDriver', 'M41ClientAudit'} & names
+assert not {'M5Tests', 'M5TestDriver', 'M5ClientAudit', 'FakeMarketplace'} & names
 server = next(i for i in items if i.get('class') == 'ServerScriptService')
 server_names = {i.findtext('Properties/string[@name="Name"]') for i in server.iter('Item')}
-assert required - {'Hud', 'Config'} <= server_names
+assert required - {'Hud', 'SocialHud', 'Config'} <= server_names
 sources = '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in items)
 assert 'M2TestDriver' not in sources and 'M1TestDriver' not in sources
 assert 'M3TestDriver' not in sources
-assert 'M4TestDriver' not in sources and 'MarketplaceService' not in sources
+assert 'M4TestDriver' not in sources
+assert 'M5TestDriver' not in sources and 'FakeMarketplace' not in names
+assert sources.count('Marketplace.ProcessReceipt =') == 1
+assert 'PromptProductPurchaseFinished' not in sources
+assert 'enabled = false' in sources and 'isolatedDataStoreVerified = false' in sources
+assert 'passId = 0' in sources and 'productId = 0' in sources
+assert 'self.rt.roles' not in (next(i.findtext('Properties/*[@name="Source"]') for i in items if i.findtext('Properties/string[@name="Name"]') == 'CommerceService'))
 assert 'M41TestDriver' not in sources
 assert 'studioEnabled = false' in sources and 'studioUniverseId = 0' in sources
 assert 'store:UpdateAsync(key, transform)' in sources and 'SetAsync(' not in sources
