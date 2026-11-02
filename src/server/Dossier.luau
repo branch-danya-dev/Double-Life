@@ -1,11 +1,12 @@
 local Dossier = {}
-function Dossier.start(world, roles, interactions, personalUpdate, tell, Config, finish, evidence, onTask, onActivity)
+function Dossier.start(world, roles, interactions, personalUpdate, tell, Config, finish, evidence, onTask, onActivity, scope, tool)
     local safe, gold, block = world.safe, world.gold, world.block
     local prompt = interactions.prompt
     local function usePrompt(p, f, neutral) interactions:bind(p, f, neutral) end
     local safePrompt = prompt(safe, "Осмотреть", "Сейф с документами", 2)
     local dossierMissing, carrierId = false, nil
     local opened = false
+    local openedAt, nextRead = 0, {}
     local seenPaintings = {}
     local function paintingCount(userId)
         local count = 0
@@ -24,9 +25,11 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
         elseif roles:get(player) == Config.ROLE_SPY then
             dossierMissing = true
             opened = true
+            openedAt = scope:now()
             carrierId = player.UserId
             safe.Color = Color3.fromRGB(96, 88, 71)
             evidence:create()
+            onTask(player, "Safe", 1)
             if dossierMissing then
                 tell(player, "Досье у вас. Доберитесь до выхода из особняка.")
             end
@@ -39,10 +42,16 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
     usePrompt(prompt(logbook, "Изучить журнал", "Журнал проверок", 1), function(player)
         if roles:get(player) ~= Config.ROLE_AGENT then
             tell(player, "Журнал защищён. Для чтения требуется допуск контрразведки.")
-        elseif opened then
-            tell(player, "Журнал показывает недавнее открытие сейфа, но не имя посетителя.")
         else
-            tell(player, "Записи о недавнем открытии сейфа отсутствуют.")
+            local equipped = tool(player, "CounterAgent")
+            if scope:now() < (nextRead[player.UserId] or 0) then tell(player, "Подождите перед повторным чтением журнала."); return end
+            nextRead[player.UserId] = scope:now() + equipped.readCooldown
+            onTask(player, "Journal", 1)
+            if not opened then tell(player, "Записи об открытии сейфа отсутствуют.")
+            elseif equipped.recent then
+                tell(player, if scope:now() - openedAt <= equipped.recent then "Сейф открывали в последние 40 секунд. Имя неизвестно."
+                    else "Сейф открывали более 40 секунд назад. Имя неизвестно.")
+            else tell(player, "Сейф открывали в этом раунде. Имя посетителя неизвестно.") end
         end
     end)
 
@@ -90,6 +99,7 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
     function api:remove(player)
         self:resetCharacter(player)
         seenPaintings[player.UserId] = nil
+        nextRead[player.UserId] = nil
     end
     function api:search(player)
         if carrierId ~= player.UserId then return false end

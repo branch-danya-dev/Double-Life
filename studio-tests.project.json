@@ -1,5 +1,5 @@
 {
-  "name": "DoubleLifeM3Tests",
+  "name": "DoubleLifeM4Tests",
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
@@ -9,10 +9,12 @@
     },
     "ServerScriptService": {
       "DoubleLifeServer": {
-        "$path": "src/server"
+        "$path": "src/server",
+        "Main": {"$className": "Script", "$properties": {"Disabled": true}}
       },
-      "M3Tests": {
-        "$path": "tests/m3"
+      "M4Tests": {
+        "$path": "tests/m4",
+        "MemoryStore": {"$path": "tests/MemoryStore.luau"}
       }
     },
     "StarterPlayer": {
@@ -20,8 +22,8 @@
         "DoubleLifeClient": {
           "$path": "src/client"
         },
-        "M3ClientAudit": {
-          "$path": "tests/M3Client.client.luau"
+        "M4ClientAudit": {
+          "$path": "tests/M4Client.client.luau"
         }
       }
     }

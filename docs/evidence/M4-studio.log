@@ -1,0 +1,68 @@
+M4 Studio game markers, 2026-11-02 UTC. No real DataStore was accessed.
+Full gameplay suite passed at 16:27:29. Later StoreAudit/reload and held Results were targeted checks.
+The first combined JSON print exceeded the Studio log line limit; complete per-account export follows.
+
+2026-11-02T16:14:54.015Z,50.015926,4208,6,Info [FLog::CreatorOutput] M4 PASS isolated test profile loaded
+2026-11-02T16:14:56.432Z,52.432999,7e68,6,Info [FLog::CreatorOutput] M4 PASS Waiting activity never grants permanent XP
+2026-11-02T16:14:57.431Z,53.431679,4208,6,Info [FLog::CreatorOutput] M4 PASS insufficient tokens rejected over real remote
+2026-11-02T16:14:58.400Z,54.400234,7be0,6,Info [FLog::CreatorOutput] M4 PASS locked tool rejected over real remote
+2026-11-02T16:14:59.382Z,55.382568,7be0,6,Info [FLog::CreatorOutput] M4 PASS client cannot award XP
+2026-11-02T16:14:59.382Z,55.382568,7be0,6,Info [FLog::CreatorOutput] M4 WAITING PASS: add FOUR clients now
+2026-11-02T16:17:34.409Z,210.409943,0414,6,Info [FLog::CreatorOutput] M4 PASS profile ready before round for Player1
+2026-11-02T16:17:34.510Z,210.510101,2934,6,Info [FLog::CreatorOutput] M4 PASS profile ready before round for Player2
+2026-11-02T16:17:34.626Z,210.626007,7be0,6,Info [FLog::CreatorOutput] M4 PASS profile ready before round for Player3
+2026-11-02T16:17:34.726Z,210.726761,2934,6,Info [FLog::CreatorOutput] M4 PASS profile ready before round for Player4
+2026-11-02T16:17:34.843Z,210.843048,7e68,6,Info [FLog::CreatorOutput] M4 PASS profile ready before round for Player5
+2026-11-02T16:17:35.960Z,211.960114,7be0,6,Info [FLog::CreatorOutput] M4 PASS Active loadout changes denied
+2026-11-02T16:18:16.274Z,252.274048,0414,6,Info [FLog::CreatorOutput] M4 PASS M3 music still runs with profile hooks
+2026-11-02T16:18:30.125Z,266.125000,2934,6,Info [FLog::CreatorOutput] M4 PASS first round freezes free baseline tool
+2026-11-02T16:18:40.175Z,276.175171,0414,6,Info [FLog::CreatorOutput] M4 PASS baseline permits ordinary dossier theft
+2026-11-02T16:18:51.773Z,287.773743,7e68,6,Info [FLog::CreatorOutput] M4 PASS baseline window actually closes after 14 seconds
+2026-11-02T16:19:12.739Z,308.739655,0414,6,Info [FLog::CreatorOutput] M4 PASS baseline trace actually clears after 35 seconds
+2026-11-02T16:19:12.739Z,308.739655,0414,6,Info [FLog::CreatorOutput] M4 PASS real active movement qualifies Player1
+2026-11-02T16:19:12.739Z,308.739655,0414,6,Info [FLog::CreatorOutput] M4 PASS real active movement qualifies Player2
+2026-11-02T16:19:12.739Z,308.739655,0414,6,Info [FLog::CreatorOutput] M4 PASS real active movement qualifies Player3
+2026-11-02T16:19:12.739Z,308.739655,0414,6,Info [FLog::CreatorOutput] M4 PASS real active movement qualifies Player4
+2026-11-02T16:19:16.072Z,312.072906,2934,6,Info [FLog::CreatorOutput] M4 PASS first completed round grants account and role progression
+2026-11-02T16:19:16.188Z,312.188324,4208,6,Info [FLog::CreatorOutput] M4 PASS AFK real client receives no permanent rewards
+2026-11-02T16:19:16.488Z,312.488953,0414,6,Info [FLog::CreatorOutput] M4 PASS duplicate server result cannot grant twice
+2026-11-02T16:19:17.487Z,313.487854,2934,6,Info [FLog::CreatorOutput] M4 PASS unlocked sidegrade selected before next role
+2026-11-02T16:19:19.872Z,315.872040,7e68,6,Info [FLog::CreatorOutput] M4 PASS response lost after purchase still debits once
+2026-11-02T16:19:20.856Z,316.856079,2934,6,Info [FLog::CreatorOutput] M4 PASS replayed purchase remote does not double charge
+2026-11-02T16:19:22.055Z,318.055176,7be0,6,Info [FLog::CreatorOutput] M4 PASS reload keeps balance, collection and equipped title
+2026-11-02T16:19:22.055Z,318.055176,7be0,6,Info [FLog::CreatorOutput] M4 FIRST ROUND PASS 1 real rewards, purchase and profile reload
+2026-11-02T16:19:39.022Z,335.022217,2934,6,Info [FLog::CreatorOutput] M4 PASS second round has different role assignments
+2026-11-02T16:19:39.022Z,335.022217,2934,6,Info [FLog::CreatorOutput] M4 PASS saved choice frozen for new Spy role
+2026-11-02T16:20:19.420Z,375.420135,2934,6,Info [FLog::CreatorOutput] M4 PASS M3 music still runs with profile hooks
+2026-11-02T16:20:43.702Z,399.702057,2934,6,Info [FLog::CreatorOutput] M4 PASS alternative retains ordinary access and theft
+2026-11-02T16:20:46.802Z,402.802277,2934,6,Info [FLog::CreatorOutput] M4 PASS agent lens gives bounded recent-time fact without identity
+2026-11-02T16:20:49.468Z,405.468842,0414,6,Info [FLog::CreatorOutput] M4 PASS agent precision tradeoff enforces longer read cooldown
+2026-11-02T16:20:49.468Z,405.468842,0414,6,Info [FLog::CreatorOutput] M4 PASS agent alternative selected from persistent collection
+2026-11-02T16:20:55.217Z,411.217773,0414,6,Info [FLog::CreatorOutput] M4 PASS alternative window stays open after baseline would close
+2026-11-02T16:21:03.201Z,419.201447,7be0,6,Info [FLog::CreatorOutput] M4 PASS alternative window bounded to 22 seconds
+2026-11-02T16:21:16.184Z,432.184235,1940,6,Info [FLog::CreatorOutput] M4 PASS alternative leaves stronger visible trace beyond baseline expiry
+2026-11-02T16:21:43.017Z,459.017639,2934,6,Info [FLog::CreatorOutput] M4 PASS defenders can search alternative-tool Spy normally
+2026-11-02T16:22:16.148Z,492.148743,0414,6,Info [FLog::CreatorOutput] M4 PASS longer trace also expires after Council pause
+2026-11-02T16:22:16.698Z,492.698608,2934,6,Info [FLog::CreatorOutput] M4 SECOND ROUND: waiting for genuine 420-second defender timeout; no timer acceleration
+2026-11-02T16:27:04.053Z,780.053223,7be0,6,Info [FLog::CreatorOutput] M4 PASS full-length defensive victory preserved
+2026-11-02T16:27:04.387Z,780.387573,0414,6,Info [FLog::CreatorOutput] M4 PASS role XP independently follows changed roles
+2026-11-02T16:27:04.504Z,780.504578,2934,6,Info [FLog::CreatorOutput] M4 PASS vote alone cannot farm XP for stationary client
+2026-11-02T16:27:04.603Z,780.603516,7be0,6,Info [FLog::CreatorOutput] M4 PASS two durable results for Player1
+2026-11-02T16:27:04.719Z,780.719849,2934,6,Info [FLog::CreatorOutput] M4 PASS two durable results for Player2
+2026-11-02T16:27:04.820Z,780.820984,6ff8,6,Info [FLog::CreatorOutput] M4 PASS two durable results for Player3
+2026-11-02T16:27:04.937Z,780.937134,7e68,6,Info [FLog::CreatorOutput] M4 PASS two durable results for Player4
+2026-11-02T16:27:28.270Z,804.270142,7e68,6,Info [FLog::CreatorOutput] M4 PASS world reset preserves profile but clears session events
+2026-11-02T16:27:28.603Z,804.603088,0414,6,Info [FLog::CreatorOutput] M4 PASS stale prior-round callback cannot award in new world
+2026-11-02T16:27:29.702Z,805.702454,7be0,6,Info [FLog::CreatorOutput] M4 STUDIO SUITE PASS 5 real clients; isolated memory adapter; real DataStore NOT TESTED
+2026-11-02T16:28:49.333Z,885.333923,2934,6,Info [FLog::CreatorOutput] M4 STORE AUDIT PASS: shutdown released all leases; reload preserved confirmed accounts
+2026-11-02T16:28:49.333Z,885.333923,2934,6,Info [FLog::CreatorOutput] M4 UI READY: held Results only after completed gameplay suite
+2026-11-02T16:33:07.190Z,1143.190430,2934,6,Info [FLog::CreatorOutput] M4 STORE ACCOUNT Player1 {"inventory":{"GuestGuide":true,"Prybar":true,"OwnerLedger":true,"ServingTray":true,"Lockpick":true,"Journal":true,"JournalLens":true},"stats":{"roles":{"Guest":{"wins":1,"played":1},"Staff":{"wins":0,"played":0},"Owner":{"wins":0,"played":1},"Spy":{"wins":0,"played":0},"CounterAgent":{"wins":0,"played":0}},"played":2,"wins":1},"tokens":45,"historyCount":2,"reputationXp":120,"achievements":{"FirstWin":true,"FirstRound":true},"equipped":{"Guest":"GuestGuide","Title":"","Card":"","Staff":"ServingTray","Owner":"OwnerLedger","Spy":"Lockpick","CounterAgent":"Journal"},"roleXp":{"Guest":40,"Staff":0,"Owner":30,"Spy":0,"CounterAgent":0}}
+2026-11-02T16:33:07.190Z,1143.190430,2934,6,Info [FLog::CreatorOutput] M4 STORE ACCOUNT Player2 {"inventory":{"GuestGuide":true,"Journal":true,"Prybar":true,"OwnerLedger":true,"ObserverTitle":true,"Lockpick":true,"JournalLens":true,"ServingTray":true},"stats":{"roles":{"Guest":{"wins":0,"played":0},"Staff":{"wins":0,"played":0},"Owner":{"wins":1,"played":1},"Spy":{"wins":1,"played":1},"CounterAgent":{"wins":0,"played":0}},"played":2,"wins":2},"tokens":36,"historyCount":2,"reputationXp":150,"achievements":{"FirstWin":true,"FirstRound":true},"equipped":{"Guest":"GuestGuide","Title":"ObserverTitle","Card":"","Staff":"ServingTray","Owner":"OwnerLedger","Spy":"Lockpick","CounterAgent":"Journal"},"roleXp":{"Guest":0,"Staff":0,"Owner":40,"Spy":40,"CounterAgent":0}}
+2026-11-02T16:33:07.190Z,1143.190430,2934,6,Info [FLog::CreatorOutput] M4 STORE ACCOUNT Player4 {"inventory":{"GuestGuide":true,"Prybar":true,"OwnerLedger":true,"ServingTray":true,"Lockpick":true,"Journal":true,"JournalLens":true},"stats":{"roles":{"Guest":{"wins":0,"played":0},"Staff":{"wins":0,"played":1},"Owner":{"wins":0,"played":0},"Spy":{"wins":0,"played":0},"CounterAgent":{"wins":1,"played":1}},"played":2,"wins":1},"tokens":47,"historyCount":2,"reputationXp":125,"achievements":{"FirstWin":true,"FirstRound":true},"equipped":{"Guest":"GuestGuide","Title":"","Card":"","Staff":"ServingTray","Owner":"OwnerLedger","Spy":"Lockpick","CounterAgent":"JournalLens"},"roleXp":{"Guest":0,"Staff":30,"Owner":0,"Spy":0,"CounterAgent":40}}
+2026-11-02T16:33:07.190Z,1143.190430,2934,6,Info [FLog::CreatorOutput] M4 STORE ACCOUNT Player5 {"inventory":{"GuestGuide":true,"OwnerLedger":true,"ServingTray":true,"Lockpick":true,"Journal":true},"stats":{"roles":{"Guest":{"wins":0,"played":0},"Staff":{"wins":0,"played":0},"Owner":{"wins":0,"played":0},"Spy":{"wins":0,"played":0},"CounterAgent":{"wins":0,"played":0}},"played":0,"wins":0},"tokens":0,"historyCount":0,"reputationXp":0,"achievements":[],"equipped":{"Guest":"GuestGuide","Title":"","Card":"","Staff":"ServingTray","Owner":"OwnerLedger","Spy":"Lockpick","CounterAgent":"Journal"},"roleXp":{"Guest":0,"Staff":0,"Owner":0,"Spy":0,"CounterAgent":0}}
+2026-11-02T16:33:07.190Z,1143.190430,2934,6,Info [FLog::CreatorOutput] M4 STORE ACCOUNT Player3 {"inventory":{"GuestGuide":true,"Prybar":true,"OwnerLedger":true,"ServingTray":true,"Lockpick":true,"Journal":true,"JournalLens":true},"stats":{"roles":{"Guest":{"wins":0,"played":0},"Staff":{"wins":0,"played":0},"Owner":{"wins":0,"played":0},"Spy":{"wins":0,"played":1},"CounterAgent":{"wins":0,"played":1}},"played":2,"wins":0},"tokens":42,"historyCount":2,"reputationXp":110,"achievements":{"FirstRound":true},"equipped":{"Guest":"GuestGuide","Title":"","Card":"","Staff":"ServingTray","Owner":"OwnerLedger","Spy":"Prybar","CounterAgent":"Journal"},"roleXp":{"Guest":0,"Staff":0,"Owner":0,"Spy":30,"CounterAgent":30}}
+2026-11-02T16:33:07.190Z,1143.190430,2934,6,Info [FLog::CreatorOutput] M4 STORE AUDIT PASS: shutdown released all leases; reload preserved confirmed accounts
+
+Final client HUD checks:
+2026-11-02T16:30:51.499Z,964.499573,0f40,6,Info [FLog::CreatorOutput] M4 HUD RELOADED: final source
+2026-11-02T16:33:49.837Z,1142.837646,5d2c,6,Info [FLog::CreatorOutput] M4 HUD RELOADED: final source with prior-attempt caption

@@ -8,6 +8,7 @@ player.CameraMode = Enum.CameraMode.LockFirstPerson
 local remotes = RS:WaitForChild("DoubleLifeRemotes")
 local update, action = remotes:WaitForChild("PersonalUpdate"), remotes:WaitForChild("CouncilAction")
 local eventAction = remotes:WaitForChild("EventAction")
+local profileAction = remotes:WaitForChild("ProfileAction")
 local names = {Owner = "Владелец", Spy = "Шпион", CounterAgent = "Контрразведчик", Staff = "Персонал", Guest = "Гость", Waiting = "Ожидание"}
 local phases = {Waiting = "Нужно 3 участника · свободный осмотр", Countdown = "Подготовка", Active = "Игра", Council = "Собрание · игра на паузе", Results = "Итоги"}
 local goals = {
@@ -46,7 +47,7 @@ local function button(parent, value, y, callback)
     return b
 end
 local status = frame(gui, "StatusPanel", UDim2.fromOffset(390, 211), UDim2.fromOffset(14, 12))
-local phaseLabel = text(status, "Phase", "DOUBLE LIFE · M2", 8, 22, 16)
+local phaseLabel = text(status, "Phase", "DOUBLE LIFE · M4", 8, 22, 16)
 local roleLabel = text(status, "Role", "Загрузка…", 32, 20)
 local goalLabel = text(status, "Goal", "", 55, 48, 13)
 local progressLabel = text(status, "Progress", "", 106, 34, 12)
@@ -79,16 +80,31 @@ local bannerLimit = Instance.new("UISizeConstraint")
 bannerLimit.MaxSize, bannerLimit.Parent = Vector2.new(570, 94), banner
 local activityLabel = text(banner, "Activity", "", 8, 80, 14)
 local last, showRules, showEvents, eventNotice, attach, panelKey = nil, false, false, "", false, ""
+local showProfile = false
+local profileMessages = {Ready = "Сохранено", Saving = "Сохраняем…", Loading = "Загружаем профиль…",
+    Unavailable = "Сохранение недоступно; новые награды и покупки отключены.", Locked = "Профиль занят другой сессией. Повторите вход позже.",
+    LostLease = "Сессия сохранения завершилась. Повторите вход; до этого прогресс отключён.", Malformed = "Профиль требует восстановления. Данные не изменены.",
+    UnsupportedVersion = "Профиль создан более новой версией игры. Запись отключена.",
+    Purchased = "Предмет куплен", Owned = "Этот предмет уже ваш", Equipped = "Выбор сохранён", LockedItem = "Предмет пока закрыт",
+    InsufficientTokens = "Недостаточно жетонов", WrongSlot = "Неподходящий слот", NotForSale = "Открывается уровнем репутации",
+    Pending = "Награда ожидает подтверждения сохранения", Awarded = "Награда сохранена", InsufficientActivity = "Недостаточно активности для постоянной награды",
+    NotParticipant = "За этот раунд постоянной награды нет"}
 local eventNames = {Relic = "Пропавшая реликвия", Music = "Музыка остановилась"}
 local rules = "7 минут: шпион выносит досье через главный выход; остальные побеждают, если время истекло или шпион ушёл.\n\nРоль видите только вы. Общие занятия: 3 картины на западной стене, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины всех оставшихся участников.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nОкно снаружи: выйдите на юг, обойдите дом слева и идите к кабинету. Пульт — в северном коридоре. E удерживается по подсказке. H — закрыть правила."
 local function renderPanel()
     if not last then return end
     local r = last.round
+    local p = last.profile or {status = "Loading"}
     local key = r.phase .. ":" .. tostring(r.roundId) .. ":" .. tostring(showRules) .. ":" .. tostring(r.voted) .. ":" .. tostring(attach)
         .. ":" .. tostring(#r.protocol) .. ":" .. tostring(#r.members) .. ":" .. tostring(last.evidence ~= nil)
         .. ":" .. tostring(showEvents) .. ":" .. eventNotice .. ":" .. last.activities.event.phase
         .. ":" .. tostring(last.activities.owner and last.activities.owner.reason)
-    panel.Visible = r.phase == "Council" or r.phase == "Results" or showRules or showEvents
+        .. ":" .. tostring(showProfile) .. ":" .. p.status .. ":" .. tostring(p.revision) .. ":" .. tostring(p.requestResult)
+        .. ":" .. tostring(p.reward and p.reward.reason)
+    panel.Visible = r.phase == "Council" or r.phase == "Results" or showRules or showEvents or showProfile
+    local card = p.equipped and p.equipped.Card
+    panel.BackgroundColor3 = if (showProfile or r.phase == "Results") and card == "TealCard" then Color3.fromRGB(23, 55, 57)
+        elseif (showProfile or r.phase == "Results") and card == "AmberCard" then Color3.fromRGB(65, 47, 24) else Color3.fromRGB(19, 21, 28)
     status.Visible = not panel.Visible
     banner.Visible = not panel.Visible
     local timer = scroll:FindFirstChild("CouncilTime")
@@ -132,15 +148,65 @@ local function renderPanel()
             line((lookup[entry.voter] or "Участник") .. " → " .. (lookup[entry.target] or "ушёл")
                 .. (if entry.evidence then " · " .. entry.evidence.kind .. " · " .. entry.evidence.location else " · без улики"), 36, 13)
         end
+    elseif showProfile then
+        line("Профиль · репутация и Loadout", 28, 20)
+        line(profileMessages[p.status] or "Сохранение временно недоступно. Повторите вход позже.", 48)
+        if p.mode == "FakeMemory" then line("Тестовый профиль: данные живут только до закрытия тестового сервера.", 40, 12) end
+        if p.reputationXp then
+            line("Репутация " .. p.level .. "/10 · XP " .. p.reputationXp .. (if p.nextLevelXp then "/" .. p.nextLevelXp else " · максимум уровня")
+                .. "\nЖетоны: " .. p.tokens .. " · матчей: " .. p.stats.played .. " · побед: " .. p.stats.wins, 55, 16)
+            line("Мастерство ролей", 24, 17)
+            for _, role in ipairs({"Spy", "CounterAgent", "Owner", "Staff", "Guest"}) do
+                line(names[role] .. ": " .. p.mastery[role] .. "/5 · XP " .. p.roleXp[role]
+                    .. " · матчей " .. p.stats.roles[role].played .. " · побед " .. p.stats.roles[role].wins, 32)
+            end
+            local achievements = {FirstRound = "Первый раунд", FirstWin = "Первая победа", AllRoles = "Все пять ролей"}
+            local earned = {}
+            for id, title in pairs(achievements) do if p.achievements[id] then table.insert(earned, title) end end
+            line("Достижения: " .. (if #earned > 0 then table.concat(earned, ", ") else "впереди"), 44)
+            line("Коллекция и снаряжение", 26, 17)
+            line("Инструменты открываются общей репутацией. Выбор фиксируется при старте раунда; смена доступна только в ожидании и итогах.", 62)
+            if p.requestResult then line("Последняя попытка: " .. (if p.requestResult == "Locked" then "предмет ещё не был открыт."
+                else profileMessages[p.requestResult] or "предмет недоступен для этого действия."), 42) end
+            for _, item in ipairs(p.catalog) do
+                local equipped = p.equipped[item.slot] == item.id
+                line(item.name .. " · " .. (names[item.slot] or item.slot) .. (if equipped then " · выбрано" elseif item.owned then " · в коллекции"
+                    elseif item.price then " · " .. item.price .. " жетонов" else " · репутация " .. item.level), 32, 15)
+                line(item.description, 54, 13)
+                if p.status == "Ready" and not equipped then
+                    if item.owned then
+                        button(scroll, "Выбрать: " .. item.name, y, function() profileAction:FireServer("Equip", item.id, item.slot) end); y += 38
+                    elseif item.price then
+                        button(scroll, "Купить: " .. item.name, y, function() profileAction:FireServer("Buy", item.id) end); y += 38
+                    end
+                end
+            end
+            line("Последние матчи", 26, 17)
+            for index = #p.history, 1, -1 do
+                local h = p.history[index]
+                line(names[h.role] .. " · " .. (if h.won then "победа" else "участие") .. " · +" .. h.xp .. " XP · +" .. h.tokens .. " жетонов", 32)
+            end
+        end
     elseif r.phase == "Results" then
         local reasons = {Extraction = "Досье вынесено", Timeout = "Время истекло", SpyLeft = "Шпион покинул матч"}
         line(if r.result.winner == "Spy" then "Победа шпиона" else "Победа защитников", 28, 22)
         line(reasons[r.result.reason] or r.result.reason, 24)
+        line("Постоянный профиль · " .. (profileMessages[p.status] or "Сохранение недоступно"), 36)
+        if p.equipped then
+            for _, item in ipairs(p.catalog) do if item.id == p.equipped.Title then line("Титул: " .. item.name, 28, 16) end end
+        end
+        if p.reward and p.reward.reason == "Awarded" then
+            local reward = p.reward
+            line("+" .. reward.xp .. " XP репутации · +" .. reward.roleXp .. " XP роли · +" .. reward.tokens .. " жетонов\nРепутация "
+                .. reward.beforeLevel .. " → " .. reward.level .. " · мастерство " .. reward.beforeMastery .. " → " .. reward.mastery, 60, 16)
+            if #reward.unlocked > 0 then line("Открыто: " .. table.concat(reward.unlocked, ", "), 50) end
+        else line(profileMessages[p.reward and p.reward.reason or "Unavailable"] or "Награда не подтверждена.", 44) end
+        button(scroll, "Профиль, коллекция и Loadout [P]", y, function() showProfile = true; renderPanel() end); y += 38
         line("Ваши цели: картины " .. last.paintings .. "/3 · сок получен " .. last.refreshments .. " · доставки " .. math.floor(last.servicePoints / 10)
             .. " · очки доставки " .. last.servicePoints .. " · мероприятий " .. last.activities.event.score, 64)
         line("Роли раскрываются только сейчас:", 24)
         for _, member in ipairs(r.result.roles) do line(member.name .. " — " .. names[member.role], 24) end
-        line("Следующий раунд начнётся автоматически. Все очки и предметы относятся только к этому раунду.", 48)
+        line("Следующий раунд начнётся автоматически. Сессионные очки сбросятся; подтверждённый прогресс профиля сохранён.", 48)
     elseif showEvents and owner then
         line("Выберите мероприятие", 28, 20)
         text(scroll, "EventLimit", "Осталось запусков: " .. owner.usesLeft .. "/2 · перерыв: " .. owner.cooldown .. " с", y, 28)
@@ -162,10 +228,11 @@ local function renderPanel()
         line("Мероприятия: владелец выбирает у синего пульта возле входа в коридор (2 за раунд, перерыв 55 с). Любой может найти реликвию и отнести на постамент (G — положить) или двигаться/замирать на площадке. Уходить с площадки можно в любой момент.\n\nГостевые занятия иногда приводят к проверке охраны или короткому сбою света. Подсветка путей сохраняется. В ожидании следуйте трём шагам практики внизу экрана.", 210, 14)
     end
     -- Keeps the pointer usable in first person for Council/results/help.
-    local caption = if r.phase == "Council" then "Дождитесь конца голосования (время вверху)"
+    local caption = if showProfile then "Назад [P]" elseif r.phase == "Council" then "Дождитесь конца голосования (время вверху)"
         elseif r.phase == "Results" then "Следующий раунд начнётся автоматически" else "Закрыть [H]"
     local modal = button(scroll, caption, y, function()
-        if r.phase ~= "Council" and r.phase ~= "Results" then showRules, showEvents = false, false; renderPanel() end
+        if showProfile then showProfile = false; renderPanel()
+        elseif r.phase ~= "Council" and r.phase ~= "Results" then showRules, showEvents = false, false; renderPanel() end
     end)
     modal.Modal = true
     scroll.CanvasSize = UDim2.fromOffset(0, y + 44)
@@ -175,6 +242,7 @@ local function snapshot(value)
     last = value
     if previous ~= value.round.roundId then attach, showEvents, eventNotice = false, false, ""; notice.Text = "H — правила · B — уронить улику" end
     local r = value.round
+    if r.phase ~= "Waiting" and r.phase ~= "Results" then showProfile = false end
     if r.phase ~= "Active" or not value.activities.owner then showEvents = false end
     local minutes, seconds = math.floor(r.remaining / 60), r.remaining % 60
     phaseLabel.Text = (phases[r.phase] or r.phase) .. " · " .. string.format("%d:%02d", minutes, seconds)
@@ -188,7 +256,7 @@ local function snapshot(value)
     if a.practice then
         local steps = {"1/3 Осмотрите картину у западной стены.", "2/3 Закажите сок у зелёного столика и дождитесь NPC.",
             "3/3 Позовите охрану колокольчиком у восточной стены.", "Практика завершена! Можно повторить; очки не начисляются."}
-        table.insert(lines, "Практика · " .. a.practice.remaining .. " с · " .. steps[a.practice.step])
+        table.insert(lines, "Практика · " .. a.practice.remaining .. " с · " .. steps[a.practice.step] .. "\nP — профиль и снаряжение")
     elseif e.phase == "Announcing" then table.insert(lines, eventNames[e.kind] .. " через " .. e.remaining .. " с · участие добровольное")
     elseif e.phase == "Running" then
         local instruction = if e.kind == "Relic" then (if e.hasRelic then "Верните на постамент в холле · G положить" else "Ищите светящуюся реликвию в холле")
@@ -201,6 +269,9 @@ local function snapshot(value)
         table.insert(lines, (if a.incident.kind == "Blackout" then "Сбой света в холле · пути подсвечены" else "Внеплановая проверка охраны") .. " · " .. a.incident.remaining .. " с")
     end
     activityLabel.Text = table.concat(lines, "\n")
+    if value.profile and value.profile.status ~= "Ready" and value.profile.status ~= "Saving" and value.profile.status ~= "Loading" then
+        notice.Text = "Сохранение недоступно: игра продолжается без постоянных наград и покупок."
+    end
     renderPanel()
 end
 update.OnClientEvent:Connect(function(kind, value)
@@ -212,8 +283,10 @@ end)
 Input.InputBegan:Connect(function(input, processed)
     if processed then return end
     if input.KeyCode == Enum.KeyCode.H then
-        if showEvents then showEvents = false else showRules = not showRules end
+        if showProfile then showProfile = false elseif showEvents then showEvents = false else showRules = not showRules end
         renderPanel()
+    elseif input.KeyCode == Enum.KeyCode.P and last and (last.round.phase == "Waiting" or last.round.phase == "Results") then
+        showProfile, showRules, showEvents = not showProfile, false, false; renderPanel()
     elseif input.KeyCode == Enum.KeyCode.B and last then action:FireServer("DropEvidence", last.round.roundId)
     elseif input.KeyCode == Enum.KeyCode.G and last then eventAction:FireServer("DropRelic", last.round.roundId) end
 end)
