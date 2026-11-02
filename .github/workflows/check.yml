@@ -24,14 +24,17 @@ jobs:
           luau tests/run.luau
           luau tests/rounds.luau
           luau tests/events.luau
+          luau tests/progression.luau
+          luau tests/persistence.luau
           find src tests -name '*.luau' -print0 | xargs -0 luau-compile --null
           luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau tests/run.luau tests/rounds.luau tests/events.luau
+          luau-analyze src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau tests/MemoryStore.luau tests/progression.luau tests/persistence.luau
       - name: Build and inspect artifacts
         run: |
-          rojo build default.project.json -o DoubleLife-M3.rbxlx
-          rojo build studio-tests.project.json -o DoubleLife-M3-tests.rbxlx
-          python3 tests/check-build.py DoubleLife-M3.rbxlx
+          rojo build default.project.json -o DoubleLife-M4.rbxlx
+          rojo build studio-tests.project.json -o DoubleLife-M4-tests.rbxlx
+          python3 tests/check-build.py DoubleLife-M4.rbxlx
       - uses: actions/upload-artifact@v4
         with:
-          name: DoubleLife-M3
+          name: DoubleLife-M4
           path: '*.rbxlx'

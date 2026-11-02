@@ -1,6 +1,6 @@
 local Events = {}
 
-function Events.start(world, roles, interactions, guard, tell, config, scope, onActivity)
+function Events.start(world, roles, interactions, guard, tell, config, scope, onActivity, tool, onTask)
     local tokens, ready, closesAt = {}, {}, {}
     local function open(part, seconds)
         closesAt[part] = math.max(closesAt[part] or 0, scope:now() + seconds)
@@ -49,11 +49,17 @@ function Events.start(world, roles, interactions, guard, tell, config, scope, on
         local now = scope:now()
         if now < (ready.window or 0) then tell(player, "Механизм окна ещё заклинен. Подождите."); return end
         ready.window = now + config.NOISE_SOURCE_COOLDOWN
-        open(world.studyWindow, config.WINDOW_SECONDS)
+        local equipped = tool(player, "Spy")
+        open(world.studyWindow, equipped.window)
         guard:react("Window", Vector3.new(-23, 3.5, 58))
-        world.studyWindow.Color = Color3.fromRGB(130, 142, 146)
-        scope:delay(35, function() world.studyWindow.Color = Color3.fromRGB(69, 107, 124) end)
-        tell(player, "Окно открыто ненадолго. Остались следы на раме.")
+        local traceToken = (tokens.trace or 0) + 1
+        tokens.trace = traceToken
+        world.studyWindow.Color = if equipped.trace > 35 then Color3.fromRGB(190, 144, 80) else Color3.fromRGB(130, 142, 146)
+        scope:delay(equipped.trace, function()
+            if tokens.trace == traceToken then world.studyWindow.Color = Color3.fromRGB(69, 107, 124) end
+        end)
+        onTask(player, "Window", 1)
+        tell(player, "Проход открыт на " .. equipped.window .. " с; след на раме — " .. equipped.trace .. " с.")
     end)
     local glass = world.block("BreakableGlass", Vector3.new(0.8, 1.4, 0.8), Vector3.new(21, 2, -17), Color3.fromRGB(165, 209, 221), Enum.Material.Glass)
     glass.Transparency = 0.25

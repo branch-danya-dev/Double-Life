@@ -1,6 +1,6 @@
 local Game = {}
 local runtime
-function Game.start()
+function Game.start(options)
     if runtime then return runtime end
     local Players = game:GetService("Players")
     local RS = game:GetService("ReplicatedStorage")
@@ -18,6 +18,7 @@ function Game.start()
     local Requests = require(script.Parent.Requests)
     local WorldEvents = require(script.Parent.WorldEvents)
     local EventDirector = require(script.Parent.EventDirector)
+    local ProfileService = require(script.Parent.ProfileService)
 
     pcall(function() PhysicsService:RegisterCollisionGroup("DoubleLifeActors") end)
     PhysicsService:CollisionGroupSetCollidable("DoubleLifeActors", "DoubleLifeActors", false)
@@ -32,6 +33,7 @@ function Game.start()
     local getState = remote("RemoteFunction", "GetState")
     local actionRemote = remote("RemoteEvent", "CouncilAction")
     local eventRemote = remote("RemoteEvent", "EventAction")
+    local profileRemote = remote("RemoteEvent", "ProfileAction")
     local function event(name)
         local value = Instance.new("BindableEvent")
         value.Name, value.Parent = name, script.Parent
@@ -48,6 +50,7 @@ function Game.start()
     local roles = Roles.new(Config, update)
     local rounds = RoundService.new(Config, roles, tell, finished)
     runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished, eventSignals = eventSignals}
+    runtime.profiles = ProfileService.new(runtime, tell, options)
     local function rebuild(starting)
         if runtime.scope then
             runtime.events:cancel()
@@ -69,20 +72,26 @@ function Game.start()
         local function onActivity(player, key)
             if scope.alive and runtime.scope == scope then runtime.events:activity(player, key) end
         end
+        local function tool(player, role) return runtime.profiles:tool(player, role) end
         local dossier = Dossier.start(world, roles, interactions, update, tell, Config,
-            function(id) if scope.alive then rounds:extract(id) end end, evidence, onTask, onActivity)
+            function(id) if scope.alive then rounds:extract(id) end end, evidence, onTask, onActivity, scope, tool)
         local guard = GuardService.start(world, Config, scope)
         local requests = Requests.start(world, roles, interactions, guard, tell, update, Config, scope, onTask, onActivity)
-        WorldEvents.start(world, roles, interactions, guard, tell, Config, scope, onActivity)
+        WorldEvents.start(world, roles, interactions, guard, tell, Config, scope, onActivity, tool, onTask)
         local council = interactions.prompt(world.console, "Созвать собрание", "Пульт владельца · 1 раз", 1)
         council.KeyboardKeyCode = Enum.KeyCode.C
-        interactions:bind(council, function(player) rounds:callCouncil(player) end)
+        interactions:bind(council, function(player)
+            if rounds:callCouncil(player) then
+                completed:Fire({roundId = rounds.policy.roundId, userId = player.UserId, kind = "Council", amount = 1})
+            end
+        end)
         runtime.scope, runtime.state, runtime.world = scope, state, world
         runtime.interactions, runtime.dossier, runtime.guard = interactions, dossier, guard
         runtime.requests, runtime.evidence = requests, evidence
         runtime.events = EventDirector.new({world = world, scope = scope, rounds = rounds, roles = roles,
             interactions = interactions, guard = guard, tell = tell, update = update, config = Config, signals = eventSignals})
         rounds.session = runtime
+        if starting then runtime.profiles:beginRound(rounds.policy.roundId) end
         for index, player in ipairs(Players:GetPlayers()) do
             dossier:add(player)
             if player.Character then
@@ -103,10 +112,17 @@ function Game.start()
             servicePoints = runtime.requests.ledger.scores[player.UserId] or 0,
             refreshments = runtime.requests.received[player.UserId] or 0,
             evidence = runtime.evidence:description(player.UserId), hasDossier = runtime.dossier:has(player), round = round,
-            activities = runtime.events:snapshot(player)}
+            activities = runtime.events:snapshot(player), profile = runtime.profiles:snapshot(player)}
     end
     getState.OnServerInvoke = snapshot
-    local lastAction = {}
+    local lastAction, lastProfileAction = {}, {}
+    profileRemote.OnServerEvent:Connect(function(player, kind, item, slot)
+        if os.clock() < (lastProfileAction[player.UserId] or 0) then return end
+        lastProfileAction[player.UserId] = os.clock() + 0.5
+        local ok, why = runtime.profiles:request(player, kind, item, slot)
+        if not ok then tell(player, if why == "PhaseLocked" then "Покупки и выбор доступны в ожидании или итогах."
+            elseif why == "Busy" then "Подождите перед следующим действием с профилем." else "Действие с профилем недоступно. Проверьте сохранение и выбранный предмет.") end
+    end)
     eventRemote.OnServerEvent:Connect(function(player, action, roundId, kind)
         local now = os.clock() -- Transport spam throttle; event deadlines use SessionClock only.
         if now < (lastAction[player.UserId] or 0) then return end
@@ -122,6 +138,9 @@ function Game.start()
         if roundId ~= rounds.policy.roundId then return end
         if action == "Vote" then
             local accepted = rounds:vote(player, target, roundId, attach)
+            if accepted then
+                completed:Fire({roundId = roundId, userId = player.UserId, kind = "Vote", amount = 1})
+            end
             tell(player, if accepted then "Голос принят. Изменить его нельзя." else "Голос отклонён: проверьте участника, улику и фазу собрания.")
         elseif action == "DropEvidence" and rounds:allows(player, false) then
             local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
@@ -138,6 +157,7 @@ function Game.start()
     local function addPlayer(player)
         if connected[player] then return end
         connected[player] = true
+        runtime.profiles:add(player)
         runtime.dossier:add(player)
         local function characterAdded(character)
             resetCharacter(player)
@@ -157,6 +177,7 @@ function Game.start()
     end
     Players.PlayerAdded:Connect(addPlayer)
     Players.PlayerRemoving:Connect(function(player)
+        runtime.profiles:remove(player)
         runtime.events:remove(player)
         rounds:leave(player) -- Determine the result before removing the private role.
         runtime.evidence:drop(player)
@@ -165,6 +186,7 @@ function Game.start()
         runtime.interactions:remove(player)
         roles:remove(player)
         connected[player], lastAction[player.UserId] = nil, nil
+        lastProfileAction[player.UserId] = nil
     end)
     for _, player in ipairs(Players:GetPlayers()) do addPlayer(player) end
     local broadcast = 0
@@ -172,6 +194,7 @@ function Game.start()
         rounds:tick(dt)
         runtime.scope:advance(dt)
         runtime.events:tick()
+        runtime.profiles:tick(dt)
         broadcast += dt
         if broadcast >= 0.5 then
             broadcast = 0

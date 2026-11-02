@@ -1,0 +1,297 @@
+{
+  "Player1": {
+    "inventory": {
+      "GuestGuide": true,
+      "Prybar": true,
+      "OwnerLedger": true,
+      "ServingTray": true,
+      "Lockpick": true,
+      "Journal": true,
+      "JournalLens": true
+    },
+    "stats": {
+      "roles": {
+        "Guest": {
+          "wins": 1,
+          "played": 1
+        },
+        "Staff": {
+          "wins": 0,
+          "played": 0
+        },
+        "Owner": {
+          "wins": 0,
+          "played": 1
+        },
+        "Spy": {
+          "wins": 0,
+          "played": 0
+        },
+        "CounterAgent": {
+          "wins": 0,
+          "played": 0
+        }
+      },
+      "played": 2,
+      "wins": 1
+    },
+    "tokens": 45,
+    "historyCount": 2,
+    "reputationXp": 120,
+    "achievements": {
+      "FirstWin": true,
+      "FirstRound": true
+    },
+    "equipped": {
+      "Guest": "GuestGuide",
+      "Title": "",
+      "Card": "",
+      "Staff": "ServingTray",
+      "Owner": "OwnerLedger",
+      "Spy": "Lockpick",
+      "CounterAgent": "Journal"
+    },
+    "roleXp": {
+      "Guest": 40,
+      "Staff": 0,
+      "Owner": 30,
+      "Spy": 0,
+      "CounterAgent": 0
+    }
+  },
+  "Player2": {
+    "inventory": {
+      "GuestGuide": true,
+      "Journal": true,
+      "Prybar": true,
+      "OwnerLedger": true,
+      "ObserverTitle": true,
+      "Lockpick": true,
+      "JournalLens": true,
+      "ServingTray": true
+    },
+    "stats": {
+      "roles": {
+        "Guest": {
+          "wins": 0,
+          "played": 0
+        },
+        "Staff": {
+          "wins": 0,
+          "played": 0
+        },
+        "Owner": {
+          "wins": 1,
+          "played": 1
+        },
+        "Spy": {
+          "wins": 1,
+          "played": 1
+        },
+        "CounterAgent": {
+          "wins": 0,
+          "played": 0
+        }
+      },
+      "played": 2,
+      "wins": 2
+    },
+    "tokens": 36,
+    "historyCount": 2,
+    "reputationXp": 150,
+    "achievements": {
+      "FirstWin": true,
+      "FirstRound": true
+    },
+    "equipped": {
+      "Guest": "GuestGuide",
+      "Title": "ObserverTitle",
+      "Card": "",
+      "Staff": "ServingTray",
+      "Owner": "OwnerLedger",
+      "Spy": "Lockpick",
+      "CounterAgent": "Journal"
+    },
+    "roleXp": {
+      "Guest": 0,
+      "Staff": 0,
+      "Owner": 40,
+      "Spy": 40,
+      "CounterAgent": 0
+    }
+  },
+  "Player4": {
+    "inventory": {
+      "GuestGuide": true,
+      "Prybar": true,
+      "OwnerLedger": true,
+      "ServingTray": true,
+      "Lockpick": true,
+      "Journal": true,
+      "JournalLens": true
+    },
+    "stats": {
+      "roles": {
+        "Guest": {
+          "wins": 0,
+          "played": 0
+        },
+        "Staff": {
+          "wins": 0,
+          "played": 1
+        },
+        "Owner": {
+          "wins": 0,
+          "played": 0
+        },
+        "Spy": {
+          "wins": 0,
+          "played": 0
+        },
+        "CounterAgent": {
+          "wins": 1,
+          "played": 1
+        }
+      },
+      "played": 2,
+      "wins": 1
+    },
+    "tokens": 47,
+    "historyCount": 2,
+    "reputationXp": 125,
+    "achievements": {
+      "FirstWin": true,
+      "FirstRound": true
+    },
+    "equipped": {
+      "Guest": "GuestGuide",
+      "Title": "",
+      "Card": "",
+      "Staff": "ServingTray",
+      "Owner": "OwnerLedger",
+      "Spy": "Lockpick",
+      "CounterAgent": "JournalLens"
+    },
+    "roleXp": {
+      "Guest": 0,
+      "Staff": 30,
+      "Owner": 0,
+      "Spy": 0,
+      "CounterAgent": 40
+    }
+  },
+  "Player5": {
+    "inventory": {
+      "GuestGuide": true,
+      "OwnerLedger": true,
+      "ServingTray": true,
+      "Lockpick": true,
+      "Journal": true
+    },
+    "stats": {
+      "roles": {
+        "Guest": {
+          "wins": 0,
+          "played": 0
+        },
+        "Staff": {
+          "wins": 0,
+          "played": 0
+        },
+        "Owner": {
+          "wins": 0,
+          "played": 0
+        },
+        "Spy": {
+          "wins": 0,
+          "played": 0
+        },
+        "CounterAgent": {
+          "wins": 0,
+          "played": 0
+        }
+      },
+      "played": 0,
+      "wins": 0
+    },
+    "tokens": 0,
+    "historyCount": 0,
+    "reputationXp": 0,
+    "achievements": [],
+    "equipped": {
+      "Guest": "GuestGuide",
+      "Title": "",
+      "Card": "",
+      "Staff": "ServingTray",
+      "Owner": "OwnerLedger",
+      "Spy": "Lockpick",
+      "CounterAgent": "Journal"
+    },
+    "roleXp": {
+      "Guest": 0,
+      "Staff": 0,
+      "Owner": 0,
+      "Spy": 0,
+      "CounterAgent": 0
+    }
+  },
+  "Player3": {
+    "inventory": {
+      "GuestGuide": true,
+      "Prybar": true,
+      "OwnerLedger": true,
+      "ServingTray": true,
+      "Lockpick": true,
+      "Journal": true,
+      "JournalLens": true
+    },
+    "stats": {
+      "roles": {
+        "Guest": {
+          "wins": 0,
+          "played": 0
+        },
+        "Staff": {
+          "wins": 0,
+          "played": 0
+        },
+        "Owner": {
+          "wins": 0,
+          "played": 0
+        },
+        "Spy": {
+          "wins": 0,
+          "played": 1
+        },
+        "CounterAgent": {
+          "wins": 0,
+          "played": 1
+        }
+      },
+      "played": 2,
+      "wins": 0
+    },
+    "tokens": 42,
+    "historyCount": 2,
+    "reputationXp": 110,
+    "achievements": {
+      "FirstRound": true
+    },
+    "equipped": {
+      "Guest": "GuestGuide",
+      "Title": "",
+      "Card": "",
+      "Staff": "ServingTray",
+      "Owner": "OwnerLedger",
+      "Spy": "Prybar",
+      "CounterAgent": "Journal"
+    },
+    "roleXp": {
+      "Guest": 0,
+      "Staff": 0,
+      "Owner": 0,
+      "Spy": 30,
+      "CounterAgent": 30
+    }
+  }
+}
