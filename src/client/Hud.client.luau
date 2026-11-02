@@ -47,7 +47,7 @@ local function button(parent, value, y, callback)
     return b
 end
 local status = frame(gui, "StatusPanel", UDim2.fromOffset(390, 211), UDim2.fromOffset(14, 12))
-local phaseLabel = text(status, "Phase", "DOUBLE LIFE · M4", 8, 22, 16)
+local phaseLabel = text(status, "Phase", "DOUBLE LIFE · M5", 8, 22, 16)
 local roleLabel = text(status, "Role", "Загрузка…", 32, 20)
 local goalLabel = text(status, "Goal", "", 55, 48, 13)
 local progressLabel = text(status, "Progress", "", 106, 34, 12)
@@ -81,6 +81,7 @@ bannerLimit.MaxSize, bannerLimit.Parent = Vector2.new(570, 94), banner
 local activityLabel = text(banner, "Activity", "", 8, 80, 14)
 local last, showRules, showEvents, eventNotice, attach, panelKey = nil, false, false, "", false, ""
 local showProfile = false
+local hideResults = false
 local profileMessages = {Ready = "Сохранено", Saving = "Сохраняем…", Loading = "Загружаем профиль…",
     Unavailable = "Сохранение недоступно; новые награды и покупки отключены.", Locked = "Профиль занят другой сессией; запись временно отключена.",
     Recovering = "Восстанавливаем профиль автоматически. Можно играть; постоянные награды и покупки пока отключены.",
@@ -91,7 +92,7 @@ local profileMessages = {Ready = "Сохранено", Saving = "Сохраня�
     Pending = "Награда ожидает подтверждения сохранения", Awarded = "Награда сохранена", InsufficientActivity = "Недостаточно активности для постоянной награды",
     NotParticipant = "За этот раунд постоянной награды нет"}
 local eventNames = {Relic = "Пропавшая реликвия", Music = "Музыка остановилась"}
-local rules = "7 минут: шпион выносит досье через главный выход; остальные побеждают, если время истекло или шпион ушёл.\n\nРоль видите только вы. Общие занятия: 3 картины на западной стене, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины всех оставшихся участников.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nОкно снаружи: выйдите на юг, обойдите дом слева и идите к кабинету. Пульт — в северном коридоре. E удерживается по подсказке. H — закрыть правила."
+local rules = "7 минут: шпион выносит досье через главный выход; остальные побеждают, если время истекло или ушли все шпионы. Досье возвращается в сейф через 60 с активной игры у носителя.\n\nРоль видите только вы. Общие занятия: 3 картины на западной стене, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины всех оставшихся участников.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nОкно снаружи: выйдите на юг, обойдите дом слева и идите к кабинету. Пульт — в северном коридоре. E удерживается по подсказке. H — закрыть правила."
 local function renderPanel()
     if not last then return end
     local r = last.round
@@ -103,7 +104,7 @@ local function renderPanel()
         .. ":" .. tostring(showProfile) .. ":" .. p.status .. ":" .. tostring(p.revision) .. ":" .. tostring(p.requestResult)
         .. ":" .. tostring(p.reward and p.reward.reason)
         .. ":" .. tostring(p.retrying) .. ":" .. tostring(p.unconfirmed)
-    panel.Visible = r.phase == "Council" or r.phase == "Results" or showRules or showEvents or showProfile
+    panel.Visible = r.phase == "Council" or (r.phase == "Results" and not hideResults) or showRules or showEvents or showProfile
     local card = p.equipped and p.equipped.Card
     panel.BackgroundColor3 = if (showProfile or r.phase == "Results") and card == "TealCard" then Color3.fromRGB(23, 55, 57)
         elseif (showProfile or r.phase == "Results") and card == "AmberCard" then Color3.fromRGB(65, 47, 24) else Color3.fromRGB(19, 21, 28)
@@ -194,8 +195,8 @@ local function renderPanel()
             end
         end
     elseif r.phase == "Results" then
-        local reasons = {Extraction = "Досье вынесено", Timeout = "Время истекло", SpyLeft = "Шпион покинул матч"}
-        line(if r.result.winner == "Spy" then "Победа шпиона" else "Победа защитников", 28, 22)
+        local reasons = {Extraction = "Досье вынесено", Timeout = "Время истекло", SpyLeft = "Все шпионы покинули матч"}
+        line(if r.result.winner == "Spy" then "Победа шпионской команды" else "Победа защитников", 28, 22)
         line(reasons[r.result.reason] or r.result.reason, 24)
         line("Постоянный профиль · " .. (profileMessages[p.status] or "Сохранение недоступно"), 36)
         if p.equipped then
@@ -235,9 +236,10 @@ local function renderPanel()
     end
     -- Keeps the pointer usable in first person for Council/results/help.
     local caption = if showProfile then "Назад [P]" elseif r.phase == "Council" then "Дождитесь конца голосования (время вверху)"
-        elseif r.phase == "Results" then "Следующий раунд начнётся автоматически" else "Закрыть [H]"
+        elseif r.phase == "Results" then "Свернуть итоги [H] · следующий раунд автоматически" else "Закрыть [H]"
     local modal = button(scroll, caption, y, function()
         if showProfile then showProfile = false; renderPanel()
+        elseif r.phase == "Results" then hideResults = true; renderPanel()
         elseif r.phase ~= "Council" and r.phase ~= "Results" then showRules, showEvents = false, false; renderPanel() end
     end)
     modal.Modal = true
@@ -247,6 +249,7 @@ local function snapshot(value)
     local previous = last and last.round.roundId
     last = value
     if previous ~= value.round.roundId then attach, showEvents, eventNotice = false, false, ""; notice.Text = "H — правила · B — уронить улику" end
+    if value.round.phase ~= "Results" then hideResults = false end
     local r = value.round
     if r.phase ~= "Waiting" and r.phase ~= "Results" then showProfile = false end
     if r.phase ~= "Active" or not value.activities.owner then showEvents = false end
@@ -289,7 +292,9 @@ end)
 Input.InputBegan:Connect(function(input, processed)
     if processed then return end
     if input.KeyCode == Enum.KeyCode.H then
-        if showProfile then showProfile = false elseif showEvents then showEvents = false else showRules = not showRules end
+        if showProfile then showProfile = false elseif showEvents then showEvents = false
+        elseif last and last.round.phase == "Results" then hideResults = not hideResults
+        else showRules = not showRules end
         renderPanel()
     elseif input.KeyCode == Enum.KeyCode.P and last and (last.round.phase == "Waiting" or last.round.phase == "Results") then
         showProfile, showRules, showEvents = not showProfile, false, false; renderPanel()

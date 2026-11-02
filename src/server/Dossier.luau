@@ -7,6 +7,7 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
     local dossierMissing, carrierId = false, nil
     local opened = false
     local openedAt, nextRead = 0, {}
+    local carryGeneration = 0
     local seenPaintings = {}
     local function paintingCount(userId)
         local count = 0
@@ -15,6 +16,7 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
     end
     -- No Tool/attribute: carrier identity stays on the server.
     local function resetDossier()
+        carryGeneration += 1
         carrierId, dossierMissing = nil, false
         safe.Color = gold
     end
@@ -27,11 +29,19 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
             opened = true
             openedAt = scope:now()
             carrierId = player.UserId
+            carryGeneration += 1
+            local generation = carryGeneration
+            scope:delay(60, function()
+                if generation == carryGeneration and carrierId then
+                    resetDossier()
+                    tell(player, "Срок операции с досье истёк: оно возвращено в сейф. Попытку можно повторить.")
+                end
+            end)
             safe.Color = Color3.fromRGB(96, 88, 71)
             evidence:create()
             onTask(player, "Safe", 1)
             if dossierMissing then
-                tell(player, "Досье у вас. Доберитесь до выхода из особняка.")
+                tell(player, "Досье у вас. Доберитесь до выхода за 60 с активной игры; затем оно вернётся в сейф.")
             end
         else
             tell(player, "Документы на месте.")

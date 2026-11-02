@@ -19,6 +19,9 @@ function Game.start(options)
     local WorldEvents = require(script.Parent.WorldEvents)
     local EventDirector = require(script.Parent.EventDirector)
     local ProfileService = require(script.Parent.ProfileService)
+    local SocialService = require(script.Parent.SocialService)
+    local CommerceService = require(script.Parent.CommerceService)
+    local Telemetry = require(script.Parent.Telemetry)
 
     pcall(function() PhysicsService:RegisterCollisionGroup("DoubleLifeActors") end)
     PhysicsService:CollisionGroupSetCollidable("DoubleLifeActors", "DoubleLifeActors", false)
@@ -34,6 +37,8 @@ function Game.start(options)
     local actionRemote = remote("RemoteEvent", "CouncilAction")
     local eventRemote = remote("RemoteEvent", "EventAction")
     local profileRemote = remote("RemoteEvent", "ProfileAction")
+    local socialRemote = remote("RemoteEvent", "SocialAction")
+    local commerceRemote = remote("RemoteEvent", "CommerceAction")
     local function event(name)
         local value = Instance.new("BindableEvent")
         value.Name, value.Parent = name, script.Parent
@@ -51,6 +56,8 @@ function Game.start(options)
     local rounds = RoundService.new(Config, roles, tell, finished)
     runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished, eventSignals = eventSignals}
     runtime.profiles = ProfileService.new(runtime, tell, options)
+    runtime.telemetry = Telemetry.new(runtime, options and options.analytics)
+    runtime.commerce = CommerceService.new(runtime, tell, options)
     local function rebuild(starting)
         if runtime.scope then
             runtime.events:cancel()
@@ -77,7 +84,7 @@ function Game.start(options)
             function(id) if scope.alive then rounds:extract(id) end end, evidence, onTask, onActivity, scope, tool)
         local guard = GuardService.start(world, Config, scope)
         local requests = Requests.start(world, roles, interactions, guard, tell, update, Config, scope, onTask, onActivity)
-        WorldEvents.start(world, roles, interactions, guard, tell, Config, scope, onActivity, tool, onTask)
+        local access = WorldEvents.start(world, roles, interactions, guard, tell, Config, scope, onActivity, tool, onTask)
         local council = interactions.prompt(world.console, "Созвать собрание", "Пульт владельца · 1 раз", 1)
         council.KeyboardKeyCode = Enum.KeyCode.C
         interactions:bind(council, function(player)
@@ -88,6 +95,8 @@ function Game.start(options)
         runtime.scope, runtime.state, runtime.world = scope, state, world
         runtime.interactions, runtime.dossier, runtime.guard = interactions, dossier, guard
         runtime.requests, runtime.evidence = requests, evidence
+        runtime.access = access
+        runtime.social = SocialService.new(runtime, tell, onTask)
         runtime.events = EventDirector.new({world = world, scope = scope, rounds = rounds, roles = roles,
             interactions = interactions, guard = guard, tell = tell, update = update, config = Config, signals = eventSignals})
         rounds.session = runtime
@@ -112,10 +121,17 @@ function Game.start(options)
             servicePoints = runtime.requests.ledger.scores[player.UserId] or 0,
             refreshments = runtime.requests.received[player.UserId] or 0,
             evidence = runtime.evidence:description(player.UserId), hasDossier = runtime.dossier:has(player), round = round,
-            activities = runtime.events:snapshot(player), profile = runtime.profiles:snapshot(player)}
+            activities = runtime.events:snapshot(player), profile = runtime.profiles:snapshot(player),
+            social = runtime.social:snapshot(player), commerce = runtime.commerce:snapshot(player), publicStyles = runtime.commerce:public()}
     end
     getState.OnServerInvoke = snapshot
-    local lastAction, lastProfileAction = {}, {}
+    local lastAction, lastProfileAction, lastSocialAction = {}, {}, {}
+    socialRemote.OnServerEvent:Connect(function(player, action, target, roundId)
+        if os.clock() < (lastSocialAction[player.UserId] or 0) then return end
+        lastSocialAction[player.UserId] = os.clock() + 0.25
+        if not runtime.social:request(player, action, target, roundId) then tell(player, "Действие недоступно: проверьте расстояние, участника и время ожидания.") end
+    end)
+    commerceRemote.OnServerEvent:Connect(function(player, action, key) runtime.commerce:request(player, action, key) end)
     profileRemote.OnServerEvent:Connect(function(player, kind, item, slot)
         if os.clock() < (lastProfileAction[player.UserId] or 0) then return end
         lastProfileAction[player.UserId] = os.clock() + 0.5
@@ -149,6 +165,7 @@ function Game.start(options)
     end)
     local connected = {}
     local function resetCharacter(player)
+        runtime.social:remove(player)
         runtime.events:resetCharacter(player)
         runtime.dossier:resetCharacter(player)
         runtime.requests:resetCharacter(player)
@@ -158,6 +175,8 @@ function Game.start(options)
         if connected[player] then return end
         connected[player] = true
         runtime.profiles:add(player)
+        runtime.telemetry:add(player)
+        runtime.commerce:add(player)
         runtime.dossier:add(player)
         local function characterAdded(character)
             resetCharacter(player)
@@ -177,6 +196,9 @@ function Game.start(options)
     end
     Players.PlayerAdded:Connect(addPlayer)
     Players.PlayerRemoving:Connect(function(player)
+        runtime.social:remove(player)
+        runtime.commerce:remove(player)
+        runtime.telemetry:remove(player)
         runtime.profiles:remove(player)
         runtime.events:remove(player)
         rounds:leave(player) -- Determine the result before removing the private role.
@@ -187,6 +209,7 @@ function Game.start(options)
         roles:remove(player)
         connected[player], lastAction[player.UserId] = nil, nil
         lastProfileAction[player.UserId] = nil
+        lastSocialAction[player.UserId] = nil
     end)
     for _, player in ipairs(Players:GetPlayers()) do addPlayer(player) end
     local broadcast = 0
@@ -194,6 +217,9 @@ function Game.start(options)
         rounds:tick(dt)
         runtime.scope:advance(dt)
         runtime.events:tick()
+        runtime.social:tick()
+        runtime.commerce:tick()
+        runtime.telemetry:tick()
         runtime.profiles:tick(dt)
         broadcast += dt
         if broadcast >= 0.5 then

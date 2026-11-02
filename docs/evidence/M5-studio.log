@@ -1,0 +1,54 @@
+2026-11-02T19:31:15.099Z,17.099880,6b2c,6,Info [FLog::CreatorOutput] M5 PASS real client shop DISABLED with zero platform IDs
+2026-11-02T19:31:25.132Z,27.132210,5638,6,Info [FLog::CreatorOutput] M5 PASS disabled UI request cannot prompt
+2026-11-02T19:31:26.581Z,28.581520,5638,6,Info [FLog::CreatorOutput] M5 PASS pass verified server-side and voluntary style saved
+2026-11-02T19:31:26.697Z,28.697571,6b2c,6,Info [FLog::CreatorOutput] M5 PASS social title visible in Waiting
+2026-11-02T19:31:26.697Z,28.697571,6b2c,6,Info [FLog::CreatorOutput] M5 WAITING PASS: add FOUR clients now
+2026-11-02T19:31:27.915Z,29.915354,5490,6,Info [FLog::CreatorOutput] M5 PASS real client privacy/participation Player1
+2026-11-02T19:31:28.031Z,30.031195,4f64,6,Info [FLog::CreatorOutput] M5 PASS real client privacy/participation Player2
+2026-11-02T19:31:28.147Z,30.147743,6d74,6,Info [FLog::CreatorOutput] M5 PASS real client privacy/participation Player3
+2026-11-02T19:31:28.264Z,30.264175,5638,6,Info [FLog::CreatorOutput] M5 PASS real client privacy/participation Player4
+2026-11-02T19:31:31.247Z,33.247746,5638,6,Info [FLog::CreatorOutput] M5 PASS real client privacy/participation Player5
+2026-11-02T19:31:32.930Z,34.930893,5638,6,Info [FLog::CreatorOutput] M5 PASS non-owner denied even at console
+2026-11-02T19:31:34.381Z,36.381256,5638,6,Info [FLog::CreatorOutput] M5 PASS remote owner grant denied from afar
+2026-11-02T19:31:35.947Z,37.947262,5490,6,Info [FLog::CreatorOutput] M5 PASS owner grants named participant via real remote
+2026-11-02T19:31:38.564Z,40.564404,5490,6,Info [FLog::CreatorOutput] M5 PASS pass opens shared access and leaves anonymous trace
+2026-11-02T19:31:41.865Z,43.865086,5638,6,Info [FLog::CreatorOutput] M5 PASS agent reads temporal trace through real prompt
+2026-11-02T19:31:44.397Z,46.397167,7628,6,Info [FLog::CreatorOutput] M5 PASS guest takes collection and leaves second physical trace
+2026-11-02T19:31:46.680Z,48.680576,5638,6,Info [FLog::CreatorOutput] M5 PASS consensual near transfer has one carrier
+2026-11-02T19:31:48.146Z,50.146084,5638,6,Info [FLog::CreatorOutput] M5 PASS no remote-distance transfer
+2026-11-02T19:31:50.697Z,52.697189,5638,6,Info [FLog::CreatorOutput] M5 PASS guest/staff cannot be trapped by absent owner
+2026-11-02T19:31:54.230Z,56.230068,5638,6,Info [FLog::CreatorOutput] M5 PASS verified physical delivery earns activity once
+2026-11-02T19:32:01.246Z,63.246296,5490,6,Info [FLog::CreatorOutput] M5 PASS guest creates plausible anonymous false trace with real hold
+2026-11-02T19:32:01.912Z,63.912651,5638,6,Info [FLog::CreatorOutput] M5 PASS owner council remains functional
+2026-11-02T19:32:03.929Z,65.929817,5638,6,Info [FLog::CreatorOutput] M5 PASS council pauses resource and trace timers
+2026-11-02T19:32:04.712Z,66.712265,7628,6,Info [FLog::CreatorOutput] M5 PASS council blocks active signals
+2026-11-02T19:32:05.695Z,67.695724,5490,6,Info [FLog::CreatorOutput] M5 PASS silent context sign visible in world
+2026-11-02T19:32:12.263Z,74.263336,5638,6,Info [FLog::CreatorOutput] M5 PASS independent spy route preserved
+2026-11-02T19:32:15.779Z,77.779366,2360,6,Info [FLog::CreatorOutput] M5 PASS old safe theft preserved
+2026-11-02T19:32:18.778Z,80.778625,5638,6,Info [FLog::CreatorOutput] M5 PASS real prompt finishes exactly one team result
+2026-11-02T19:32:18.895Z,80.895180,7628,6,Info [FLog::CreatorOutput] M5 PASS all five real clients see public cosmetic surface
+2026-11-02T19:32:18.895Z,80.895180,7628,6,Info [FLog::CreatorOutput] M5 PASS other participant sees chosen paid style without private account fields
+2026-11-02T19:32:21.928Z,83.928787,5638,6,Info [FLog::CreatorOutput] M5 PASS real service defers ambiguous fake storage response
+2026-11-02T19:32:21.928Z,83.928787,5638,6,Info [FLog::CreatorOutput] M5 PASS service receipt retry confirmed
+2026-11-02T19:32:22.029Z,84.029137,7628,6,Info [FLog::CreatorOutput] M5 PASS one cosmetic charge despite duplicate receipt
+2026-11-02T19:32:23.344Z,85.344910,4f64,6,Info [FLog::CreatorOutput] M5 PASS charge consumed once through real remote
+2026-11-02T19:32:23.462Z,85.462090,5490,6,Info [FLog::CreatorOutput] M5 PASS nearby social effect available to other real client
+2026-11-02T19:32:26.310Z,88.310905,5490,6,Info [FLog::CreatorOutput] M5 PASS consumed purchase cannot be recredited
+2026-11-02T19:32:26.428Z,88.428780,4f64,6,Info [FLog::CreatorOutput] M5 PASS M4.1 profile reconnect does not duplicate paid charge
+2026-11-02T19:32:27.645Z,89.645309,5638,6,Info [FLog::CreatorOutput] M5 PASS finite telemetry test stub; no real dashboard claim
+2026-11-02T19:32:28.195Z,90.195160,5490,6,Info [FLog::CreatorOutput] M5 FIVE CLIENTS PASS: inspect K shop and visible social status; DataStore NOT TESTED / paid shop DISABLED in production
+2026-11-02T19:33:28.410Z,150.410385,5490,6,Info [FLog::CreatorOutput] M5 PASS full round reset
+2026-11-02T19:33:28.410Z,150.410385,5490,6,Info [FLog::CreatorOutput] M5 STUDIO PASS: five real clients, no chat, fake commerce, public whitelist, reset
+2026-11-02T19:33:28.410Z,150.410385,5490,6,Info [FLog::CreatorOutput] M5 EIGHT CLIENTS: add THREE clients now
+2026-11-02T19:35:22.638Z,264.638763,5490,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player1
+2026-11-02T19:35:22.856Z,264.856354,5638,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player2
+2026-11-02T19:35:22.971Z,264.971832,5490,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player3
+2026-11-02T19:35:23.088Z,265.088837,7628,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player4
+2026-11-02T19:35:23.206Z,265.206512,5638,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player5
+2026-11-02T19:35:30.955Z,272.955780,4f64,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player6
+2026-11-02T19:35:35.445Z,277.445221,5638,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player7
+2026-11-02T19:35:35.554Z,277.554840,5490,6,Info [FLog::CreatorOutput] M5 PASS eight-client participant privacy Player8
+2026-11-02T19:35:35.555Z,277.555847,5490,6,Info [FLog::CreatorOutput] M5 PASS eight real clients use live M5 team matrix
+2026-11-02T19:35:36.654Z,278.654846,5888,6,Info [FLog::CreatorOutput] M5 PASS actual client disconnect leaves second spy in active game
+2026-11-02T19:35:49.803Z,291.803833,6b2c,6,Info [FLog::CreatorOutput] M5 PASS remaining spy extracts without teammate
+2026-11-02T19:35:49.803Z,291.803833,6b2c,6,Info [FLog::CreatorOutput] M5 EIGHT CLIENTS PASS: real disconnect and surviving spy extraction

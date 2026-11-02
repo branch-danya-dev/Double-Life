@@ -81,6 +81,7 @@ function Events.start(world, roles, interactions, guard, tell, config, scope, on
             glassPrompt.Enabled, glass.Transparency = true, 0.25
         end)
     end)
+    return {open = open}
 end
 
 return Events
