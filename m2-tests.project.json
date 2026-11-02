@@ -1,0 +1,29 @@
+{
+  "name": "DoubleLifeM2Tests",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "DoubleLifeShared": {
+        "$path": "src/shared"
+      }
+    },
+    "ServerScriptService": {
+      "DoubleLifeServer": {
+        "$path": "src/server"
+      },
+      "M2Tests": {
+        "$path": "tests/m2"
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "DoubleLifeClient": {
+          "$path": "src/client"
+        },
+        "M2ClientAudit": {
+          "$path": "tests/M2Client.client.luau"
+        }
+      }
+    }
+  }
+}

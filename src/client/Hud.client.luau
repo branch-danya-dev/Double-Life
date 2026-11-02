@@ -7,6 +7,7 @@ local player = Players.LocalPlayer
 player.CameraMode = Enum.CameraMode.LockFirstPerson
 local remotes = RS:WaitForChild("DoubleLifeRemotes")
 local update, action = remotes:WaitForChild("PersonalUpdate"), remotes:WaitForChild("CouncilAction")
+local eventAction = remotes:WaitForChild("EventAction")
 local names = {Owner = "Владелец", Spy = "Шпион", CounterAgent = "Контрразведчик", Staff = "Персонал", Guest = "Гость", Waiting = "Ожидание"}
 local phases = {Waiting = "Нужно 3 участника · свободный осмотр", Countdown = "Подготовка", Active = "Игра", Council = "Собрание · игра на паузе", Results = "Итоги"}
 local goals = {
@@ -72,17 +73,29 @@ constraint.MaxSize, constraint.Parent = Vector2.new(620, 600), panel
 local scroll = Instance.new("ScrollingFrame")
 scroll.Size, scroll.BackgroundTransparency, scroll.BorderSizePixel = UDim2.fromScale(1, 1), 1, 0
 scroll.ScrollBarThickness, scroll.Parent = 6, panel
-local last, showRules, attach, panelKey = nil, false, false, ""
+local banner = frame(gui, "ActivityBanner", UDim2.new(0.92, 0, 0, 94), UDim2.new(0.5, 0, 1, -12))
+banner.AnchorPoint = Vector2.new(0.5, 1)
+local bannerLimit = Instance.new("UISizeConstraint")
+bannerLimit.MaxSize, bannerLimit.Parent = Vector2.new(570, 94), banner
+local activityLabel = text(banner, "Activity", "", 8, 80, 14)
+local last, showRules, showEvents, eventNotice, attach, panelKey = nil, false, false, "", false, ""
+local eventNames = {Relic = "Пропавшая реликвия", Music = "Музыка остановилась"}
 local rules = "7 минут: шпион выносит досье через главный выход; остальные побеждают, если время истекло или шпион ушёл.\n\nРоль видите только вы. Общие занятия: 3 картины на западной стене, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины всех оставшихся участников.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nОкно снаружи: выйдите на юг, обойдите дом слева и идите к кабинету. Пульт — в северном коридоре. E удерживается по подсказке. H — закрыть правила."
 local function renderPanel()
     if not last then return end
     local r = last.round
     local key = r.phase .. ":" .. tostring(r.roundId) .. ":" .. tostring(showRules) .. ":" .. tostring(r.voted) .. ":" .. tostring(attach)
         .. ":" .. tostring(#r.protocol) .. ":" .. tostring(#r.members) .. ":" .. tostring(last.evidence ~= nil)
-    panel.Visible = r.phase == "Council" or r.phase == "Results" or showRules
+        .. ":" .. tostring(showEvents) .. ":" .. eventNotice .. ":" .. last.activities.event.phase
+        .. ":" .. tostring(last.activities.owner and last.activities.owner.reason)
+    panel.Visible = r.phase == "Council" or r.phase == "Results" or showRules or showEvents
     status.Visible = not panel.Visible
+    banner.Visible = not panel.Visible
     local timer = scroll:FindFirstChild("CouncilTime")
     if timer then timer.Text = "Собрание · осталось " .. r.remaining .. " с" end
+    local limits = scroll:FindFirstChild("EventLimit")
+    local owner = last.activities.owner
+    if limits and owner then limits.Text = "Осталось запусков: " .. owner.usesLeft .. "/2 · перерыв: " .. owner.cooldown .. " с" end
     if key == panelKey then return end
     panelKey = key
     for _, child in ipairs(scroll:GetChildren()) do child:Destroy() end
@@ -123,19 +136,36 @@ local function renderPanel()
         local reasons = {Extraction = "Досье вынесено", Timeout = "Время истекло", SpyLeft = "Шпион покинул матч"}
         line(if r.result.winner == "Spy" then "Победа шпиона" else "Победа защитников", 28, 22)
         line(reasons[r.result.reason] or r.result.reason, 24)
-        line("Ваши цели: картины " .. last.paintings .. "/3 · сок получен " .. last.refreshments .. " · доставки " .. math.floor(last.servicePoints / 10) .. " · очки " .. last.servicePoints, 48)
+        line("Ваши цели: картины " .. last.paintings .. "/3 · сок получен " .. last.refreshments .. " · доставки " .. math.floor(last.servicePoints / 10)
+            .. " · очки доставки " .. last.servicePoints .. " · мероприятий " .. last.activities.event.score, 64)
         line("Роли раскрываются только сейчас:", 24)
         for _, member in ipairs(r.result.roles) do line(member.name .. " — " .. names[member.role], 24) end
         line("Следующий раунд начнётся автоматически. Все очки и предметы относятся только к этому раунду.", 48)
+    elseif showEvents and owner then
+        line("Выберите мероприятие", 28, 20)
+        text(scroll, "EventLimit", "Осталось запусков: " .. owner.usesLeft .. "/2 · перерыв: " .. owner.cooldown .. " с", y, 28)
+        y += 36
+        line("Поиск: 60 с, реликвию нужно принести на постамент. Музыка: три пары двигайся/замри на цветной площадке. Участие добровольное для всех.", 80)
+        if owner.reason then line(owner.reason, 52)
+        else
+            for _, kind in ipairs({"Relic", "Music"}) do
+                button(scroll, eventNames[kind], y, function()
+                    eventAction:FireServer("Start", r.roundId, kind)
+                end)
+                y += 38
+            end
+        end
+        if eventNotice ~= "" then line(eventNotice, 60) end
     else
         line("DOUBLE LIFE · правила", 26, 20)
         line(rules, 390, 14)
+        line("Мероприятия: владелец выбирает у синего пульта возле входа в коридор (2 за раунд, перерыв 55 с). Любой может найти реликвию и отнести на постамент (G — положить) или двигаться/замирать на площадке. Уходить с площадки можно в любой момент.\n\nГостевые занятия иногда приводят к проверке охраны или короткому сбою света. Подсветка путей сохраняется. В ожидании следуйте трём шагам практики внизу экрана.", 210, 14)
     end
     -- Keeps the pointer usable in first person for Council/results/help.
     local caption = if r.phase == "Council" then "Дождитесь конца голосования (время вверху)"
-        elseif r.phase == "Results" then "Следующий раунд начнётся автоматически" else "Закрыть правила [H]"
+        elseif r.phase == "Results" then "Следующий раунд начнётся автоматически" else "Закрыть [H]"
     local modal = button(scroll, caption, y, function()
-        if r.phase ~= "Council" and r.phase ~= "Results" then showRules = false; renderPanel() end
+        if r.phase ~= "Council" and r.phase ~= "Results" then showRules, showEvents = false, false; renderPanel() end
     end)
     modal.Modal = true
     scroll.CanvasSize = UDim2.fromOffset(0, y + 44)
@@ -143,8 +173,9 @@ end
 local function snapshot(value)
     local previous = last and last.round.roundId
     last = value
-    if previous ~= value.round.roundId then attach = false; notice.Text = "H — правила · B — уронить улику" end
+    if previous ~= value.round.roundId then attach, showEvents, eventNotice = false, false, ""; notice.Text = "H — правила · B — уронить улику" end
     local r = value.round
+    if r.phase ~= "Active" or not value.activities.owner then showEvents = false end
     local minutes, seconds = math.floor(r.remaining / 60), r.remaining % 60
     phaseLabel.Text = (phases[r.phase] or r.phase) .. " · " .. string.format("%d:%02d", minutes, seconds)
     roleLabel.Text = "Ваша роль: " .. names[value.role] .. (if value.hasDossier then " · досье у вас" else "")
@@ -152,16 +183,39 @@ local function snapshot(value)
     if r.search and r.search.id == player.UserId then goalLabel.Text = "Досмотр: осталось " .. r.search.remaining .. " с. Затем продолжайте свою цель." end
     progressLabel.Text = "Картины " .. value.paintings .. "/3 · сок " .. value.refreshments .. "/1 · доставки " .. math.floor(value.servicePoints / 10)
         .. (if value.evidence then "\nУлика: пломба · сейф, кабинет [B уронить]" else "\nH — правила · E/F — действия по подсказке")
+    local a, lines = value.activities, {}
+    local e = a.event
+    if a.practice then
+        local steps = {"1/3 Осмотрите картину у западной стены.", "2/3 Закажите сок у зелёного столика и дождитесь NPC.",
+            "3/3 Позовите охрану колокольчиком у восточной стены.", "Практика завершена! Можно повторить; очки не начисляются."}
+        table.insert(lines, "Практика · " .. a.practice.remaining .. " с · " .. steps[a.practice.step])
+    elseif e.phase == "Announcing" then table.insert(lines, eventNames[e.kind] .. " через " .. e.remaining .. " с · участие добровольное")
+    elseif e.phase == "Running" then
+        local instruction = if e.kind == "Relic" then (if e.hasRelic then "Верните на постамент в холле · G положить" else "Ищите светящуюся реликвию в холле")
+            else (if e.beat == "Move" then "ДВИГАЙСЯ" else "ЗАМРИ") .. " на площадке · " .. e.beatIndex .. "/3 · зачтено " .. e.passes
+        table.insert(lines, eventNames[e.kind] .. " · " .. e.remaining .. " с\n" .. instruction)
+    elseif e.phase == "Finished" then
+        table.insert(lines, (if e.cancelled then "Мероприятие прервано" else "Мероприятие завершено · вам +" .. e.reward) .. " · очки мероприятий: " .. e.score)
+    else table.insert(lines, "Очки мероприятий: " .. e.score .. " · H правила · G положить реликвию") end
+    if a.incident then
+        table.insert(lines, (if a.incident.kind == "Blackout" then "Сбой света в холле · пути подсвечены" else "Внеплановая проверка охраны") .. " · " .. a.incident.remaining .. " с")
+    end
+    activityLabel.Text = table.concat(lines, "\n")
     renderPanel()
 end
 update.OnClientEvent:Connect(function(kind, value)
     if kind == "Snapshot" then snapshot(value)
     elseif kind == "Notice" then notice.Text = value end
+    if kind == "EventMenu" then showEvents, showRules, eventNotice = true, false, ""; renderPanel()
+    elseif kind == "EventNotice" then eventNotice = value; notice.Text = value; renderPanel() end
 end)
 Input.InputBegan:Connect(function(input, processed)
     if processed then return end
-    if input.KeyCode == Enum.KeyCode.H then showRules = not showRules; renderPanel()
-    elseif input.KeyCode == Enum.KeyCode.B and last then action:FireServer("DropEvidence", last.round.roundId) end
+    if input.KeyCode == Enum.KeyCode.H then
+        if showEvents then showEvents = false else showRules = not showRules end
+        renderPanel()
+    elseif input.KeyCode == Enum.KeyCode.B and last then action:FireServer("DropEvidence", last.round.roundId)
+    elseif input.KeyCode == Enum.KeyCode.G and last then eventAction:FireServer("DropRelic", last.round.roundId) end
 end)
 local ok, state = pcall(function() return remotes:WaitForChild("GetState"):InvokeServer() end)
 if ok then snapshot(state) end

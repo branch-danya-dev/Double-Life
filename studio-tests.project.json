@@ -1,5 +1,5 @@
 {
-  "name": "DoubleLifeM2Tests",
+  "name": "DoubleLifeM3Tests",
   "tree": {
     "$className": "DataModel",
     "ReplicatedStorage": {
@@ -11,8 +11,8 @@
       "DoubleLifeServer": {
         "$path": "src/server"
       },
-      "M2Tests": {
-        "$path": "tests/m2"
+      "M3Tests": {
+        "$path": "tests/m3"
       }
     },
     "StarterPlayer": {
@@ -20,8 +20,8 @@
         "DoubleLifeClient": {
           "$path": "src/client"
         },
-        "M2ClientAudit": {
-          "$path": "tests/M2Client.client.luau"
+        "M3ClientAudit": {
+          "$path": "tests/M3Client.client.luau"
         }
       }
     }

@@ -1,0 +1,119 @@
+M3 Studio integration evidence — 2026-11-02 UTC.
+Filtered game markers only. Early failed attempts are retained; see M3_VALIDATION.md for causes.
+Waiting passed separately; final corrected Active replay starts at 15:15:02 and passes at 15:19:25.
+
+2026-11-02T14:41:24.000Z,91.000519,4bb0,6,Info [FLog::CreatorOutput] M3 PASS first visitor can play in Waiting
+2026-11-02T14:41:24.217Z,91.217842,711c,6,Info [FLog::CreatorOutput] M3 PASS practice has private steps and no role
+2026-11-02T14:41:26.601Z,93.601082,711c,6,Info [FLog::CreatorOutput] M3 PASS practice inspection advances
+2026-11-02T14:41:40.600Z,107.600632,65a8,6,Info [FLog::CreatorOutput] M3 PASS practice waits for physical NPC delivery
+2026-11-02T14:42:10.982Z,137.982315,4bb0,6,Info [FLog::CreatorOutput] M3 PASS practice safe reaction completes without rewards
+2026-11-02T14:42:10.982Z,137.982315,4bb0,6,Info [FLog::CreatorOutput] M3 PASS waiting cannot farm event rewards or incidents
+2026-11-02T14:42:10.982Z,137.982315,4bb0,6,Info [FLog::CreatorOutput] M3 PASS waiting cannot steal
+2026-11-02T14:42:10.982Z,137.982315,4bb0,6,Info [FLog::CreatorOutput] M3 WAITING PASS: add FOUR clients now
+2026-11-02T14:44:18.078Z,265.078369,4bb0,6,Info [FLog::CreatorOutput] M3 PASS countdown cancels practice and rebuilds world
+2026-11-02T14:44:19.060Z,266.060577,72c0,6,Info [FLog::CreatorOutput] M3 PASS remote start without held nearby menu denied
+2026-11-02T14:44:21.844Z,268.844055,72c0,6,Info [FLog::CreatorOutput] M3 PASS guest cannot choose owner event
+2026-11-02T14:44:24.678Z,271.678009,711c,6,Warning [FLog::CreatorWarning] Warning: M3 STUDIO SUITE FAIL ServerScriptService.M3Tests.Runner:13: owner event starts through held prompt and remote
+2026-11-02T14:46:52.187Z,419.187622,6ba8,6,Info [FLog::CreatorOutput] M3 DIAG Player2 Idle nil 154.14442056696862 false 7.73419189453125, 3.724853515625, 22.54998779296875 Workspace.Player3.HumanoidRootPart
+2026-11-02T14:54:05.016Z,150.016403,1950,6,Info [FLog::CreatorOutput] M3 PASS first visitor can play in Waiting
+2026-11-02T14:54:05.249Z,150.249527,42e4,6,Info [FLog::CreatorOutput] M3 PASS practice has private steps and no role
+2026-11-02T14:54:07.649Z,152.649445,1950,6,Info [FLog::CreatorOutput] M3 PASS practice inspection advances
+2026-11-02T14:54:21.915Z,166.915207,42e4,6,Info [FLog::CreatorOutput] M3 PASS practice waits for physical NPC delivery
+2026-11-02T14:54:52.131Z,197.131165,42e4,6,Info [FLog::CreatorOutput] M3 PASS practice safe reaction completes without rewards
+2026-11-02T14:54:52.131Z,197.131165,42e4,6,Info [FLog::CreatorOutput] M3 PASS waiting cannot farm event rewards or incidents
+2026-11-02T14:54:52.131Z,197.131165,42e4,6,Info [FLog::CreatorOutput] M3 PASS waiting cannot steal
+2026-11-02T14:54:52.131Z,197.131165,42e4,6,Info [FLog::CreatorOutput] M3 WAITING PASS: add FOUR clients now
+2026-11-02T14:56:15.245Z,280.245972,7c54,6,Info [FLog::CreatorOutput] M3 PASS countdown cancels practice and rebuilds world
+2026-11-02T14:56:16.244Z,281.244232,42e4,6,Info [FLog::CreatorOutput] M3 PASS remote start without held nearby menu denied
+2026-11-02T14:56:18.996Z,283.996582,42e4,6,Info [FLog::CreatorOutput] M3 PASS guest cannot choose owner event
+2026-11-02T14:56:22.211Z,287.211426,759c,6,Info [FLog::CreatorOutput] M3 PASS owner event starts through held prompt and remote
+2026-11-02T14:56:26.792Z,291.792847,79b0,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventStarted
+2026-11-02T14:56:26.811Z,291.811310,42e4,6,Info [FLog::CreatorOutput] M3 PASS event draws bounded guard route in hall
+2026-11-02T14:56:33.660Z,298.660583,3c94,6,Info [FLog::CreatorOutput] M3 PASS spy neutral actions never trigger guest incident
+2026-11-02T14:56:41.143Z,306.143005,759c,6,Info [FLog::CreatorOutput] M3 PASS guest incident has no immediate public marker
+2026-11-02T14:56:41.243Z,306.243378,6368,6,Info [FLog::CreatorOutput] M3 PASS guest feedback is private
+2026-11-02T14:56:42.727Z,307.727173,6368,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventParticipated
+2026-11-02T14:56:43.560Z,308.560333,79b0,6,Info [FLog::CreatorOutput] M3 PASS relic physically carried by Guest
+2026-11-02T14:56:48.241Z,313.241943,6368,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook GuestIncidentTriggered
+2026-11-02T14:56:48.309Z,313.309723,7c54,6,Warning [FLog::CreatorWarning] Warning: M3 STUDIO SUITE FAIL ServerScriptService.M3Tests.Runner:13: blackout leaves safe path lights
+2026-11-02T14:57:26.808Z,351.808655,42e4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventFinished
+2026-11-02T15:00:32.701Z,537.701599,7c54,6,Info [FLog::CreatorOutput] M3 ACTIVE REPLAY: complete round scenarios from clean generation
+2026-11-02T15:00:32.701Z,537.701599,7c54,6,Info [FLog::CreatorOutput] M3 ENGINE FLOAT 0.100000001490
+2026-11-02T15:00:33.684Z,538.684509,42e4,6,Info [FLog::CreatorOutput] M3 PASS remote start without held nearby menu denied
+2026-11-02T15:00:36.451Z,541.451355,1988,6,Info [FLog::CreatorOutput] M3 PASS guest cannot choose owner event
+2026-11-02T15:00:39.717Z,544.717102,42e4,6,Info [FLog::CreatorOutput] M3 PASS owner event starts through held prompt and remote
+2026-11-02T15:00:44.183Z,549.183838,42e4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventStarted
+2026-11-02T15:00:44.250Z,549.250366,7c54,6,Info [FLog::CreatorOutput] M3 PASS event draws bounded guard route in hall
+2026-11-02T15:00:51.134Z,556.134033,79b0,6,Info [FLog::CreatorOutput] M3 PASS spy neutral actions never trigger guest incident
+2026-11-02T15:00:58.565Z,563.565796,7c54,6,Info [FLog::CreatorOutput] M3 PASS guest incident has no immediate public marker
+2026-11-02T15:00:58.666Z,563.666260,42e4,6,Info [FLog::CreatorOutput] M3 PASS guest feedback is private
+2026-11-02T15:01:00.150Z,565.150452,6368,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventParticipated
+2026-11-02T15:01:00.982Z,565.982056,42e4,6,Info [FLog::CreatorOutput] M3 PASS relic physically carried by Guest
+2026-11-02T15:01:05.666Z,570.666321,42e4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook GuestIncidentTriggered
+2026-11-02T15:01:05.716Z,570.716431,7c54,6,Info [FLog::CreatorOutput] M3 PASS blackout leaves safe path lights
+2026-11-02T15:01:08.266Z,573.266663,42e4,6,Info [FLog::CreatorOutput] M3 PASS defenders may call council during relic and blackout
+2026-11-02T15:01:10.716Z,575.716248,42e4,6,Info [FLog::CreatorOutput] M3 PASS Council pauses event, incident and reward clocks
+2026-11-02T15:01:10.716Z,575.716248,42e4,6,Info [FLog::CreatorOutput] M3 PASS Council blocks relic drop and rewards
+2026-11-02T15:01:32.482Z,597.482422,7c54,6,Info [FLog::CreatorOutput] M3 PASS no-majority council resumes all activities
+2026-11-02T15:01:33.597Z,598.597961,42e4,6,Info [FLog::CreatorOutput] M3 PASS departed carrier restores reachable relic
+2026-11-02T15:01:35.098Z,600.098206,759c,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventParticipated
+2026-11-02T15:01:36.348Z,601.348022,79b0,6,Info [FLog::CreatorOutput] M3 PASS ordinary drop restores accessible pickup
+2026-11-02T15:01:41.163Z,606.163940,759c,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventFinished
+2026-11-02T15:01:41.980Z,606.980957,7c54,6,Info [FLog::CreatorOutput] M3 PASS physical delivery awards once and removes relic
+2026-11-02T15:01:44.282Z,609.282593,42e4,6,Info [FLog::CreatorOutput] M3 PASS duplicate delivery cannot farm points
+2026-11-02T15:01:44.714Z,609.714539,79b0,6,Info [FLog::CreatorOutput] M3 PASS cooldown rejects next event
+2026-11-02T15:01:55.730Z,620.730652,42e4,6,Info [FLog::CreatorOutput] M3 PASS lighting restored exactly
+2026-11-02T15:01:55.730Z,620.730652,42e4,6,Info [FLog::CreatorOutput] M3 LATE READY: add ONE client now
+2026-11-02T15:03:55.760Z,740.760437,6368,6,Warning [FLog::CreatorWarning] Warning: M3 STUDIO SUITE FAIL ServerScriptService.M3Tests.Runner:10: late client
+2026-11-02T15:15:02.049Z,1407.049316,42e4,6,Info [FLog::CreatorOutput] M3 ACTIVE REPLAY START: corrected fixture, production gameplay unchanged
+2026-11-02T15:15:02.999Z,1407.999878,42e4,6,Info [FLog::CreatorOutput] M3 PASS remote start without held nearby menu denied
+2026-11-02T15:15:05.699Z,1410.699463,6368,6,Info [FLog::CreatorOutput] M3 PASS guest cannot choose owner event
+2026-11-02T15:15:08.866Z,1413.866333,7c54,6,Info [FLog::CreatorOutput] M3 PASS owner event starts through held prompt and remote
+2026-11-02T15:15:13.465Z,1418.465088,4a40,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventStarted
+2026-11-02T15:15:13.549Z,1418.549438,759c,6,Info [FLog::CreatorOutput] M3 PASS event draws bounded guard route in hall
+2026-11-02T15:15:20.482Z,1425.482910,7c54,6,Info [FLog::CreatorOutput] M3 PASS spy neutral actions never trigger guest incident
+2026-11-02T15:15:27.898Z,1432.898315,7c54,6,Info [FLog::CreatorOutput] M3 PASS guest incident has no immediate public marker
+2026-11-02T15:15:27.999Z,1432.999634,759c,6,Info [FLog::CreatorOutput] M3 PASS guest feedback is private
+2026-11-02T15:15:29.496Z,1434.496826,79b0,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventParticipated
+2026-11-02T15:15:30.281Z,1435.281128,42e4,6,Info [FLog::CreatorOutput] M3 PASS relic physically carried by Guest
+2026-11-02T15:15:34.998Z,1439.998169,7c54,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook GuestIncidentTriggered
+2026-11-02T15:15:35.114Z,1440.114136,759c,6,Info [FLog::CreatorOutput] M3 PASS blackout leaves safe path lights
+2026-11-02T15:15:37.698Z,1442.698608,42e4,6,Info [FLog::CreatorOutput] M3 PASS defenders may call council during relic and blackout
+2026-11-02T15:15:40.148Z,1445.148560,6368,6,Info [FLog::CreatorOutput] M3 PASS Council pauses event, incident and reward clocks
+2026-11-02T15:15:40.148Z,1445.148560,6368,6,Info [FLog::CreatorOutput] M3 PASS Council blocks relic drop and rewards
+2026-11-02T15:16:01.914Z,1466.914429,79b0,6,Info [FLog::CreatorOutput] M3 PASS no-majority council resumes all activities
+2026-11-02T15:16:03.014Z,1468.014160,7c54,6,Info [FLog::CreatorOutput] M3 PASS departed carrier restores reachable relic
+2026-11-02T15:16:04.498Z,1469.498901,42e4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventParticipated
+2026-11-02T15:16:05.714Z,1470.714478,42e4,6,Info [FLog::CreatorOutput] M3 PASS ordinary drop restores accessible pickup
+2026-11-02T15:16:10.379Z,1475.379517,759c,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventFinished
+2026-11-02T15:16:11.230Z,1476.230469,759c,6,Info [FLog::CreatorOutput] M3 PASS physical delivery awards once and removes relic
+2026-11-02T15:16:13.514Z,1478.514038,42e4,6,Info [FLog::CreatorOutput] M3 PASS duplicate delivery cannot farm points
+2026-11-02T15:16:13.947Z,1478.947021,759c,6,Info [FLog::CreatorOutput] M3 PASS cooldown rejects next event
+2026-11-02T15:16:25.095Z,1490.095215,42e4,6,Info [FLog::CreatorOutput] M3 PASS lighting restored exactly
+2026-11-02T15:16:25.096Z,1490.096191,42e4,6,Info [FLog::CreatorOutput] M3 LATE READY: add ONE client now
+2026-11-02T15:16:52.579Z,1517.579590,7c54,6,Info [FLog::CreatorOutput] M3 PASS late arrival remains spectator
+2026-11-02T15:16:55.329Z,1520.329590,7c54,6,Info [FLog::CreatorOutput] M3 PASS late arrival cannot progress or launch event
+2026-11-02T15:17:08.177Z,1533.177246,79b0,6,Info [FLog::CreatorOutput] M3 PASS owner event starts through held prompt and remote
+2026-11-02T15:17:12.778Z,1537.778442,79b0,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventStarted
+2026-11-02T15:17:13.144Z,1538.144287,79b0,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventParticipated
+2026-11-02T15:17:22.827Z,1547.827515,1950,6,Info [FLog::CreatorOutput] M3 PASS spy can steal during music without forced participation
+2026-11-02T15:17:23.911Z,1548.911255,42e4,6,Info [FLog::CreatorOutput] M3 PASS owner departure does not stop the match or event
+2026-11-02T15:17:33.811Z,1558.811157,42e4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventFinished
+2026-11-02T15:17:33.927Z,1558.927124,759c,6,Info [FLog::CreatorOutput] M3 PASS server observes all three dance cycles and awards once
+2026-11-02T15:17:33.927Z,1558.927124,759c,6,Info [FLog::CreatorOutput] M3 PASS nonparticipants and spectator receive no event award
+2026-11-02T15:17:33.927Z,1558.927124,759c,6,Info [FLog::CreatorOutput] M3 PASS one lifecycle per event and one incident per round
+2026-11-02T15:17:37.410Z,1562.410522,42e4,6,Info [FLog::CreatorOutput] M3 PASS extraction remains authoritative after events
+2026-11-02T15:18:00.676Z,1585.676392,79b0,6,Info [FLog::CreatorOutput] M3 PASS new round resets event limits and scores
+2026-11-02T15:18:14.726Z,1599.726196,42e4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook GuestIncidentTriggered
+2026-11-02T15:18:16.841Z,1601.841431,42e4,6,Info [FLog::CreatorOutput] M3 PASS guest inspection moves real guard on bounded route
+2026-11-02T15:18:20.091Z,1605.091309,42e4,6,Info [FLog::CreatorOutput] M3 PASS owner event starts through held prompt and remote
+2026-11-02T15:18:24.574Z,1609.574951,42e4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventStarted
+2026-11-02T15:18:26.175Z,1611.175293,79b0,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventParticipated
+2026-11-02T15:18:27.091Z,1612.091309,7c54,6,Info [FLog::CreatorOutput] M3 PASS carrier death preserves relic availability
+2026-11-02T15:18:59.324Z,1644.324097,7c54,6,Info [FLog::CreatorOutput] M3 PASS defender majority search still works during event
+2026-11-02T15:19:00.307Z,1645.307617,7ab4,6,Info [FLog::CreatorOutput] M3 PASS roundId on server hook EventFinished
+2026-11-02T15:19:00.405Z,1645.405640,7c54,6,Info [FLog::CreatorOutput] M3 PASS defender timeout wins during relic event
+2026-11-02T15:19:00.405Z,1645.405640,7c54,6,Info [FLog::CreatorOutput] M3 PASS Results cancels every decoration, incident and pending effect
+2026-11-02T15:19:24.390Z,1669.390015,6368,6,Info [FLog::CreatorOutput] M3 PASS old callbacks and world cannot affect next round
+2026-11-02T15:19:24.390Z,1669.390015,6368,6,Info [FLog::CreatorOutput] M3 PASS fresh score ledger and lighting
+2026-11-02T15:19:25.272Z,1670.272461,79b0,6,Info [FLog::CreatorOutput] M3 STUDIO SUITE PASS 4 clients; production event timings; manual playtest deferred
