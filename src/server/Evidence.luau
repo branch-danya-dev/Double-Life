@@ -19,7 +19,7 @@ end
 function Evidence:create()
     if self.created then return end
     self.created = true
-    self:place(self.world.safe.Position + Vector3.new(3.3, -1.7, -0.5))
+    self:place(self.world:point("Evidence.Home"))
 end
 function Evidence:description(id)
     if self.holder ~= id then return nil end
@@ -29,10 +29,8 @@ function Evidence:drop(player)
     if self.holder ~= player.UserId then return false end
     self.holder = nil
     local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
-    local position = if root then root.Position - Vector3.new(0, 2.4, 0) else self.world.safe.Position + Vector3.new(3.3, -1.7, -0.5)
-    if math.abs(position.X) > 50 or position.Z < -50 or position.Z > 90 or position.Y < -2 or position.Y > 12 then
-        position = self.world.safe.Position + Vector3.new(3.3, -1.7, -0.5)
-    end
+    local home = self.world:point("Evidence.Home")
+    local position = if root then self.world:dropPoint(root.Position, home, 0.15) else home
     self:place(position)
     return true
 end

@@ -27,7 +27,9 @@ function Mover.new(parent, name, position, color, scope)
     body("Right Leg", Vector3.new(0.8, 2, 0.8), Vector3.new(0.55, -2, 0))
     local humanoid = Instance.new("Humanoid")
     humanoid.RequiresNeck = false
-    humanoid.HipHeight, humanoid.WalkSpeed = 2, 11
+    -- This rig has R6 legs: their two studs already contribute to standing height.
+    -- Adding R15's hip offset floated the root above stair waypoints and broke arrival checks.
+    humanoid.HipHeight, humanoid.WalkSpeed = 0, 11
     humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
     humanoid.Parent = model
     model.PrimaryPart, model.Parent = root, parent
@@ -39,7 +41,8 @@ function Mover.new(parent, name, position, color, scope)
     label.Size, label.BackgroundTransparency = UDim2.fromScale(1, 1), 1
     label.TextColor3, label.TextSize, label.TextWrapped = Color3.new(1, 1, 1), 14, true
     label.Parent = sign
-    return setmetatable({model = model, root = root, humanoid = humanoid, label = label, scope = scope}, Mover)
+    return setmetatable({model = model, root = root, humanoid = humanoid, label = label, scope = scope,
+        metrics = {computes = 0, failures = 0, timeouts = 0, arrivals = 0, computeSeconds = 0}}, Mover)
 end
 
 function Mover:stop()
@@ -73,18 +76,22 @@ function Mover:move(position, deadline, cancelled)
         if self:near(position, 2.5) then self:stop(); return true end
         -- Never queue an unbounded number of ComputeAsync jobs if the engine stalls.
         if self.computing then self:stop(); return false end
-        local path = PathfindingService:CreatePath({AgentRadius = 2, AgentHeight = 6, AgentCanJump = true})
+        -- Mansion ramps are continuous: jumping can pick rail tops as shortcut waypoints.
+        local path = PathfindingService:CreatePath({AgentRadius = 2, AgentHeight = 6, AgentCanJump = false})
         local done, computed = false, false
+        self.metrics.computes += 1
+        local computeStarted = os.clock()
         self.computing = true
         local abandoned = false
         task.spawn(function()
             computed = pcall(function() path:ComputeAsync(self.root.Position, position) end)
+            self.metrics.computeSeconds += os.clock() - computeStarted
             self.computing, done = false, true
             if abandoned then path:Destroy() end
         end)
         local computeDeadline = math.min(deadline, self.scope:now() + 3)
         while not done and valid() and self.scope:now() < computeDeadline do task.wait(0.1) end
-        if not done then abandoned = true; self:stop(); return false end
+        if not done then self.metrics.timeouts += 1; abandoned = true; self:stop(); return false end
         if computed and path.Status == Enum.PathStatus.Success and valid() then
             local blocked, current = false, 1
             local connection = path.Blocked:Connect(function(index)
@@ -104,7 +111,7 @@ function Mover:move(position, deadline, cancelled)
             end
             connection:Disconnect()
             path:Destroy()
-            if arrived and self:near(position, 3) then self:stop(); return true end
+            if arrived and self:near(position, 3) then self.metrics.arrivals += 1; self:stop(); return true end
         else
             path:Destroy()
         end
@@ -112,6 +119,7 @@ function Mover:move(position, deadline, cancelled)
         task.wait(0.25)
     end
     self:stop()
+    self.metrics.failures += 1
     return false
 end
 

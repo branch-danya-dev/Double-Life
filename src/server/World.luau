@@ -1,78 +1,105 @@
+local Layout = require(script.Parent.MansionLayout)
+local Contract = require(script.Parent.WorldContract)
 local World = {}
+World.__index = World
+local colors = {Stone=Color3.fromRGB(88,91,99),Floor=Color3.fromRGB(126,104,79),Wood=Color3.fromRGB(88,62,46),
+    Gold=Color3.fromRGB(192,153,74),Glass=Color3.fromRGB(95,142,160),Green=Color3.fromRGB(78,145,110),
+    Teal=Color3.fromRGB(61,130,143),Blue=Color3.fromRGB(98,110,157),Grass=Color3.fromRGB(58,81,62),Painting=Color3.fromRGB(163,121,96)}
+local function v(p) return Vector3.new(p[1],p[2],p[3]) end
+local function folder(name,parent)
+    local f=Instance.new("Folder"); f.Name,f.Parent=name,parent; return f
+end
+local function block(parent,name,size,position,color,material)
+    local p=Instance.new("Part")
+    p.Name,p.Size,p.Position,p.Color=name,size,position,color
+    p.Anchored,p.Material,p.Parent=true,material or Enum.Material.SmoothPlastic,parent
+    return p
+end
+function World:point(id) return assert(self.anchors[id],"Missing world anchor "..id).WorldPosition end
+function World:approach(id) return self:point(id..".Approach") end
+function World:object(id) return assert(self.objects[id],"Missing world object "..id) end
+function World:points(group)
+    local result={}
+    for _,id in ipairs(assert(Layout.groups[group],"Missing group "..group)) do table.insert(result,self:point(id)) end
+    return result
+end
+function World:spawn(index) return self:point(Layout.groups.PlayerSpawns[(index-1)%15+1]) end
+function World:dropPoint(position,fallback,height)
+    -- Resolve the actual floor on either level, rather than the old graybox bounds.
+    local params=RaycastParams.new()
+    params.FilterType,params.FilterDescendantsInstances=Enum.RaycastFilterType.Include,{self.static}
+    local hit=workspace:Raycast(position,Vector3.new(0,-12,0),params)
+    if hit and hit.Normal.Y>0.7 then return hit.Position+Vector3.new(0,height,0) end
+    return fallback
+end
+function World:reset()
+    local started=os.clock()
+    if self.map then self.map:Destroy() end
+    self.map=folder("Round",self.level)
+    self.interactives=folder("Interactives",self.map)
+    self.temporary=folder("Temporary",self.map)
+    self.npcs=folder("NPCs",self.map)
+    self.objects={}
+    self.block=function(name,size,position,color,material) return block(self.temporary,name,size,position,color,material) end
+    for _,n in ipairs(Layout.nodes) do
+        if n.kind=="Object" then
+            local p=block(self.interactives,n.name,v(n.size),self:point(n.id),colors[n.color])
+            p:SetAttribute("WorldId",n.id)
+            if n.id=="StudyWindow" then p.Material,p.Transparency=Enum.Material.Glass,0.3 end
+            if n.id~="StudyDoor" and n.id~="StudyWindow" then p.CanCollide=false end
+            if n.id=="MainExit" then p.Transparency=0.5 end
+            self.objects[n.id]=p
+        end
+    end
+    self.gold=colors.Gold
+    self.studyDoor,self.studyWindow=self:object("StudyDoor"),self:object("StudyWindow")
+    self.safe,self.console,self.logbook,self.exitDoor=self:object("Safe"),self:object("OwnerConsole"),self:object("ForensicLog"),self:object("MainExit")
+    self.metrics.resets+=1; self.metrics.lastResetMs=(os.clock()-started)*1000
+    return self
+end
 function World.build()
-    local Lighting = game:GetService("Lighting")
-    local map = Instance.new("Folder")
-    map.Name = "DoubleLifePrototype"
-    map.Parent = workspace
-
-    local function block(name, size, position, color, material)
-        local part = Instance.new("Part")
-        part.Name = name
-        part.Size = size
-        part.Position = position
-        part.Anchored = true
-        part.Material = material or Enum.Material.SmoothPlastic
-        part.Color = color
-        part.Parent = map
-        return part
+    local started=os.clock()
+    local ok,why,nodes=Contract.validate(Layout)
+    assert(ok,why)
+    local self=setmetatable({anchors={},navigation=Layout.navigation,layout=Layout,metrics={resets=0}},World)
+    self.level=folder("DoubleLifeMansion",workspace)
+    self.static=folder("StaticGeometry",self.level)
+    local navigation=folder("Navigation",self.level)
+    local origin=block(navigation,"AnchorOrigin",Vector3.one,Vector3.zero,colors.Stone)
+    origin.CanCollide,origin.CanQuery,origin.Transparency=false,false,1
+    for id,n in pairs(nodes) do
+        local a=Instance.new("Attachment"); a.Name,a.Position,a.Parent=id,v(n.position),origin; self.anchors[id]=a
+        a:SetAttribute("Room",n.room)
+        if n.approach then
+            local approach=Instance.new("Attachment"); approach.Name,approach.Position,approach.Parent=id..".Approach",v(n.approach),origin
+            self.anchors[approach.Name]=approach
+        end
     end
-
-    local stone = Color3.fromRGB(68, 69, 74)
-    local floorColor = Color3.fromRGB(100, 76, 59)
-    local wood = Color3.fromRGB(55, 33, 28)
-    local gold = Color3.fromRGB(192, 153, 74)
-
-    local function wall(name, size, position)
-        return block(name, size, position, stone, Enum.Material.Brick)
+    for _,g in ipairs(Layout.geometry) do
+        local p=block(self.static,g.id,v(g.size),v(g.position),colors[g.color],
+            if g.color=="Floor" then Enum.Material.WoodPlanks elseif g.color=="Glass" then Enum.Material.Glass else Enum.Material.SmoothPlastic)
+        p.Transparency=g.transparency or 0
+        if g.rotation then p.CFrame=CFrame.new(v(g.position))*CFrame.Angles(g.rotation[1],g.rotation[2],g.rotation[3]) end
+        if g.collide==false then p.CanCollide,p.CanQuery=false,false end
     end
-
-    -- One foyer, one study, an owner's door, and a second exterior infiltration route.
-    block("ExteriorGround", Vector3.new(110, 1, 150), Vector3.new(0, -1, 20), Color3.fromRGB(43, 62, 48), Enum.Material.Grass)
-    block("FoyerFloor", Vector3.new(56, 1, 56), Vector3.new(0, 0, 0), floorColor, Enum.Material.WoodPlanks)
-    block("StudyFloor", Vector3.new(36, 1, 36), Vector3.new(0, 0, 58), floorColor, Enum.Material.WoodPlanks)
-    block("PassageFloor", Vector3.new(12, 1, 14), Vector3.new(0, 0, 34), floorColor, Enum.Material.WoodPlanks)
-
-    wall("FoyerWest", Vector3.new(1, 12, 56), Vector3.new(-28, 6, 0))
-    wall("FoyerEast", Vector3.new(1, 12, 56), Vector3.new(28, 6, 0))
-    wall("FoyerNorthLeft", Vector3.new(22, 12, 1), Vector3.new(-17, 6, 28))
-    wall("FoyerNorthRight", Vector3.new(22, 12, 1), Vector3.new(17, 6, 28))
-    wall("FoyerSouthLeft", Vector3.new(23, 12, 1), Vector3.new(-16.5, 6, -28))
-    wall("FoyerSouthRight", Vector3.new(23, 12, 1), Vector3.new(16.5, 6, -28))
-    wall("PassageLeft", Vector3.new(1, 12, 12), Vector3.new(-6, 6, 34))
-    wall("PassageRight", Vector3.new(1, 12, 12), Vector3.new(6, 6, 34))
-    wall("StudyNorth", Vector3.new(36, 12, 1), Vector3.new(0, 6, 76))
-    wall("StudyEast", Vector3.new(1, 12, 36), Vector3.new(18, 6, 58))
-    wall("StudySouthLeft", Vector3.new(14, 12, 1), Vector3.new(-11, 6, 40))
-    wall("StudySouthRight", Vector3.new(14, 12, 1), Vector3.new(11, 6, 40))
-    wall("StudyWestLower", Vector3.new(1, 12, 14), Vector3.new(-18, 6, 47))
-    wall("StudyWestUpper", Vector3.new(1, 12, 14), Vector3.new(-18, 6, 69))
-
-    local studyDoor = block("StudyDoor", Vector3.new(8, 11, 1), Vector3.new(0, 5.5, 40), wood)
-    local studyWindow = block("StudyWindow", Vector3.new(1, 11, 8), Vector3.new(-18, 5.5, 58), Color3.fromRGB(69, 107, 124), Enum.Material.Glass)
-    studyWindow.Transparency = 0.3
-
-    local spawn = Instance.new("SpawnLocation")
-    spawn.Name = "FoyerSpawn"
-    spawn.Size = Vector3.new(7, 1, 7)
-    spawn.Position = Vector3.new(0, 1, -16)
-    spawn.Anchored = true
-    spawn.Neutral = true
-    spawn.Material = Enum.Material.Neon
-    spawn.Color = Color3.fromRGB(117, 132, 117)
-    spawn.Parent = map
-
-    Lighting.ClockTime = 19.5
-    Lighting.Brightness = 2
-    Lighting.Ambient = Color3.fromRGB(85, 88, 105)
-
-
-    local safe = block("DocumentSafe", Vector3.new(5,4,3), Vector3.new(0,2.5,65), gold, Enum.Material.Metal)
-    local console = block("OwnerAccessConsole", Vector3.new(2,3,2), Vector3.new(3.5,2,33), gold)
-    local logbook = block("ForensicLog", Vector3.new(2,1,2), Vector3.new(8,2,64), Color3.fromRGB(129,96,73))
-    local exitDoor = block("EstateExit", Vector3.new(9,10,1), Vector3.new(0,5,-28), Color3.fromRGB(36,83,69))
-    exitDoor.CanCollide = false
-    exitDoor.Transparency = 0.35
-    return {map=map, block=block, gold=gold, studyDoor=studyDoor, studyWindow=studyWindow,
-        console=console, safe=safe, logbook=logbook, exitDoor=exitDoor}
+    local signs=folder("Wayfinding",self.static)
+    for _,r in ipairs(Layout.rooms) do
+        if r.id~="Courtyard" then
+            local p=block(signs,r.id.."Sign",Vector3.new(12,1.5,0.2),Vector3.new((r.min[1]+r.max[1])/2,r.min[2]+8,r.min[3]+2),colors.Teal)
+            p.CanCollide,p.CanQuery=false,false
+            local gui=Instance.new("BillboardGui"); gui.Size,gui.MaxDistance,gui.Parent=UDim2.fromOffset(260,40),65,p
+            local label=Instance.new("TextLabel"); label.Size,label.Text,label.TextSize=UDim2.fromScale(1,1),r.label,15
+            label.TextColor3,label.BackgroundColor3,label.TextWrapped,label.Parent=Color3.new(1,1,1),colors.Teal,true,gui
+        end
+    end
+    self.spawns=folder("Spawns",self.level)
+    for i,id in ipairs(Layout.groups.PlayerSpawns) do
+        local p=Instance.new("SpawnLocation"); p.Name,p.Size,p.Position="PlayerSpawn"..i,Vector3.new(4,0.2,4),self:point(id)-Vector3.new(0,2.85,0)
+        p.Anchored,p.CanCollide,p.Neutral,p.Duration,p.Transparency,p.Parent=true,false,true,0,1,self.spawns
+    end
+    local lighting=game:GetService("Lighting")
+    lighting.ClockTime,lighting.Brightness,lighting.Ambient=14,2,Color3.fromRGB(125,128,140)
+    self:reset(); self.metrics.buildMs=(os.clock()-started)*1000
+    return self
 end
 return World

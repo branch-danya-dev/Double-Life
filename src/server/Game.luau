@@ -54,22 +54,23 @@ function Game.start(options)
     end
     local roles = Roles.new(Config, update)
     local rounds = RoundService.new(Config, roles, tell, finished)
-    runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished, eventSignals = eventSignals}
+    runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished, eventSignals = eventSignals,
+        metrics = {maxRebuildMs = 0, maxHeartbeatMs = 0}}
     runtime.profiles = ProfileService.new(runtime, tell, options)
     runtime.telemetry = Telemetry.new(runtime, options and options.analytics)
     runtime.commerce = CommerceService.new(runtime, tell, options)
     local function rebuild(starting)
+        local began = os.clock()
         if runtime.scope then
             runtime.events:cancel()
             runtime.scope:destroy()
             for id in pairs(runtime.requests.trays) do runtime.requests:clearTray(id) end
-            runtime.world.map:Destroy()
         end
         local scope, state = Clock.new(), {finished = false}
         local interactions = Interactions.new(state, function(player, neutral)
             return scope.alive and rounds:allows(player, neutral)
         end)
-        local world = World.build()
+        local world = if runtime.world then runtime.world:reset() else World.build()
         local evidence = Evidence.new(world, interactions, tell)
         local function onTask(player, kind, amount)
             if scope.alive and rounds.policy.phase == "Active" then
@@ -105,11 +106,12 @@ function Game.start(options)
             dossier:add(player)
             if player.Character then
                 -- A new round starts everyone in the foyer, with no carry-over positioning.
-                player.Character:PivotTo(CFrame.new((index % 5 - 2) * 4, 4, -16 + math.floor(index / 5) * 4))
+                player.Character:PivotTo(CFrame.new(world:spawn(index)))
             end
             if starting then tell(player, "Раунд начался. Ваша роль и личные цели — в панели. H — правила.") end
         end
         rounds:sync()
+        runtime.metrics.maxRebuildMs = math.max(runtime.metrics.maxRebuildMs, (os.clock() - began) * 1000)
     end
     rounds.rebuild = rebuild
     rebuild(false)
@@ -164,6 +166,7 @@ function Game.start(options)
         end
     end)
     local connected = {}
+    local spawnSlots = {}
     local function resetCharacter(player)
         runtime.social:remove(player)
         runtime.events:resetCharacter(player)
@@ -174,6 +177,10 @@ function Game.start(options)
     local function addPlayer(player)
         if connected[player] then return end
         connected[player] = true
+        local used = {}
+        for _, slot in pairs(spawnSlots) do used[slot] = true end
+        for slot = 1, 15 do if not used[slot] then spawnSlots[player] = slot; break end end
+        player.RespawnLocation = runtime.world.spawns:FindFirstChild("PlayerSpawn" .. (spawnSlots[player] or 1))
         runtime.profiles:add(player)
         runtime.telemetry:add(player)
         runtime.commerce:add(player)
@@ -186,6 +193,8 @@ function Game.start(options)
             for _, part in ipairs(character:GetDescendants()) do configure(part) end
             character.DescendantAdded:Connect(configure)
             local humanoid = character:WaitForChild("Humanoid", 10)
+            local root = character:WaitForChild("HumanoidRootPart", 10)
+            if root and player.Character == character then character:PivotTo(CFrame.new(runtime.world:spawn(spawnSlots[player] or 1))) end
             if humanoid then humanoid.Died:Connect(function()
                 if player.Character == character then resetCharacter(player) end
             end) end
@@ -208,12 +217,14 @@ function Game.start(options)
         runtime.interactions:remove(player)
         roles:remove(player)
         connected[player], lastAction[player.UserId] = nil, nil
+        spawnSlots[player] = nil
         lastProfileAction[player.UserId] = nil
         lastSocialAction[player.UserId] = nil
     end)
     for _, player in ipairs(Players:GetPlayers()) do addPlayer(player) end
     local broadcast = 0
     RunService.Heartbeat:Connect(function(dt)
+        runtime.metrics.maxHeartbeatMs = math.max(runtime.metrics.maxHeartbeatMs, dt * 1000)
         rounds:tick(dt)
         runtime.scope:advance(dt)
         runtime.events:tick()

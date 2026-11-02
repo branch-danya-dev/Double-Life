@@ -24,12 +24,12 @@ function Director.new(context)
         self.permits[player.UserId] = self.scope:now() + 20
         self.update:FireClient(player, "EventMenu")
     end)
-    bind(self.scene.pedestal, "Вернуть реликвию", "Постамент в холле", function(player)
+    bind(self.scene.pedestal, "Вернуть реликвию", "Постамент · бальный зал, этаж 1", function(player)
         if self.policy:deliver(player.UserId, self.rounds:allows(player, false), self.scope:now()) then self:reportFinish()
         else self.tell(player, "Принесите реликвию во время поиска.") end
     end)
     bind(self.scene.bell, "Позвать охрану", "Сигнальный колокольчик", function(player)
-        if self.guard:react("PracticeBell", Vector3.new(18, 3.5, -21)) then
+        if self.guard:react("PracticeBell", self.world:point("Guard.Bell")) then
             self:activity(player, "Noise")
             self.tell(player, "Охрана осмотрит место и вернётся к патрулю.")
         else self.tell(player, "Охрана занята. Дождитесь возвращения к патрулю.") end
@@ -82,7 +82,7 @@ function Director:spawnRelic()
         local weld = Instance.new("WeldConstraint")
         weld.Part0, weld.Part1, weld.Parent = root, self.relic, self.relic
         if first then self:participated(player.UserId) end
-        self.tell(player, "Реликвия у вас: верните на постамент в холле. G — положить в доступном месте.")
+        self.tell(player, "Реликвия у вас: верните на постамент в бальном зале, этаж 1. G — положить в доступном месте.")
     end)
 end
 function Director:drop(player)
@@ -152,7 +152,7 @@ function Director:tick()
     local transition = p:advance(now)
     if transition == "Running" then
         self:signal("EventStarted", {eventId = p.serial, kind = p.kind})
-        self.attention = {untilTime = now + 10, point = Vector3.new(-5, 3.5, 14)}
+        self.attention = {untilTime = now + 10, point = self.world:point("Guard.Event")}
         if p.kind == "Relic" then self:spawnRelic() end
     elseif transition == "Finished" then self:reportFinish() end
     if self.attention then
@@ -165,7 +165,7 @@ function Director:tick()
             local pos = if root then root.Position else Vector3.zero
             local offset = pos - self.scene.stage.Position
             local inside = self.rounds:allows(player, false) and humanoid ~= nil and humanoid.Health > 0
-                and math.abs(offset.X) < 8 and math.abs(offset.Z) < 7 and offset.Y > 0 and offset.Y < 7
+                and math.abs(offset.X) < self.scene.stage.Size.X / 2 and math.abs(offset.Z) < self.scene.stage.Size.Z / 2 and offset.Y > 0 and offset.Y < 7
             if p:sample(player.UserId, pos.X, pos.Z, inside, now) then self:participated(player.UserId) end
         end
     end
@@ -174,7 +174,8 @@ function Director:tick()
         self:signal("GuestIncidentTriggered", {kind = p.incident.kind, userId = p.incident.source})
         if p.incident.kind == "Blackout" then self:setBlackout(true)
         else
-            p.incident.point = if self.choose(1, 2) == 1 then Vector3.new(0, 3.5, 33) else Vector3.new(15, 3.5, -15)
+            local spots = self.world:points("Guard.Incidents")
+            p.incident.point = spots[self.choose(1, #spots)]
         end
     elseif incident == "Finished" then self:setBlackout(false) end
     if p.incident and p.incident.kind == "Inspection" and not p.incident.dispatched then
@@ -184,7 +185,7 @@ function Director:tick()
     self.scene.beacon.Color = if dancing and p.beat == "Move" then Color3.fromRGB(86, 205, 130) else Color3.fromRGB(231, 173, 81)
     self.scene.stage.Color = self.scene.beacon.Color
     self.scene.label.Text = if dancing then (if p.beat == "Move" then "ДВИГАЙСЯ" else "ЗАМРИ") .. " · " .. p.beatIndex .. "/3 · " .. math.max(0, math.ceil(p.endsAt - now)) .. " с"
-        elseif p.phase == "Running" then "Найдите реликвию → постамент в холле" else "Площадка мероприятий"
+        elseif p.phase == "Running" then "Найдите реликвию → постамент в бальном зале, этаж 1" else "Площадка мероприятий"
 end
 function Director:snapshot(player)
     local p, now, phase = self.policy, self.scope:now(), self.rounds.policy.phase

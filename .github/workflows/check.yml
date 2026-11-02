@@ -29,19 +29,19 @@ jobs:
           luau tests/reconnect.luau
           luau tests/social.luau
           luau tests/commerce.luau
+          luau tests/mansion.luau
           find src tests -name '*.luau' -print0 | xargs -0 luau-compile --null
           luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau tests/run.luau tests/rounds.luau tests/events.luau
           luau-analyze src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau tests/MemoryStore.luau tests/progression.luau tests/persistence.luau
           luau-analyze src/server/ProfileSessions.luau tests/reconnect.luau
           luau-analyze src/server/SocialPolicy.luau src/server/CommerceStore.luau src/server/CommercePolicy.luau src/server/CommerceCatalog.luau src/server/MonetizationSettings.luau src/server/AnalyticsPolicy.luau tests/FakeMarketplace.luau tests/social.luau tests/commerce.luau
+          luau-analyze src/server/MansionLayout.luau src/server/WorldContract.luau tests/mansion.luau
       - name: Build and inspect artifacts
         run: |
-          rojo build default.project.json -o DoubleLife-M5.rbxlx
-          rojo build studio-tests.project.json -o DoubleLife-M5-regression.rbxlx
-          rojo build reconnect-tests.project.json -o DoubleLife-M5-reconnect.rbxlx
-          rojo build social-tests.project.json -o DoubleLife-M5-tests.rbxlx
-          python3 tests/check-build.py DoubleLife-M5.rbxlx
+          rojo build default.project.json -o DoubleLife-M6.rbxlx
+          rojo build mansion-tests.project.json -o DoubleLife-M6-tests.rbxlx
+          python3 tests/check-build.py DoubleLife-M6.rbxlx
       - uses: actions/upload-artifact@v4
         with:
-          name: DoubleLife-M5
+          name: DoubleLife-M6
           path: '*.rbxlx'
