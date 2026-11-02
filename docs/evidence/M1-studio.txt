@@ -1,0 +1,54 @@
+2026-11-02T12:16:22.483Z,9.483301,3838,6,Info [FLog::CreatorOutput] M1 PASS NPC patrol moves physically
+2026-11-02T12:16:22.484Z,9.484303,3838,6,Info [FLog::CreatorOutput] M1 PASS NPC owned by server
+2026-11-02T12:16:22.484Z,9.484303,3838,6,Info [FLog::CreatorOutput] M1 PASS noise accepted
+2026-11-02T12:16:22.484Z,9.484303,3838,6,Info [FLog::CreatorOutput] M1 PASS noise replay rejected
+2026-11-02T12:16:26.201Z,13.201363,5e68,6,Info [FLog::CreatorOutput] M1 PASS NPC reaches investigation target
+2026-11-02T12:16:44.150Z,31.150122,5e68,6,Info [FLog::CreatorOutput] M1 PASS investigation -> return -> patrol without owner
+2026-11-02T12:16:44.150Z,31.150122,5e68,6,Info [FLog::CreatorOutput] M1 PASS mandatory patrol interval rejects fresh noise
+2026-11-02T12:17:04.632Z,51.632156,3838,6,Info [FLog::CreatorOutput] M1 PASS service dispatch diverts guard
+2026-11-02T12:17:08.683Z,55.683521,3838,6,Info [FLog::CreatorOutput] M1 PASS delivery at real destination
+2026-11-02T12:17:08.683Z,55.683521,3838,6,Info [FLog::CreatorOutput] M1 PASS NPC generates no currency
+2026-11-02T12:17:24.665Z,71.665794,5e68,6,Info [FLog::CreatorOutput] M1 PASS NPC has no teleport-sized movement steps
+2026-11-02T12:17:36.881Z,83.881844,8174,6,Info [FLog::CreatorOutput] M1 PASS unreachable test accepted
+2026-11-02T12:17:55.564Z,102.564362,4acc,6,Info [FLog::CreatorOutput] M1 PASS unreachable path recovers
+2026-11-02T12:17:55.564Z,102.564362,4acc,6,Info [FLog::CreatorOutput] M1 PASS far interaction rejected
+2026-11-02T12:17:55.564Z,102.564362,4acc,6,Info [FLog::CreatorOutput] M1 PASS near visible interaction allowed
+2026-11-02T12:17:55.564Z,102.564362,4acc,6,Info [FLog::CreatorOutput] M1 PASS nearby through wall interaction rejected
+2026-11-02T12:17:55.564Z,102.564362,4acc,6,Info [FLog::CreatorOutput] M1 STUDIO SUITE PASS 5 clients
+2026-11-02T12:25:11.578Z,538.578308,3838,6,Info [FLog::CreatorOutput] M1 PASS prompt input: OwnerAccessConsole / Сменить зону патруля
+2026-11-02T12:25:11.578Z,538.578308,3838,6,Info [FLog::CreatorOutput] M1 PASS spy rejected at owner console
+2026-11-02T12:25:14.046Z,541.046143,8174,6,Info [FLog::CreatorOutput] M1 PASS prompt input: OwnerAccessConsole / Сменить зону патруля
+2026-11-02T12:25:14.046Z,541.046143,8174,6,Info [FLog::CreatorOutput] M1 PASS owner selects one zone
+2026-11-02T12:25:16.546Z,543.546875,3838,6,Info [FLog::CreatorOutput] M1 PASS prompt input: OwnerAccessConsole / Сменить зону патруля
+2026-11-02T12:25:16.546Z,543.546875,3838,6,Info [FLog::CreatorOutput] M1 PASS owner command spam rejected
+2026-11-02T12:25:18.813Z,545.813354,7460,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePoint2 / Заказать сок сюда
+2026-11-02T12:25:18.813Z,545.813354,7460,6,Info [FLog::CreatorOutput] M1 PASS honest guest request accepted
+2026-11-02T12:25:21.094Z,548.094360,4acc,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePoint1 / Заказать сок сюда
+2026-11-02T12:25:21.094Z,548.094360,4acc,6,Info [FLog::CreatorOutput] M1 PASS spy uses same public request
+2026-11-02T12:25:23.381Z,550.381226,3838,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePoint2 / Заказать сок сюда
+2026-11-02T12:25:23.381Z,550.381226,3838,6,Info [FLog::CreatorOutput] M1 PASS duplicate public request rejected
+2026-11-02T12:25:25.645Z,552.645081,4acc,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePantry / Принять заказ / взять сок
+2026-11-02T12:25:25.645Z,552.645081,4acc,6,Info [FLog::CreatorOutput] M1 PASS staff takes request
+2026-11-02T12:25:27.896Z,554.896179,8174,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePantry / Принять заказ / взять сок
+2026-11-02T12:25:27.896Z,554.896179,8174,6,Info [FLog::CreatorOutput] M1 PASS staff takes physical supplies
+2026-11-02T12:25:34.412Z,561.412109,8174,6,Info [FLog::CreatorOutput] M1 PASS prompt input: StudyWindow / Открыть окно
+2026-11-02T12:25:34.412Z,561.412109,8174,6,Info [FLog::CreatorOutput] M1 PASS window opens through server handler
+2026-11-02T12:25:37.961Z,564.961731,3838,6,Info [FLog::CreatorOutput] M1 PASS prompt input: DocumentSafe / Осмотреть
+2026-11-02T12:25:37.961Z,564.961731,3838,6,Info [FLog::CreatorOutput] M1 PASS dossier stolen through prompt
+2026-11-02T12:25:37.977Z,564.977661,4acc,6,Info [FLog::CreatorOutput] M1 PASS theft sends no automatic owner alarm
+2026-11-02T12:25:40.244Z,567.244751,8174,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePoint1 / Доставить сок
+2026-11-02T12:25:40.244Z,567.244751,8174,6,Info [FLog::CreatorOutput] M1 PASS staff delivery earns session points
+2026-11-02T12:25:43.278Z,570.278320,3838,6,Info [FLog::CreatorOutput] M1 PASS prompt input: EstateExit / Покинуть особняк
+2026-11-02T12:25:43.278Z,570.278320,3838,6,Info [FLog::CreatorOutput] M1 PASS spy extraction completes M0 objective
+2026-11-02T12:25:50.529Z,577.529236,8174,6,Info [FLog::CreatorOutput] M1 PASS dossier resets for next test
+2026-11-02T12:26:07.709Z,594.709961,8174,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePoint1 / Заказать сок сюда
+2026-11-02T12:26:09.961Z,596.961121,3838,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePantry / Принять заказ / взять сок
+2026-11-02T12:26:12.194Z,599.194214,3838,6,Info [FLog::CreatorOutput] M1 PASS prompt input: ServicePantry / Принять заказ / взять сок
+2026-11-02T12:26:27.810Z,614.810425,5e68,6,Info [FLog::CreatorOutput] M1 PASS staff disconnect recovered with physical NPC delivery
+2026-11-02T12:26:41.325Z,628.325928,3838,6,Info [FLog::CreatorOutput] M1 PASS owner disconnect does not stop guard
+2026-11-02T12:26:41.325Z,628.325928,3838,6,Info [FLog::CreatorOutput] M1 PLAYTHROUGH PASS 4 clients
+2026-11-02T12:17:29.243Z,11.243647,3308,6,Info [FLog::CreatorOutput] M1 CLIENT AUDIT PASS Player1 own-role-only
+2026-11-02T12:17:32.365Z,13.365520,659c,6,Info [FLog::CreatorOutput] M1 CLIENT AUDIT PASS Player2 own-role-only
+2026-11-02T12:17:32.771Z,12.771032,706c,6,Info [FLog::CreatorOutput] M1 CLIENT AUDIT PASS Player3 own-role-only
+2026-11-02T12:17:33.339Z,12.339270,8554,6,Info [FLog::CreatorOutput] M1 CLIENT AUDIT PASS Player5 own-role-only
+2026-11-02T12:17:33.706Z,10.706299,86e0,6,Info [FLog::CreatorOutput] M1 CLIENT AUDIT PASS Player4 own-role-only
