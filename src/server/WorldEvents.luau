@@ -1,6 +1,6 @@
 local Events = {}
 
-function Events.start(world, roles, interactions, guard, tell, config, scope)
+function Events.start(world, roles, interactions, guard, tell, config, scope, onActivity)
     local tokens, ready, closesAt = {}, {}, {}
     local function open(part, seconds)
         closesAt[part] = math.max(closesAt[part] or 0, scope:now() + seconds)
@@ -58,7 +58,7 @@ function Events.start(world, roles, interactions, guard, tell, config, scope)
     local glass = world.block("BreakableGlass", Vector3.new(0.8, 1.4, 0.8), Vector3.new(21, 2, -17), Color3.fromRGB(165, 209, 221), Enum.Material.Glass)
     glass.Transparency = 0.25
     local glassPrompt
-    glassPrompt = bind(glass, "Уронить бокал", "Столик с соком", 1, function()
+    glassPrompt = bind(glass, "Уронить бокал", "Столик с соком", 1, function(player)
         local now = scope:now()
         if now < (ready.glass or 0) then return end
         ready.glass = now + config.NOISE_SOURCE_COOLDOWN
@@ -69,7 +69,7 @@ function Events.start(world, roles, interactions, guard, tell, config, scope)
             shard.CanCollide = false
             table.insert(shards, shard)
         end
-        guard:react("Glass", Vector3.new(18, 3.5, -17))
+        if guard:react("Glass", Vector3.new(18, 3.5, -17)) then onActivity(player, "Noise") end
         scope:delay(config.NOISE_SOURCE_COOLDOWN, function()
             for _, shard in ipairs(shards) do shard:Destroy() end
             glassPrompt.Enabled, glass.Transparency = true, 0.25

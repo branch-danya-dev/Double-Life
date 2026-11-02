@@ -17,6 +17,7 @@ function Game.start()
     local GuardService = require(script.Parent.GuardService)
     local Requests = require(script.Parent.Requests)
     local WorldEvents = require(script.Parent.WorldEvents)
+    local EventDirector = require(script.Parent.EventDirector)
 
     pcall(function() PhysicsService:RegisterCollisionGroup("DoubleLifeActors") end)
     PhysicsService:CollisionGroupSetCollidable("DoubleLifeActors", "DoubleLifeActors", false)
@@ -30,20 +31,26 @@ function Game.start()
     local update = remote("RemoteEvent", "PersonalUpdate")
     local getState = remote("RemoteFunction", "GetState")
     local actionRemote = remote("RemoteEvent", "CouncilAction")
+    local eventRemote = remote("RemoteEvent", "EventAction")
     local function event(name)
         local value = Instance.new("BindableEvent")
         value.Name, value.Parent = name, script.Parent
         return value
     end
     local completed, finished = event("TaskCompleted"), event("RoundFinished")
+    local eventSignals = {}
+    for _, name in ipairs({"EventStarted", "EventParticipated", "EventFinished", "GuestIncidentTriggered"}) do
+        eventSignals[name] = event(name)
+    end
     local function tell(player, message)
         if player.Parent == Players then update:FireClient(player, "Notice", message) end
     end
     local roles = Roles.new(Config, update)
     local rounds = RoundService.new(Config, roles, tell, finished)
-    runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished}
+    runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished, eventSignals = eventSignals}
     local function rebuild(starting)
         if runtime.scope then
+            runtime.events:cancel()
             runtime.scope:destroy()
             for id in pairs(runtime.requests.trays) do runtime.requests:clearTray(id) end
             runtime.world.map:Destroy()
@@ -59,17 +66,22 @@ function Game.start()
                 completed:Fire({roundId = rounds.policy.roundId, userId = player.UserId, kind = kind, amount = amount})
             end
         end
+        local function onActivity(player, key)
+            if scope.alive and runtime.scope == scope then runtime.events:activity(player, key) end
+        end
         local dossier = Dossier.start(world, roles, interactions, update, tell, Config,
-            function(id) if scope.alive then rounds:extract(id) end end, evidence, onTask)
+            function(id) if scope.alive then rounds:extract(id) end end, evidence, onTask, onActivity)
         local guard = GuardService.start(world, Config, scope)
-        local requests = Requests.start(world, roles, interactions, guard, tell, update, Config, scope, onTask)
-        WorldEvents.start(world, roles, interactions, guard, tell, Config, scope)
+        local requests = Requests.start(world, roles, interactions, guard, tell, update, Config, scope, onTask, onActivity)
+        WorldEvents.start(world, roles, interactions, guard, tell, Config, scope, onActivity)
         local council = interactions.prompt(world.console, "Созвать собрание", "Пульт владельца · 1 раз", 1)
         council.KeyboardKeyCode = Enum.KeyCode.C
         interactions:bind(council, function(player) rounds:callCouncil(player) end)
         runtime.scope, runtime.state, runtime.world = scope, state, world
         runtime.interactions, runtime.dossier, runtime.guard = interactions, dossier, guard
         runtime.requests, runtime.evidence = requests, evidence
+        runtime.events = EventDirector.new({world = world, scope = scope, rounds = rounds, roles = roles,
+            interactions = interactions, guard = guard, tell = tell, update = update, config = Config, signals = eventSignals})
         rounds.session = runtime
         for index, player in ipairs(Players:GetPlayers()) do
             dossier:add(player)
@@ -90,10 +102,19 @@ function Game.start()
             paintings = runtime.dossier:count(player), requiredPaintings = Config.GUEST_PAINTINGS,
             servicePoints = runtime.requests.ledger.scores[player.UserId] or 0,
             refreshments = runtime.requests.received[player.UserId] or 0,
-            evidence = runtime.evidence:description(player.UserId), hasDossier = runtime.dossier:has(player), round = round}
+            evidence = runtime.evidence:description(player.UserId), hasDossier = runtime.dossier:has(player), round = round,
+            activities = runtime.events:snapshot(player)}
     end
     getState.OnServerInvoke = snapshot
     local lastAction = {}
+    eventRemote.OnServerEvent:Connect(function(player, action, roundId, kind)
+        local now = os.clock() -- Transport spam throttle; event deadlines use SessionClock only.
+        if now < (lastAction[player.UserId] or 0) then return end
+        lastAction[player.UserId] = now + 0.25
+        if roundId ~= rounds.policy.roundId then return end
+        if action == "Start" and typeof(kind) == "string" then runtime.events:start(player, kind, roundId)
+        elseif action == "DropRelic" and rounds:allows(player, false) then runtime.events:drop(player) end
+    end)
     actionRemote.OnServerEvent:Connect(function(player, action, roundId, target, attach)
         local now = os.clock()
         if now < (lastAction[player.UserId] or 0) then return end
@@ -109,6 +130,7 @@ function Game.start()
     end)
     local connected = {}
     local function resetCharacter(player)
+        runtime.events:resetCharacter(player)
         runtime.dossier:resetCharacter(player)
         runtime.requests:resetCharacter(player)
         runtime.evidence:drop(player)
@@ -135,6 +157,7 @@ function Game.start()
     end
     Players.PlayerAdded:Connect(addPlayer)
     Players.PlayerRemoving:Connect(function(player)
+        runtime.events:remove(player)
         rounds:leave(player) -- Determine the result before removing the private role.
         runtime.evidence:drop(player)
         runtime.dossier:remove(player)
@@ -148,6 +171,7 @@ function Game.start()
     RunService.Heartbeat:Connect(function(dt)
         rounds:tick(dt)
         runtime.scope:advance(dt)
+        runtime.events:tick()
         broadcast += dt
         if broadcast >= 0.5 then
             broadcast = 0

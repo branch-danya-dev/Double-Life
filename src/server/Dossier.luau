@@ -1,5 +1,5 @@
 local Dossier = {}
-function Dossier.start(world, roles, interactions, personalUpdate, tell, Config, finish, evidence, onTask)
+function Dossier.start(world, roles, interactions, personalUpdate, tell, Config, finish, evidence, onTask, onActivity)
     local safe, gold, block = world.safe, world.gold, world.block
     local prompt = interactions.prompt
     local function usePrompt(p, f, neutral) interactions:bind(p, f, neutral) end
@@ -55,6 +55,7 @@ function Dossier.start(world, roles, interactions, personalUpdate, tell, Config,
             if not visited then
                 return
             end
+            onActivity(player, "Painting" .. index)
             if visited[index] then
                 tell(player, "Вы уже осматривали эту картину.")
                 return

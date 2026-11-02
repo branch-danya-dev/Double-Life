@@ -4,8 +4,8 @@ local Mover = require(script.Parent.NpcMover)
 local Requests = {}
 Requests.__index = Requests
 
-function Requests.start(world, roles, interactions, guard, tell, update, config, scope, onTask)
-    local self = setmetatable({scope = scope, onTask = onTask, received = {}, ledger = Ledger.new(config), trays = {}, world = world,
+function Requests.start(world, roles, interactions, guard, tell, update, config, scope, onTask, onActivity)
+    local self = setmetatable({scope = scope, onTask = onTask, onActivity = onActivity, received = {}, ledger = Ledger.new(config), trays = {}, world = world,
         tell = tell, update = update, roles = roles, config = config, guard = guard}, Requests)
     self.pantry = world.block("ServicePantry", Vector3.new(4, 3, 3), Vector3.new(-19, 2, 19), Color3.fromRGB(88, 133, 112))
     self.home = Vector3.new(-15, 3.5, 19)
@@ -108,6 +108,7 @@ function Requests:complete(request, executor)
     if requester then
         self.received[request.userId] = (self.received[request.userId] or 0) + 1
         self.onTask(requester, "Refreshment", 1)
+        self.onActivity(requester, "Refreshment")
         self.tell(requester, "Сок доставлен к выбранному столику.")
     end
     local staff = if executor ~= 0 then Players:GetPlayerByUserId(executor) else nil

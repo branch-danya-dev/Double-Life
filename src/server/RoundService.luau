@@ -46,6 +46,7 @@ function RoundService:report()
     if p.phase ~= "Results" or self.reported == p.roundId then return end
     self.reported = p.roundId
     self.session.interactions:clear()
+    if self.session.events then self.session.events:cancel() end
     self:sync()
     self.finished:Fire({roundId = p.roundId, winner = p.result.winner, reason = p.result.reason})
 end
