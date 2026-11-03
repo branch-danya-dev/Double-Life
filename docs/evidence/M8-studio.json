@@ -1,0 +1,707 @@
+{
+  "complete": true,
+  "failures": [],
+  "rounds": [
+    "2026-11-03T07:27:48.104Z M8 THREE FULL ROUND PASS",
+    "2026-11-03T07:31:15.228Z M8 FIVE FULL ROUND PASS",
+    "2026-11-03T07:40:36.854Z M8 EIGHT FULL ROUND PASS",
+    "2026-11-03T07:47:49.307Z M8 STUDIO SUITE PASS: four natural rounds 3/5/8/15; chat, AFK rewards, counterplay, NPC and reset"
+  ],
+  "routes": [
+    "2026-11-03T07:27:36.937Z M8 ROUTE extraction 20.13s window-to-exit 24.63s",
+    "2026-11-03T07:31:04.112Z M8 ROUTE extraction 20.00s window-to-exit 24.57s",
+    "2026-11-03T07:47:36.306Z M8 ROUTE extraction 19.96s window-to-exit 24.52s"
+  ],
+  "clientSamples": [
+    {
+      "label": "2026-11-03T07:27:38.502Z M8 CLIENT METRICS 3 Results Player1",
+      "metrics": {
+        "maxMs": 69.3650022149086,
+        "seconds": 39.998016469180584,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.15990060567856,
+        "meanFps": 15.000743860944059,
+        "p95Ms": 67.64040142297745,
+        "viewport": "1274, 635",
+        "p50Ms": 66.65360182523727,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:27:38.622Z M8 CLIENT METRICS 3 Results Player2",
+      "metrics": {
+        "maxMs": 69.58159804344177,
+        "seconds": 39.999157756567,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.24930012226105,
+        "meanFps": 15.000315847937896,
+        "p95Ms": 67.82349944114685,
+        "viewport": "1274, 672",
+        "p50Ms": 66.6671022772789,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:27:38.737Z M8 CLIENT METRICS 3 Results Player3",
+      "metrics": {
+        "maxMs": 23.551899939775467,
+        "seconds": 9.998561879619956,
+        "over50Ms": 0,
+        "samples": 600,
+        "p99Ms": 17.88420043885708,
+        "meanFps": 60.00862996337288,
+        "p95Ms": 17.558500170707703,
+        "viewport": "1274, 672",
+        "p50Ms": 16.64239913225174,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:30:21.597Z M8 CLIENT METRICS 5 Active Player1",
+      "metrics": {
+        "maxMs": 68.98249685764313,
+        "seconds": 39.99891101568937,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.1867003440857,
+        "meanFps": 15.000408380234477,
+        "p95Ms": 67.7269995212555,
+        "viewport": "1274, 635",
+        "p50Ms": 66.65810197591782,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:30:21.714Z M8 CLIENT METRICS 5 Active Player2",
+      "metrics": {
+        "maxMs": 68.4966966509819,
+        "seconds": 39.99835326522589,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.06530058383942,
+        "meanFps": 15.000617550963858,
+        "p95Ms": 67.6082968711853,
+        "viewport": "1274, 672",
+        "p50Ms": 66.66179746389389,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:30:21.814Z M8 CLIENT METRICS 5 Active Player3",
+      "metrics": {
+        "maxMs": 68.73539835214615,
+        "seconds": 39.99929570406675,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.31269711256027,
+        "meanFps": 15.000264115625356,
+        "p95Ms": 67.8114965558052,
+        "viewport": "1274, 672",
+        "p50Ms": 66.62189960479736,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:30:21.932Z M8 CLIENT METRICS 5 Active Player4",
+      "metrics": {
+        "maxMs": 69.08950209617615,
+        "seconds": 39.998859353363514,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.11290234327316,
+        "meanFps": 15.000427754686607,
+        "p95Ms": 67.59510189294815,
+        "viewport": "1274, 635",
+        "p50Ms": 66.65550172328949,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:30:22.047Z M8 CLIENT METRICS 5 Active Player5",
+      "metrics": {
+        "maxMs": 19.092699512839317,
+        "seconds": 10.000378114171326,
+        "over50Ms": 0,
+        "samples": 600,
+        "p99Ms": 17.990700900554657,
+        "meanFps": 59.99773140075099,
+        "p95Ms": 17.669400200247765,
+        "viewport": "1274, 672",
+        "p50Ms": 16.710499301552773,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:47.320Z M8 CLIENT METRICS 8 Active Player1",
+      "metrics": {
+        "maxMs": 68.43599677085876,
+        "seconds": 39.999448001384735,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.02940368652344,
+        "meanFps": 15.00020700233735,
+        "p95Ms": 67.73489713668823,
+        "viewport": "1274, 635",
+        "p50Ms": 66.64309650659561,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:47.435Z M8 CLIENT METRICS 8 Active Player2",
+      "metrics": {
+        "maxMs": 68.88490170240402,
+        "seconds": 39.99972765147686,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.30280274152756,
+        "meanFps": 15.00010213139156,
+        "p95Ms": 67.90109723806381,
+        "viewport": "1274, 672",
+        "p50Ms": 66.66869670152664,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:47.552Z M8 CLIENT METRICS 8 Active Player3",
+      "metrics": {
+        "maxMs": 68.91690194606781,
+        "seconds": 39.99795141816139,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.0743008852005,
+        "meanFps": 15.000768257535439,
+        "p95Ms": 67.70219653844833,
+        "viewport": "1274, 672",
+        "p50Ms": 66.64829701185226,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:47.669Z M8 CLIENT METRICS 8 Active Player4",
+      "metrics": {
+        "maxMs": 68.84150207042694,
+        "seconds": 39.99960010498762,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.24850291013718,
+        "meanFps": 15.00014996212887,
+        "p95Ms": 67.83050298690796,
+        "viewport": "1274, 635",
+        "p50Ms": 66.67780131101608,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:47.786Z M8 CLIENT METRICS 8 Active Player5",
+      "metrics": {
+        "maxMs": 69.58790123462677,
+        "seconds": 39.99903676658869,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.6149001121521,
+        "meanFps": 15.00036122122775,
+        "p95Ms": 67.95970350503922,
+        "viewport": "1274, 672",
+        "p50Ms": 66.65120273828506,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:47.886Z M8 CLIENT METRICS 8 Active Player6",
+      "metrics": {
+        "maxMs": 68.74199956655502,
+        "seconds": 39.99843576550484,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.02870333194733,
+        "meanFps": 15.00058661087561,
+        "p95Ms": 67.6966980099678,
+        "viewport": "1274, 635",
+        "p50Ms": 66.6733980178833,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:48.003Z M8 CLIENT METRICS 8 Active Player7",
+      "metrics": {
+        "maxMs": 75.4287987947464,
+        "seconds": 39.99786872416735,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.2206004858017,
+        "meanFps": 15.00079927102392,
+        "p95Ms": 67.86130368709564,
+        "viewport": "1274, 672",
+        "p50Ms": 66.66090339422226,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:34:48.103Z M8 CLIENT METRICS 8 Active Player8",
+      "metrics": {
+        "maxMs": 19.69059929251671,
+        "seconds": 9.999921678565443,
+        "over50Ms": 0,
+        "samples": 600,
+        "p99Ms": 18.248800188302994,
+        "meanFps": 60.00046993228792,
+        "p95Ms": 17.870400100946426,
+        "viewport": "1274, 672",
+        "p50Ms": 16.657600179314613,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:03.440Z M8 CLIENT METRICS 15 simultaneous routes Player1",
+      "metrics": {
+        "maxMs": 220.92430293560028,
+        "seconds": 27.39888321608305,
+        "over50Ms": 408,
+        "samples": 409,
+        "p99Ms": 69.89579647779465,
+        "meanFps": 14.927615727049721,
+        "p95Ms": 67.92420148849487,
+        "viewport": "1274, 635",
+        "p50Ms": 66.68759882450104,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:03.557Z M8 CLIENT METRICS 15 simultaneous routes Player2",
+      "metrics": {
+        "maxMs": 69.48719918727875,
+        "seconds": 27.398025833070278,
+        "over50Ms": 411,
+        "samples": 411,
+        "p99Ms": 68.53000074625015,
+        "meanFps": 15.001080826192597,
+        "p95Ms": 67.79990345239639,
+        "viewport": "1274, 672",
+        "p50Ms": 66.67870283126831,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:03.673Z M8 CLIENT METRICS 15 simultaneous routes Player3",
+      "metrics": {
+        "maxMs": 116.48839712142944,
+        "seconds": 27.514635529369116,
+        "over50Ms": 412,
+        "samples": 412,
+        "p99Ms": 70.15150040388107,
+        "meanFps": 14.973849083344437,
+        "p95Ms": 68.35830211639404,
+        "viewport": "1274, 672",
+        "p50Ms": 66.65509939193726,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:03.790Z M8 CLIENT METRICS 15 simultaneous routes Player4",
+      "metrics": {
+        "maxMs": 75.51019638776779,
+        "seconds": 27.39891665428877,
+        "over50Ms": 411,
+        "samples": 411,
+        "p99Ms": 69.86639648675919,
+        "meanFps": 15.000593095919577,
+        "p95Ms": 68.4157982468605,
+        "viewport": "1274, 635",
+        "p50Ms": 66.66970252990723,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:03.908Z M8 CLIENT METRICS 15 simultaneous routes Player5",
+      "metrics": {
+        "maxMs": 91.86229854822159,
+        "seconds": 27.4151823297143,
+        "over50Ms": 411,
+        "samples": 411,
+        "p99Ms": 69.91320103406906,
+        "meanFps": 14.991693108476333,
+        "p95Ms": 68.63109767436981,
+        "viewport": "1274, 672",
+        "p50Ms": 66.72579795122147,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.024Z M8 CLIENT METRICS 15 simultaneous routes Player6",
+      "metrics": {
+        "maxMs": 72.86190241575241,
+        "seconds": 27.39904684200883,
+        "over50Ms": 411,
+        "samples": 411,
+        "p99Ms": 68.41769814491272,
+        "meanFps": 15.000521819972425,
+        "p95Ms": 67.84979999065399,
+        "viewport": "1274, 635",
+        "p50Ms": 66.66269898414612,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.140Z M8 CLIENT METRICS 15 simultaneous routes Player7",
+      "metrics": {
+        "maxMs": 76.28139853477478,
+        "seconds": 27.46646537259221,
+        "over50Ms": 412,
+        "samples": 412,
+        "p99Ms": 69.7282999753952,
+        "meanFps": 15.000109930822036,
+        "p95Ms": 68.07629764080048,
+        "viewport": "1274, 672",
+        "p50Ms": 66.69879704713821,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.240Z M8 CLIENT METRICS 15 simultaneous routes Player8",
+      "metrics": {
+        "maxMs": 264.20170068740845,
+        "seconds": 27.44754210114479,
+        "over50Ms": 409,
+        "samples": 409,
+        "p99Ms": 68.64210218191147,
+        "meanFps": 14.90115211383322,
+        "p95Ms": 67.78640300035477,
+        "viewport": "1274, 672",
+        "p50Ms": 66.65019690990448,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.357Z M8 CLIENT METRICS 15 simultaneous routes Player9",
+      "metrics": {
+        "maxMs": 76.95160061120987,
+        "seconds": 27.39810497313738,
+        "over50Ms": 411,
+        "samples": 411,
+        "p99Ms": 70.353202521801,
+        "meanFps": 15.00103749521973,
+        "p95Ms": 68.197101354599,
+        "viewport": "1274, 672",
+        "p50Ms": 66.66240096092224,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.473Z M8 CLIENT METRICS 15 simultaneous routes Player10",
+      "metrics": {
+        "maxMs": 70.89699804782867,
+        "seconds": 27.465295732021332,
+        "over50Ms": 412,
+        "samples": 412,
+        "p99Ms": 69.11320239305496,
+        "meanFps": 15.000748727407878,
+        "p95Ms": 67.9164007306099,
+        "viewport": "1274, 635",
+        "p50Ms": 66.65889918804169,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.589Z M8 CLIENT METRICS 15 simultaneous routes Player11",
+      "metrics": {
+        "maxMs": 75.19079744815826,
+        "seconds": 27.39953038468957,
+        "over50Ms": 411,
+        "samples": 411,
+        "p99Ms": 69.44429874420166,
+        "meanFps": 15.000257093079975,
+        "p95Ms": 68.1701973080635,
+        "viewport": "1274, 672",
+        "p50Ms": 66.66509807109833,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.708Z M8 CLIENT METRICS 15 simultaneous routes Player12",
+      "metrics": {
+        "maxMs": 77.7105987071991,
+        "seconds": 27.467723306268454,
+        "over50Ms": 412,
+        "samples": 412,
+        "p99Ms": 69.84130293130875,
+        "meanFps": 14.999422973871912,
+        "p95Ms": 68.756103515625,
+        "viewport": "1274, 672",
+        "p50Ms": 66.65720045566559,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.824Z M8 CLIENT METRICS 15 simultaneous routes Player13",
+      "metrics": {
+        "maxMs": 78.98370176553726,
+        "seconds": 27.414991959929466,
+        "over50Ms": 411,
+        "samples": 411,
+        "p99Ms": 69.71009820699692,
+        "meanFps": 14.991797210837388,
+        "p95Ms": 67.9996982216835,
+        "viewport": "1274, 672",
+        "p50Ms": 66.65019690990448,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:04.940Z M8 CLIENT METRICS 15 simultaneous routes Player14",
+      "metrics": {
+        "maxMs": 183.13220143318176,
+        "seconds": 27.398224622011185,
+        "over50Ms": 409,
+        "samples": 409,
+        "p99Ms": 69.71070170402527,
+        "meanFps": 14.927974554651165,
+        "p95Ms": 67.90850311517715,
+        "viewport": "1274, 635",
+        "p50Ms": 66.70569628477097,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:05.057Z M8 CLIENT METRICS 15 simultaneous routes Player15",
+      "metrics": {
+        "maxMs": 19.269799813628197,
+        "seconds": 10.000507489778101,
+        "over50Ms": 0,
+        "samples": 600,
+        "p99Ms": 18.587900325655937,
+        "meanFps": 59.996955215851074,
+        "p95Ms": 17.85469986498356,
+        "viewport": "1274, 672",
+        "p50Ms": 16.701700165867805,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:47.705Z M8 CLIENT METRICS 15 Waiting reset Player1",
+      "metrics": {
+        "maxMs": 93.5342013835907,
+        "seconds": 40.00056840106845,
+        "over50Ms": 599,
+        "samples": 600,
+        "p99Ms": 68.67320090532303,
+        "meanFps": 14.999786852628162,
+        "p95Ms": 67.63319671154022,
+        "viewport": "1274, 635",
+        "p50Ms": 66.65779650211334,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:47.822Z M8 CLIENT METRICS 15 Waiting reset Player2",
+      "metrics": {
+        "maxMs": 118.37390065193176,
+        "seconds": 40.032614789903164,
+        "over50Ms": 599,
+        "samples": 600,
+        "p99Ms": 68.70990246534348,
+        "meanFps": 14.987779418079109,
+        "p95Ms": 67.61530041694641,
+        "viewport": "1274, 672",
+        "p50Ms": 66.68230146169662,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:47.938Z M8 CLIENT METRICS 15 Waiting reset Player3",
+      "metrics": {
+        "maxMs": 85.08499711751938,
+        "seconds": 40.032311890274286,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 69.96670365333557,
+        "meanFps": 14.98789282129289,
+        "p95Ms": 67.815400660038,
+        "viewport": "1274, 672",
+        "p50Ms": 66.67040288448334,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.056Z M8 CLIENT METRICS 15 Waiting reset Player4",
+      "metrics": {
+        "maxMs": 99.47949647903442,
+        "seconds": 40.03351715952158,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 69.28730010986328,
+        "meanFps": 14.987441588236667,
+        "p95Ms": 68.32090020179749,
+        "viewport": "1274, 635",
+        "p50Ms": 66.69200211763382,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.172Z M8 CLIENT METRICS 15 Waiting reset Player5",
+      "metrics": {
+        "maxMs": 82.28220045566559,
+        "seconds": 40.01439907029271,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 69.8326975107193,
+        "meanFps": 14.994602291689768,
+        "p95Ms": 68.41179728507996,
+        "viewport": "1274, 672",
+        "p50Ms": 66.71609729528427,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.289Z M8 CLIENT METRICS 15 Waiting reset Player6",
+      "metrics": {
+        "maxMs": 71.16720080375671,
+        "seconds": 39.99676750972867,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.31420212984085,
+        "meanFps": 15.001212281818978,
+        "p95Ms": 67.8194984793663,
+        "viewport": "1274, 635",
+        "p50Ms": 66.67809933423996,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.404Z M8 CLIENT METRICS 15 Waiting reset Player7",
+      "metrics": {
+        "maxMs": 85.01370251178741,
+        "seconds": 40.015330985188484,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 69.07159835100174,
+        "meanFps": 14.994253083201727,
+        "p95Ms": 68.15169751644135,
+        "viewport": "1274, 672",
+        "p50Ms": 66.66769832372665,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.522Z M8 CLIENT METRICS 15 Waiting reset Player8",
+      "metrics": {
+        "maxMs": 82.11839944124222,
+        "seconds": 40.01470120996237,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.68589669466019,
+        "meanFps": 14.994489071696965,
+        "p95Ms": 67.83439964056015,
+        "viewport": "1274, 672",
+        "p50Ms": 66.6797012090683,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.638Z M8 CLIENT METRICS 15 Waiting reset Player9",
+      "metrics": {
+        "maxMs": 100.92949867248535,
+        "seconds": 40.03273952007294,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 69.57440078258514,
+        "meanFps": 14.987732720593657,
+        "p95Ms": 67.88189709186554,
+        "viewport": "1274, 672",
+        "p50Ms": 66.67549908161163,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.755Z M8 CLIENT METRICS 15 Waiting reset Player10",
+      "metrics": {
+        "maxMs": 97.06149995326996,
+        "seconds": 40.01492960751057,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.7716007232666,
+        "meanFps": 14.994403486027464,
+        "p95Ms": 68.14219802618027,
+        "viewport": "1274, 635",
+        "p50Ms": 66.65399670600891,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.872Z M8 CLIENT METRICS 15 Waiting reset Player11",
+      "metrics": {
+        "maxMs": 99.41159933805466,
+        "seconds": 40.01472858712077,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 69.23169642686844,
+        "meanFps": 14.994478812811874,
+        "p95Ms": 68.03389638662338,
+        "viewport": "1274, 672",
+        "p50Ms": 66.65530055761337,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:48.987Z M8 CLIENT METRICS 15 Waiting reset Player12",
+      "metrics": {
+        "maxMs": 99.45780038833618,
+        "seconds": 40.03296518698335,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 70.67439705133438,
+        "meanFps": 14.987648234337861,
+        "p95Ms": 68.51640343666077,
+        "viewport": "1274, 672",
+        "p50Ms": 66.668801009655,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:49.090Z M8 CLIENT METRICS 15 Waiting reset Player13",
+      "metrics": {
+        "maxMs": 117.06510186195374,
+        "seconds": 40.04915037751198,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 69.2221000790596,
+        "meanFps": 14.981591228384868,
+        "p95Ms": 67.85900145769119,
+        "viewport": "1274, 672",
+        "p50Ms": 66.63910299539566,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:49.205Z M8 CLIENT METRICS 15 Waiting reset Player14",
+      "metrics": {
+        "maxMs": 84.12890136241913,
+        "seconds": 40.014624275267124,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.8076987862587,
+        "meanFps": 14.994517901067924,
+        "p95Ms": 67.84120202064514,
+        "viewport": "1274, 635",
+        "p50Ms": 66.63479655981064,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:47:49.305Z M8 CLIENT METRICS 15 Waiting reset Player15",
+      "metrics": {
+        "maxMs": 21.27769961953163,
+        "seconds": 10.000489311292768,
+        "over50Ms": 0,
+        "samples": 600,
+        "p99Ms": 18.340900540351868,
+        "meanFps": 59.99706427589169,
+        "p95Ms": 17.709599807858467,
+        "viewport": "1274, 672",
+        "p50Ms": 16.704099252820015,
+        "chat": "PASS"
+      }
+    }
+  ]
+}

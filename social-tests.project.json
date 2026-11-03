@@ -2,13 +2,78 @@
   "name": "DoubleLifeM5Tests",
   "tree": {
     "$className": "DataModel",
-    "ReplicatedStorage": {"DoubleLifeShared": {"$path": "src/shared"}},
-    "ServerScriptService": {
-      "DoubleLifeServer": {"$path": "src/server", "Main": {"$className": "Script", "$properties": {"Disabled": true}}},
-      "M5Tests": {"$path": "tests/m5", "MemoryStore": {"$path": "tests/MemoryStore.luau"}, "FakeMarketplace": {"$path": "tests/FakeMarketplace.luau"}}
+    "ReplicatedStorage": {
+      "DoubleLifeShared": {
+        "$path": "src/shared"
+      }
     },
-    "StarterPlayer": {"StarterPlayerScripts": {
-      "DoubleLifeClient": {"$path": "src/client"}, "M5ClientAudit": {"$path": "tests/M5Client.client.luau"}
-    }}
+    "ServerScriptService": {
+      "DoubleLifeServer": {
+        "$path": "src/server",
+        "Main": {
+          "$className": "Script",
+          "$properties": {
+            "Disabled": true
+          }
+        }
+      },
+      "M5Tests": {
+        "$path": "tests/m5",
+        "MemoryStore": {
+          "$path": "tests/MemoryStore.luau"
+        },
+        "FakeMarketplace": {
+          "$path": "tests/FakeMarketplace.luau"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "DoubleLifeClient": {
+          "$path": "src/client"
+        },
+        "M5ClientAudit": {
+          "$path": "tests/M5Client.client.luau"
+        }
+      }
+    },
+    "Chat": {
+      "$className": "Chat",
+      "$properties": {
+        "LoadDefaultChat": false
+      }
+    },
+    "TextChatService": {
+      "$className": "TextChatService",
+      "$properties": {
+        "ChatVersion": "TextChatService",
+        "CreateDefaultTextChannels": false,
+        "CreateDefaultCommands": false
+      },
+      "ChatWindowConfiguration": {
+        "$className": "ChatWindowConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "ChatInputBarConfiguration": {
+        "$className": "ChatInputBarConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "BubbleChatConfiguration": {
+        "$className": "BubbleChatConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "ChannelTabsConfiguration": {
+        "$className": "ChannelTabsConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      }
+    }
   }
 }

@@ -4,7 +4,7 @@ local Input = game:GetService("UserInputService")
 local UI = require(script.Parent.Interface)
 local Prompts = game:GetService("ProximityPromptService")
 game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
-game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+local RoleGuide = require(RS:WaitForChild("DoubleLifeShared"):WaitForChild("RoleGuide"))
 local player = Players.LocalPlayer
 player.CameraMode = Enum.CameraMode.LockFirstPerson
 local remotes = RS:WaitForChild("DoubleLifeRemotes")
@@ -101,7 +101,7 @@ local profileMessages = {Ready = "Сохранено", Saving = "Сохраня�
     Pending = "Награда ожидает подтверждения сохранения", Awarded = "Награда сохранена", InsufficientActivity = "Недостаточно активности для постоянной награды",
     NotParticipant = "За этот раунд постоянной награды нет"}
 local eventNames = {Relic = "Пропавшая реликвия", Music = "Музыка остановилась"}
-local rules = "7 минут: шпион выносит досье через главный выход; остальные побеждают, если время истекло или ушли все шпионы. Досье возвращается в сейф через 60 с активного времени переноски, даже в движении.\n\nРоль видите только вы. Общие занятия: 3 картины на западной стене, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины всех оставшихся участников.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nКабинет и пульт — этаж 2. Независимый путь: двор → западная лестница → архив → терраса → окно. Обратно: кнопка изнутри → любая лестница → приёмная → выход во дворе. E удерживается по подсказке. H — закрыть правила."
+local rules = "7 минут: шпион выносит досье через главный выход; остальные побеждают, если время истекло или ушли все шпионы. Досье возвращается в сейф через 60 с активного времени переноски, даже в движении.\n\nРоль видите только вы. Общие занятия: 3 картины в галерее, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины всех оставшихся участников.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nКабинет и пульт — этаж 2. Независимый путь: двор → западная лестница → архив → терраса → окно. Обратно: кнопка изнутри → любая лестница → приёмная → выход во дворе. E удерживается по подсказке. H — закрыть правила."
 local function renderPanel()
     if not last then return end
     local r = last.round
@@ -275,8 +275,8 @@ local function snapshot(value)
     local a, lines = value.activities, {}
     local e = a.event
     if a.practice then
-        local steps = {"1/3 Осмотрите картину у западной стены.", "2/3 Закажите сок у зелёного столика и дождитесь NPC.",
-            "3/3 Позовите охрану колокольчиком у восточной стены.", "Практика завершена! Можно повторить; очки не начисляются."}
+        local steps = {"1/3 Осмотрите картину в галерее.", "2/3 Закажите сок у зелёного столика и дождитесь NPC.",
+            "3/3 Позовите охрану колокольчиком в бальном зале.", "Практика завершена! Можно повторить; очки не начисляются."}
         table.insert(lines, "Практика · " .. a.practice.remaining .. " с · " .. steps[a.practice.step] .. "\nP — профиль и снаряжение")
     elseif e.phase == "Announcing" then table.insert(lines, eventNames[e.kind] .. " через " .. e.remaining .. " с · участие добровольное")
     elseif e.phase == "Running" then
@@ -285,7 +285,7 @@ local function snapshot(value)
         table.insert(lines, eventNames[e.kind] .. " · " .. e.remaining .. " с\n" .. instruction)
     elseif e.phase == "Finished" then
         table.insert(lines, (if e.cancelled then "Мероприятие прервано" else "Мероприятие завершено · вам +" .. e.reward) .. " · очки мероприятий: " .. e.score)
-    else table.insert(lines, "Очки мероприятий: " .. e.score .. " · H правила · G положить реликвию") end
+    else table.insert(lines, RoleGuide.goal(value.role) .. "\nМеню → Действия: знаки без чата · H правила") end
     if a.incident then
         table.insert(lines, (if a.incident.kind == "Blackout" then "Сбой света · пути подсвечены" else "Внеплановая проверка охраны") .. " · " .. a.incident.remaining .. " с")
     end

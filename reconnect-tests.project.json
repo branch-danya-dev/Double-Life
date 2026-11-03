@@ -2,15 +2,74 @@
   "name": "DoubleLifeM41Reconnect",
   "tree": {
     "$className": "DataModel",
-    "ReplicatedStorage": {"DoubleLifeShared": {"$path": "src/shared"}},
+    "ReplicatedStorage": {
+      "DoubleLifeShared": {
+        "$path": "src/shared"
+      }
+    },
     "ServerScriptService": {
-      "DoubleLifeServer": {"$path": "src/server", "Main": {"$className": "Script", "$properties": {"Disabled": true}}},
-      "M41Tests": {"$path": "tests/m41", "MemoryStore": {"$path": "tests/MemoryStore.luau"}}
+      "DoubleLifeServer": {
+        "$path": "src/server",
+        "Main": {
+          "$className": "Script",
+          "$properties": {
+            "Disabled": true
+          }
+        }
+      },
+      "M41Tests": {
+        "$path": "tests/m41",
+        "MemoryStore": {
+          "$path": "tests/MemoryStore.luau"
+        }
+      }
     },
     "StarterPlayer": {
       "StarterPlayerScripts": {
-        "DoubleLifeClient": {"$path": "src/client"},
-        "M41ClientAudit": {"$path": "tests/M41Client.client.luau"}
+        "DoubleLifeClient": {
+          "$path": "src/client"
+        },
+        "M41ClientAudit": {
+          "$path": "tests/M41Client.client.luau"
+        }
+      }
+    },
+    "Chat": {
+      "$className": "Chat",
+      "$properties": {
+        "LoadDefaultChat": false
+      }
+    },
+    "TextChatService": {
+      "$className": "TextChatService",
+      "$properties": {
+        "ChatVersion": "TextChatService",
+        "CreateDefaultTextChannels": false,
+        "CreateDefaultCommands": false
+      },
+      "ChatWindowConfiguration": {
+        "$className": "ChatWindowConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "ChatInputBarConfiguration": {
+        "$className": "ChatInputBarConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "BubbleChatConfiguration": {
+        "$className": "BubbleChatConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "ChannelTabsConfiguration": {
+        "$className": "ChannelTabsConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
       }
     }
   }

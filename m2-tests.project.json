@@ -24,6 +24,44 @@
           "$path": "tests/M2Client.client.luau"
         }
       }
+    },
+    "Chat": {
+      "$className": "Chat",
+      "$properties": {
+        "LoadDefaultChat": false
+      }
+    },
+    "TextChatService": {
+      "$className": "TextChatService",
+      "$properties": {
+        "ChatVersion": "TextChatService",
+        "CreateDefaultTextChannels": false,
+        "CreateDefaultCommands": false
+      },
+      "ChatWindowConfiguration": {
+        "$className": "ChatWindowConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "ChatInputBarConfiguration": {
+        "$className": "ChatInputBarConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "BubbleChatConfiguration": {
+        "$className": "BubbleChatConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      },
+      "ChannelTabsConfiguration": {
+        "$className": "ChannelTabsConfiguration",
+        "$properties": {
+          "Enabled": false
+        }
+      }
     }
   }
 }
