@@ -89,13 +89,13 @@ function Rig.configureForTest(failure,delaySeconds)
     Rig.testFailure=failure==true
     Rig.testDelay=delaySeconds and math.clamp(delaySeconds,0,12) or nil
 end
-function Rig.new(parent,serial,position,scope,id,refresh)
+function Rig.new(parent,serial,position,scope,id,refresh,nickname,admit)
     id=id or Catalog.pick(Catalog.seed,serial,{})
     local began=os.clock(); local model,source=template(id,scope,refresh)
     if not model then return nil,source end
-    if not scope.alive or not parent.Parent then model:Destroy(); return nil,"Cancelled" end
+    if not scope.alive or not parent.Parent or (admit and not admit()) then model:Destroy(); return nil,"Cancelled" end
     local p=Catalog.presets[id]
-    local name=p.name..(if serial>#Catalog.presets then tostring(math.floor((serial-1)/#Catalog.presets)+1) else "")
+    local name=nickname or p.name..(if serial>#Catalog.presets then tostring(math.floor((serial-1)/#Catalog.presets)+1) else "")
     local h=model:FindFirstChildOfClass("Humanoid"); local root=model.HumanoidRootPart
     local visibility={}
     model.Name=name; model.PrimaryPart=root
@@ -114,16 +114,17 @@ function Rig.new(parent,serial,position,scope,id,refresh)
         motion:fallback(); deadline=os.clock()+2
         while not motion:ready() and scope.alive and model.Parent and os.clock()<deadline do task.wait(0.1) end
     end
-    if not motion or not motion:ready() or not scope.alive or not model.Parent then
+    if not motion or not motion:ready() or not scope.alive or not model.Parent or (admit and not admit()) then
         if motion then motion:destroy() end; model:Destroy(); Rig.metrics.deferred+=1; return nil,"AnimationDeferred"
     end
     h.WalkSpeed=10+serial%3; h.DisplayDistanceType=Enum.HumanoidDisplayDistanceType.None
     motion:update(0,false,false)
     for v,alpha in pairs(visibility) do if v.Parent then v.Transparency=alpha end end
     root.Anchored=false; root:SetNetworkOwner(nil)
-    local sign=Instance.new("BillboardGui"); sign.Size,sign.StudsOffset,sign.MaxDistance,sign.Parent=UDim2.fromOffset(180,40),Vector3.new(0,2.5,0),35,model.Head
+    local sign=Instance.new("BillboardGui"); sign.Name="MimicNameplate"
+    sign.Size,sign.StudsOffset,sign.MaxDistance,sign.Parent=UDim2.fromOffset(180,40),Vector3.new(0,2.5,0),35,model.Head
     local label=Instance.new("TextLabel"); label.Size,label.BackgroundTransparency,label.TextSize,label.TextColor3,label.Parent=UDim2.fromScale(1,1),1,13,Color3.fromRGB(241,224,186),sign
-    label.Text=name.." · персонаж"
+    label.Text=name
     model:SetAttribute("MimicName",name); model:SetAttribute("MansionNPC",true)
     model:SetAttribute("AppearanceId",id); model:SetAttribute("AppearanceStyle",p.style)
     local mover=setmetatable({model=model,root=root,humanoid=h,label=label,scope=scope,motion=motion,preset=id,source=source,

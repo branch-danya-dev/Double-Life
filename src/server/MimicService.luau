@@ -3,10 +3,13 @@ local Settings=require(script.Parent.MatchSettings)
 local Clock=require(script.Parent.SessionClock)
 local Rig=require(script.Parent.MimicRig)
 local Appearance=require(script.Parent.MimicAppearance)
+local Identity=require(script.Parent.MimicIdentity)
+local Crowd=require(script.Parent.MimicCrowd)
+local Players=game:GetService("Players")
 local Service={}; Service.__index=Service
 function Service.new(rt)
     return setmetatable({rt=rt,values={},serial=0,busy=0,creating=false,nextCreate=0,lastTick=0,used={},practice={},
-        lobbyClock=Clock.new(),metrics={jobs=0,actions=0,matchActions=0,upperArrivals=0,orders=0,failures=0,maxWorkers=0}},Service)
+        names={},crowd=Crowd.new(),lobbyClock=Clock.new(),metrics={jobs=0,actions=0,matchActions=0,upperArrivals=0,orders=0,failures=0,maxWorkers=0}},Service)
 end
 function Service:count(context)
     local n=0; for _,a in pairs(self.values) do if a.context==context then n+=1 end end; return n
@@ -16,6 +19,7 @@ function Service:remove(a)
     self.rt.rounds.policy:removeMimic(a.actor.id)
     if a.context=="Match" and self.rt.events then self.rt.events.policy:remove(a.actor.id) end
     if a.context=="Match" and self.rt.requests then self.rt.requests.ledger:remove(a.actor.id,self.rt.scope:now()) end
+    self.names[a.actor.name]=nil; self.crowd:release(a.mover)
     a.mover:destroy(); self.values[a.actor.id]=nil
     local used=self.used[a.appearanceContext]
     if used then used[a.preset]=nil; if next(used)==nil then self.used[a.appearanceContext]=nil end end
@@ -37,6 +41,21 @@ end
 function Service:greetPractice(owner)
     for _,a in pairs(self.values) do if a.owner==owner then a.gesture=a.mover.scope:now()+3; a.gestureKind="Wave" end end
 end
+-- At most three bounded local snapshots per creation (selection and admission).
+-- GetAppliedDescription reads the live Character, never an account/avatar web API.
+function Service:humanLooks()
+    local looks={}
+    for _,p in ipairs(Players:GetPlayers()) do
+        local h=p.Character and p.Character:FindFirstChildOfClass("Humanoid")
+        if h then
+            local d
+            local ok,f=pcall(function() d=h:GetAppliedDescription(); return Identity.description(d) end)
+            if d then d:Destroy() end
+            if ok then table.insert(looks,f) else return nil end
+        end
+    end
+    return looks
+end
 function Service:create(context,request)
     self.creating=true
     if not request then self.serial+=1 end
@@ -44,12 +63,18 @@ function Service:create(context,request)
     local scope=if request then request.scope elseif context=="Lobby" then self.lobbyClock else self.rt.scope
     local appearanceContext=if request then request.scene else context
     local used=self.used[appearanceContext] or {}; self.used[appearanceContext]=used
+    local nickname,spawnKey
     local function release(id)
+        if nickname then self.names[nickname]=nil end
+        if spawnKey then self.crowd:release(spawnKey) end
         used[id]=nil
         if next(used)==nil and self.used[appearanceContext]==used then self.used[appearanceContext]=nil end
     end
-    local preset=Appearance.pick(Appearance.seed,serial,used)
-    if not preset then self.creating=false; return end
+    local looks=self:humanLooks()
+    local preset=looks and Identity.pick(Appearance.seed,serial,used,looks)
+    nickname=preset and Identity.name(preset,Identity.names(Players:GetPlayers(),self.names))
+    if not preset or not nickname then self.creating=false; if next(used)==nil then self.used[appearanceContext]=nil end; return end
+    self.names[nickname]=true
     used[preset]=true -- Reserve before an engine yield; no duplicate neighbours.
     local parent=if request then request.scene.world.npcs else self.rt.lobby.root
     if context=="Match" then
@@ -58,12 +83,23 @@ function Service:create(context,request)
     end
     local x,z=Appearance.matchOffset(preset)
     local pos=if request then request.scene.world:spawn(2) elseif context=="Lobby" then self.rt.lobby.entrance else self.rt.world:point("Service.Home")+Vector3.new(x,0,z)
+    spawnKey={}; pos=self.crowd:slot(pos,spawnKey,preset)
+    if not pos then release(preset); self.creating=false; return end
+    local function admit()
+        if not scope.alive or (request and self.practice[request.owner]~=request) then return false end
+        if Identity.names(Players:GetPlayers(),{})[Identity.key(nickname)] then return false end
+        local current=self:humanLooks()
+        if not current or not self.crowd:free(pos,spawnKey,3.2) then return false end
+        for _,f in ipairs(current) do if Identity.conflict(Identity.preset(preset),f) then return false end end
+        return true
+    end
     task.spawn(function()
-        local ok,mover,name=pcall(Rig.new,parent,serial,pos,scope,preset)
+        local ok,mover,name=pcall(Rig.new,parent,serial,pos,scope,preset,nil,nickname,admit)
         self.creating=false
         if not ok or not mover then release(preset); self.metrics.failures+=1; return end
         if not scope.alive or (request and self.practice[request.owner]~=request)
             or (context=="Match" and self.rt.rounds.policy.phase~="Active" and self.rt.rounds.policy.phase~="Council") then mover:destroy(); release(preset); return end
+        self.crowd:release(spawnKey); mover.crowd=self.crowd
         local actor=self.rt.actors:addMimic(mover.model,name)
         self.values[actor.id]={actor=actor,mover=mover,context=context,index=serial,next=scope:now()+Appearance.pause(serial,0),seen={},gesture=0,
             appearanceContext=appearanceContext,preset=preset,owner=request and request.owner,scene=request and request.scene}
@@ -74,13 +110,17 @@ end
 function Service:tick(dt)
     local settings=self.rt.settings or Settings
     self.lobbyClock:advance(dt)
+    local now=os.clock()
+    if now-self.lastTick<0.1 then return end
+    self.lastTick=now
+    local players=Players:GetPlayers()
+    self.crowd:update(players,self.values,{self.rt.guard and self.rt.guard.mover,self.rt.requests and self.rt.requests.npc})
     local phase=self.rt.rounds.policy.phase
-    local humans=#game:GetService("Players"):GetPlayers()
+    local humans=#players
     local matchHumans=0; for _ in pairs(self.rt.rounds.policy.participants) do matchHumans+=1 end
     if phase=="Active" and not self.matchGoal then self.matchGoal=Policy.mimicCount(matchHumans,settings.targetSize,settings.maxMimics) end
     local desired={Lobby=Policy.mimicCount(humans,settings.lobbyDensity,settings.maxMimics),
         Match=if phase=="Active" or phase=="Council" then self.matchGoal or 0 else 0}
-    local now=os.clock()
     if not self.creating and now>=self.nextCreate then
         local lesson
         for owner,r in pairs(self.practice) do
@@ -93,8 +133,6 @@ function Service:tick(dt)
         end
         end
     end
-    if now-self.lastTick<0.1 then return end
-    self.lastTick=now
     for _,a in pairs(self.values) do
         local mover,scope=a.mover,a.mover.scope
         if not scope.alive or not mover.root.Parent then continue end
@@ -107,7 +145,7 @@ function Service:tick(dt)
         mover.root.Anchored=paused==true
         if not paused then
             if mover.root:GetNetworkOwnershipAuto() or mover.root:GetNetworkOwner()~=nil then mover.root:SetNetworkOwner(nil) end
-            for _,p in ipairs(game:GetService("Players"):GetPlayers()) do
+            for _,p in ipairs(players) do
                 local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
                 if root and not a.working and (root.Position-mover.root.Position).Magnitude<7 and now>(a.nextGreeting or 0) then
                     a.gesture=scope:now()+1.5; a.gestureKind="Wave"; a.nextGreeting=now+18+a.preset%7
@@ -143,6 +181,8 @@ function Service:tick(dt)
                     id=ids[a.index%#ids+1]
                     pos=if self.rt.world.objects[id] then self.rt.world:approach(id) else self.rt.world:point(id)
                 end
+                pos=self.crowd:slot(pos,mover,a.preset+a.index)
+                if not pos then a.index+=1; return end
                 if mover:move(pos,scope:now()+30,function()
                     return not scope.alive or not self.values[a.actor.id] or (dancing and events.policy.beat=="Freeze")
                 end) then
@@ -163,6 +203,7 @@ function Service:tick(dt)
                 a.index+=1
             end)
             if not ok then self.metrics.failures+=1 end
+            self.crowd:release(mover)
             a.working=false; self.busy-=1; a.next=scope:now()+Appearance.pause(a.preset,a.index)
         end)
     end

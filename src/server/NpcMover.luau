@@ -83,7 +83,7 @@ function Mover:move(position, deadline, cancelled)
     end
     for _ = 1, 2 do
         if not valid() then self:stop(); return false end
-        if self:near(position, 2.5) then self:stop(); return true end
+        if self:near(position, if self.crowd then 1.25 else 2.5) and (not self.crowd or self.crowd:free(self.root.Position,self,3.2)) then self:stop(); return true end
         -- Never queue an unbounded number of ComputeAsync jobs if the engine stalls.
         if self.computing then self:stop(); return false end
         -- Mansion ramps are continuous: jumping can pick rail tops as shortcut waypoints.
@@ -112,6 +112,11 @@ function Mover:move(position, deadline, cancelled)
                 current = index
                 if not valid() or blocked then arrived = false; break end
                 if waypoint.Action == Enum.PathWaypointAction.Jump then self.humanoid.Jump = true end
+                if self.crowd then
+                    local reached=self.crowd:walk(self,waypoint.Position,math.min(deadline,self.scope:now()+8),function() return valid() and not blocked end)
+                    if not reached then arrived=false; break end
+                    continue
+                end
                 self.destination = waypoint.Position
                 self.humanoid:MoveTo(waypoint.Position)
                 local waypointDeadline = math.min(deadline, self.scope:now() + 3)
@@ -121,7 +126,7 @@ function Mover:move(position, deadline, cancelled)
             end
             connection:Disconnect()
             path:Destroy()
-            if arrived and self:near(position, 3) then self.metrics.arrivals += 1; self:stop(); return true end
+            if arrived and self:near(position, if self.crowd then 1.25 else 3) and (not self.crowd or self.crowd:free(self.root.Position,self,3.2)) then self.metrics.arrivals += 1; self:stop(); return true end
         else
             path:Destroy()
         end

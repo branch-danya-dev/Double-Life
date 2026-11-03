@@ -7,7 +7,7 @@ import sys
 root = Path(__file__).resolve().parents[1]
 engine_globals = {
     'game', 'workspace', 'script', 'Instance', 'Enum', 'task', 'warn',
-    'CFrame', 'Color3', 'Random', 'RaycastParams', 'TweenInfo', 'UDim2', 'Vector2', 'Vector3',
+    'CFrame', 'Color3', 'Random', 'RaycastParams', 'OverlapParams', 'TweenInfo', 'UDim2', 'Vector2', 'Vector3',
 }
 result = subprocess.run([sys.argv[1] if len(sys.argv) > 1 else 'luau-analyze',
                          *[str(p.relative_to(root)) for p in sorted((root / 'src').rglob('*.luau'))]],

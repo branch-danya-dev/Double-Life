@@ -42,6 +42,8 @@ jobs:
           python3 tests/run-mimic-animation.py
           python3 tests/run-mimic-rig.py
           python3 tests/run-mimic-presentation.py
+          python3 tests/run-mimic-polish.py
+          python3 tests/check-mimic-polish.py
           find src tests -name '*.luau' -print0 | xargs -0 luau-compile --null
           luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau tests/run.luau tests/rounds.luau tests/events.luau
           luau-analyze src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau tests/MemoryStore.luau tests/progression.luau tests/persistence.luau
@@ -55,6 +57,7 @@ jobs:
           luau-analyze src/server/PrologueContent.luau src/server/ProloguePolicy.luau tests/prologue.luau
           luau-analyze src/server/RetentionPolicy.luau src/server/TuningConfig.luau tests/TelemetrySink.luau tests/retention.luau
           luau-analyze src/server/MimicAppearance.luau src/server/MimicLoadPolicy.luau tests/mimic-avatars.luau
+          luau-analyze src/server/MimicCrowdPolicy.luau
           python3 tests/check-runtime-globals.py
       - name: Build and inspect artifacts
         run: |
@@ -76,7 +79,10 @@ jobs:
           python3 tests/check-mimic-assets.py
           python3 tests/check-fixtures.py DoubleLife-M111-review.rbxlx DoubleLife-M111-tests.rbxlx
           python3 tests/check-chat.py DoubleLife-M111-review.rbxlx DoubleLife-M111-tests.rbxlx
+          rojo build mimic-polish-tests.project.json -o DoubleLife-M112-tests.rbxlx
+          python3 tests/check-fixtures.py DoubleLife-M112-tests.rbxlx
+          python3 tests/check-chat.py DoubleLife-M112-tests.rbxlx
       - uses: actions/upload-artifact@v4
         with:
-          name: DoubleLife-M11-1
+          name: DoubleLife-M11-2
           path: '*.rbxlx'
