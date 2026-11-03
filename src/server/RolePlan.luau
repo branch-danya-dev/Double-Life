@@ -14,9 +14,12 @@ function Plan.assign(ids, randomIndex, mode)
         shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
     end
     local roles = {}
+    if mode == "M9" and #ids == 2 then
+        return {[shuffled[1]] = "Owner", [shuffled[2]] = "Spy"}
+    end
     if #ids < 3 then return roles end
     local composition = {}
-    if mode == "M5" then
+    if mode == "M5" or mode == "M9" then
         for index, role in ipairs({"Owner", "Spy", "CounterAgent", "Staff", "Guest"}) do
             for _ = 1, Plan.matrix[math.min(#ids, 15)][index] do table.insert(composition, role) end
         end

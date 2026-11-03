@@ -22,6 +22,8 @@ assert not {'M5Tests', 'M5TestDriver', 'M5ClientAudit', 'FakeMarketplace'} & nam
 assert not {'M6Tests', 'M6TestDriver', 'M6ClientAudit'} & names
 assert not {'M7Audit', 'M7ClientAudit', 'M7ReviewTests', 'M7ReviewClient', 'M7Review'} & names
 assert not {'M8Tests', 'M8ClientAudit', 'M8Metrics', 'M8AuditDriver'} & names
+assert not {'M9Tests', 'M9TestDriver'} & names
+assert {'ActorRegistry', 'ActorPolicy', 'Matchmaking', 'MatchPool', 'MatchTransport', 'QueuePolicy', 'LobbyWorld', 'MimicRig', 'MimicService', 'LobbyHud'} <= names
 assert 'M8AuditDriver' not in '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in items)
 assert {'ChatSetup', 'RoleGuide'} <= names
 assert 'M7Review' not in '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in items)

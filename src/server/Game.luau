@@ -22,6 +22,10 @@ function Game.start(options)
     local SocialService = require(script.Parent.SocialService)
     local CommerceService = require(script.Parent.CommerceService)
     local Telemetry = require(script.Parent.Telemetry)
+    local ActorRegistry = require(script.Parent.ActorRegistry)
+    local LobbyWorld = require(script.Parent.LobbyWorld)
+    local Matchmaking = require(script.Parent.Matchmaking)
+    local MimicService = require(script.Parent.MimicService)
 
     pcall(function() PhysicsService:RegisterCollisionGroup("DoubleLifeActors") end)
     PhysicsService:CollisionGroupSetCollidable("DoubleLifeActors", "DoubleLifeActors", false)
@@ -39,6 +43,7 @@ function Game.start(options)
     local profileRemote = remote("RemoteEvent", "ProfileAction")
     local socialRemote = remote("RemoteEvent", "SocialAction")
     local commerceRemote = remote("RemoteEvent", "CommerceAction")
+    local queueRemote = remote("RemoteEvent", "QueueAction")
     local function event(name)
         local value = Instance.new("BindableEvent")
         value.Name, value.Parent = name, script.Parent
@@ -55,12 +60,13 @@ function Game.start(options)
     local roles = Roles.new(Config, update)
     local rounds = RoundService.new(Config, roles, tell, finished)
     runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished, eventSignals = eventSignals,
-        metrics = {maxRebuildMs = 0, maxHeartbeatMs = 0}}
+        alive = true, actors = ActorRegistry.new(), metrics = {maxRebuildMs = 0, maxHeartbeatMs = 0}}
     runtime.profiles = ProfileService.new(runtime, tell, options)
     runtime.telemetry = Telemetry.new(runtime, options and options.analytics)
     runtime.commerce = CommerceService.new(runtime, tell, options)
     local function rebuild(starting)
         local began = os.clock()
+        if runtime.mimics then runtime.mimics:reset() end
         if runtime.scope then
             runtime.events:cancel()
             runtime.scope:destroy()
@@ -85,6 +91,7 @@ function Game.start(options)
             function(id) if scope.alive then rounds:extract(id) end end, evidence, onTask, onActivity, scope, tool)
         local guard = GuardService.start(world, Config, scope)
         local requests = Requests.start(world, roles, interactions, guard, tell, update, Config, scope, onTask, onActivity)
+        requests.actors = runtime.actors
         local access = WorldEvents.start(world, roles, interactions, guard, tell, Config, scope, onActivity, tool, onTask)
         local council = interactions.prompt(world.console, "Созвать собрание", "Пульт владельца · 1 раз", 1)
         council.KeyboardKeyCode = Enum.KeyCode.C
@@ -99,14 +106,17 @@ function Game.start(options)
         runtime.access = access
         runtime.social = SocialService.new(runtime, tell, onTask)
         runtime.events = EventDirector.new({world = world, scope = scope, rounds = rounds, roles = roles,
-            interactions = interactions, guard = guard, tell = tell, update = update, config = Config, signals = eventSignals})
+            interactions = interactions, guard = guard, tell = tell, update = update, config = Config, signals = eventSignals,
+            actors = runtime.actors})
         rounds.session = runtime
         if starting then runtime.profiles:beginRound(rounds.policy.roundId) end
         for index, player in ipairs(Players:GetPlayers()) do
             dossier:add(player)
             if player.Character then
                 -- A new round starts everyone in the foyer, with no carry-over positioning.
-                player.Character:PivotTo(CFrame.new(world:spawn(index)))
+                local position = if starting and rounds.policy.participants[player.UserId] then world:spawn(index)
+                    elseif runtime.lobby then runtime.lobby:position(index) else world:spawn(index)
+                player.Character:PivotTo(CFrame.new(position))
             end
             if starting then tell(player, "Раунд начался. Ваша роль и личные цели — в панели. H — правила.") end
         end
@@ -115,6 +125,10 @@ function Game.start(options)
     end
     rounds.rebuild = rebuild
     rebuild(false)
+    runtime.lobby = LobbyWorld.build(runtime)
+    runtime.queue = Matchmaking.new(runtime, queueRemote)
+    runtime.mimics = MimicService.new(runtime)
+    game:BindToClose(function() runtime.alive=false end)
 
     local function snapshot(player)
         local round = rounds:snapshot(player)
@@ -123,7 +137,7 @@ function Game.start(options)
             servicePoints = runtime.requests.ledger.scores[player.UserId] or 0,
             refreshments = runtime.requests.received[player.UserId] or 0,
             evidence = runtime.evidence:description(player.UserId), hasDossier = runtime.dossier:has(player), round = round,
-            activities = runtime.events:snapshot(player), profile = runtime.profiles:snapshot(player),
+            queue = runtime.queue:snapshot(player), activities = runtime.events:snapshot(player), profile = runtime.profiles:snapshot(player),
             social = runtime.social:snapshot(player), commerce = runtime.commerce:snapshot(player), publicStyles = runtime.commerce:public()}
     end
     getState.OnServerInvoke = snapshot
@@ -180,7 +194,9 @@ function Game.start(options)
         local used = {}
         for _, slot in pairs(spawnSlots) do used[slot] = true end
         for slot = 1, 15 do if not used[slot] then spawnSlots[player] = slot; break end end
-        player.RespawnLocation = runtime.world.spawns:FindFirstChild("PlayerSpawn" .. (spawnSlots[player] or 1))
+        player.RespawnLocation = runtime.lobby.spawn
+        runtime.actors:addHuman(player)
+        task.spawn(function() runtime.queue:add(player) end)
         runtime.profiles:add(player)
         runtime.telemetry:add(player)
         runtime.commerce:add(player)
@@ -194,7 +210,11 @@ function Game.start(options)
             character.DescendantAdded:Connect(configure)
             local humanoid = character:WaitForChild("Humanoid", 10)
             local root = character:WaitForChild("HumanoidRootPart", 10)
-            if root and player.Character == character then character:PivotTo(CFrame.new(runtime.world:spawn(spawnSlots[player] or 1))) end
+            if root and player.Character == character then
+                local position=if rounds.policy.participants[player.UserId] then runtime.world:spawn(spawnSlots[player] or 1)
+                    else runtime.lobby:position(spawnSlots[player] or 1)
+                character:PivotTo(CFrame.new(position))
+            end
             if humanoid then humanoid.Died:Connect(function()
                 if player.Character == character then resetCharacter(player) end
             end) end
@@ -205,6 +225,9 @@ function Game.start(options)
     end
     Players.PlayerAdded:Connect(addPlayer)
     Players.PlayerRemoving:Connect(function(player)
+        runtime.queue:remove(player)
+        runtime.actors:remove(player.UserId)
+        runtime.lobby.interactions:remove(player)
         runtime.social:remove(player)
         runtime.commerce:remove(player)
         runtime.telemetry:remove(player)
@@ -232,6 +255,7 @@ function Game.start(options)
         runtime.commerce:tick()
         runtime.telemetry:tick()
         runtime.profiles:tick(dt)
+        runtime.mimics:tick(dt)
         broadcast += dt
         if broadcast >= 0.5 then
             broadcast = 0

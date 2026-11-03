@@ -64,7 +64,7 @@ function Requests.start(world, roles, interactions, guard, tell, update, config,
         while scope.alive and world.map.Parent do
             for _, request in ipairs(self.ledger:expire(scope:now())) do
                 if request.executor then self:clearTray(request.executor) end
-                local player = Players:GetPlayerByUserId(request.userId)
+                local player = if type(request.userId)=="number" then Players:GetPlayerByUserId(request.userId) else nil
                 if player then tell(player, "Запрос истёк. Можно заказать снова.") end
             end
             task.wait(1)
@@ -103,7 +103,7 @@ function Requests:complete(request, executor)
     local cup = self.world.block("DeliveredJuice", Vector3.new(0.6, 1, 0.6), target.part.Position + Vector3.new(0, 1.6, 0), Color3.fromRGB(255, 180, 64))
     cup.CanCollide = false
     self.scope:delay(12, function() cup:Destroy() end)
-    local requester = Players:GetPlayerByUserId(request.userId)
+    local requester = if type(request.userId)=="number" then Players:GetPlayerByUserId(request.userId) else nil
     if requester then
         self.received[request.userId] = (self.received[request.userId] or 0) + 1
         self.onTask(requester, "Refreshment", 1)
@@ -120,6 +120,16 @@ function Requests:complete(request, executor)
         self.tell(staff, "Доставлено. +" .. self.config.REQUEST_POINTS .. " сессионных очков.")
     end
     return true
+end
+
+function Requests:createForActor(actor, target)
+    if not self.actors or self.actors:get(actor.id)~=actor or actor.kind~="Mimic" or actor.role~="Guest"
+        or not self.scope.alive or not self.scope.running then return false end
+    local destination=self.targets[target]
+    local root=actor.model and actor.model:FindFirstChild("HumanoidRootPart")
+    if not destination or not root or (root.Position-destination.approach).Magnitude>10 then return false end
+    -- A string actorId is confined to the service ledger, never sent to Player APIs.
+    return self.ledger:create(actor.id,target,self.scope:now())~=nil
 end
 
 function Requests:runNpc()

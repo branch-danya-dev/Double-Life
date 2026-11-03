@@ -1,0 +1,58 @@
+2026-11-03T09:41:49.618Z M7 PASS isolated memory adapter
+2026-11-03T09:41:49.618Z M9 WAIT ONE: start one client; add second only after SOLO PASS
+2026-11-03T09:41:51.629Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T09:41:51.629Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T09:41:51.629Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T09:41:51.629Z M7 PASS bounded animated NPCs
+2026-11-03T09:41:51.629Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T09:41:51.629Z M7 PASS exactly 22 lights after reset
+2026-11-03T09:41:51.629Z M7 PASS interactive art budget 82
+2026-11-03T09:41:51.629Z M7 PASS static art survives round reset
+2026-11-03T09:41:59.984Z M8 CLIENT CHAT PASS Player1
+2026-11-03T09:42:25.111Z M9 PASS mimics do not become Roblox Players
+2026-11-03T09:42:25.111Z M9 PASS moving lobby mimics exist
+2026-11-03T09:42:25.111Z M9 PASS one real player never starts full round
+2026-11-03T09:42:25.111Z M9 SOLO PASS: add second real client
+2026-11-03T09:43:52.321Z M8 CLIENT CHAT PASS Player2
+2026-11-03T09:44:02.625Z M9 PASS client chat and FakeMemory
+2026-11-03T09:44:02.741Z M9 PASS client chat and FakeMemory
+2026-11-03T09:44:02.741Z M9 PASS two actual players are Owner and Spy
+2026-11-03T09:44:04.408Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T09:44:04.408Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T09:44:04.408Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T09:44:04.408Z M7 PASS bounded animated NPCs
+2026-11-03T09:44:04.408Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T09:44:04.408Z M7 PASS exactly 22 lights after reset
+2026-11-03T09:44:04.408Z M7 PASS interactive art budget 82
+2026-11-03T09:44:04.408Z M7 PASS static art survives round reset
+2026-11-03T09:44:12.557Z M9 PASS mimic has separate Guest actor
+2026-11-03T09:44:12.557Z M9 PASS mimic has separate Guest actor
+2026-11-03T09:44:12.557Z M9 PASS mimic has separate Guest actor
+2026-11-03T09:44:12.557Z M9 PASS mimic has separate Guest actor
+2026-11-03T09:44:12.557Z M9 PASS mimic has separate Guest actor
+2026-11-03T09:44:12.557Z M9 PASS mimic has separate Guest actor
+2026-11-03T09:44:12.557Z M9 PASS no mimic profile
+2026-11-03T09:44:12.557Z M9 PASS no mimic profile
+2026-11-03T09:44:12.557Z M9 PASS no mimic profile
+2026-11-03T09:44:12.557Z M9 PASS no mimic profile
+2026-11-03T09:44:12.557Z M9 PASS no mimic profile
+2026-11-03T09:44:12.557Z M9 PASS no mimic profile
+2026-11-03T09:44:34.939Z M9 PASS human owner calls council
+2026-11-03T09:44:37.957Z M9 PASS mimic and world clock pause
+2026-11-03T09:44:59.139Z M9 PASS human majority can search a mimic
+2026-11-03T09:44:59.139Z M9 PASS match mimics reach upper floor and place a real service request
+2026-11-03T09:45:41.336Z M9 METRICS {"maxWorkers":2,"failures":0,"orders":1,"upperArrivals":3,"matchActions":9,"actions":61,"jobs":65}
+2026-11-03T09:45:41.336Z M9 PASS bounded pathfinding workers
+2026-11-03T09:45:41.336Z M9 PASS real spy extraction decides match
+2026-11-03T09:45:54.203Z M9 PASS first visitor retained as real player
+2026-11-03T09:45:54.203Z M9 PASS lobby survives round rebuild
+2026-11-03T09:45:54.203Z M9 PASS match actors cleaned on reset
+2026-11-03T09:45:54.203Z M9 STUDIO SUITE PASS: one/two humans, lobby, six match mimics, council, extraction and reset
+2026-11-03T09:45:54.537Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T09:45:54.537Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T09:45:54.537Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T09:45:54.537Z M7 PASS bounded animated NPCs
+2026-11-03T09:45:54.537Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T09:45:54.537Z M7 PASS exactly 22 lights after reset
+2026-11-03T09:45:54.537Z M7 PASS interactive art budget 82
+2026-11-03T09:45:54.537Z M7 PASS static art survives round reset

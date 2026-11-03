@@ -65,6 +65,7 @@ driver.OnClientInvoke=function(c)
         assert(prompt,"missing prompt "..c.action)
         task.wait(0.25); prompt:InputHoldBegin(); task.wait(prompt.HoldDuration+0.3); prompt:InputHoldEnd(); task.wait(0.5)
         return true
+    elseif c.kind=="Queue" then remotes.QueueAction:FireServer(c.action); task.wait(0.6); return true
     elseif c.kind=="Social" then remotes.SocialAction:FireServer(c.action,c.target,c.roundId); task.wait(0.7); return true
     elseif c.kind=="Event" then remotes.EventAction:FireServer(c.action,c.roundId,c.event); task.wait(0.5); return true
     elseif c.kind=="Vote" then remotes.CouncilAction:FireServer("Vote",c.roundId,c.target,false); task.wait(0.4); return true

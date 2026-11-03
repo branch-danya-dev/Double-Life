@@ -11,18 +11,21 @@ import re
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', required=True, type=Path)
 parser.add_argument('--staff-gate', action='store_true', help='Expect the focused M8.1 positive + negative rounds')
+parser.add_argument('--stage', default='M8', help='Project fixture prefix, e.g. M9')
 parser.add_argument('logs', nargs='+', type=Path)
 args = parser.parse_args()
+assert re.fullmatch(r'M\d+', args.stage), 'Invalid stage prefix'
 lines = []
 for path in args.logs:
     for line in path.read_text(encoding='utf-8', errors='replace').splitlines():
-        match = re.match(r'^(\d{4}-\d{2}-\d{2}T[^,]+),.*\[FLog::Creator(?:Output|Warning|Error)\] (?:Warning: )?(M8 .*|M7 PASS .*|M7 CLIENT .*|M7 STUDIO FAIL.*)$', line)
+        match = re.match(r'^(\d{4}-\d{2}-\d{2}T[^,]+),.*\[FLog::Creator(?:Output|Warning|Error)\] (?:Warning: )?('
+                         + re.escape(args.stage) + r' .*|M8 .*|M7 PASS .*|M7 CLIENT .*|M7 STUDIO FAIL.*)$', line)
         if match:
             lines.append(match.group(1) + ' ' + match.group(2))
 lines.sort()
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text('\n'.join(lines) + '\n', encoding='utf-8', newline='\n')
-completion = 'M8 STAFF DELIVERY GATE PASS:' if args.staff_gate else 'M8 STUDIO SUITE PASS:'
+completion = 'M8 STAFF DELIVERY GATE PASS:' if args.staff_gate else args.stage + ' STUDIO SUITE PASS:'
 summary = {'complete': any(completion in s for s in lines),
            'failures': [s for s in lines if 'STUDIO FAIL' in s],
            # The final marker follows the last cohort's natural reset and client
