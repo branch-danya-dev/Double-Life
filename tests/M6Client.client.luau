@@ -14,6 +14,7 @@ local function near(a,b,r) return Vector2.new(a.X-b.X,a.Z-b.Z).Magnitude<r and m
 local function walk(destination)
     local root,h=body()
     local began,travel,last=os.clock(),0,root.Position
+    if near(root.Position,destination,3) then return {seconds=0,distance=0,position=root.Position} end
     local camera=workspace.CurrentCamera
     camera.CameraType=Enum.CameraType.Scriptable
     for _=1,3 do
@@ -53,7 +54,16 @@ driver.OnClientInvoke=function(c)
             if p:IsA("BasePart") then p.LocalTransparencyModifier=if c.kind=="Manual" then 0 else 1 end
         end
     end
-    if c.kind=="Walk" then return walk(c.position)
+    if c.kind=="LessonReady" then
+        local deadline=os.clock()+15
+        repeat
+            local root=body()
+            local s=remotes.GetState:InvokeServer().prologue
+            if s.active and (root.Position-s.target).Magnitude<180 then return true end
+            task.wait(0.1)
+        until os.clock()>deadline
+        error("private spawn did not replicate")
+    elseif c.kind=="Walk" then return walk(c.position)
     elseif c.kind=="Prompt" then
         local part=workspace.DoubleLifeMansion.Round:FindFirstChild(c.part,true)
         assert(part,"missing object "..c.part)
@@ -65,6 +75,34 @@ driver.OnClientInvoke=function(c)
         assert(prompt,"missing prompt "..c.action)
         task.wait(0.25); prompt:InputHoldBegin(); task.wait(prompt.HoldDuration+0.3); prompt:InputHoldEnd(); task.wait(0.5)
         return true
+    elseif c.kind=="Prologue" then remotes.PrologueAction:FireServer(c.action); task.wait(0.7); return true
+    elseif c.kind=="LessonPrompt" then
+        local s=remotes.GetState:InvokeServer().prologue
+        assert(s.active and s.object and s.object:IsDescendantOf(s.scene),"private lesson target")
+        local root=body()
+        workspace.CurrentCamera.CameraType=Enum.CameraType.Scriptable
+        workspace.CurrentCamera.CFrame=CFrame.lookAt(root.Position+Vector3.new(0,1.5,0),s.object.Position)
+        local prompt
+        for _,p in ipairs(s.object:GetChildren()) do if p:IsA("ProximityPrompt") and p.Enabled and p.ActionText==s.action then prompt=p; break end end
+        assert(prompt,"current lesson prompt")
+        task.wait(0.25); prompt:InputHoldBegin(); task.wait(prompt.HoldDuration+0.3); prompt:InputHoldEnd(); task.wait(0.6)
+        return true
+    elseif c.kind=="LessonDance" then
+        local s=remotes.GetState:InvokeServer().prologue
+        walk(s.target)
+        local root,h=body(); local direction=1; local deadline=os.clock()+40
+        repeat
+            s=remotes.GetState:InvokeServer().prologue
+            if not s.active or s.step~=c.step then h:MoveTo(root.Position); return true end
+            local e=s.music
+            if e and e.phase=="Running" and e.beat=="Move" then
+                local destination=s.target+Vector3.new(3*direction,0,0)
+                if near(root.Position,destination,1) then direction=-direction end
+                h:MoveTo(destination)
+            else h:MoveTo(root.Position) end
+            task.wait(0.1)
+        until os.clock()>deadline
+        error("lesson dance deadline")
     elseif c.kind=="Queue" then remotes.QueueAction:FireServer(c.action); task.wait(0.6); return true
     elseif c.kind=="Social" then remotes.SocialAction:FireServer(c.action,c.target,c.roundId); task.wait(0.7); return true
     elseif c.kind=="Event" then remotes.EventAction:FireServer(c.action,c.roundId,c.event); task.wait(0.5); return true

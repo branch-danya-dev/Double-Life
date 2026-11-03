@@ -31,7 +31,7 @@ summary = {'complete': any(completion in s for s in lines),
            # The final marker follows the last cohort's natural reset and client
            # reports (15 in full M8; the negative 5-client round in staff mode).
            'rounds': [s for s in lines if 'FULL ROUND PASS' in s or completion in s],
-           'routes': [s for s in lines if 'M8 ROUTE ' in s],
+           'routes': [s for s in lines if 'M8 ROUTE ' in s or args.stage + ' ROUTE ' in s],
            'clientSamples': []}
 for line in lines:
     if 'M8 CLIENT METRICS ' in line:

@@ -48,6 +48,16 @@ function Service:entry(player)
     local token = self.connections[player]
     return if e and e.token == token and self.sessions:isCurrent(player.UserId, token) then e else nil
 end
+function Service:onboarding(player,state)
+    local e=self:entry(player)
+    local safe=self.adapter.mode=="FakeMemory" or (Settings.onboardingPersistenceVerified
+        and self.adapter.mode=="IsolatedDataStore")
+    if not safe or not e or e.status~="Ready" then return false end
+    local ok=self.store:enqueue(player.UserId,{id="onboarding:v1:"..state..":"..player.UserId,
+        kind="Onboarding",state=state,at=os.time()},e.token)
+    if ok then self:pump(player.UserId,e.token) end
+    return ok
+end
 function Service:add(player)
     if self.sessions.stopping then return end
     local token = self.serverId .. ":" .. Http:GenerateGUID(false)

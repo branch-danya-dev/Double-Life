@@ -44,6 +44,12 @@ function Policy.reward(record, winner, rules)
 end
 function Policy.apply(p, op, catalog)
     for _, receipt in ipairs(p.receipts) do if receipt.id == op.id then return receipt.ok, receipt.reason end end
+    if op.kind=="Onboarding" then
+        if (op.state~="Skipped" and op.state~="Completed") or type(op.at)~="number" or op.at%1~=0
+            or op.at<0 or op.at>1000000000000 then return false,"InvalidOnboarding" end
+        if p.onboarding.state~="Completed" then p.onboarding={version=1,state=op.state,at=op.at} end
+        return true,"OnboardingSaved"
+    end
     if op.kind == "Award" then
         local a = op.award
         if type(a) ~= "table" or not table.find(catalog.roles, a.role) or type(a.won) ~= "boolean" then return false, "InvalidAward" end

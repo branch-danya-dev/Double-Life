@@ -12,7 +12,8 @@ end
 function Schema.new(catalog)
     local p = {schemaVersion = 1, revision = 0, reputationXp = 0, tokens = 0, roleXp = {},
         stats = {played = 0, wins = 0, roles = {}}, history = {}, inventory = {}, equipped = {Title = "", Card = ""},
-        achievements = {}, receipts = {}, sessionSeq = 0, lease = {owner = "", expires = 0}}
+        achievements = {}, receipts = {}, sessionSeq = 0, lease = {owner = "", expires = 0},
+        onboarding = {version=1,state="Unseen",at=0}}
     for _, role in ipairs(catalog.roles) do
         p.roleXp[role], p.stats.roles[role] = 0, {played = 0, wins = 0}
         p.inventory[catalog.defaults[role]], p.equipped[role] = true, catalog.defaults[role]
@@ -75,6 +76,12 @@ function Schema.normalize(raw, catalog)
             table.insert(p.receipts, {id = r.id, ok = r.ok, reason = r.reason})
         end
         p.sessionSeq = number(raw.sessionSeq, 0, 1000000000)
+        if raw.onboarding~=nil then
+            local o=raw.onboarding
+            if type(o)~="table" or o.version~=1 or (o.state~="Unseen" and o.state~="Skipped" and o.state~="Completed")
+                or not Schema.integer(o.at,1000000000000) then error("Malformed onboarding") end
+            p.onboarding={version=1,state=o.state,at=o.at}
+        end
         local lease = raw.lease
         if lease ~= nil then
             if type(lease) ~= "table" or type(lease.owner) ~= "string" or #lease.owner > 120

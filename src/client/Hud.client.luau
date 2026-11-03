@@ -113,12 +113,13 @@ local function renderPanel()
         .. ":" .. tostring(showProfile) .. ":" .. p.status .. ":" .. tostring(p.revision) .. ":" .. tostring(p.requestResult)
         .. ":" .. tostring(p.reward and p.reward.reason)
         .. ":" .. tostring(p.retrying) .. ":" .. tostring(p.unconfirmed)
-    panel.Visible = r.phase == "Council" or (r.phase == "Results" and not hideResults) or showRules or showEvents or showProfile
+    local teaching=last.prologue and last.prologue.active
+    panel.Visible = (not teaching and (r.phase == "Council" or (r.phase == "Results" and not hideResults))) or showRules or showEvents or showProfile
     local card = p.equipped and p.equipped.Card
     panel.BackgroundColor3 = if (showProfile or r.phase == "Results") and card == "TealCard" then Color3.fromRGB(23, 55, 57)
         elseif (showProfile or r.phase == "Results") and card == "AmberCard" then Color3.fromRGB(65, 47, 24) else UI.color("Ink")
-    status.Visible = not panel.Visible
-    banner.Visible = not panel.Visible
+    status.Visible = not panel.Visible and not teaching
+    banner.Visible = not panel.Visible and not teaching
     local timer = scroll:FindFirstChild("CouncilTime")
     if timer then timer.Text = "Собрание · осталось " .. r.remaining .. " с" end
     local limits = scroll:FindFirstChild("EventLimit")

@@ -51,7 +51,7 @@ function Suite.run(loadService)
         end
         return shared,server
     end
-    for _,mode in ipairs({"Success","SendFailure","MemoryFailure","CancelDuringYield","CancelAfterSend","InitFailure","StaleInitFailure","ArrivalForgery","Timeout","Disconnect"}) do
+    for _,mode in ipairs({"Success","SendFailure","MemoryFailure","CancelDuringYield","CancelAfterSend","InitFailure","StaleInitFailure","ArrivalForgery","Timeout","Disconnect","ConsentHeld","ConsentWithdrawn"}) do
         local s,new=scenario(); local a,b=new("A"),new("B")
         local pa,pb=a.add(1),b.add(2)
         check(not a.q:register(pa),"duplicate registration does not replace ticket")
@@ -59,8 +59,15 @@ function Suite.run(loadService)
         if mode=="SendFailure" then b.transport.failSend=true end
         if mode=="MemoryFailure" then b.transport.failUpdate=true end
         if mode=="CancelDuringYield" then b.transport.afterUpdate=function() b.q:cancel(pb) end end
+        if mode=="ConsentHeld" then b.q.policy:consent(2,false) end
+        if mode=="ConsentWithdrawn" then b.transport.afterUpdate=function() b.q.policy:consent(2,false) end end
         b.q:poll()
-        if mode=="MemoryFailure" then
+        if mode=="ConsentHeld" or mode=="ConsentWithdrawn" then
+            check(#s.sends==0,"held or withdrawn learner is never silently teleported")
+            b.q:eligible(); check(b.q:snapshot(pb).state=="MatchReady","one local learner sees a remote reservation")
+            b.q.policy:consent(2,true); b.q:poll()
+            check(#s.sends==1,"acceptance permits the reserved transport")
+        elseif mode=="MemoryFailure" then
             check(b.q.status=="MatchmakingFailed" and #s.sends==0,"MemoryStore refusal fails closed")
             b.transport.failUpdate=false; b.q:poll(); check(#s.sends==1,"memory retry makes progress")
         elseif mode=="SendFailure" then
@@ -74,7 +81,10 @@ function Suite.run(loadService)
             b.q:poll(); check(#s.sends==1,"repeated poll does not duplicate teleport")
             if mode=="Success" then
                 b.q:remove(pb); pb.Parent=nil
+                local admitted=false
+                a.q.onArrival=function(p) admitted=a.q.arrived[p.UserId] and a.q.joined[p.UserId] end
                 local arrived=a.add(2,{SourceGameId=100,SourcePlaceId=200,TeleportData=sent})
+                check(admitted,"validated admission reconciles a late prologue bootstrap")
                 a.q:poll(); a.q:eligible(); s.now=4
                 check(#a.q:eligible()==2,"arrival, atomic confirmation and local ready delay permit actual pair")
                 check(a.q.players[2]==arrived and a.q.approved[2],"destination owns actual arrived Player")
@@ -100,6 +110,6 @@ function Suite.run(loadService)
             end
         end
     end
-    print("M9 actual matchmaking runtime:",count,"assertions PASS")
+    print("M9/M10 actual matchmaking runtime:",count,"assertions PASS")
 end
 return Suite

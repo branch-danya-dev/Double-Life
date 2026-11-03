@@ -6,7 +6,7 @@ task.spawn(function()
         local modules = game.ServerScriptService.DoubleLifeServer
         local driver = Instance.new("RemoteFunction")
         driver.Name, driver.Parent = "M6TestDriver", game.ReplicatedStorage
-        local rt = require(modules.Game).start({adapter = require(script.Parent.MemoryStore).new(require(modules.ProfileSchema).copy)})
+        local rt = require(modules.Game).start({prologue=false,adapter = require(script.Parent.MemoryStore).new(require(modules.ProfileSchema).copy)})
         local naturalTick = rt.rounds.policy.tick
         rt.rounds.policy.tick = function(self, dt) return naturalTick(self, dt, 0) end
         assert(rt.profiles.adapter.mode == "FakeMemory", "isolated memory only")

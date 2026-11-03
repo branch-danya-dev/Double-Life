@@ -7,4 +7,5 @@ return {
     studioEnabled = false,
     studioUniverseId = 0,
     studioStoreName = "DoubleLife_M4_ISOLATED_TEST_v1",
+    onboardingPersistenceVerified = false, -- Enable only after the isolated published marker/recovery gate.
 }

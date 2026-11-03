@@ -7,16 +7,17 @@ local Transport=require(script.Parent.MatchTransport)
 local Service={}; Service.__index=Service
 function Service.new(rt, remote)
     local self=setmetatable({rt=rt,policy=Queue.new(Settings,os.clock),settings=Settings,tokens={},players={},
-        sending={},last={},approved={},transport=Transport.new(Settings),status="Local",errors=0},Service)
+        sending={},last={},approved={},arrived={},joined={},transport=Transport.new(Settings),status="Local",errors=0},Service)
     remote.OnServerEvent:Connect(function(p,action)
         if os.clock()<(self.last[p] or 0) then return end
         self.last[p]=os.clock()+0.5
         if action=="Register" then self:register(p)
         elseif action=="Cancel" then self:cancel(p)
-        elseif action=="Accept" then self.policy:consent(p.UserId,true)
+        elseif action=="Accept" then
+            if self.onAccept then self.onAccept(p) else self.policy:consent(p.UserId,true) end
         elseif action=="Decline" then self:cancel(p)
         elseif action=="Lobby" and not rt.rounds.policy.participants[p.UserId] and p.Character then
-            p.Character:PivotTo(CFrame.new(rt.lobby:position(1)))
+            if not self.onLobby or not self.onLobby(p) then p.Character:PivotTo(CFrame.new(rt.lobby:position(1))) end
         end
     end)
     if self.transport.enabled then
@@ -58,10 +59,12 @@ function Service:add(p)
                 accepted=t and t.token==td.ticket and t.server==game.JobId and t.arrived==true
             end
             if p.Parent~=Players then return end
-            if accepted then self.tokens[p.UserId]=td.ticket else self.status="ArrivalRejected"; self.errors+=1 end
+            if accepted then self.tokens[p.UserId]=td.ticket; self.arrived[p.UserId]=true else self.status="ArrivalRejected"; self.errors+=1 end
         end
     end
     self:register(p)
+    self.joined[p.UserId]=true
+    if self.arrived[p.UserId] and self.onArrival then self.onArrival(p) end
 end
 function Service:cancel(p)
     if not self.policy:cancel(p.UserId) then return false end
@@ -83,6 +86,7 @@ function Service:remove(p)
     if not self.sending[p] then self:cancel(p) end
     self.policy:leave(p.UserId)
     self.players[p.UserId],self.tokens[p.UserId],self.last[p],self.sending[p],self.approved[p.UserId]=nil,nil,nil,nil,nil
+    self.arrived[p.UserId],self.joined[p.UserId]=nil,nil
 end
 function Service:poll()
     if self.busy then return end
@@ -99,26 +103,33 @@ function Service:poll()
         if p.Parent==Players then
             present[id]=true
             local r=self.policy.entries[id]
-            if r and r.state~="Active" and r.consent and not self.sending[p] then registrations[id]=self.tokens[id] end
+            if r and r.state~="Active" and not self.sending[p] then registrations[id]={token=self.tokens[id],consent=r.consent} end
         end
     end
     local ok,state=pcall(function() return self.transport:update(function(s)
         s=s or Pool.empty(); Pool.prune(s,now)
-        for id,token in pairs(registrations) do Pool.register(s,id,game.JobId,token,now,Settings) end
+        for id,r in pairs(registrations) do Pool.register(s,id,game.JobId,r.token,now,Settings,r.consent) end
         Pool.match(s,matchId,now,Settings)
         for id in pairs(s.matches) do Pool.consume(s,id,game.JobId,present,now) end
         return s
     end) end)
     self.busy=false
-    if not ok then self.status="MatchmakingFailed"; self.errors+=1; self.approved={}; return end
+    if not ok then
+        self.status="MatchmakingFailed"; self.errors+=1; self.approved={}
+        for _,r in pairs(self.policy.entries) do r.remoteReady=nil end
+        return
+    end
     self.status="Staging"
     local approved={}
-    for id,token in pairs(registrations) do
+    for id,registration in pairs(registrations) do
+        local token=registration.token
         local p,t=self.players[id],state.tickets[tostring(id)]
         local m=t and t.match and state.matches[t.match]
+        local entry=self.policy.entries[id]
+        if entry then entry.remoteReady=m~=nil and t.token==token end
         if p and p.Parent==Players and self.policy.entries[id] and self.tokens[id]==token and t and t.token==token and m then
             if m.target==game.JobId and m.committed then approved[id]=true
-            elseif m.target~=game.JobId and not self.sending[p] then
+            elseif m.target~=game.JobId and entry.consent and Pool.consented(state,m.id) and not self.sending[p] then
                 self.sending[p]={id=m.id,token=token,deadline=os.clock()+Settings.assignmentLease}
                 local sent=pcall(function() self.transport:send(p,m.target,m.id,token) end)
                 if not sent then self.sending[p]=nil; self.status="TransportFailed"; self.errors+=1; self:cancel(p); self:register(p) end

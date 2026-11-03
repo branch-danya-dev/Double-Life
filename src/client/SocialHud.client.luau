@@ -174,6 +174,8 @@ end)
 remotes.PersonalUpdate.OnClientEvent:Connect(function(kind, value) if kind == "Snapshot" then snapshot(value) end end)
 Input.InputBegan:Connect(function(input, processed)
     if processed then return end
+    if state and ((state.prologue and state.prologue.active)
+        or (state.queue and state.queue.state=="MatchReady" and state.queue.needsConsent)) then return end
     if input.KeyCode == Enum.KeyCode.J then toggle("Social")
     elseif input.KeyCode == Enum.KeyCode.K then toggle("Shop")
     elseif input.KeyCode == Enum.KeyCode.P or input.KeyCode == Enum.KeyCode.H then panel.Visible = false end

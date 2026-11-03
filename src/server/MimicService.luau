@@ -22,6 +22,24 @@ function Service:reset()
     local list={}; for _,a in pairs(self.values) do if a.context=="Match" then table.insert(list,a) end end
     for _,a in ipairs(list) do self:remove(a) end
 end
+function Service:addPractice(scene,scope,owner,ready)
+    self.serial+=1; local serial=self.serial
+    task.spawn(function()
+        local ok,mover,name=pcall(Rig.new,scene.world.npcs,serial,scene.world:spawn(2),scope)
+        if not ok then self.metrics.failures+=1; return end
+        if not scope.alive then mover.model:Destroy(); return end
+        local actor=self.rt.actors:addMimic(mover.model,name)
+        self.values[actor.id]={actor=actor,mover=mover,context="Prologue",owner=owner,scene=scene,index=serial,next=0,seen={},gesture=0}
+        ready(actor)
+    end)
+end
+function Service:removePractice(owner)
+    local list={}; for _,a in pairs(self.values) do if a.context=="Prologue" and a.owner==owner then table.insert(list,a) end end
+    for _,a in ipairs(list) do self:remove(a) end
+end
+function Service:greetPractice(owner)
+    for _,a in pairs(self.values) do if a.owner==owner then a.gesture=a.mover.scope:now()+3 end end
+end
 function Service:create(context)
     self.creating=true; self.serial+=1
     local serial=self.serial
@@ -93,6 +111,9 @@ function Service:tick(dt)
                 local pos,id
                 if a.context=="Lobby" then
                     pos=if retiring then self.rt.lobby.entrance else self.rt.lobby.spots[a.index%#self.rt.lobby.spots+1]
+                elseif a.context=="Prologue" then
+                    local ids={"Painting1","Service.Target2","Events.Stage","Social.TraceSpot"}
+                    id=ids[a.index%#ids+1]; pos=a.scene.world:approach(id)
                 else
                     local ids={"Painting1","Service.Target2","Painting2","Events.Stage","Painting3","Social.TraceSpot"}
                     id=ids[a.index%#ids+1]

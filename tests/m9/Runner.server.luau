@@ -5,7 +5,7 @@ local Http=game:GetService("HttpService")
 local modules=game.ServerScriptService.DoubleLifeServer
 local driver=Instance.new("RemoteFunction"); driver.Name,driver.Parent="M6TestDriver",RS
 local audit=Instance.new("RemoteFunction"); audit.Name,audit.Parent="M8AuditDriver",RS
-local rt=require(modules.Game).start({adapter=require(script.Parent.MemoryStore).new(require(modules.ProfileSchema).copy)})
+local rt=require(modules.Game).start({prologue=false,adapter=require(script.Parent.MemoryStore).new(require(modules.ProfileSchema).copy)})
 rt.roles.random={NextInteger=function(_,_,high) return high end}
 local function check(ok,msg) assert(ok,msg); print("M9 PASS",msg) end
 local function waitFor(f,seconds,msg)

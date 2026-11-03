@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "Double Life / M7 native art-deco kit",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "engine": "Roblox Studio 0.745",
   "baseCommit": "91a9a16e69242b2fc6ac6f67627ef4b0dc38996b",
   "direction": "Art deco, warm evening reception, restrained mystery; user-approved",
@@ -58,14 +58,14 @@
     },
     {
       "path": "src/client/Hud.client.luau",
-      "sha256": "3aa067bac49a8f2d7791049eb3d89bec1ca3b0ef5e94250ed8d1cc70ceb863ef",
+      "sha256": "1a63dfc3a2540f2b5a77cc356f6b5b4507a760bff9d562b4cb4355eaed844016",
       "normalization": "UTF-8 LF",
       "provenance": "Original code authored for this project",
       "rights": "Project-original; no public license grant"
     },
     {
       "path": "src/client/SocialHud.client.luau",
-      "sha256": "c39fa23f98138315c99eaf9b978702fc11f403ecbf55d23bac49dd258829dfe7",
+      "sha256": "1221ba74ce70d01a0066755f13dcbbadbef5597b081c092e126fe783c4b7098a",
       "normalization": "UTF-8 LF",
       "provenance": "Original code authored for this project",
       "rights": "Project-original; no public license grant"
@@ -117,5 +117,5 @@
     "animatedNPCs": 2,
     "particles": 0
   },
-  "revisionNote": "M9: lobby and two-human HUD wording; original mansion art unchanged"
+  "revisionNote": "M10: prologue HUD visibility and shortcut coordination; original mansion art unchanged"
 }
