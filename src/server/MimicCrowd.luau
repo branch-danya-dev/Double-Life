@@ -51,8 +51,10 @@ function Crowd:walk(mover,waypoint,deadline,valid)
     local waitUntil
     while valid() and mover.scope:now()<deadline do
         local from=mover.root.Position
-        if mover:near(waypoint,0.85) and self:free(from,mover,Policy.radius) then mover:stop(); return true end
-        if detour and mover:near(detour,0.85) then detour=nil end
+        -- Humanoid MoveTo completes about one stud from its goal. A tighter
+        -- threshold waits forever at an engine-completed waypoint.
+        if mover:near(waypoint,1.25) and self:free(from,mover,Policy.radius) then mover:stop(); return true end
+        if detour and mover:near(detour,1.25) then detour=nil end
         local target=detour or waypoint
         local delta=Vector3.new(target.X-from.X,0,target.Z-from.Z)
         if delta.Magnitude<0.1 then mover:stop(); return false end

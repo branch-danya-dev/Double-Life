@@ -100,6 +100,16 @@ function Suite.run(load)
         scope={alive=true,running=true,now=function() return time end},metrics={computes=0,failures=0,timeouts=0,arrivals=0,computeSeconds=0}},Mover)
     check(routed:move(V.new(12,3,0),30,function() return false end),'actual path skips occupied intermediate waypoints and reaches goal')
     check(minimum>=3.2 and routed.metrics.computes==1,'one path, safe physical route past stationary player')
+    time=0; root.Position=V.new(0,3,0); target=nil; minimum=100
+    env.task.wait=function(dt)
+        time+=dt
+        if target then local d=target-root.Position; d=V.new(d.X,0,d.Z)
+            if d.Magnitude>1 then root.Position+=d.Unit*math.min(d.Magnitude-1,0.9) end
+        end
+        minimum=math.min(minimum,P.distance(root.Position,v(5,3,0)))
+    end
+    check(routed:move(V.new(12,3,0),30,function() return false end),'Roblox one-stud MoveTo completion reaches goal without false timeout')
+    check(minimum>=3.2,'engine arrival tolerance preserves human clearance')
     -- Run the actual service scheduler while holding the path worker occupied.
     -- Older eligible lobby work and departures cannot starve behind match jobs.
     local clock={alive=true,now=function() return 100 end,advance=function() end}
