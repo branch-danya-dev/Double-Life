@@ -18,4 +18,5 @@ for path in ['MimicIdentity','MimicCrowd','MimicCrowdPolicy']:
     for forbidden in ['DataStore','Marketplace','TeleportService','InvokeClient','UserId=']:
         assert forbidden not in code
 assert 'doubleLifeFakePlayer' not in sources
+assert 'if a.point.Z==b.point.Z then' in read('src/client/MimicNames.client.luau') # Strict total order, no epsilon cycle.
 print('PASS: names/payloads, pre-yield reservations, bounded navigation, cleanup and isolation')

@@ -29,7 +29,7 @@ game:GetService('RunService').Heartbeat:Connect(function(dt)
             if visible then table.insert(candidates,{sign=sign,point=point,name=model.Name}) end
         end
     end
-    table.sort(candidates,function(a,b) if math.abs(a.point.Z-b.point.Z)<0.1 then return a.name<b.name end; return a.point.Z<b.point.Z end)
+    table.sort(candidates,function(a,b) if a.point.Z==b.point.Z then return a.name<b.name end; return a.point.Z<b.point.Z end)
     for _,c in ipairs(candidates) do
         local clear=true
         for _,p in ipairs(boxes) do if math.abs(p.X-c.point.X)<140 and math.abs(p.Y-c.point.Y)<34 then clear=false; break end end

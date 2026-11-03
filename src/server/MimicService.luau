@@ -133,7 +133,17 @@ function Service:tick(dt)
         end
         end
     end
-    for _,a in pairs(self.values) do
+    -- Oldest eligible work wins the bounded worker slots. Hash iteration can
+    -- otherwise starve a lobby departure behind repeated long match routes.
+    local scheduled={}
+    for _,a in pairs(self.values) do table.insert(scheduled,a) end
+    table.sort(scheduled,function(a,b)
+        if (a.retiring==true)~=(b.retiring==true) then return a.retiring==true end
+        local ageA,ageB=a.mover.scope:now()-a.next,b.mover.scope:now()-b.next
+        if ageA==ageB then return a.actor.id<b.actor.id end
+        return ageA>ageB
+    end)
+    for _,a in ipairs(scheduled) do
         local mover,scope=a.mover,a.mover.scope
         if not scope.alive or not mover.root.Parent then continue end
         local detained=self.rt.rounds.policy.detained

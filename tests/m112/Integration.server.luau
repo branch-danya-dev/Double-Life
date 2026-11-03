@@ -131,8 +131,8 @@ local function run()
     local function arrivedGround(a) return a.mover.root.Position.Y<15 and not a.working and next(a.seen)~=nil end
     waitFor(function() return actor("Match",arrivedGround) end,90,"physical ground-floor arrival")
     capture(owner,actor("Match",arrivedGround),"MATCH / ground floor")
-    waitFor(function() return actor("Match",function(a) return a.mover.root.Position.Y>15 and not a.working end) end,120,"physical upper-floor arrival")
-    capture(owner,actor("Match",function(a) return a.mover.root.Position.Y>15 and not a.working end),"MATCH / upper floor")
+    waitFor(function() return actor("Match",function(a) return a.mover.root.Position.Y>20 and not a.working end) end,120,"physical upper-floor arrival")
+    capture(owner,actor("Match",function(a) return a.mover.root.Position.Y>20 and not a.working end),"MATCH / upper floor")
     prompt(owner,"OwnerConsole","Созвать собрание")
     if rt.rounds.policy.phase~="Council" then
         waitFor(function() return rt.rounds.policy.elapsed>=30 end,35)

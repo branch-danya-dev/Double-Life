@@ -100,6 +100,24 @@ function Suite.run(load)
         scope={alive=true,running=true,now=function() return time end},metrics={computes=0,failures=0,timeouts=0,arrivals=0,computeSeconds=0}},Mover)
     check(routed:move(V.new(12,3,0),30,function() return false end),'actual path skips occupied intermediate waypoints and reaches goal')
     check(minimum>=3.2 and routed.metrics.computes==1,'one path, safe physical route past stationary player')
+    -- Run the actual service scheduler while holding the path worker occupied.
+    -- Older eligible lobby work and departures cannot starve behind match jobs.
+    local clock={alive=true,now=function() return 100 end,advance=function() end}
+    local Service=load('MimicService',{ActorPolicy={mimicCount=function() return 4 end},MatchSettings={},
+        SessionClock={new=function() return clock end},MimicRig={},MimicAppearance={},MimicIdentity={},
+        MimicCrowd={new=function() return {update=function() end} end}},
+        {game={GetService=function() return {GetPlayers=function() return {} end} end},
+        os={clock=function() return 100 end},task={spawn=function() end}})
+    local service=Service.new({settings={aiWorkers=1},rounds={policy={phase='Waiting',participants={}}}})
+    service.nextCreate=math.huge
+    for i=1,4 do service.values['m:'..i]={actor={id='m:'..i},context='Lobby',next=if i==4 then 1 else 90,
+        gesture=0,mover={scope=clock,root={Parent=true,GetNetworkOwnershipAuto=function() return false end,GetNetworkOwner=function() return nil end},animate=function() end}} end
+    service:tick(0.1)
+    check(service.values['m:4'].working and service.busy==1,'oldest eligible actor gets bounded worker')
+    for _,a in pairs(service.values) do a.working=false end
+    service.busy=0; service.lastTick=0; service.values['m:2'].retiring=true
+    service:tick(0.1)
+    check(service.values['m:2'].working and service.busy==1,'departure has priority without extra workers')
     print('M11.2 identity and crowd runtime:',n,'assertions PASS')
 end
 return Suite
