@@ -220,7 +220,7 @@ local function run()
     end
     together(jobs)
     reports("8 Active")
-    -- Real seven-minute timeout; no acceleration or fabricated server outcome.
+    -- Real configured-duration timeout; no acceleration or fabricated server outcome.
     while rt.rounds.policy.phase == "Active" do
         print("M8 NATURAL TIMEOUT WAIT", math.ceil(rt.rounds.policy.remaining))
         task.wait(math.min(30, rt.rounds.policy.remaining + 0.1))

@@ -56,6 +56,6 @@ assert 'M41TestDriver' not in sources
 assert 'studioEnabled = false' in sources and 'studioUniverseId = 0' in sources
 assert 'store:UpdateAsync(key, transform)' in sources and 'SetAsync(' not in sources
 assert 'task.delay(' not in sources, 'gameplay delays must be cancellable round-local timers'
-assert 'Config.ROUND_SECONDS = 420' in sources
+assert 'Config.ROUND_SECONDS = 1200' in sources
 assert 'Config.EVENT_COOLDOWN = 55' in sources and 'Config.EVENT_LIMIT = 2' in sources
 print('PASS: shipping artifact contains all services, keeps server modules private, excludes test fixtures')

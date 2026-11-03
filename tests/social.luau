@@ -43,7 +43,7 @@ for _, size in ipairs({3, 4, 5, 6, 7, 8, 9, 10, 12, 15}) do
         check(left:leave(spies[#spies]) and left.result.winner == "Defenders", "all spies leave ends round")
         local idle = Round.new(Config); idle:countdown(); idle:activate(ids, spies)
         check(idle:extract(spies[1]), "AFK teammate is not needed for extraction")
-        local timeout = Round.new(Config); timeout:countdown(); timeout:activate(ids, spies); timeout:tick(420, size)
+        local timeout = Round.new(Config); timeout:countdown(); timeout:activate(ids, spies); timeout:tick(Config.ROUND_SECONDS, size)
         check(timeout.result.winner == "Defenders", "timeout unchanged")
     end
 end

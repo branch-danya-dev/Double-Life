@@ -193,7 +193,7 @@ local function run()
     for _,p in ipairs(Players:GetPlayers()) do if p~=spies[1] then invoke(p,{kind="Vote",roundId=rt.rounds.policy.roundId,target=spies[1].UserId}) end end
     waitFor(function() return rt.rounds.policy.phase=="Active" end,30)
     check(not rt.dossier:has(spies[1]) and rt.rounds.policy.detained~=nil,"majority search recovers dossier without elimination")
-    -- The remaining time is real seven-minute time. Exercise NPC/blackout and walking while defenders hold.
+    -- The remaining time is real configured match time. Exercise NPC/blackout and walking while defenders hold.
     rt.events:setBlackout(true)
     walk(agents[1],"Events.Bell"); walk(agents[1],"Service.Target2")
     rt.events:setBlackout(false)

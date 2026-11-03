@@ -1,5 +1,7 @@
 # Проверка M2 — 2 ноября 2026
 
+> Исторический отчёт этапа: упоминания 420 с / 7 минут описывают тот запуск. С M12.0 текущий лимит — 1200 активных секунд; старые свидетельства не переобозначаются.
+
 ## База и просмотр M1
 
 Прочитаны Issue #4, Draft PR #3, CONCEPT, M1_TESTING, M1_VALIDATION и код Game/Roles/Dossier/Interactions/Requests/WorldEvents/Hud. В обсуждениях задачи и PR замечаний не было. `origin/feat/m1-npc-guards-and-requests` проверена через fetch: HEAD `57aa8372575828deca11becebe5d2d8e660db8c8`. Ветка M2 создана от этого SHA; база нового Draft PR — M1. Предыдущие PR не слиты.

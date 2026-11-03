@@ -125,7 +125,7 @@ local function run()
     prompt(staff, "ServicePoint1", "Доставить сок")
     check(rt.requests.ledger.scores[staff.UserId] == 10, "no duplicate task reward")
     id = rt.rounds.policy.roundId
-    rt.rounds.policy.remaining = 1 -- Exercise real Heartbeat expiry without waiting seven minutes.
+    rt.rounds.policy.remaining = 1 -- Exercise real Heartbeat expiry without waiting for the full configured match.
     untilTrue(function() return rt.rounds.policy.phase == "Results" end, 3, "timer result")
     check(rt.rounds.policy.result.winner == "Defenders" and rt.rounds.policy.result.reason == "Timeout" and finished[id] == 1, "defenders win on timer exactly once")
     nextRound(id)

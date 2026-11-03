@@ -92,9 +92,10 @@ function Round:tick(dt, population)
         self.phase, self.remaining = "Waiting", 0
         return "Waiting"
     end
+    local consumed = math.min(dt, self.remaining)
     self.remaining = math.max(0, self.remaining - dt)
     if self.phase == "Active" then
-        self.elapsed += dt
+        self.elapsed += consumed -- A delayed frame cannot report active time beyond the match limit.
         if self.detained and self.elapsed >= self.detained.untilTime then self.detained = nil end
         if self.remaining == 0 then self:finish("Defenders", "Timeout"); return "Results" end
     elseif self.remaining == 0 then

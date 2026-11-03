@@ -58,7 +58,7 @@
     },
     {
       "path": "src/client/Hud.client.luau",
-      "sha256": "4ab19c78e9546a2eb0e2d9c5f930193abe6eeed26545efafc19935fc2ce44991",
+      "sha256": "cd99ecfdffe5c15fb8f1334e342061472338d97abbf336dd26b625a2c5295f04",
       "normalization": "UTF-8 LF",
       "provenance": "Original code authored for this project",
       "rights": "Project-original; no public license grant"
