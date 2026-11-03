@@ -40,14 +40,21 @@ function Suite.run(loadService)
                 script={Parent=setmetatable({},{__index=function(_,k) return k end})},
                 require=function(name) return assert(modules[name],name) end},{__index=getfenv()})
             local remote={OnServerEvent={Connect=function(self,cb) self.callback=cb end}}
-            local rt={alive=false,rounds={policy={participants={}}},lobby={}}
+            local observed={registered=0,cancelled=0,arrived=0,transport=0,matchmaking=0,matched=0}
+            local rt={alive=false,rounds={policy={participants={}}},lobby={},telemetry={
+                registered=function() observed.registered+=1 end,
+                cancelled=function() observed.cancelled+=1 end,
+                arrival=function() observed.arrived+=1 end,
+                matched=function(_,_,remote) observed.matched+=1; observed.remote=remote end,
+                decision=function() end,
+                failure=function(_,_,transport) observed[if transport then "transport" else "matchmaking"]+=1 end}}
             local service=loadService(env).new(rt,remote)
             local function add(id,data)
                 local p={UserId=id,Parent=players,GetJoinData=function() return data or {} end}
                 table.insert(players.list or {},p)
                 service:add(p); return p
             end
-            return {q=service,add=add,transport=transport,failed=failure,players=players,remote=remote}
+            return {q=service,add=add,transport=transport,failed=failure,players=players,remote=remote,observed=observed}
         end
         return shared,server
     end
@@ -109,7 +116,20 @@ function Suite.run(loadService)
                 else check(not b.q.sending[pb] and b.q.errors==1,"matching transport failure releases and retries") end
             end
         end
+        check(b.observed.registered>=1,"actual registration telemetry hook")
+        if mode=="SendFailure" or mode=="InitFailure" or mode=="Timeout" then
+            check(b.observed.transport==1,"actual transport failure reported exactly once")
+        elseif mode=="MemoryFailure" then check(b.observed.matchmaking==1,"actual pool failure reported")
+        elseif mode=="Success" then check(a.observed.arrived==1,"only validated arrival reported")
+        elseif mode=="StaleInitFailure" then check(b.observed.transport==0,"stale callback creates no analytics failure") end
+        if mode=="Success" then check(b.observed.matched>=1,"reservation observed before source removal")
+        elseif mode=="ArrivalForgery" then check(a.observed.matchmaking==1,"forged arrival classified as failure") end
+        if mode=="Success" then check(b.observed.remote==true,"cross-server reservation classified remote") end
     end
-    print("M9/M10 actual matchmaking runtime:",count,"assertions PASS")
+    do
+        local _,new=scenario(); local a=new("A"); a.add(1); a.add(2); a.q:poll()
+        check(a.observed.matched==2 and a.observed.remote==false,"same-server pool reservation classified local")
+    end
+    print("M9-M11 actual matchmaking runtime:",count,"assertions PASS")
 end
 return Suite

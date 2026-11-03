@@ -49,8 +49,8 @@ local function render(s)
     actions.AnchorPoint=if p.active then Vector2.new(0.5,1) else Vector2.new(1,0)
     actions.Position=if p.active then UDim2.new(0.5,0,1,-12) else UDim2.new(1,-12,0,252)
     actions:FindFirstChildOfClass("UISizeConstraint").MaxSize=Vector2.new(if p.active then 500 else 340,90)
-    ready.Visible=p.available and s.queue.state=="MatchReady" and s.queue.needsConsent
-    skip.Visible,lobby.Visible,queue.Visible,replay.Visible=p.active,p.active,p.active,not p.active
+    ready.Visible=p.available and p.allowInvite~=false and s.queue.state=="MatchReady" and s.queue.needsConsent
+    skip.Visible,lobby.Visible,queue.Visible,replay.Visible=p.active and p.allowSkip~=false,p.active,p.active,not p.active
     saved.Text=if p.active then "Поиск идёт параллельно. Пролог без XP и жетонов. "..p.saved else p.saved
     if not s.queue.queued and p.active then saved.Text="Очередь выключена. Можно закончить знакомство или включить поиск." end
     queue.Text=if s.queue.queued then "Отменить поиск · Q" else "Искать матч · Q"
@@ -77,7 +77,7 @@ Input.InputBegan:Connect(function(key,processed)
     elseif k==Enum.KeyCode.J and ready.Visible then send("Defer")
     elseif k==Enum.KeyCode.N and ready.Visible then send("Decline")
     elseif last.prologue.active then
-        if k==Enum.KeyCode.K then send("Skip") elseif k==Enum.KeyCode.L then send("Lobby")
+        if k==Enum.KeyCode.K and skip.Visible then send("Skip") elseif k==Enum.KeyCode.L then send("Lobby")
         elseif k==Enum.KeyCode.Q then remotes.QueueAction:FireServer(if last.queue.queued then "Cancel" else "Register") end
     elseif k==Enum.KeyCode.R then send("Replay") end
 end)

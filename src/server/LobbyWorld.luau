@@ -26,7 +26,7 @@ function Lobby.build(rt)
     end)
     local prompt=Interactions.prompt(console,"Осмотреть особняк","Приёмная · свободная практика",0.5)
     interactions:bind(prompt,function(p)
-        if p.Character then p.Character:PivotTo(CFrame.new(rt.world:spawn(1))) end
+        if p.Character then rt.telemetry:activity(p); p.Character:PivotTo(CFrame.new(rt.world:spawn(1))) end
     end,true)
     return {root=root,spawn=spawn,spots=spots,entrance=Vector3.new(-330,3,25),interactions=interactions,
         position=function(_,index) return Vector3.new(-250+(index%5)*3,4,32-math.floor(index/5)*3) end}

@@ -63,8 +63,10 @@ function Game.start(options)
     local rounds = RoundService.new(Config, roles, tell, finished)
     runtime = {roles = roles, rounds = rounds, taskCompleted = completed, roundFinished = finished, eventSignals = eventSignals,
         alive = true, actors = ActorRegistry.new(), metrics = {maxRebuildMs = 0, maxHeartbeatMs = 0}}
+    assert(not options or not options.tuning or RunService:IsStudio(), "Tuning injection is Studio-only")
+    runtime.settings = require(script.Parent.TuningConfig).resolve(require(script.Parent.MatchSettings), options and options.tuning)
     runtime.profiles = ProfileService.new(runtime, tell, options)
-    runtime.telemetry = Telemetry.new(runtime, options and options.analytics)
+    runtime.telemetry = Telemetry.new(runtime, options and options.analytics, options and options.analyticsClock)
     runtime.commerce = CommerceService.new(runtime, tell, options)
     local function rebuild(starting)
         local began = os.clock()
@@ -86,7 +88,7 @@ function Game.start(options)
             end
         end
         local function onActivity(player, key)
-            if scope.alive and runtime.scope == scope then runtime.events:activity(player, key) end
+            if scope.alive and runtime.scope == scope then runtime.events:activity(player, key); runtime.telemetry:activity(player) end
         end
         local function tool(player, role) return runtime.profiles:tool(player, role) end
         local dossier = Dossier.start(world, roles, interactions, update, tell, Config,
@@ -111,7 +113,7 @@ function Game.start(options)
             interactions = interactions, guard = guard, tell = tell, update = update, config = Config, signals = eventSignals,
             actors = runtime.actors})
         rounds.session = runtime
-        if starting then runtime.profiles:beginRound(rounds.policy.roundId) end
+        if starting then runtime.profiles:beginRound(rounds.policy.roundId); runtime.telemetry:started() end
         for index, player in ipairs(Players:GetPlayers()) do
             dossier:add(player)
             if player.Character and not (runtime.prologue and runtime.prologue:active(player)) then
@@ -201,10 +203,10 @@ function Game.start(options)
         for slot = 1, 15 do if not used[slot] then spawnSlots[player] = slot; break end end
         player.RespawnLocation = runtime.lobby.spawn
         runtime.actors:addHuman(player)
+        runtime.telemetry:add(player)
         task.spawn(function() runtime.queue:add(player) end)
         runtime.profiles:add(player)
         runtime.prologue:add(player)
-        runtime.telemetry:add(player)
         runtime.commerce:add(player)
         runtime.dossier:add(player)
         local function characterAdded(character)
@@ -238,13 +240,13 @@ function Game.start(options)
     end
     Players.PlayerAdded:Connect(addPlayer)
     Players.PlayerRemoving:Connect(function(player)
+        runtime.telemetry:remove(player)
         runtime.prologue:remove(player)
         runtime.queue:remove(player)
         runtime.actors:remove(player.UserId)
         runtime.lobby.interactions:remove(player)
         runtime.social:remove(player)
         runtime.commerce:remove(player)
-        runtime.telemetry:remove(player)
         runtime.profiles:remove(player)
         runtime.events:remove(player)
         rounds:leave(player) -- Determine the result before removing the private role.
