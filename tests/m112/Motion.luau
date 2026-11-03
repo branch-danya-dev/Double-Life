@@ -7,6 +7,12 @@ function Motion.run()
     local players=game:GetService('Players'):GetPlayers(); assert(#players==2)
     local driver=game.ReplicatedStorage.M6TestDriver
     local view=game.ReplicatedStorage.M112ContextView
+    local connections={}; local controlled
+    local function connect(f)
+        local c=game:GetService('RunService').Heartbeat:Connect(f)
+        table.insert(connections,c); return c
+    end
+    local function body()
     local function call(p,c) return driver:InvokeClient(p,c) end
     local function untilReady(f,seconds)
         local deadline=os.clock()+seconds
@@ -20,18 +26,29 @@ function Motion.run()
         for _,a in pairs(rt.mimics.values) do a.next=math.huge end
         return rt.mimics.busy==0
     end,70)
-    local gathering=game:GetService('RunService').Heartbeat:Connect(function()
+    local gathering=connect(function()
         for _,a in pairs(rt.mimics.values) do a.next=math.huge end
     end)
     local first=players[1]; local point=rt.lobby.spots[2]
     call(first,{kind='Walk',position=point})
     local sample
     for _,a in pairs(rt.mimics.values) do if a.context=='Lobby' then
-        sample=a; a.working=true; rt.mimics.busy+=1
-        local target=rt.mimics.crowd:slot(point,a.mover,a.preset)
-        local reached=target and a.mover:move(target,a.mover.scope:now()+50,function() return false end)
-        rt.mimics.crowd:release(a.mover); a.working=false; rt.mimics.busy-=1
-        assert(reached,'physical lobby gathering'); a.mover:lookAt(point)
+        sample=a; controlled=a; a.working=true; rt.mimics.busy+=1
+        local function gathered()
+            return a.mover:near(point,10) and rt.mimics.crowd:free(a.mover.root.Position,a.mover,3.2)
+                and rt.mimics.crowd:floor(a.mover.root.Position)
+        end
+        for attempt=1,3 do
+            if gathered() then break end
+            local target=rt.mimics.crowd:slot(point,a.mover,a.preset+(attempt-1)*3)
+            local reached=target and a.mover:move(target,a.mover.scope:now()+30,function() return false end)
+            rt.mimics.crowd:release(a.mover)
+            print('M112 GATHER ATTEMPT',a.actor.name,attempt,reached,a.mover.root.Position,target)
+        end
+        a.mover:stop(); a.working=false; rt.mimics.busy-=1; controlled=nil
+        -- A safe neighbouring stop is the contract, not a particular pixel on
+        -- the far side of the now occupied object. Never force a crossing.
+        assert(gathered(),'physical lobby gathering in free supported interest area'); a.mover:lookAt(point)
     end end
     call(first,{kind='Manual'})
     print('M112 GROUP CAPTURE READY: actual Player and four AI at lobby interest object')
@@ -44,7 +61,7 @@ function Motion.run()
         for _,a in pairs(rt.mimics.values) do a.next=math.huge end
         return rt.mimics.busy==0 and not rt.mimics.creating
     end,70)
-    local hold=game:GetService('RunService').Heartbeat:Connect(function()
+    local hold=connect(function()
         for _,a in pairs(rt.mimics.values) do a.next=math.huge end
     end)
     local names,used={},{}
@@ -58,7 +75,7 @@ function Motion.run()
     local a
     for _,v in pairs(rt.mimics.values) do if v.context=='Match' then a=v; break end end
     call(first,{kind='Walk',position=Vector3.new(0,21.5,24)})
-    a.working=true; rt.mimics.busy+=1
+    controlled=a; a.working=true; rt.mimics.busy+=1
     local function walk(point)
         return a.mover:move(point,rt.scope:now()+55,function() return not rt.scope.alive end)
     end
@@ -70,7 +87,7 @@ function Motion.run()
     print('M112 MOTION START IN 5 SECONDS')
     task.wait(5)
     local result={samples=0,overlaps=0,minDistance=100,arrivals=0,detoursBefore=rt.mimics.crowd.metrics.detours}
-    local monitor=game:GetService('RunService').Heartbeat:Connect(function()
+    local monitor=connect(function()
         local p=first.Character.HumanoidRootPart.Position; local q=a.mover.root.Position
         local distance=Vector2.new(p.X-q.X,p.Z-q.Z).Magnitude
         if math.abs(p.Y-q.Y)<4 then
@@ -82,12 +99,21 @@ function Motion.run()
         if walk(Vector3.new(if i%2==1 then 18 else -18,21.5,24)) then result.arrivals+=1 end
         a.mover:stop(); task.wait(2)
     end
-    monitor:Disconnect(); a.working=false; rt.mimics.busy-=1
+    monitor:Disconnect(); a.working=false; rt.mimics.busy-=1; controlled=nil
     result.detours=rt.mimics.crowd.metrics.detours-result.detoursBefore
     print('M112 MOTION METRICS',game:GetService('HttpService'):JSONEncode(result))
     assert(result.overlaps==0 and result.arrivals==6 and result.detours>0,'physical human avoidance')
     hold:Disconnect()
     for _,v in pairs(rt.mimics.values) do v.next=0 end
     print('M112 MOTION PASS: six crossings, no stationary-human body intersections')
+    end
+    local ok,err=xpcall(body,debug.traceback)
+    for _,c in ipairs(connections) do c:Disconnect() end
+    if controlled then
+        controlled.mover:stop(); rt.mimics.crowd:release(controlled.mover)
+        controlled.working=false; rt.mimics.busy-=1
+    end
+    for _,v in pairs(rt.mimics.values) do v.next=0 end
+    assert(ok,err)
 end
 return Motion
