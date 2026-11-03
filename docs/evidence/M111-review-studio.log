@@ -1,0 +1,216 @@
+SOURCE 0.745.462.7451125_20261103T132411Z_Studio_CF608_last.log
+2026-11-03T13:24:25.135Z M111 REVIEW Checking official asset metadata and all 20 R15 presets
+2026-11-03T13:24:25.618Z M111 PASS Roblox creator for asset 62724852
+2026-11-03T13:24:25.618Z M111 ASSET {"type":41,"name":"Каштановый булочка","id":62724852,"price":0,"creator":1}
+2026-11-03T13:24:26.118Z M111 PASS Roblox creator for asset 63690008
+2026-11-03T13:24:26.118Z M111 ASSET {"type":41,"name":"Волосы друга","id":63690008,"price":0,"creator":1}
+2026-11-03T13:24:26.618Z M111 PASS Roblox creator for asset 86499666
+2026-11-03T13:24:26.618Z M111 ASSET {"type":27,"name":"Женский торс","id":86499666,"creator":1}
+2026-11-03T13:24:27.118Z M111 PASS Roblox creator for asset 86499698
+2026-11-03T13:24:27.118Z M111 ASSET {"type":28,"name":"Правая рука женщины","id":86499698,"creator":1}
+2026-11-03T13:24:27.618Z M111 PASS Roblox creator for asset 86499716
+2026-11-03T13:24:27.618Z M111 ASSET {"type":29,"name":"Женщина левая рука","id":86499716,"creator":1}
+2026-11-03T13:24:28.134Z M111 PASS Roblox creator for asset 86499753
+2026-11-03T13:24:28.134Z M111 ASSET {"type":30,"name":"Левая нога женщины","id":86499753,"creator":1}
+2026-11-03T13:24:28.617Z M111 PASS Roblox creator for asset 86499793
+2026-11-03T13:24:28.617Z M111 ASSET {"type":31,"name":"Женская правая нога","id":86499793,"creator":1}
+2026-11-03T13:24:29.101Z M111 PASS Roblox creator for asset 86500008
+2026-11-03T13:24:29.101Z M111 ASSET {"type":27,"name":"Мужской торс","id":86500008,"creator":1}
+2026-11-03T13:24:29.617Z M111 PASS Roblox creator for asset 86500036
+2026-11-03T13:24:29.618Z M111 ASSET {"type":28,"name":"Правая рука человека","id":86500036,"creator":1}
+2026-11-03T13:24:30.118Z M111 PASS Roblox creator for asset 86500054
+2026-11-03T13:24:30.118Z M111 ASSET {"type":29,"name":"Мужская левая рука","id":86500054,"creator":1}
+2026-11-03T13:24:30.635Z M111 PASS Roblox creator for asset 86500064
+2026-11-03T13:24:30.635Z M111 ASSET {"type":30,"name":"Мужская левая нога","id":86500064,"creator":1}
+2026-11-03T13:24:31.151Z M111 PASS Roblox creator for asset 86500078
+2026-11-03T13:24:31.151Z M111 ASSET {"type":31,"name":"Мужская правая нога","id":86500078,"creator":1}
+2026-11-03T13:24:31.651Z M111 PASS Roblox creator for asset 144076358
+2026-11-03T13:24:31.652Z M111 ASSET {"type":11,"name":"Сине-черная рубашка для мотоцикла","id":144076358,"price":0,"creator":1}
+2026-11-03T13:24:32.167Z M111 PASS Roblox creator for asset 144076760
+2026-11-03T13:24:32.167Z M111 ASSET {"type":12,"name":"Темно-зеленые джинсы","id":144076760,"price":0,"creator":1}
+2026-11-03T13:24:32.666Z M111 PASS Roblox creator for asset 376524487
+2026-11-03T13:24:32.666Z M111 ASSET {"type":41,"name":"Блондинки с колючими волосами","id":376524487,"price":0,"creator":1}
+2026-11-03T13:24:33.167Z M111 PASS Roblox creator for asset 376526888
+2026-11-03T13:24:33.167Z M111 ASSET {"type":41,"name":"Прямые блондинки","id":376526888,"price":0,"creator":1}
+2026-11-03T13:24:33.668Z M111 PASS Roblox creator for asset 376548738
+2026-11-03T13:24:33.668Z M111 ASSET {"type":41,"name":"Коричневые очаровательные волосы","id":376548738,"price":0,"creator":1}
+2026-11-03T13:24:34.184Z M111 PASS Roblox creator for asset 382538059
+2026-11-03T13:24:34.184Z M111 ASSET {"type":11,"name":"Зеленый трикотаж","id":382538059,"price":0,"creator":1}
+2026-11-03T13:24:34.701Z M111 PASS Roblox creator for asset 382538503
+2026-11-03T13:24:34.701Z M111 ASSET {"type":12,"name":"Черные джинсы с кроссовками","id":382538503,"price":0,"creator":1}
+2026-11-03T13:24:35.201Z M111 PASS Roblox creator for asset 398633584
+2026-11-03T13:24:35.202Z M111 ASSET {"type":11,"name":"Джинсовая куртка с белым капюшоном","id":398633584,"price":0,"creator":1}
+2026-11-03T13:24:35.700Z M111 PASS Roblox creator for asset 398633812
+2026-11-03T13:24:35.700Z M111 ASSET {"type":12,"name":"Черные джинсы с белыми ботинками","id":398633812,"price":0,"creator":1}
+2026-11-03T13:24:36.217Z M111 PASS Roblox creator for asset 398634295
+2026-11-03T13:24:36.217Z M111 ASSET {"type":11,"name":"Пастельный топ \"Звездный взрыв\" с серой курткой","id":398634295,"price":0,"creator":1}
+2026-11-03T13:24:36.717Z M111 PASS Roblox creator for asset 398634487
+2026-11-03T13:24:36.717Z M111 ASSET {"type":12,"name":"Красивые джинсы","id":398634487,"price":0,"creator":1}
+2026-11-03T13:24:37.218Z M111 PASS Roblox creator for asset 398635081
+2026-11-03T13:24:37.218Z M111 ASSET {"type":11,"name":"Синяя клетчатая рубашка","id":398635081,"price":0,"creator":1}
+2026-11-03T13:24:37.768Z M111 PASS Roblox creator for asset 398635338
+2026-11-03T13:24:37.768Z M111 ASSET {"type":12,"name":"Разрывные брюки скейтера","id":398635338,"price":0,"creator":1}
+2026-11-03T13:24:38.268Z M111 PASS Roblox creator for asset 451221329
+2026-11-03T13:24:38.268Z M111 ASSET {"type":41,"name":"Истинно синие волосы","id":451221329,"price":0,"creator":1}
+2026-11-03T13:24:38.784Z M111 PASS Roblox creator for asset 507766388
+2026-11-03T13:24:38.784Z M111 ASSET {"type":24,"name":"R15Идл","id":507766388,"creator":1}
+2026-11-03T13:24:39.284Z M111 PASS Roblox creator for asset 507766666
+2026-11-03T13:24:39.284Z M111 ASSET {"type":24,"name":"R15Оглянись вокруг","id":507766666,"creator":1}
+2026-11-03T13:24:39.801Z M111 PASS Roblox creator for asset 507767714
+2026-11-03T13:24:39.801Z M111 ASSET {"type":24,"name":"R15Бег","id":507767714,"creator":1}
+2026-11-03T13:24:40.301Z M111 PASS Roblox creator for asset 507770239
+2026-11-03T13:24:40.301Z M111 ASSET {"type":24,"name":"R15Волна","id":507770239,"creator":1}
+2026-11-03T13:24:40.818Z M111 PASS Roblox creator for asset 507770453
+2026-11-03T13:24:40.818Z M111 ASSET {"type":24,"name":"R15Поинт","id":507770453,"creator":1}
+2026-11-03T13:24:41.334Z M111 PASS Roblox creator for asset 507770677
+2026-11-03T13:24:41.334Z M111 ASSET {"type":24,"name":"R15 Чеер","id":507770677,"creator":1}
+2026-11-03T13:24:41.834Z M111 PASS Roblox creator for asset 507777826
+2026-11-03T13:24:41.834Z M111 ASSET {"type":24,"name":"R15Прогулка","id":507777826,"creator":1}
+2026-11-03T13:24:42.334Z M111 PASS Roblox creator for asset 607785314
+2026-11-03T13:24:42.334Z M111 ASSET {"type":11,"name":"Куртка ROBLOX","id":607785314,"price":0,"creator":1}
+2026-11-03T13:24:42.835Z M111 PASS Roblox creator for asset 1103003368
+2026-11-03T13:24:42.835Z M111 ASSET {"type":41,"name":"Оранжевая шапочка с черными волосами","id":1103003368,"price":0,"creator":1}
+2026-11-03T13:24:43.350Z M111 PASS Roblox creator for asset 2956239660
+2026-11-03T13:24:43.350Z M111 ASSET {"type":41,"name":"Красавица Белфаста Длинные красные волосы","id":2956239660,"price":0,"creator":1}
+2026-11-03T13:24:43.868Z M111 PASS Roblox creator for asset 3670737444
+2026-11-03T13:24:43.868Z M111 ASSET {"type":11,"name":"Рубашка Roblox - Простой узор","id":3670737444,"price":0,"creator":1}
+2026-11-03T13:24:44.383Z M111 PASS Roblox creator for asset 7193454569
+2026-11-03T13:24:44.383Z M111 ASSET {"type":41,"name":"Плетеные волосы - черный","id":7193454569,"price":0,"creator":1}
+2026-11-03T13:24:44.900Z M111 PASS Roblox creator for asset 7193455510
+2026-11-03T13:24:44.901Z M111 ASSET {"type":41,"name":"Плетеные волосы - красный","id":7193455510,"price":0,"creator":1}
+2026-11-03T13:24:45.418Z M111 PASS Roblox creator for asset 9244148336
+2026-11-03T13:24:45.418Z M111 ASSET {"type":41,"name":"Плетеные волосы - блондинка","id":9244148336,"price":0,"creator":1}
+2026-11-03T13:24:45.934Z M111 PASS Roblox creator for asset 9244150641
+2026-11-03T13:24:45.934Z M111 ASSET {"type":41,"name":"Плетеные волосы - прохладный коричневый","id":9244150641,"price":0,"creator":1}
+2026-11-03T13:24:46.451Z M111 PASS Roblox creator for asset 10725626210
+2026-11-03T13:24:46.451Z M111 ASSET {"type":79,"name":"Лицо женщины - голова","id":10725626210,"creator":1}
+2026-11-03T13:24:46.967Z M111 PASS Roblox creator for asset 10725826963
+2026-11-03T13:24:46.967Z M111 ASSET {"type":79,"name":"Лицо человека - голова","id":10725826963,"creator":1}
+2026-11-03T13:24:47.283Z Mimic avatar deferred 20 ServerScriptService.DoubleLifeServer.MimicRig:61: InjectedAvatarFailure
+2026-11-03T13:24:47.283Z M111 PASS cold failure defers without a block rig
+2026-11-03T13:24:50.301Z M111 PASS slow cold creation defers concurrent caller 2
+2026-11-03T13:24:50.301Z M111 PASS slow cold creation defers concurrent caller 3
+2026-11-03T13:24:50.301Z M111 PASS slow cold creation defers concurrent caller 4
+2026-11-03T13:24:58.417Z M111 PASS slow cold creation defers concurrent caller 1
+2026-11-03T13:24:58.417Z M111 PASS four callers share one bounded engine request
+2026-11-03T13:24:58.417Z M111 PASS slow engine call has an eight-second admission deadline
+2026-11-03T13:25:01.217Z M111 PASS late result fills cache without spawning an orphan
+2026-11-03T13:25:01.451Z M111 PASS R15 clothing joints and accessories preset 1
+2026-11-03T13:25:01.451Z M111 PASS six animation tracks loaded preset 1
+2026-11-03T13:25:01.451Z M111 RIG {"id":1,"seconds":0.2342878999770619,"hip":2.4734935760498049,"parts":248}
+2026-11-03T13:25:02.654Z M111 PASS R15 clothing joints and accessories preset 2
+2026-11-03T13:25:02.655Z M111 PASS six animation tracks loaded preset 2
+2026-11-03T13:25:02.655Z M111 RIG {"id":2,"seconds":0.8876578000490554,"hip":2.2999916076660158,"parts":248}
+2026-11-03T13:25:03.838Z M111 PASS R15 clothing joints and accessories preset 3
+2026-11-03T13:25:03.838Z M111 PASS six animation tracks loaded preset 3
+2026-11-03T13:25:03.839Z M111 RIG {"id":3,"seconds":0.871392700006254,"hip":1.8799996376037598,"parts":233}
+2026-11-03T13:25:05.021Z M111 PASS R15 clothing joints and accessories preset 4
+2026-11-03T13:25:05.021Z M111 PASS six animation tracks loaded preset 4
+2026-11-03T13:25:05.021Z M111 RIG {"id":4,"seconds":0.8710056000272743,"hip":2.2097959518432619,"parts":247}
+2026-11-03T13:25:06.137Z M111 PASS R15 clothing joints and accessories preset 5
+2026-11-03T13:25:06.137Z M111 PASS six animation tracks loaded preset 5
+2026-11-03T13:25:06.137Z M111 RIG {"id":5,"seconds":0.804191000002902,"hip":2.54921293258667,"parts":248}
+2026-11-03T13:25:07.354Z M111 PASS R15 clothing joints and accessories preset 6
+2026-11-03T13:25:07.354Z M111 PASS six animation tracks loaded preset 6
+2026-11-03T13:25:07.354Z M111 RIG {"id":6,"seconds":0.9037280000047758,"hip":2,"parts":234}
+2026-11-03T13:25:08.539Z M111 PASS R15 clothing joints and accessories preset 7
+2026-11-03T13:25:08.539Z M111 PASS six animation tracks loaded preset 7
+2026-11-03T13:25:08.539Z M111 RIG {"id":7,"seconds":0.8733852000441402,"hip":2.3977739810943605,"parts":248}
+2026-11-03T13:25:09.738Z M111 PASS R15 clothing joints and accessories preset 8
+2026-11-03T13:25:09.738Z M111 PASS six animation tracks loaded preset 8
+2026-11-03T13:25:09.739Z M111 RIG {"id":8,"seconds":0.8892051000148058,"hip":2.367638349533081,"parts":248}
+2026-11-03T13:25:10.505Z M111 PASS R15 clothing joints and accessories preset 9
+2026-11-03T13:25:10.505Z M111 PASS six animation tracks loaded preset 9
+2026-11-03T13:25:10.505Z M111 RIG {"id":9,"seconds":0.4555195000139065,"hip":2.4456021785736086,"parts":248}
+2026-11-03T13:25:11.270Z M111 PASS R15 clothing joints and accessories preset 10
+2026-11-03T13:25:11.271Z M111 PASS six animation tracks loaded preset 10
+2026-11-03T13:25:11.271Z M111 RIG {"id":10,"seconds":0.45359740004641938,"hip":1.919999361038208,"parts":233}
+2026-11-03T13:25:12.505Z M111 PASS R15 clothing joints and accessories preset 11
+2026-11-03T13:25:12.505Z M111 PASS six animation tracks loaded preset 11
+2026-11-03T13:25:12.505Z M111 RIG {"id":11,"seconds":0.9226469999994151,"hip":2.3450894355773927,"parts":248}
+2026-11-03T13:25:13.254Z M111 PASS R15 clothing joints and accessories preset 12
+2026-11-03T13:25:13.254Z M111 PASS six animation tracks loaded preset 12
+2026-11-03T13:25:13.254Z M111 RIG {"id":12,"seconds":0.4373835999867879,"hip":2.523972988128662,"parts":248}
+2026-11-03T13:25:14.020Z M111 PASS R15 clothing joints and accessories preset 13
+2026-11-03T13:25:14.020Z M111 PASS six animation tracks loaded preset 13
+2026-11-03T13:25:14.020Z M111 RIG {"id":13,"seconds":0.45338650001212957,"hip":2.277442455291748,"parts":247}
+2026-11-03T13:25:14.787Z M111 PASS R15 clothing joints and accessories preset 14
+2026-11-03T13:25:14.787Z M111 PASS six animation tracks loaded preset 14
+2026-11-03T13:25:14.787Z M111 RIG {"id":14,"seconds":0.4543487000046298,"hip":2.4230141639709474,"parts":248}
+2026-11-03T13:25:15.554Z M111 PASS R15 clothing joints and accessories preset 15
+2026-11-03T13:25:15.554Z M111 PASS six animation tracks loaded preset 15
+2026-11-03T13:25:15.554Z M111 RIG {"id":15,"seconds":0.4547518999897875,"hip":2.0379605293273927,"parts":234}
+2026-11-03T13:25:16.304Z M111 PASS R15 clothing joints and accessories preset 16
+2026-11-03T13:25:16.304Z M111 PASS six animation tracks loaded preset 16
+2026-11-03T13:25:16.304Z M111 RIG {"id":16,"seconds":0.43760350003140049,"hip":2.5996921062469484,"parts":247}
+2026-11-03T13:25:17.486Z M111 PASS R15 clothing joints and accessories preset 17
+2026-11-03T13:25:17.486Z M111 PASS six animation tracks loaded preset 17
+2026-11-03T13:25:17.486Z M111 RIG {"id":17,"seconds":0.8701633000164293,"hip":1.8999993801116944,"parts":233}
+2026-11-03T13:25:18.270Z M111 PASS R15 clothing joints and accessories preset 18
+2026-11-03T13:25:18.270Z M111 PASS six animation tracks loaded preset 18
+2026-11-03T13:25:18.270Z M111 RIG {"id":18,"seconds":0.47120229998836296,"hip":2.624931812286377,"parts":249}
+2026-11-03T13:25:19.502Z M111 PASS R15 clothing joints and accessories preset 19
+2026-11-03T13:25:19.502Z M111 PASS six animation tracks loaded preset 19
+2026-11-03T13:25:19.503Z M111 RIG {"id":19,"seconds":0.9198035000008531,"hip":2.2097959518432619,"parts":248}
+2026-11-03T13:25:20.253Z M111 PASS R15 clothing joints and accessories preset 20
+2026-11-03T13:25:20.253Z M111 PASS six animation tracks loaded preset 20
+2026-11-03T13:25:20.253Z M111 RIG {"id":20,"seconds":0.43669559998670595,"hip":2.018979787826538,"parts":233}
+2026-11-03T13:25:20.566Z M111 PASS twenty rigs release every track
+2026-11-03T13:25:20.940Z M111 REVIEW After · mixed catalogue · 5 mimics + 1 actual Player
+2026-11-03T13:25:20.940Z M111 CATALOGUE READY {"live":5,"pending":0,"requests":21,"maxPending":1,"timeouts":1,"tracks":30,"cacheHits":25,"failures":1,"deferred":5,"maxSeconds":0.9219547000247985}
+2026-11-03T13:26:06.266Z M111 REVIEW After · Profile
+2026-11-03T13:26:29.931Z M111 REVIEW After · Front
+2026-11-03T13:26:45.929Z M111 REVIEW After · Walk (server Animator)
+2026-11-03T13:27:06.428Z M111 REVIEW After · Stop → Idle
+2026-11-03T13:27:27.128Z M111 REVIEW After · Front
+2026-11-03T13:27:38.760Z M111 REVIEW After · Wave (server Animator)
+2026-11-03T13:27:53.210Z Mimic avatar deferred 1 ServerScriptService.DoubleLifeServer.MimicRig:61: InjectedAvatarFailure
+2026-11-03T13:27:53.214Z M111 PASS real injected API failure uses identical validated R15 cache
+2026-11-03T13:27:53.216Z M111 REVIEW API FAILURE · identical cached R15 · no visible replacement
+2026-11-03T13:28:10.955Z M111 REVIEW After · mixed catalogue · 5 mimics + 1 actual Player
+2026-11-03T13:29:13.507Z M111 REVIEW After · Front
+2026-11-03T13:29:31.189Z M111 REVIEW After · Profile
+2026-11-03T13:30:26.754Z M111 REVIEW After · Front
+2026-11-03T13:30:40.253Z M111 REVIEW After · Wave (server Animator)
+2026-11-03T13:31:06.614Z M111 REVIEW After · mixed catalogue · 5 mimics + 1 actual Player
+2026-11-03T13:31:25.228Z M111 REVIEW After · mixed catalogue · 5 mimics + 1 actual Player
+2026-11-03T13:31:41.043Z M111 REVIEW After · mixed catalogue · 5 mimics + 1 actual Player
+2026-11-03T13:31:58.461Z M111 REVIEW After · mixed catalogue · 5 mimics + 1 actual Player
+2026-11-03T13:32:19.443Z M111 REVIEW Before · mixed catalogue · 5 mimics + 1 actual Player
+2026-11-03T13:32:36.616Z M111 REVIEW Before · Profile
+SOURCE 0.745.462.7451125_20261103T132417Z_Studio_2C7DC_last.log
+2026-11-03T13:25:22.696Z M111 CLIENT RIG MiraVell R15 1
+2026-11-03T13:25:23.230Z M111 CLIENT RIG MaxElvar R15 1
+2026-11-03T13:25:23.347Z M111 CLIENT RIG TheoWren R15 1
+2026-11-03T13:25:23.463Z M111 CLIENT RIG RinaCole R15 1
+2026-11-03T13:25:23.580Z M111 CLIENT RIG KaiMoss R15 1
+2026-11-03T13:28:12.956Z M111 CLIENT RIG MiraVell R15 1
+2026-11-03T13:28:13.072Z M111 CLIENT RIG LeonArden R15 1
+2026-11-03T13:28:13.172Z M111 CLIENT RIG NikaFane R15 1
+2026-11-03T13:28:13.288Z M111 CLIENT RIG FelixVale R15 1
+2026-11-03T13:28:13.388Z M111 CLIENT RIG AdaMorn R15 1
+2026-11-03T13:31:08.381Z M111 CLIENT RIG OscarReed R15 1
+2026-11-03T13:31:08.581Z M111 CLIENT RIG VeraLinden R15 1
+2026-11-03T13:31:08.697Z M111 CLIENT RIG MaxElvar R15 1
+2026-11-03T13:31:08.799Z M111 CLIENT RIG LinaOrrel R15 1
+2026-11-03T13:31:08.914Z M111 CLIENT RIG IrisVoss R15 1
+2026-11-03T13:31:26.831Z M111 CLIENT RIG TheoWren R15 1
+2026-11-03T13:31:26.947Z M111 CLIENT RIG RinaCole R15 1
+2026-11-03T13:31:27.048Z M111 CLIENT RIG EmilBrook R15 1
+2026-11-03T13:31:27.164Z M111 CLIENT RIG SanaVale R15 1
+2026-11-03T13:31:27.264Z M111 CLIENT RIG NoelAsh R15 1
+2026-11-03T13:31:42.563Z M111 CLIENT RIG TessaFern R15 1
+2026-11-03T13:31:42.664Z M111 CLIENT RIG KaiMoss R15 1
+2026-11-03T13:31:42.780Z M111 CLIENT RIG ZoeRill R15 1
+2026-11-03T13:31:42.897Z M111 CLIENT RIG EliStorm R15 1
+2026-11-03T13:31:42.998Z M111 CLIENT RIG AriaGlen R15 1
+2026-11-03T13:32:00.080Z M111 CLIENT RIG MiraVell R15 1
+2026-11-03T13:32:00.196Z M111 CLIENT RIG MaxElvar R15 1
+2026-11-03T13:32:00.314Z M111 CLIENT RIG TheoWren R15 1
+2026-11-03T13:32:00.413Z M111 CLIENT RIG RinaCole R15 1
+2026-11-03T13:32:00.529Z M111 CLIENT RIG KaiMoss R15 1
+2026-11-03T13:32:20.428Z M111 CLIENT RIG MiraVell R15 0
+2026-11-03T13:32:20.428Z M111 CLIENT RIG MaxElvar R15 0
+2026-11-03T13:32:20.428Z M111 CLIENT RIG TheoWren R15 0
+2026-11-03T13:32:20.428Z M111 CLIENT RIG RinaCole R15 0
+2026-11-03T13:32:20.428Z M111 CLIENT RIG AdaMorn2 R15 0

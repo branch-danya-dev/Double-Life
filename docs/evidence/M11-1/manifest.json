@@ -1,0 +1,113 @@
+{
+  "images": [
+    {
+      "file": "after-front.png",
+      "sha256": "3836a77bc030a6a2c17dbbe8281a9a196817f626ba13644b695193ed1567a631",
+      "savedUtc": "2026-11-03T13:26:46.462508+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "after-profile.png",
+      "sha256": "f757ffd2461d9b0499511d47b97817be847157c68059ee4d15e3f4e7a60e6597",
+      "savedUtc": "2026-11-03T13:26:30.454986+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "after-stop.png",
+      "sha256": "b1bd876bf94496f2c2ae992eecc2173f6645da496cac9584a0c15007a57152e0",
+      "savedUtc": "2026-11-03T13:27:27.654577+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "after-walk.png",
+      "sha256": "fa85dacf101ea7afb561973639f2dc952ee646a7555faf2f6127b41e08996d1b",
+      "savedUtc": "2026-11-03T13:27:06.958058+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "after-wave.png",
+      "sha256": "00c78046bae90887e25e11eb1116d058f11830ea2c019cf01f8ab50f246e6395",
+      "savedUtc": "2026-11-03T13:27:53.737826+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "api-failure.png",
+      "sha256": "33c6debded3b00fc0f6ca0eac5441df7b6c27708d6bdbabd81d9fa86b3f7a86c",
+      "savedUtc": "2026-11-03T13:28:11.454536+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "before-front.png",
+      "sha256": "792ab5b3d20f2b0f05cf92b261dba607f5ca1143f77c2b2c0baaee1a99f869de",
+      "savedUtc": "2026-11-03T13:32:37.139526+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "before-profile.png",
+      "sha256": "5883a01c190760f7a304c210fffa4384ab5850b46063cdbf94729cac7dc0d3e4",
+      "savedUtc": "2026-11-03T13:32:58.859387+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "catalogue-01-05.png",
+      "sha256": "85b5a733098043f85057e55610573ae197bb90bac3487250ca45f690e38af881",
+      "savedUtc": "2026-11-03T13:31:07.112135+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "catalogue-06-10.png",
+      "sha256": "a8707fb9a08470da21bc16fcb93e9069e0ba97a9818eecfdc8af0a27211de7c2",
+      "savedUtc": "2026-11-03T13:31:25.728994+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "catalogue-11-15.png",
+      "sha256": "855d073bde3c105fb611e4df0f8ca8d9fb3929b3b8c92af9080bcabc3aee056d",
+      "savedUtc": "2026-11-03T13:31:41.550890+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "catalogue-16-20.png",
+      "sha256": "402802cdfdd2e5c3c01a67b3dc4e791add7b065c5fad154794a06ba20a9fab54",
+      "savedUtc": "2026-11-03T13:31:58.957593+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "council.png",
+      "sha256": "53e81fce3dd1a7bf101955a10de69fee9b9b9f7ddc8b4063ae6c76256641cee2",
+      "savedUtc": "2026-11-03T13:19:34.643560+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "lobby.png",
+      "sha256": "05e764bf92db6f00d1e608cbeb02f77a2e178d0c9f6e9e92879a175fda424e0b",
+      "savedUtc": "2026-11-03T13:16:17.373730+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "match-ground.png",
+      "sha256": "b4e40667af2f72356b447038e6b2cb5d70272f080406f45e2dcf79ed00c8efa1",
+      "savedUtc": "2026-11-03T13:17:40.770816+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "match-upper.png",
+      "sha256": "e28c4c1ef5f09c662a3d3acf99f4b7d72302de670fc4c132e1b8a3fd85917ad4",
+      "savedUtc": "2026-11-03T13:19:08.140541+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "prologue.png",
+      "sha256": "b55a6a448b745014677a13d90fd01c3a5eb4519aa95e256a59af3c228dd3290d",
+      "savedUtc": "2026-11-03T13:15:08.661976+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    },
+    {
+      "file": "spy-extraction.png",
+      "sha256": "aeb224241792baae250b6aa9122c5dbcfabc62694bdef22cd0a1f8b87442491c",
+      "savedUtc": "2026-11-03T13:21:51.413495+00:00",
+      "kind": "unmodified Roblox Studio window capture"
+    }
+  ],
+  "notes": "Capture timestamps are file-save times, not invented frame timestamps. Comparative lighting/camera are identical. Final integration and catalogue verification use the shipped production code. No image processing."
+}
