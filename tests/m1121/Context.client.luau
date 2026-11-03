@@ -18,6 +18,14 @@ remote.OnClientInvoke=function(c)
     assert(model:GetAttribute("MimicClientReady"),"client appearance preload deadline")
     proceed=false; gui.Enabled=true; title.Text="M11.2.1 · "..c.label
     local overview=c.wide and c.label:find('stationary Player',1,true)~=nil
+    if c.camera then
+        -- Only contextual interaction labels obscure the stationary body here.
+        -- Keep ordinary HUD, bodies and world intact; restore automatically.
+        local prompts=game:GetService('ProximityPromptService')
+        prompts.Enabled=false
+        print('M1121 CAPTURE UI: proximity labels hidden; ordinary HUD retained')
+        task.delay(180,function() prompts.Enabled=true end)
+    end
     local camera=workspace.CurrentCamera; camera.CameraType=Enum.CameraType.Scriptable; camera.FieldOfView=if c.camera or overview then 85 else 65
     local filter=RaycastParams.new(); filter.FilterType=Enum.RaycastFilterType.Exclude
     filter.FilterDescendantsInstances={model,player.Character}; filter.RespectCanCollide=true

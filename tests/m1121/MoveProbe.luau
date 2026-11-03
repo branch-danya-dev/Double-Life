@@ -23,7 +23,15 @@ function Probe.run(mover,crowd,target,seconds)
         elseif not record.targetFree then 'OccupiedFixedTarget'
         elseif #record.waypoints==0 then 'PathDidNotProduceWalkableWaypoints'
         else 'WaypointRejectedOrTimedOut'
+    -- Studio truncates a single print around 1 KiB. Keep the summary and each
+    -- waypoint in separate bounded records so failed arrivals remain diagnosable.
+    local points=record.waypoints
+    record.waypoints=nil; record.waypointCount=#points
     print('M1121 MOVE DIAGNOSTIC',game:GetService('HttpService'):JSONEncode(record))
+    for i,entry in ipairs(points) do
+        print('M1121 WAYPOINT',i,game:GetService('HttpService'):JSONEncode(entry))
+    end
+    record.waypoints=points
     assert(ok,tostring(result)); return result,record
 end
 return Probe

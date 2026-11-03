@@ -78,9 +78,6 @@ function Motion.run()
     for _,v in pairs(rt.mimics.values) do if v.context=='Match' then a=v; break end end
     call(first,{kind='Walk',position=Vector3.new(0,21.5,24)})
     controlled=a; a.working=true; rt.mimics.busy+=1
-    local function walk(point)
-        return a.mover:move(point,rt.scope:now()+55,function() return not rt.scope.alive end)
-    end
     -- Reproduce the original fixed-target approach with per-waypoint diagnostics.
     local fixed=Vector3.new(-18,21.5,24)
     local raw=Probe.run(a.mover,rt.mimics.crowd,fixed,55)
@@ -102,7 +99,7 @@ function Motion.run()
         camera=CFrame.lookAt(Vector3.new(0,27,30),Vector3.new(0,22,24))})
     print('M112 MOTION START IN 5 SECONDS')
     task.wait(5)
-    local result={samples=0,overlaps=0,minDistance=100,arrivals=0,detoursBefore=rt.mimics.crowd.metrics.detours}
+    local result={samples=0,overlaps=0,minDistance=100,arrivals=0,attempts=0,refusals=0,detoursBefore=rt.mimics.crowd.metrics.detours}
     local monitor=connect(function()
         local p=first.Character.HumanoidRootPart.Position; local q=a.mover.root.Position
         local distance=Vector2.new(p.X-q.X,p.Z-q.Z).Magnitude
@@ -112,7 +109,19 @@ function Motion.run()
         end
     end)
     for i=1,6 do
-        if walk(Vector3.new(if i%2==1 then 18 else -18,21.5,24)) then result.arrivals+=1 end
+        -- Ordinary AI schedules another bounded job after a transient refusal.
+        -- Require six actual alternating arrivals; never count an immediate
+        -- return to the same side after a failed outward crossing as a crossing.
+        local point=Vector3.new(if i%2==1 then 18 else -18,21.5,24)
+        local arrived=false
+        for attempt=1,3 do
+            result.attempts+=1
+            arrived=Probe.run(a.mover,rt.mimics.crowd,point,30)
+            print('M1121 CROSSING',i,attempt,arrived)
+            if arrived then result.arrivals+=1; break end
+            result.refusals+=1; a.mover:stop(); task.wait(2)
+        end
+        assert(arrived,'bounded physical crossing '..i)
         a.mover:stop(); task.wait(2)
     end
     monitor:Disconnect(); a.working=false; rt.mimics.busy-=1; controlled=nil

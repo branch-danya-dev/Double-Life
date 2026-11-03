@@ -87,6 +87,9 @@ jobs:
           rojo build mimic-visual-gate-tests.project.json -o DoubleLife-M1121-tests.rbxlx
           python3 tests/check-fixtures.py DoubleLife-M1121-tests.rbxlx
           python3 tests/check-chat.py DoubleLife-M1121-tests.rbxlx
+          rojo build mimic-motion-tests.project.json -o DoubleLife-M1121-motion-tests.rbxlx
+          python3 tests/check-fixtures.py DoubleLife-M1121-motion-tests.rbxlx
+          python3 tests/check-chat.py DoubleLife-M1121-motion-tests.rbxlx
       - uses: actions/upload-artifact@v4
         with:
           name: DoubleLife-M11-2-1
