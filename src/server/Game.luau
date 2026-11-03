@@ -26,6 +26,7 @@ function Game.start(options)
     local LobbyWorld = require(script.Parent.LobbyWorld)
     local Matchmaking = require(script.Parent.Matchmaking)
     local MimicService = require(script.Parent.MimicService)
+    local PrologueService = require(script.Parent.PrologueService)
 
     pcall(function() PhysicsService:RegisterCollisionGroup("DoubleLifeActors") end)
     PhysicsService:CollisionGroupSetCollidable("DoubleLifeActors", "DoubleLifeActors", false)
@@ -44,6 +45,7 @@ function Game.start(options)
     local socialRemote = remote("RemoteEvent", "SocialAction")
     local commerceRemote = remote("RemoteEvent", "CommerceAction")
     local queueRemote = remote("RemoteEvent", "QueueAction")
+    local prologueRemote = remote("RemoteEvent", "PrologueAction")
     local function event(name)
         local value = Instance.new("BindableEvent")
         value.Name, value.Parent = name, script.Parent
@@ -112,7 +114,7 @@ function Game.start(options)
         if starting then runtime.profiles:beginRound(rounds.policy.roundId) end
         for index, player in ipairs(Players:GetPlayers()) do
             dossier:add(player)
-            if player.Character then
+            if player.Character and not (runtime.prologue and runtime.prologue:active(player)) then
                 -- A new round starts everyone in the foyer, with no carry-over positioning.
                 local position = if starting and rounds.policy.participants[player.UserId] then world:spawn(index)
                     elseif runtime.lobby then runtime.lobby:position(index) else world:spawn(index)
@@ -128,6 +130,8 @@ function Game.start(options)
     runtime.lobby = LobbyWorld.build(runtime)
     runtime.queue = Matchmaking.new(runtime, queueRemote)
     runtime.mimics = MimicService.new(runtime)
+    assert(not options or options.prologue~=false or RunService:IsStudio(),"Prologue override is Studio-only")
+    runtime.prologue = PrologueService.new(runtime,prologueRemote,tell,not options or options.prologue~=false)
     game:BindToClose(function() runtime.alive=false end)
 
     local function snapshot(player)
@@ -137,7 +141,7 @@ function Game.start(options)
             servicePoints = runtime.requests.ledger.scores[player.UserId] or 0,
             refreshments = runtime.requests.received[player.UserId] or 0,
             evidence = runtime.evidence:description(player.UserId), hasDossier = runtime.dossier:has(player), round = round,
-            queue = runtime.queue:snapshot(player), activities = runtime.events:snapshot(player), profile = runtime.profiles:snapshot(player),
+            queue = runtime.queue:snapshot(player), prologue = runtime.prologue:snapshot(player), activities = runtime.events:snapshot(player), profile = runtime.profiles:snapshot(player),
             social = runtime.social:snapshot(player), commerce = runtime.commerce:snapshot(player), publicStyles = runtime.commerce:public()}
     end
     getState.OnServerInvoke = snapshot
@@ -182,6 +186,7 @@ function Game.start(options)
     local connected = {}
     local spawnSlots = {}
     local function resetCharacter(player)
+        runtime.prologue:resetCharacter(player)
         runtime.social:remove(player)
         runtime.events:resetCharacter(player)
         runtime.dossier:resetCharacter(player)
@@ -198,6 +203,7 @@ function Game.start(options)
         runtime.actors:addHuman(player)
         task.spawn(function() runtime.queue:add(player) end)
         runtime.profiles:add(player)
+        runtime.prologue:add(player)
         runtime.telemetry:add(player)
         runtime.commerce:add(player)
         runtime.dossier:add(player)
@@ -210,9 +216,16 @@ function Game.start(options)
             character.DescendantAdded:Connect(configure)
             local humanoid = character:WaitForChild("Humanoid", 10)
             local root = character:WaitForChild("HumanoidRootPart", 10)
-            if root and player.Character == character then
-                local position=if rounds.policy.participants[player.UserId] then runtime.world:spawn(spawnSlots[player] or 1)
+            -- CharacterAdded precedes engine placement at RespawnLocation. Route
+            -- only after parenting/rig creation and the following simulation step.
+            local spawnDeadline = os.clock() + 10
+            while not character:IsDescendantOf(workspace) and player.Character == character
+                and player.Parent == Players and os.clock() < spawnDeadline do RunService.Heartbeat:Wait() end
+            RunService.Heartbeat:Wait()
+            if root and player.Parent == Players and player.Character == character and character:IsDescendantOf(workspace) then
+                local position=runtime.prologue:position(player) or (if rounds.policy.participants[player.UserId] then runtime.world:spawn(spawnSlots[player] or 1)
                     else runtime.lobby:position(spawnSlots[player] or 1)
+                )
                 character:PivotTo(CFrame.new(position))
             end
             if humanoid then humanoid.Died:Connect(function()
@@ -225,6 +238,7 @@ function Game.start(options)
     end
     Players.PlayerAdded:Connect(addPlayer)
     Players.PlayerRemoving:Connect(function(player)
+        runtime.prologue:remove(player)
         runtime.queue:remove(player)
         runtime.actors:remove(player.UserId)
         runtime.lobby.interactions:remove(player)
@@ -255,6 +269,7 @@ function Game.start(options)
         runtime.commerce:tick()
         runtime.telemetry:tick()
         runtime.profiles:tick(dt)
+        runtime.prologue:tick(dt)
         runtime.mimics:tick(dt)
         broadcast += dt
         if broadcast >= 0.5 then

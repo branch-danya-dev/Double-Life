@@ -46,7 +46,12 @@ function Queue:eligible()
     end
     local list, ids = self:ordered(), {}
     if #list < 2 then
-        for _, r in ipairs(list) do r.state, r.readyAt = "Queued", nil end
+        for _, r in ipairs(list) do
+            if r.remoteReady then
+                r.state="MatchReady"; r.readyAt=r.readyAt or self.now()+self.settings.readySeconds
+                if r.consent and self.now()>=r.readyAt then table.insert(ids,r.id) end
+            else r.state,r.readyAt="Queued",nil end
+        end
         return ids
     end
     for index, r in ipairs(list) do
@@ -65,7 +70,7 @@ function Queue:start(ids)
 end
 function Queue:reset()
     self.selected = nil
-    for _, r in pairs(self.entries) do r.state, r.joined, r.readyAt = "Queued", self.now(), nil end
+    for _, r in pairs(self.entries) do r.state, r.joined, r.readyAt, r.remoteReady = "Queued", self.now(), nil, nil end
 end
 function Queue:snapshot(id)
     local r = self.entries[id]

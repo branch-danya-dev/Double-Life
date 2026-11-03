@@ -21,7 +21,7 @@ button("В приёмную",0.5,function() remotes.QueueAction:FireServer("Lobb
 local phases={Lobby="Приёмная",Queued="Ищем второго игрока",MatchReady="Матч готов",Active="Матч"}
 remotes.PersonalUpdate.OnClientEvent:Connect(function(kind,s)
     if kind~="Snapshot" or not s.queue then return end
-    last=s.queue; frame.Visible=not s.round.participating
+    last=s.queue; frame.Visible=not s.round.participating and not (s.prologue and s.prologue.active)
     label.Text=string.format("%s · людей здесь %d · персонажей %d\nOwner и Spy — реальные игроки. Старт от двух.",phases[last.state] or last.state,last.realHumans,last.lobbyMimics)
     if last.transport=="MatchmakingFailed" or last.transport=="TransportFailed" then label.Text="Связь с подбором прервана. Повторяем поиск; вы остаётесь в приёмной." end
     join.Text=if last.queued then "Выйти из очереди · Q" else "Встать в очередь · Q"

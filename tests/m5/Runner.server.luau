@@ -14,7 +14,7 @@ local Config = require(RS.DoubleLifeShared.Config)
 Config.COUNTDOWN_SECONDS = 300 -- fixture allows time to add real clients, live remains 12
 local driver = Instance.new("RemoteFunction")
 driver.Name, driver.Parent = "M5TestDriver", RS
-local rt = require(modules.Game).start({adapter = adapter, commerceAdapter = commerceAdapter, market = market,
+local rt = require(modules.Game).start({prologue=false,adapter = adapter, commerceAdapter = commerceAdapter, market = market,
     commerceSettings = settings, commerceId = account, analytics = function(_, event) telemetry[event] = (telemetry[event] or 0) + 1 end})
 local startAllowed, naturalTick = false, rt.rounds.policy.tick
 rt.rounds.policy.tick = function(self, dt, population)

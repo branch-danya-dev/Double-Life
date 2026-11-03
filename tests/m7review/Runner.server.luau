@@ -1,6 +1,6 @@
 assert(game:GetService("RunService"):IsStudio(),"Studio only")
 local modules=game.ServerScriptService.DoubleLifeServer
-local rt=require(modules.Game).start({adapter=require(script.Parent.MemoryStore).new(require(modules.ProfileSchema).copy)})
+local rt=require(modules.Game).start({prologue=false,adapter=require(script.Parent.MemoryStore).new(require(modules.ProfileSchema).copy)})
 assert(rt.profiles.adapter.mode=="FakeMemory","review must use isolated memory")
 task.spawn(function()
     local player=game.Players:GetPlayers()[1] or game.Players.PlayerAdded:Wait()

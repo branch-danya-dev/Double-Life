@@ -7,7 +7,7 @@ local Schema = require(modules.ProfileSchema)
 local adapter = require(script.Parent.MemoryStore).new(Schema.copy)
 local driver = Instance.new("RemoteFunction")
 driver.Name, driver.Parent = "M4TestDriver", RS
-local rt = require(modules.Game).start({adapter = adapter})
+local rt = require(modules.Game).start({prologue=false,adapter = adapter})
 local function waitFor(test, seconds, message)
     local deadline = os.clock() + seconds
     repeat if test() then return end; task.wait(0.1) until os.clock() >= deadline

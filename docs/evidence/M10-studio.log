@@ -1,0 +1,86 @@
+2026-11-03T10:33:18.747Z M10 WAIT ONE: start one client; add second only after FULL SOLO PASS
+2026-11-03T10:33:19.160Z M7 PASS isolated memory adapter
+2026-11-03T10:33:21.170Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T10:33:21.172Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T10:33:21.172Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T10:33:21.172Z M7 PASS bounded animated NPCs
+2026-11-03T10:33:21.172Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T10:33:21.172Z M7 PASS exactly 22 lights after reset
+2026-11-03T10:33:21.172Z M7 PASS interactive art budget 82
+2026-11-03T10:33:21.172Z M7 PASS static art survives round reset
+2026-11-03T10:33:26.013Z M10 ROUTE 1 {"distance":0,"seconds":0}
+2026-11-03T10:33:27.996Z M10 PASS first meaningful physical action within sixty seconds
+2026-11-03T10:33:27.996Z M10 PASS solo prologue never assigns Owner/Spy
+2026-11-03T10:33:28.690Z M8 CLIENT CHAT PASS Player1
+2026-11-03T10:33:31.913Z M10 ROUTE 2 {"distance":51.08315622806549,"seconds":3.600332400004845}
+2026-11-03T10:33:35.329Z M10 ROUTE 3 {"distance":13.989173412322998,"seconds":1.1175559000112117}
+2026-11-03T10:33:38.880Z M10 ROUTE 4 {"distance":16.736037135124208,"seconds":1.2505366000114009}
+2026-11-03T10:33:47.527Z M10 ROUTE 5 {"distance":96.68340027332306,"seconds":6.283936899970286}
+2026-11-03T10:33:49.895Z M10 ROUTE 6 {"distance":0,"seconds":0}
+2026-11-03T10:34:05.427Z M10 ROUTE 7 {"distance":202.78924810886384,"seconds":13.08452740003122}
+2026-11-03T10:34:11.577Z M10 ROUTE 8 {"distance":54.89456498622894,"seconds":3.76659200002905}
+2026-11-03T10:34:13.977Z M10 ROUTE 9 {"distance":0,"seconds":0}
+2026-11-03T10:34:18.027Z M10 ROUTE 10 {"distance":25.530778884887697,"seconds":1.7504766000201926}
+2026-11-03T10:34:20.977Z M10 ROUTE 11 {"distance":7.998876571655273,"seconds":0.7003726999973878}
+2026-11-03T10:34:23.760Z M10 PASS interrupting clue checkpoint clears private carry
+2026-11-03T10:34:24.544Z M10 PASS resume restores earlier access prerequisite
+2026-11-03T10:34:24.876Z M10 ROUTE 10 {"distance":0,"seconds":0}
+2026-11-03T10:34:27.811Z M10 ROUTE 11 {"distance":7.379076898097992,"seconds":0.6993240999872796}
+2026-11-03T10:34:30.744Z M10 ROUTE 12 {"distance":8.522760272026062,"seconds":0.6996089000022039}
+2026-11-03T10:34:40.909Z M10 ROUTE 13 {"distance":118.656733751297,"seconds":7.816190499986988}
+2026-11-03T10:34:53.659Z M10 ROUTE 14 {"distance":157.47330963611604,"seconds":10.467033899971284}
+2026-11-03T10:34:56.025Z M10 ROUTE 15 {"distance":0,"seconds":0}
+2026-11-03T10:35:04.159Z M10 ROUTE 16 {"distance":87.41267085075379,"seconds":5.7336467000423}
+2026-11-03T10:35:32.741Z M10 ROUTE 18 {"distance":14.794585227966309,"seconds":1.0992059000418522}
+2026-11-03T10:35:42.989Z M10 ROUTE 19 {"distance":120.68870282173157,"seconds":7.882984499970917}
+2026-11-03T10:35:55.640Z M10 ROUTE 20 {"distance":156.7225477695465,"seconds":10.333373699977529}
+2026-11-03T10:36:02.023Z M10 ROUTE 21 {"distance":61.11079514026642,"seconds":4.0338687999756079}
+2026-11-03T10:36:11.673Z M10 ROUTE 22 {"distance":109.66085296869278,"seconds":7.300239500007592}
+2026-11-03T10:36:17.254Z M10 ROUTE 23 {"distance":11.698603391647339,"seconds":0.9496727000223473}
+2026-11-03T10:36:32.972Z M10 ROUTE 24 {"distance":204.90336775779725,"seconds":13.432352099975106}
+2026-11-03T10:36:40.605Z M10 ROUTE 25 {"distance":80.73811101913452,"seconds":5.300549799983855}
+2026-11-03T10:36:42.656Z M10 PASS all twenty-five physical steps complete
+2026-11-03T10:36:42.656Z M10 PASS completed scene and actors cleaned
+2026-11-03T10:36:42.656Z M10 PASS no training currency XP match or history
+2026-11-03T10:36:42.656Z M10 SOLO DURATION 198.85728380002547
+2026-11-03T10:36:44.171Z M10 PASS skip at first step
+2026-11-03T10:36:45.188Z M10 PASS replay skip cannot downgrade completed marker
+2026-11-03T10:36:46.322Z M10 ROUTE 1 {"distance":0,"seconds":0}
+2026-11-03T10:36:52.238Z M10 ROUTE 2 {"distance":51.02698153164238,"seconds":3.6169664000044579}
+2026-11-03T10:36:59.904Z M10 PASS actual death resumes chapter without a match or reward
+2026-11-03T10:37:00.237Z M10 ROUTE 1 {"distance":0,"seconds":0}
+2026-11-03T10:37:03.021Z M10 PASS return to lobby cancels search safely
+2026-11-03T10:37:04.087Z M10 ROUTE 1 {"distance":0,"seconds":0}
+2026-11-03T10:37:09.954Z M10 ROUTE 2 {"distance":51.08818057179451,"seconds":3.5672891999711284}
+2026-11-03T10:37:12.770Z M10 PASS skip in middle
+2026-11-03T10:37:12.886Z M10 FULL SOLO PASS: add second real client
+2026-11-03T10:37:12.886Z M10 PASS chat remains disabled
+2026-11-03T10:37:32.220Z M10 PASS simultaneous private spaces separated
+2026-11-03T10:37:32.228Z M10 PASS public world rebuild preserves private scenes
+2026-11-03T10:37:32.569Z M10 ROUTE 1 {"distance":0,"seconds":0}
+2026-11-03T10:37:34.236Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T10:37:34.236Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T10:37:34.236Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T10:37:34.236Z M7 PASS bounded animated NPCs
+2026-11-03T10:37:34.236Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T10:37:34.236Z M7 PASS exactly 22 lights after reset
+2026-11-03T10:37:34.236Z M7 PASS interactive art budget 82
+2026-11-03T10:37:34.236Z M7 PASS static art survives round reset
+2026-11-03T10:37:34.635Z M10 PASS one visitor cannot advance the other scene
+2026-11-03T10:37:34.635Z M10 PASS ready invitation does not silently start a match
+2026-11-03T10:37:35.403Z M10 PASS first acceptance preserves other visitor's control
+2026-11-03T10:37:35.811Z M8 CLIENT CHAT PASS Player2
+2026-11-03T10:37:36.136Z M10 PASS defer waits for checkpoint
+2026-11-03T10:37:36.487Z M10 ROUTE 1 {"distance":0,"seconds":0}
+2026-11-03T10:37:49.602Z M10 PASS only actual humans become Owner and Spy after acceptance
+2026-11-03T10:37:49.602Z M10 PASS two-phase transition cleans both scenes
+2026-11-03T10:37:49.702Z M10 PASS second client chat gate
+2026-11-03T10:37:49.920Z M10 STUDIO SUITE PASS: full solo, skip/replay, private contexts, consent/defer and actual two-human match
+2026-11-03T10:37:51.553Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T10:37:51.554Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T10:37:51.554Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T10:37:51.554Z M7 PASS bounded animated NPCs
+2026-11-03T10:37:51.554Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T10:37:51.554Z M7 PASS exactly 22 lights after reset
+2026-11-03T10:37:51.554Z M7 PASS interactive art budget 82
+2026-11-03T10:37:51.554Z M7 PASS static art survives round reset

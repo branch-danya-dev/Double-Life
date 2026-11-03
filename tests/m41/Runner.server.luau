@@ -8,7 +8,7 @@ local Memory = require(script.Parent.MemoryStore)
 local driver = Instance.new("RemoteFunction")
 driver.Name, driver.Parent = "M41TestDriver", RS
 local adapter = Memory.new(Schema.copy)
-local rt = require(server.Game).start({adapter = adapter})
+local rt = require(server.Game).start({prologue=false,adapter = adapter})
 local function check(ok, message) assert(ok, message); print("M4.1 PASS", message) end
 local function waitFor(predicate, seconds)
     local deadline = os.clock() + seconds

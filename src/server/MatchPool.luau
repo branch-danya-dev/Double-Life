@@ -19,7 +19,7 @@ function Pool.prune(s, now)
         end
     end
 end
-function Pool.register(s, id, server, token, now, settings)
+function Pool.register(s, id, server, token, now, settings, consent)
     if type(id)~="number" or id%1~=0 or id<=0 or type(server)~="string" or #server<1 or #server>100
         or type(token)~="string" or #token<1 or #token>100 then return false end
     local key = tostring(id)
@@ -32,6 +32,13 @@ function Pool.register(s, id, server, token, now, settings)
         s.tickets[key] = old
     end
     old.expires = now + settings.ticketLease
+    old.consent=consent~=false
+    return true
+end
+function Pool.consented(s, matchId)
+    local m=s.matches[matchId]
+    if not m then return false end
+    for _,id in ipairs(m.ids) do local t=s.tickets[tostring(id)]; if not t or t.consent==false then return false end end
     return true
 end
 function Pool.cancel(s, id, server, token, now)
@@ -62,7 +69,7 @@ function Pool.arrive(s, id, token, matchId, destination, now)
 end
 function Pool.ready(s, matchId, server, present, now)
     local m=s.matches[matchId]
-    if not m or m.target ~= server or m.expires <= now then return false end
+    if not m or m.target ~= server or m.expires <= now or not Pool.consented(s,matchId) then return false end
     for _, id in ipairs(m.ids) do
         local t=s.tickets[tostring(id)]
         if not t or not t.arrived or not present[id] then return false end

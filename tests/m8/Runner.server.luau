@@ -7,7 +7,7 @@ local Schema=require(modules.ProfileSchema)
 local Config=require(RS.DoubleLifeShared.Config)
 local driver=Instance.new("RemoteFunction"); driver.Name,driver.Parent="M6TestDriver",RS
 local audit=Instance.new("RemoteFunction"); audit.Name,audit.Parent="M8AuditDriver",RS
-local rt=require(modules.Game).start({adapter=require(script.Parent.MemoryStore).new(Schema.copy)})
+local rt=require(modules.Game).start({prologue=false,adapter=require(script.Parent.MemoryStore).new(Schema.copy)})
 local startAllowed,naturalTick=false,rt.rounds.policy.tick
 rt.rounds.policy.tick=function(self,dt,population) return naturalTick(self,dt,if startAllowed then population else 0) end
 rt.roles.random={NextInteger=function(_,_,high) return high end}
