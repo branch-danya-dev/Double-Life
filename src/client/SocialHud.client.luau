@@ -1,3 +1,4 @@
+local UI=require(script.Parent.Interface)
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
 local Input = game:GetService("UserInputService")
@@ -8,15 +9,20 @@ local social, commerce = remotes:WaitForChild("SocialAction"), remotes:WaitForCh
 local gui = Instance.new("ScreenGui")
 gui.Name, gui.ResetOnSpawn, gui.DisplayOrder, gui.Parent = "DoubleLifeSocial", false, 5, player:WaitForChild("PlayerGui")
 local panel = Instance.new("ScrollingFrame")
+panel.Active=true
 panel.Name, panel.Size, panel.Position, panel.AnchorPoint = "SocialShopPanel", UDim2.fromScale(0.8, 0.75), UDim2.fromScale(0.5, 0.5), Vector2.new(0.5, 0.5)
 panel.BackgroundColor3, panel.ScrollBarThickness, panel.Visible, panel.Parent = Color3.fromRGB(23, 29, 36), 6, false, gui
+UI.decorate(panel,false); UI.bindPanel(panel)
 local limit = Instance.new("UISizeConstraint")
 limit.MaxSize, limit.Parent = Vector2.new(620, 600), panel
+UI.pager(gui,panel,panel)
 local shortcut = Instance.new("TextButton")
 shortcut.Name, shortcut.Size, shortcut.Position, shortcut.Text = "SocialShortcut", UDim2.fromOffset(235, 32), UDim2.new(1, -245, 0, 10), "J действия · K статус / магазин"
 shortcut.BackgroundColor3, shortcut.TextColor3, shortcut.Parent = Color3.fromRGB(36, 55, 64), Color3.new(1, 1, 1), gui
+shortcut.Visible=false
 local state, mode, lastKey, showEffects = nil, "Social", "", true
 local prices, fetching, boards = {}, {}, {}
+local waves={}
 local render
 local function requestPrice(key, offer)
     if offer.id <= 0 or fetching[key] or (prices[key] and os.clock() < prices[key].expires) then return end
@@ -33,6 +39,7 @@ local function requestPrice(key, offer)
 end
 local function toggle(which)
     if not state then return end
+    if state.round.phase=="Council" then return end
     panel.Visible = not panel.Visible or mode ~= which
     mode, lastKey = which, ""
     if panel.Visible and which == "Shop" then commerce:FireServer("Open") end
@@ -44,9 +51,10 @@ render = function()
     local key = game:GetService("HttpService"):JSONEncode({state.social, state.commerce, state.round.members, state.round.phase, mode, showEffects})
     if key == lastKey then return end
     lastKey = key
-    for _, child in ipairs(panel:GetChildren()) do if not child:IsA("UISizeConstraint") then child:Destroy() end end
+    for _, child in ipairs(panel:GetChildren()) do if not child:IsA("UISizeConstraint") and not child:IsA("UIStroke") then child:Destroy() end end
     local y = 10
     local function line(value, height)
+        height=UI.textHeight(value,panel.AbsoluteSize.X-32,height or 40,14)
         local text = Instance.new("TextLabel")
         text.Size, text.Position, text.Text, text.TextWrapped = UDim2.new(1, -24, 0, height or 40), UDim2.fromOffset(12, y), value, true
         text.TextColor3, text.BackgroundTransparency, text.Font, text.TextSize = Color3.fromRGB(238, 234, 219), 1, Enum.Font.Gotham, 14
@@ -54,10 +62,11 @@ render = function()
     end
     local function button(value, callback)
         local b = Instance.new("TextButton")
-        b.Size, b.Position, b.Text, b.TextWrapped, b.Modal = UDim2.new(1, -24, 0, 36), UDim2.fromOffset(12, y), value, true, true
+        b.Size, b.Position, b.Text, b.TextWrapped, b.Modal = UDim2.new(1, -24, 0, 44), UDim2.fromOffset(12, y), value, true, true
         b.BackgroundColor3, b.TextColor3, b.TextSize, b.Font, b.Parent = Color3.fromRGB(54, 78, 83), Color3.new(1, 1, 1), 14, Enum.Font.Gotham, panel
+        UI.decorate(b,true)
         b.Activated:Connect(callback)
-        y += 42
+        y += 50
     end
     button("Закрыть [J / K]", function() panel.Visible = false end)
     if mode == "Social" then
@@ -107,10 +116,12 @@ render = function()
         line("Цена приходит от Roblox для вашего региона; окончательная цена — в окне покупки. Эффект виден только рядом, его можно скрыть. Во время раунда он не работает.", 75)
     end
     panel.CanvasSize = UDim2.fromOffset(0, y + 5)
+    UI.focus(panel)
 end
 local colors = {TealCard = Color3.fromRGB(32, 127, 128), AmberCard = Color3.fromRGB(159, 112, 39), Supporter = Color3.fromRGB(125, 75, 164)}
 local function snapshot(value)
     state = value
+    if value.round.phase=="Council" then panel.Visible=false end
     local socialPhase = value.round.phase == "Waiting" or value.round.phase == "Results"
     player.CameraMode = if socialPhase then Enum.CameraMode.Classic else Enum.CameraMode.LockFirstPerson
     player.CameraMinZoomDistance, player.CameraMaxZoomDistance = if socialPhase then 6 else 0.5, if socialPhase then 18 else 0.5
@@ -132,11 +143,34 @@ local function snapshot(value)
             b.Label.BackgroundColor3 = colors[style.card] or Color3.fromRGB(41, 47, 54)
             b.Label.Text = style.name .. (if style.title ~= "" then "\n" .. style.title else "")
                 .. (if style.effect == "Celebration" and showEffects then "\n✦ ✧ ✦" elseif style.effect == "Wave" then "\nПривет! ◇" else "")
+            b:SetAttribute("Celebrating",style.effect=="Celebration" and showEffects)
+            if style.effect=="Wave" and not waves[style.id] then
+                for _,joint in ipairs(other.Character:GetDescendants()) do
+                    if joint:IsA("Motor6D") and (joint.Name=="RightShoulder" or joint.Name=="Right Shoulder") then
+                        waves[style.id]={joint=joint,original=joint.Transform,start=os.clock()}; break
+                    end
+                end
+            elseif style.effect~="Wave" and waves[style.id] then
+                local wave=waves[style.id]; if wave.joint.Parent then wave.joint.Transform=wave.original end; waves[style.id]=nil
+            end
         end
     end
     for id, board in pairs(boards) do if not seen[id] then board:Destroy(); boards[id] = nil end end
+    for id,wave in pairs(waves) do
+        if not seen[id] then if wave.joint.Parent then wave.joint.Transform=wave.original end; waves[id]=nil end
+    end
     render()
 end
+game:GetService("RunService").PreSimulation:Connect(function()
+    local presentation=player.PlayerGui:FindFirstChild("MansionPresentation")
+    local motion=not presentation or presentation:GetAttribute("MotionEnabled")~=false
+    for _,wave in pairs(waves) do
+        if wave.joint.Parent then wave.joint.Transform=if motion then wave.original*CFrame.Angles(0,0,math.rad(140)+math.sin((os.clock()-wave.start)*10)*0.16) else wave.original end
+    end
+    for _,board in pairs(boards) do
+        board.Label.Rotation=if motion and showEffects and board:GetAttribute("Celebrating") then math.sin(os.clock()*5)*3 else 0
+    end
+end)
 remotes.PersonalUpdate.OnClientEvent:Connect(function(kind, value) if kind == "Snapshot" then snapshot(value) end end)
 Input.InputBegan:Connect(function(input, processed)
     if processed then return end
@@ -144,5 +178,19 @@ Input.InputBegan:Connect(function(input, processed)
     elseif input.KeyCode == Enum.KeyCode.K then toggle("Shop")
     elseif input.KeyCode == Enum.KeyCode.P or input.KeyCode == Enum.KeyCode.H then panel.Visible = false end
 end)
+UI.action:Connect(function(command)
+    if command=="Social" or command=="Shop" then toggle(command)
+    elseif command=="Close" or command=="Rules" or command=="Profile" then panel.Visible=false end
+end)
+player.PlayerGui:GetAttributeChangedSignal("MansionPanel"):Connect(function()
+    if player.PlayerGui:GetAttribute("MansionPanel")~="SocialShopPanel" then panel.Visible=false end
+end)
+local function resize()
+    local size=gui.AbsoluteSize
+    local layout=UI.presentation.layout(size.X,size.Y)
+    panel.Size=UDim2.fromOffset(layout.panelWidth,layout.panelHeight)
+    lastKey=""; render()
+end
+UI.watchViewport(gui,resize)
 local ok, value = pcall(function() return remotes.GetState:InvokeServer() end)
 if ok then snapshot(value) end

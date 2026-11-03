@@ -13,16 +13,19 @@ required = {'Main', 'Game', 'Roles', 'World', 'Dossier', 'Interactions', 'GuardS
             'ProgressionCatalog', 'DataStoreAdapter', 'PersistenceSettings', 'SocialHud',
             'SocialService', 'SocialPolicy', 'CommerceService', 'CommerceStore', 'CommercePolicy',
             'CommerceCatalog', 'MonetizationSettings', 'MarketplaceAdapter', 'Telemetry', 'AnalyticsPolicy',
-            'MansionLayout', 'WorldContract'}
+            'MansionLayout', 'WorldContract', 'MansionArt', 'MansionArtPlan', 'Presentation', 'Atmosphere', 'Interface'}
 assert required <= names, required - names
 assert not {'M1Tests', 'M1TestDriver', 'M1ClientAudit', 'M2Tests', 'M2TestDriver', 'M2ClientAudit', 'M3Tests', 'M3TestDriver', 'M3ClientAudit', 'Runner', 'Playthrough'} & names
 assert not {'M4Tests', 'M4TestDriver', 'M4ClientAudit', 'MemoryStore'} & names
 assert not {'M41Tests', 'M41TestDriver', 'M41ClientAudit'} & names
 assert not {'M5Tests', 'M5TestDriver', 'M5ClientAudit', 'FakeMarketplace'} & names
 assert not {'M6Tests', 'M6TestDriver', 'M6ClientAudit'} & names
+assert not {'M7Audit', 'M7ClientAudit', 'M7ReviewTests', 'M7ReviewClient', 'M7Review'} & names
+assert 'M7Review' not in '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in items)
+assert 'M7_TEST_INACTIVE_MAIN' not in '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in items)
 server = next(i for i in items if i.get('class') == 'ServerScriptService')
 server_names = {i.findtext('Properties/string[@name="Name"]') for i in server.iter('Item')}
-assert required - {'Hud', 'SocialHud', 'Config'} <= server_names
+assert required - {'Hud', 'SocialHud', 'Config', 'Presentation', 'Atmosphere', 'Interface'} <= server_names
 sources = '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in items)
 assert 'M2TestDriver' not in sources and 'M1TestDriver' not in sources
 assert 'M3TestDriver' not in sources

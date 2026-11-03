@@ -1,0 +1,2 @@
+-- M7_TEST_INACTIVE_MAIN: fixture Runner owns startup and injects isolated memory.
+-- Inert source also protects live Rojo sessions if Studio resets Script.Disabled.

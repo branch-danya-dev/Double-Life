@@ -1,6 +1,6 @@
-# Double Life — M6
+# Double Life — M7
 
-Roblox-прототип со скрытыми ролями, мероприятиями и постоянной прогрессией. M6 продолжает M5 (`1dc003b`) в `feat/m6-functional-mansion`; Draft PR направлен в `feat/m5-social-competition-and-commerce`. Двухэтажный функциональный особняк соединяет галерею, бальный зал, служебные помещения, охраняемый коридор, кабинет и наружный обход. 15 раздельных точек появления, две лестницы и несколько путей между задачами. [План карты и контракт для M7](docs/M6_LEVEL_DESIGN.md), [проверки](docs/M6_TESTING.md), [результаты](docs/M6_VALIDATION.md). Финальный арт и полная ручная балансировка остаются следующими этапами.
+Roblox-прототип со скрытыми ролями, мероприятиями и постоянной прогрессией. M7 продолжает M6 (`91a9a16`) в `feat/m7-art-deco-and-atmosphere`; Draft PR направлен в `feat/m6-functional-mansion`. Двухэтажный особняк на 10–15 игроков получил оформление вечернего приёма в стиле ар-деко: дерево, латунь, опаловые люстры, авторские картины, библиотечные стеллажи и мягкую мистическую атмосферу. Игровая геометрия M6 сохранена. [Арт-направление и бюджеты](docs/M7_ART_DIRECTION.md), [проверки и результаты](docs/M7_VALIDATION.md), [план карты](docs/M6_LEVEL_DESIGN.md). Полные ручные матчи и балансировка остаются этапом M8.
 
 **Real DataStore: NOT TESTED / paid shop: DISABLED.** ID товаров равны нулю; Robux-цены не заданы. [Процедуры, схема чеков и release gate](docs/M5_TESTING.md), [фактическая проверка](docs/M5_VALIDATION.md).
 
@@ -65,14 +65,15 @@ luau tests/reconnect.luau
 luau tests/social.luau
 luau tests/commerce.luau
 luau tests/mansion.luau
+luau tests/presentation.luau
 luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau tests/run.luau tests/rounds.luau tests/events.luau
 luau-analyze src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau tests/MemoryStore.luau tests/progression.luau tests/persistence.luau
 luau-analyze src/server/ProfileSessions.luau tests/reconnect.luau
-rojo build mansion-tests.project.json -o DoubleLife-M6-tests.rbxlx
+rojo build atmosphere-tests.project.json -o DoubleLife-M7-tests.rbxlx
 python tests/check-build.py DoubleLife.rbxlx
 ```
 
-Все исходники проверяются `luau-compile --null`. GitHub Actions собирает production и M6 fixture; запускает все **1452 прежние assertions без изменения восьми файлов** и 279 проверок карты (**1731 всего**), анализирует pure-модули/тесты и проверяет состав production. Studio не запускается в CI. В M6 начать с пяти настоящих клиентов; после `M6 FIVE CLIENTS PASS` добавить до восьми, после второго раунда — до 12–15. Подробности — [M6_TESTING](docs/M6_TESTING.md).
+Все исходники проверяются `luau-compile --null`. GitHub Actions собирает production и M7 fixture; запускает все **1731 прежние проверки без изменения девяти файлов** и 65 проверок оформления (**1796 всего**), анализирует pure-модули/тесты и проверяет состав production. Studio не запускается в CI. M7 fixture повторно использует физический сценарий M6 и добавляет аудит оформления, сброса и UI. Начать с пяти клиентов; после `M6 FIVE CLIENTS PASS` добавить до 10, после второго раунда — до 15. Подробности — [M7_VALIDATION](docs/M7_VALIDATION.md).
 
 M6-драйвер использует настоящие клиентские ProximityPrompt/RemoteEvent и Humanoid, отдельный adapter в памяти без DataStore. Он ходит по карте без тестовых телепортаций. Первый раунд заканчивается выносом, второй — настоящим 420-секундным тайм-аутом. Составы ролей закреплены только в тесте. Это автоматическая интеграция, не человеческий матч. Production не содержит драйверов или MemoryStore.
 
@@ -94,7 +95,7 @@ M6-драйвер использует настоящие клиентские P
 
 Дополнительные серверные hooks: **EventStarted** (`roundId`, `eventId`, `kind`), **EventParticipated** (+ `userId`, один раз на участника/событие), **EventFinished** (+ `cancelled`, таблица `awards`), **GuestIncidentTriggered** (`roundId`, `kind`, `userId` только на сервере). Реликвия даёт 3 сессионных очка участнику или 15 доставившему; музыка — 2 за движение плюс 3 за каждую верную остановку (максимум 11). Начисление сессионных очков одно в конце; практика и прерванное раундом мероприятие их не начисляют. В M4 участие также учитывается как один вид активности для ограниченной награды за завершённый раунд.
 
-Ограничения: Part-геометрия/NPC без анимаций; нет автоматического ареста охранником, сложной криминалистики или боёв; Robux-покупки выключены. Сервер проверяет действия, но не реализует полный античит перемещения персонажа. При полной физической изоляции NPC повторяет попытки пути с ограниченным сроком. Баланс, мобильный интерфейс и реальная сеть требуют отдельного игрового тестирования.
+Ограничения: нативная Part-геометрия и процедурные анимации; нет автоматического ареста охранником, сложной криминалистики или боёв; Robux-покупки выключены. Сервер проверяет действия, но не реализует полный античит перемещения персонажа. При полной физической изоляции NPC повторяет попытки пути с ограниченным сроком. Баланс, физические мобильные устройства и реальная сеть требуют отдельного игрового тестирования. Новое меню открывается кнопкой или Tab; на геймпаде Select выбирает меню, A открывает, B закрывает панель. В меню доступны настройки звука, анимаций и яркости. RU/EN-словарь новой оболочки не заменяет будущий полный перевод игровых текстов.
 
 ## Профили, сохранения и инструменты M4
 

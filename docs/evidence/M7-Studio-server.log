@@ -1,0 +1,162 @@
+2026-11-03T00:05:12.953Z M7 PASS isolated memory adapter
+2026-11-03T00:05:14.970Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:05:14.973Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:05:14.973Z M7 PASS static art survives round reset
+2026-11-03T00:05:14.973Z M7 PASS interactive art budget 82
+2026-11-03T00:05:14.973Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:05:14.973Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:05:14.973Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:05:14.974Z M7 PASS bounded animated NPCs
+2026-11-03T00:05:35.753Z M6 PASS five real clients initial cohort
+2026-11-03T00:05:35.868Z M6 PASS shop off; no real storage/payment APIs
+2026-11-03T00:05:35.986Z M6 PASS closed study has no free navigation bypass
+2026-11-03T00:05:39.535Z M6 WALK Player1 Painting1 3.47s 49.4studs
+2026-11-03T00:05:42.669Z M6 WALK Player1 Painting2 1.18s 15.3studs
+2026-11-03T00:05:45.886Z M6 WALK Player1 Painting3 1.30s 15.7studs
+2026-11-03T00:05:54.986Z M6 WALK Player1 Service.Pantry 7.03s 106.4studs
+2026-11-03T00:05:59.152Z M6 WALK Player1 Service.Target1 4.05s 60.5studs
+2026-11-03T00:06:09.902Z M6 WALK Player1 Service.Target2 10.68s 161.7studs
+2026-11-03T00:06:14.033Z M6 WALK Player1 Social.TraceSpot 4.05s 61.8studs
+2026-11-03T00:06:14.768Z M6 WALK Player1 Guard.Window 0.65s 6.8studs
+2026-11-03T00:06:22.967Z M6 WALK Player1 Events.Console 8.15s 122.5studs
+2026-11-03T00:06:24.951Z M6 WALK Player1 Events.Bell 1.94s 27.6studs
+2026-11-03T00:06:30.016Z M6 WALK Player1 Social.Delivery 4.93s 74.0studs
+2026-11-03T00:06:32.601Z M6 WALK Player1 Relic.Reading 2.52s 36.2studs
+2026-11-03T00:06:39.317Z M6 WALK Player1 MainExit 6.60s 101.7studs
+2026-11-03T00:06:39.317Z M6 PASS all paintings reachable and interactive while waiting
+2026-11-03T00:06:49.500Z M6 WALK Player1 Service.Target2 10.13s 155.4studs
+2026-11-03T00:06:51.417Z M6 PASS upstairs request accepted through real prompt
+2026-11-03T00:06:51.417Z M6 NPC ROUTE 34.13231658935547, 3.499999761581421, 40.019676208496094 {"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0} {"state":"Queued","expires":188.2128086949233,"id":1,"queuedAt":98.2128086949233,"userId":-1,"target":2}
+2026-11-03T00:06:56.433Z M6 NPC ROUTE 34.13231658935547, 3.499999761581421, 40.019676208496094 {"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0} {"state":"Queued","expires":188.2128086949233,"id":1,"queuedAt":98.2128086949233,"userId":-1,"target":2}
+2026-11-03T00:07:01.449Z M6 NPC ROUTE 7.118731498718262, 3.499999761581421, 38.1631965637207 {"timeouts":0,"computes":1,"arrivals":0,"failures":0,"computeSeconds":0.05027390003670007} {"state":"Carrying","target":2,"expires":188.2128086949233,"id":1,"queuedAt":98.2128086949233,"userId":-1,"executor":0}
+2026-11-03T00:07:06.465Z M6 NPC ROUTE -38.88224411010742, 3.499999761581421, 15.184930801391602 {"timeouts":0,"computes":1,"arrivals":0,"failures":0,"computeSeconds":0.05027390003670007} {"state":"Carrying","target":2,"expires":188.2128086949233,"id":1,"queuedAt":98.2128086949233,"userId":-1,"executor":0}
+2026-11-03T00:07:11.482Z M6 NPC ROUTE -57.961692810058594, 17.035425186157227, 47.41901779174805 {"timeouts":0,"computes":1,"arrivals":0,"failures":0,"computeSeconds":0.05027390003670007} {"state":"Carrying","target":2,"expires":188.2128086949233,"id":1,"queuedAt":98.2128086949233,"userId":-1,"executor":0}
+2026-11-03T00:07:16.497Z M6 NPC ROUTE -41.591712951660156, 21.48653793334961, 46.62530517578125 {"timeouts":0,"computes":1,"arrivals":0,"failures":0,"computeSeconds":0.05027390003670007} {"state":"Carrying","target":2,"expires":188.2128086949233,"id":1,"queuedAt":98.2128086949233,"userId":-1,"executor":0}
+2026-11-03T00:07:17.398Z M6 PASS NPC physically delivered upstairs
+2026-11-03T00:07:17.399Z M6 METRICS Waiting topology {"players":5,"service":{"timeouts":0,"computes":2,"arrivals":1,"failures":0,"computeSeconds":0.16539570008171723},"instances":1961,"world":{"lastResetMs":1.7535000224597753,"resets":1,"buildMs":52.13070003082976,"artParts":1362},"game":{"maxRebuildMs":54.77889999747276,"maxHeartbeatMs":716.6799306869507},"guard":{"timeouts":0,"computes":22,"arrivals":21,"failures":0,"computeSeconds":2.3113565999665299},"parts":1731}
+2026-11-03T00:07:29.448Z M6 PASS static identity preserved; old round destroyed
+2026-11-03T00:07:29.566Z M6 PASS real participant privacy Player1
+2026-11-03T00:07:29.680Z M6 PASS real participant privacy Player2
+2026-11-03T00:07:29.798Z M6 PASS real participant privacy Player3
+2026-11-03T00:07:29.915Z M6 PASS real participant privacy Player4
+2026-11-03T00:07:30.015Z M6 PASS real participant privacy Player5
+2026-11-03T00:07:31.432Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:07:31.433Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:07:31.433Z M7 PASS static art survives round reset
+2026-11-03T00:07:31.433Z M7 PASS interactive art budget 82
+2026-11-03T00:07:31.433Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:07:31.433Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:07:31.433Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:07:31.433Z M7 PASS bounded animated NPCs
+2026-11-03T00:07:35.247Z M6 WALK Player4 Service.Pantry 5.10s 75.7studs
+2026-11-03T00:07:35.798Z M6 WALK Player2 Social.Cloth 5.72s 86.0studs
+2026-11-03T00:07:39.497Z M6 WALK Player3 Service.Target2 9.33s 141.6studs
+2026-11-03T00:07:42.447Z M6 WALK Player1 OwnerConsole 12.35s 189.1studs
+2026-11-03T00:07:42.781Z M6 WALK Player5 Social.PassReader 12.72s 191.8studs
+2026-11-03T00:07:44.948Z M6 PASS owner sends patrol between floors
+2026-11-03T00:07:47.997Z M6 PASS named pass opens legal route
+2026-11-03T00:07:49.865Z M6 PASS staff customer request accepted
+2026-11-03T00:07:50.081Z M6 WALK Player5 Social.ParcelHome 2.02s 27.9studs
+2026-11-03T00:07:51.730Z M6 PASS staff accepts order before NPC
+2026-11-03T00:07:52.281Z M6 PASS guest enters and takes physical collection
+2026-11-03T00:07:53.031Z M6 PASS parcel drops on actual upper floor
+2026-11-03T00:07:53.697Z M6 PASS staff picks up physical tray
+2026-11-03T00:07:54.247Z M6 WALK Player3 Service.Target2 0.50s 4.8studs
+2026-11-03T00:07:57.898Z M6 WALK Player5 Social.Egress 1.32s 18.6studs
+2026-11-03T00:08:06.297Z M6 WALK Player2 Social.TraceSpot 9.72s 149.4studs
+2026-11-03T00:08:07.596Z M6 WALK Player4 Service.Target2 11.12s 170.3studs
+2026-11-03T00:08:12.680Z M6 WALK Player5 Social.Delivery 12.65s 191.4studs
+2026-11-03T00:08:15.847Z M6 PASS collection carried downstairs within 45 active seconds
+2026-11-03T00:08:15.847Z M6 PASS staff walked multi-level delivery
+2026-11-03T00:08:15.847Z M6 PASS cloth physically planted on terrace
+2026-11-03T00:08:19.196Z M6 WALK Player3 Social.PassReader 3.30s 46.4studs
+2026-11-03T00:08:28.046Z M6 WALK Player3 Social.TraceSpot 6.63s 100.5studs
+2026-11-03T00:08:30.979Z M6 PASS no-chat sign in new scene
+2026-11-03T00:08:35.497Z M6 WALK Player5 Events.Stage 4.45s 67.0studs
+2026-11-03T00:08:39.845Z M6 WALK Player1 Events.Console 8.80s 135.2studs
+2026-11-03T00:09:08.011Z M6 PASS music event on physical floor
+2026-11-03T00:09:08.827Z M6 WALK Player2 StudyWindow 0.70s 8.5studs
+2026-11-03T00:09:16.277Z M6 WALK Player2 Safe 1.22s 16.7studs
+2026-11-03T00:09:19.411Z M6 PASS solo spy entered independent window
+2026-11-03T00:09:21.311Z M6 WALK Player3 ForensicLog 1.80s 25.2studs
+2026-11-03T00:09:24.161Z M6 WALK Player3 Evidence.Home 0.58s 6.8studs
+2026-11-03T00:09:26.060Z M6 PASS agent physically collects seal upstairs
+2026-11-03T00:09:26.710Z M6 WALK Player3 ForensicLog 0.60s 6.8studs
+2026-11-03T00:09:27.261Z M6 PASS seal drops on actual upper floor rather than old bounds
+2026-11-03T00:09:28.461Z M6 WALK Player2 Social.Egress 1.08s 13.8studs
+2026-11-03T00:09:45.192Z M6 WALK Player2 MainExit 14.43s 217.7studs
+2026-11-03T00:09:47.826Z M6 DOSSIER WALK extraction 28.42s; window-to-exit 32.90s
+2026-11-03T00:09:47.826Z M6 PASS outcome Spy
+2026-11-03T00:09:47.827Z M6 METRICS Spy {"players":5,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":1962,"world":{"lastResetMs":4.163699981290847,"resets":2,"buildMs":52.13070003082976,"artParts":1362},"game":{"maxRebuildMs":54.77889999747276,"maxHeartbeatMs":716.6799306869507},"guard":{"timeouts":0,"computes":14,"arrivals":11,"failures":0,"computeSeconds":1.0181483999476769},"parts":1731}
+2026-11-03T00:09:59.008Z M6 PASS round reset without rebuilding level
+2026-11-03T00:09:59.008Z M6 FIVE CLIENTS PASS; add clients for EIGHT+ round now
+2026-11-03T00:10:00.977Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:10:00.977Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:10:00.977Z M7 PASS static art survives round reset
+2026-11-03T00:10:00.977Z M7 PASS interactive art budget 82
+2026-11-03T00:10:00.977Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:10:00.977Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:10:00.977Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:10:00.977Z M7 PASS bounded animated NPCs
+2026-11-03T00:11:40.121Z M6 PASS static identity preserved; old round destroyed
+2026-11-03T00:11:40.238Z M6 PASS real participant privacy Player1
+2026-11-03T00:11:40.340Z M6 PASS real participant privacy Player2
+2026-11-03T00:11:40.454Z M6 PASS real participant privacy Player3
+2026-11-03T00:11:40.573Z M6 PASS real participant privacy Player4
+2026-11-03T00:11:40.688Z M6 PASS real participant privacy Player5
+2026-11-03T00:11:40.805Z M6 PASS real participant privacy Player6
+2026-11-03T00:11:40.920Z M6 PASS real participant privacy Player7
+2026-11-03T00:11:41.026Z M6 PASS real participant privacy Player8
+2026-11-03T00:11:41.138Z M6 PASS real participant privacy Player9
+2026-11-03T00:11:42.090Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:11:42.090Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:11:42.091Z M7 PASS static art survives round reset
+2026-11-03T00:11:42.091Z M7 PASS interactive art budget 82
+2026-11-03T00:11:42.091Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:11:42.091Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:11:42.091Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:11:42.091Z M7 PASS bounded animated NPCs
+2026-11-03T00:11:42.338Z M6 PASS real participant privacy Player10
+2026-11-03T00:11:42.338Z M6 PASS two spies and two agents in live large round
+2026-11-03T00:11:46.672Z M6 WALK Player1 Events.Console 4.28s 64.2studs
+2026-11-03T00:11:51.939Z M6 WALK Player8 Relic.Archive 9.53s 145.3studs
+2026-11-03T00:11:53.604Z M6 WALK Player2 StudyWindow 11.22s 174.0studs
+2026-11-03T00:11:54.620Z M6 WALK Player4 OwnerConsole 12.15s 181.5studs
+2026-11-03T00:12:15.104Z M6 WALK Player8 Events.Pedestal 11.40s 172.4studs
+2026-11-03T00:12:17.070Z M6 PASS relic walked downstairs before timeout
+2026-11-03T00:12:17.071Z M6 RELIC WALK 13.50s
+2026-11-03T00:12:24.586Z M6 WALK Player2 Safe 1.30s 17.2studs
+2026-11-03T00:12:27.736Z M6 PASS dossier before council
+2026-11-03T00:12:36.753Z M6 WALK Player1 OwnerConsole 8.92s 136.2studs
+2026-11-03T00:12:38.953Z M6 PASS real owner console calls council
+2026-11-03T00:12:41.969Z M6 PASS council pauses carry, world and NPCs
+2026-11-03T00:13:03.118Z M6 PASS majority search recovers dossier without elimination
+2026-11-03T00:13:13.735Z M6 WALK Player4 Events.Bell 10.55s 150.5studs
+2026-11-03T00:13:25.201Z M6 WALK Player4 Service.Target2 11.43s 176.0studs
+2026-11-03T00:13:25.201Z M6 PASS blackout retains permanent route lights across both floors
+2026-11-03T00:13:52.167Z M6 DEFENDERS WAIT 313
+2026-11-03T00:14:22.498Z M6 DEFENDERS WAIT 283
+2026-11-03T00:14:52.814Z M6 DEFENDERS WAIT 253
+2026-11-03T00:15:23.146Z M6 DEFENDERS WAIT 222
+2026-11-03T00:15:53.445Z M6 DEFENDERS WAIT 192
+2026-11-03T00:16:23.743Z M6 DEFENDERS WAIT 162
+2026-11-03T00:16:54.042Z M6 DEFENDERS WAIT 132
+2026-11-03T00:17:24.375Z M6 DEFENDERS WAIT 101
+2026-11-03T00:17:54.706Z M6 DEFENDERS WAIT 71
+2026-11-03T00:18:24.971Z M6 DEFENDERS WAIT 41
+2026-11-03T00:18:55.287Z M6 DEFENDERS WAIT 10
+2026-11-03T00:19:05.371Z M6 PASS outcome Defenders
+2026-11-03T00:19:05.372Z M6 METRICS Defenders {"players":10,"service":{"timeouts":0,"computes":2,"arrivals":2,"failures":0,"computeSeconds":0.14743740000994877},"instances":1962,"world":{"lastResetMs":10.861099988687784,"resets":4,"buildMs":52.13070003082976,"artParts":1362},"game":{"maxRebuildMs":54.77889999747276,"maxHeartbeatMs":716.6799306869507},"guard":{"timeouts":0,"computes":70,"arrivals":67,"failures":0,"computeSeconds":4.9533677998697389},"parts":1731}
+2026-11-03T00:19:17.203Z M6 PASS round reset without rebuilding level
+2026-11-03T00:19:17.203Z M6 LARGE CLIENTS PASS 10 two sequential natural rounds; both outcomes
+2026-11-03T00:19:17.203Z M6 OPTIONAL LOAD: add to 12-15 clients within 180 seconds
+2026-11-03T00:19:19.138Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:19:19.139Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:19:19.139Z M7 PASS static art survives round reset
+2026-11-03T00:19:19.139Z M7 PASS interactive art budget 82
+2026-11-03T00:19:19.139Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:19:19.139Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:19:19.139Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:19:19.139Z M7 PASS bounded animated NPCs
+2026-11-03T00:22:17.263Z Warning: M6 STUDIO FAIL ServerScriptService.M6Tests.Runner:17: optional 12+ session
+2026-11-03T00:24:45.252Z Warning: M7 LOAD FAIL CommandBar:11: isolated memory only

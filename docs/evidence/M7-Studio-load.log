@@ -1,0 +1,35 @@
+2026-11-03T00:28:44.883Z M7 PASS isolated memory adapter
+2026-11-03T00:28:46.899Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:28:46.900Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:28:46.900Z M7 PASS static art survives round reset
+2026-11-03T00:28:46.900Z M7 PASS interactive art budget 82
+2026-11-03T00:28:46.900Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:28:46.900Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:28:46.900Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:28:46.900Z M7 PASS bounded animated NPCs
+2026-11-03T00:35:58.599Z M7 LOAD PASS isolated memory; 15 real clients ready
+2026-11-03T00:36:12.633Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:36:12.634Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:36:12.634Z M7 PASS static art survives round reset
+2026-11-03T00:36:12.634Z M7 PASS interactive art budget 82
+2026-11-03T00:36:12.635Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:36:12.635Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:36:12.635Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:36:12.635Z M7 PASS bounded animated NPCs
+2026-11-03T00:36:19.264Z M7 LOAD WALK Player12 Service.Target2 8.40s 127.4studs
+2026-11-03T00:36:19.331Z M7 LOAD WALK Player6 Service.Target2 8.48s 127.4studs
+2026-11-03T00:36:20.097Z M7 LOAD WALK Player8 Service.Target2 9.27s 140.0studs
+2026-11-03T00:36:20.132Z M7 LOAD WALK Player2 Service.Target2 9.27s 139.8studs
+2026-11-03T00:36:20.214Z M7 LOAD WALK Player14 Service.Target2 9.38s 142.9studs
+2026-11-03T00:36:20.514Z M7 LOAD WALK Player10 Service.Target2 9.63s 147.3studs
+2026-11-03T00:36:20.665Z M7 LOAD WALK Player4 Service.Target2 9.77s 146.8studs
+2026-11-03T00:36:21.164Z M7 LOAD WALK Player15 Social.TraceSpot 10.32s 155.7studs
+2026-11-03T00:36:21.382Z M7 LOAD WALK Player5 Social.TraceSpot 10.55s 160.6studs
+2026-11-03T00:36:21.598Z M7 LOAD WALK Player13 Social.TraceSpot 10.77s 164.1studs
+2026-11-03T00:36:21.598Z M7 LOAD WALK Player9 Social.TraceSpot 10.75s 164.1studs
+2026-11-03T00:36:21.899Z M7 LOAD WALK Player11 Social.TraceSpot 11.05s 171.3studs
+2026-11-03T00:36:22.115Z M7 LOAD WALK Player7 Social.TraceSpot 11.27s 172.3studs
+2026-11-03T00:36:22.215Z M7 LOAD WALK Player3 Social.TraceSpot 11.42s 172.8studs
+2026-11-03T00:36:22.731Z M7 LOAD WALK Player1 Social.TraceSpot 11.87s 179.5studs
+2026-11-03T00:36:22.817Z M7 LOAD METRICS {"players":15,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":1960,"world":{"lastResetMs":17.197499983012678,"resets":2,"buildMs":52.430399984586987,"artParts":1362},"game":{"maxRebuildMs":55.875100020784888,"maxHeartbeatMs":642.0596837997437},"guard":{"timeouts":0,"computes":3,"arrivals":2,"failures":0,"computeSeconds":0.17557060002582149},"parts":1730}
+2026-11-03T00:36:22.817Z M7 LOAD PASS 15; independent Studio load fixture
