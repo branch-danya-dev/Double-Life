@@ -10,6 +10,7 @@ import re
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', required=True, type=Path)
+parser.add_argument('--staff-gate', action='store_true', help='Expect the focused M8.1 positive + negative rounds')
 parser.add_argument('logs', nargs='+', type=Path)
 args = parser.parse_args()
 lines = []
@@ -21,11 +22,12 @@ for path in args.logs:
 lines.sort()
 args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text('\n'.join(lines) + '\n', encoding='utf-8', newline='\n')
-summary = {'complete': any('M8 STUDIO SUITE PASS:' in s for s in lines),
+completion = 'M8 STAFF DELIVERY GATE PASS:' if args.staff_gate else 'M8 STUDIO SUITE PASS:'
+summary = {'complete': any(completion in s for s in lines),
            'failures': [s for s in lines if 'STUDIO FAIL' in s],
-           # The final marker is emitted only after the 15-client round, natural
-           # reset and post-reset client reports; it is that cohort's completion.
-           'rounds': [s for s in lines if 'FULL ROUND PASS' in s or 'M8 STUDIO SUITE PASS:' in s],
+           # The final marker follows the last cohort's natural reset and client
+           # reports (15 in full M8; the negative 5-client round in staff mode).
+           'rounds': [s for s in lines if 'FULL ROUND PASS' in s or completion in s],
            'routes': [s for s in lines if 'M8 ROUTE ' in s],
            'clientSamples': []}
 for line in lines:
