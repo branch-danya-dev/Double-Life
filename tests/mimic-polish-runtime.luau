@@ -110,6 +110,23 @@ function Suite.run(load)
     end
     check(routed:move(V.new(12,3,0),30,function() return false end),'Roblox one-stud MoveTo completion reaches goal without false timeout')
     check(minimum>=3.2,'engine arrival tolerance preserves human clearance')
+    -- Physics may finish MoveTo while the next Lua update is delayed. Inspect
+    -- the swept segment, not just the final position, to detect tunnelling.
+    time=0; root.Position=V.new(0,3,0); target=nil; minimum=100
+    crowd.people={{key='player',position=V.new(10,3,0)}}
+    env.task.wait=function(dt)
+        time+=dt
+        if target then
+            local from=root.Position; local d=target-from; d=V.new(d.X,0,d.Z)
+            if d.Magnitude>1 then
+                local finish=from+d.Unit*(d.Magnitude-1)
+                for i=0,100 do minimum=math.min(minimum,P.distance(from+(finish-from)*(i/100),v(10,3,0))) end
+                root.Position=finish
+            end
+        end
+    end
+    check(crowd:walk(mover,V.new(24,3,0),20,function() return true end),'delayed controller still reaches destination')
+    check(minimum>=3.2,'physics cannot outrun the inspected segment through a stationary player')
     -- Run the actual service scheduler while holding the path worker occupied.
     -- Older eligible lobby work and departures cannot starve behind match jobs.
     local clock={alive=true,now=function() return 100 end,advance=function() end}

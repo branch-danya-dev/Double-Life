@@ -91,13 +91,21 @@ local function run()
         for _,a in pairs(rt.mimics.values) do if a.context=="Lobby" then a.next=math.huge; if a.working then idle=false end end end
         return idle
     end,65)
-    local crowd={samples=0,overlaps=0,minDistance=100,minPair=100}
+    local crowd={samples=0,overlaps=0,minDistance=100,minPair=100,playerDrift=0}
+    local standing=first.Character.HumanoidRootPart.Position
     local monitor=game:GetService("RunService").Heartbeat:Connect(function()
         local root=first.Character.HumanoidRootPart; local all={}
+        crowd.playerDrift=math.max(crowd.playerDrift,(root.Position-standing).Magnitude)
         for _,a in pairs(rt.mimics.values) do if a.context=="Lobby" then
             local distance=CrowdPolicy.distance(root.Position,a.mover.root.Position)
             crowd.samples+=1; crowd.minDistance=math.min(crowd.minDistance,distance)
-            if distance<2 then crowd.overlaps+=1 end
+            if distance<2 then
+                crowd.overlaps+=1
+                if not crowd.firstOverlap then
+                    crowd.firstOverlap={actor=a.actor.name,player=tostring(root.Position),mimic=tostring(a.mover.root.Position),target=tostring(a.mover.destination)}
+                    print('M112 CROWD OVERLAP',Http:JSONEncode(crowd.firstOverlap))
+                end
+            end
             for _,other in ipairs(all) do crowd.minPair=math.min(crowd.minPair,CrowdPolicy.distance(other,a.mover.root.Position)) end
             table.insert(all,a.mover.root.Position)
         end end
@@ -106,8 +114,8 @@ local function run()
     print("M112 CAPTURE READY LOBBY CROWD / stationary player / moving guests")
     invoke(first,{model=actor("Lobby").mover.model,label="LOBBY / stationary Player + 5 guests",center=rt.lobby.spots[1]+Vector3.new(0,0,3),wide=true},view,600)
     monitor:Disconnect()
-    check(crowd.samples>100 and crowd.overlaps==0,"stationary player crowd has no body crossings")
     print("M112 CROWD METRICS",Http:JSONEncode(crowd))
+    check(crowd.samples>100 and crowd.overlaps==0,"stationary player crowd has no body crossings")
     capture(first,actor("Lobby"),"LOBBY / natural stop and nameplates")
     invoke(first,{kind="Queue",action="Register"})
     print("M112 SOLO PASS: add second real client")

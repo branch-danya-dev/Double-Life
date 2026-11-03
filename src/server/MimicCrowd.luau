@@ -79,7 +79,11 @@ function Crowd:walk(mover,waypoint,deadline,valid)
                 if mover.scope:now()>=waitUntil then return false end
             end
         else
-            waitUntil=nil; mover.destination=target; mover.humanoid:MoveTo(target)
+            -- Never command travel beyond the segment we just inspected. Roblox
+            -- keeps moving while this coroutine is delayed by a slow frame.
+            local fraction=math.min(1,Policy.lookAhead/delta.Magnitude)
+            local step=Vector3.new(ahead.X,from.Y+(target.Y-from.Y)*fraction,ahead.Z)
+            waitUntil=nil; mover.destination=step; mover.humanoid:MoveTo(step)
         end
         task.wait(0.1)
     end
