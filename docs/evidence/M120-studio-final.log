@@ -1,0 +1,91 @@
+2026-11-03T21:34:55.084Z M120 VIRTUAL TIMELINE PASS 158 production policy virtual dt; NOT a physical 20-minute run
+2026-11-03T21:34:55.545Z M7 PASS isolated memory adapter
+2026-11-03T21:34:57.556Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T21:34:57.556Z M7 PASS exactly 22 lights after reset
+2026-11-03T21:34:57.556Z M7 PASS interactive art budget 82
+2026-11-03T21:34:57.556Z M7 PASS static art survives round reset
+2026-11-03T21:34:57.557Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:34:57.557Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:34:57.557Z M7 PASS bounded animated NPCs
+2026-11-03T21:34:57.557Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T21:35:01.135Z M6 CLIENT READY Player1
+2026-11-03T21:35:01.136Z M120 CLIENT READY Player1
+2026-11-03T21:35:01.523Z M6 CLIENT READY Player2
+2026-11-03T21:35:01.553Z M120 CLIENT READY Player2
+2026-11-03T21:35:05.970Z M120 CLIENT GATE Player1 PlayerGui true
+2026-11-03T21:35:06.622Z M120 CAPTURE READY 1 start gate; then ordinary 12-second countdown
+2026-11-03T21:36:07.873Z M120 CLIENT START HUD 1 1200 Игра · 20:00
+2026-11-03T21:36:07.879Z M120 CLIENT START HUD 1 1200 Игра · 20:00
+2026-11-03T21:36:08.485Z M120 PASS Owner/Spy are actual Players
+2026-11-03T21:36:10.486Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T21:36:10.486Z M7 PASS exactly 22 lights after reset
+2026-11-03T21:36:10.486Z M7 PASS static art survives round reset
+2026-11-03T21:36:10.487Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:36:10.487Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:36:10.487Z M7 PASS bounded animated NPCs
+2026-11-03T21:36:10.487Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T21:36:10.487Z M7 PASS interactive art budget 82
+2026-11-03T21:36:19.736Z M120 PASS mimic remains Guest
+2026-11-03T21:36:19.736Z M120 PASS mimic remains Guest
+2026-11-03T21:36:19.736Z M120 PASS mimic remains Guest
+2026-11-03T21:36:19.736Z M120 PASS mimic remains Guest
+2026-11-03T21:36:19.736Z M120 PASS mimic remains Guest
+2026-11-03T21:36:19.736Z M120 PASS mimic remains Guest
+2026-11-03T21:36:19.736Z M120 PASS two humans plus six Guest mimics
+2026-11-03T21:36:19.801Z M120 PASS actual client HUD 20:00 Player1
+2026-11-03T21:36:19.869Z M120 PASS actual client HUD 20:00 Player2
+2026-11-03T21:36:40.701Z M120 PASS physical council prompt
+2026-11-03T21:36:42.717Z M120 COUNCIL PAUSE 1168.6664292840287 active seconds; independent council 22.099746686406434
+2026-11-03T21:36:42.717Z M120 PASS real active/world clocks pause
+2026-11-03T21:37:04.834Z M120 PASS council restores remainder without reset
+2026-11-03T21:37:04.900Z M120 PASS client Council HUD uses paused whole-match timer
+2026-11-03T21:37:46.015Z M120 FINISHED 1 Extraction
+2026-11-03T21:37:46.865Z M120 EXTRACTION ACTIVE SECONDS 1 72.51546567305923
+2026-11-03T21:37:46.865Z M120 PASS immediate single RoundFinished
+2026-11-03T21:37:46.865Z M120 PASS physical early extraction 1
+2026-11-03T21:37:58.746Z M120 CLIENT GATE Player1 PlayerGui true
+2026-11-03T21:37:59.397Z M120 CAPTURE READY 2 start gate; then ordinary 12-second countdown
+2026-11-03T21:37:59.397Z M120 PASS Results reset releases actors
+2026-11-03T21:38:00.031Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:38:00.031Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:38:00.031Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T21:38:00.031Z M7 PASS bounded animated NPCs
+2026-11-03T21:38:00.031Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T21:38:00.031Z M7 PASS exactly 22 lights after reset
+2026-11-03T21:38:00.031Z M7 PASS interactive art budget 82
+2026-11-03T21:38:00.031Z M7 PASS static art survives round reset
+2026-11-03T21:38:31.998Z M120 CLIENT START HUD 2 1200 Игра · 20:00
+2026-11-03T21:38:32.007Z M120 CLIENT START HUD 2 1200 Игра · 20:00
+2026-11-03T21:38:32.396Z M120 PASS Owner/Spy are actual Players
+2026-11-03T21:38:34.363Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T21:38:34.364Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:38:34.364Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:38:34.364Z M7 PASS bounded animated NPCs
+2026-11-03T21:38:34.364Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T21:38:34.364Z M7 PASS exactly 22 lights after reset
+2026-11-03T21:38:34.364Z M7 PASS interactive art budget 82
+2026-11-03T21:38:34.364Z M7 PASS static art survives round reset
+2026-11-03T21:38:43.112Z M120 PASS two humans plus six Guest mimics
+2026-11-03T21:38:43.113Z M120 PASS mimic remains Guest
+2026-11-03T21:38:43.113Z M120 PASS mimic remains Guest
+2026-11-03T21:38:43.113Z M120 PASS mimic remains Guest
+2026-11-03T21:38:43.113Z M120 PASS mimic remains Guest
+2026-11-03T21:38:43.113Z M120 PASS mimic remains Guest
+2026-11-03T21:38:43.113Z M120 PASS mimic remains Guest
+2026-11-03T21:38:43.179Z M120 PASS actual client HUD 20:00 Player1
+2026-11-03T21:38:43.246Z M120 PASS actual client HUD 20:00 Player2
+2026-11-03T21:39:24.295Z M120 FINISHED 2 Extraction
+2026-11-03T21:39:25.144Z M120 EXTRACTION ACTIVE SECONDS 2 51.930345023050904
+2026-11-03T21:39:25.144Z M120 PASS immediate single RoundFinished
+2026-11-03T21:39:25.144Z M120 PASS physical early extraction 2
+2026-11-03T21:39:37.677Z M120 PASS Results reset releases actors
+2026-11-03T21:39:37.678Z M120 PASS two physical rounds exactly two completions
+2026-11-03T21:39:37.678Z M120 STUDIO SUITE PASS: 2 actual clients +6 R15 Guests; HUD, council, two physical extractions, reset; 1200 timeout VIRTUAL ONLY
+2026-11-03T21:39:38.294Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T21:39:38.294Z M7 PASS exactly 22 lights after reset
+2026-11-03T21:39:38.294Z M7 PASS interactive art budget 82
+2026-11-03T21:39:38.294Z M7 PASS static art survives round reset
+2026-11-03T21:39:38.295Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:39:38.295Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T21:39:38.295Z M7 PASS bounded animated NPCs
+2026-11-03T21:39:38.295Z M7 PASS evening lighting / atmospheric grade
