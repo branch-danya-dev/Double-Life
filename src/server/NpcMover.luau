@@ -17,14 +17,24 @@ function Mover.new(parent, name, position, color, scope)
         part.CanCollide, part.CanQuery, part.Massless = false, false, true
         part.CFrame = root.CFrame * CFrame.new(offset)
         part.Parent = model
-        local weld = Instance.new("WeldConstraint")
-        weld.Part0, weld.Part1, weld.Parent = root, part, root
+        local weld = Instance.new("Motor6D")
+        weld.Name,weld.Part0,weld.Part1,weld.C0,weld.Parent=name_.."Joint",root,part,CFrame.new(offset),root
         return part
     end
     body("Torso", Vector3.new(2, 2, 1), Vector3.zero)
     local head = body("Head", Vector3.new(1.4, 1.4, 1.4), Vector3.new(0, 1.7, 0))
     body("Left Leg", Vector3.new(0.8, 2, 0.8), Vector3.new(-0.55, -2, 0))
     body("Right Leg", Vector3.new(0.8, 2, 0.8), Vector3.new(0.55, -2, 0))
+    body("Left Arm", Vector3.new(0.65, 1.8, 0.8), Vector3.new(-1.35, 0, 0))
+    body("Right Arm", Vector3.new(0.65, 1.8, 0.8), Vector3.new(1.35, 0, 0))
+    head.Color=Color3.fromRGB(207,174,146)
+    local shirt=body("Shirt",Vector3.new(0.75,1.65,0.08),Vector3.new(0,0.1,-0.53))
+    shirt.Color=Color3.fromRGB(233,222,197)
+    local tie=body("BowTie",Vector3.new(0.65,0.2,0.13),Vector3.new(0,0.7,-0.6))
+    tie.Color=Color3.fromRGB(43,37,35)
+    local badge=body("Badge",Vector3.new(0.25,0.35,0.1),Vector3.new(-0.6,0.4,-0.55))
+    badge.Color=Color3.fromRGB(190,153,80)
+    model:SetAttribute("MansionNPC",true)
     local humanoid = Instance.new("Humanoid")
     humanoid.RequiresNeck = false
     -- This rig has R6 legs: their two studs already contribute to standing height.

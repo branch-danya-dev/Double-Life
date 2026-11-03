@@ -1,0 +1,401 @@
+SOURCE 0.745.462.7451125_20261103T000513Z_Studio_3F193_last.log
+2026-11-03T00:05:20.335Z M6 CLIENT READY Player1
+2026-11-03T00:05:20.887Z Error: Players.Player1.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:05:24.728Z M7 CLIENT PASS render surface initialized 801, 355
+2026-11-03T00:05:24.729Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:05:24.729Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:24.729Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:05:24.729Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:24.729Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:05:25.037Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:05:25.038Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:05:25.038Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:05:25.038Z M7 CLIENT PASS panel within viewport 620, 255 / 801, 355
+2026-11-03T00:05:25.354Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:05:25.654Z M7 CLIENT PASS back closes panels
+2026-11-03T00:05:25.905Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:05:25.906Z M7 CLIENT SUITE PASS Player1 801, 355
+SOURCE 0.745.462.7451125_20261103T000514Z_Studio_49E8D_last.log
+2026-11-03T00:05:24.121Z M6 CLIENT READY Player2
+2026-11-03T00:05:24.572Z Error: Players.Player2.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:05:28.415Z M7 CLIENT PASS render surface initialized 801, 355
+2026-11-03T00:05:28.416Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:05:28.416Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:28.416Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:05:28.416Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:28.416Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:05:28.724Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:05:28.725Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:05:28.725Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:05:28.725Z M7 CLIENT PASS panel within viewport 620, 255 / 801, 355
+2026-11-03T00:05:29.041Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:05:29.356Z M7 CLIENT PASS back closes panels
+2026-11-03T00:05:29.621Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:05:29.621Z M7 CLIENT SUITE PASS Player2 801, 355
+SOURCE 0.745.462.7451125_20261103T000516Z_Studio_D6F2F_last.log
+2026-11-03T00:05:26.784Z M6 CLIENT READY Player4
+2026-11-03T00:05:27.264Z Error: Players.Player4.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:05:31.039Z M7 CLIENT PASS render surface initialized 801, 355
+2026-11-03T00:05:31.039Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:05:31.039Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:05:31.039Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:05:31.039Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:05:31.039Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:05:31.039Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:05:31.039Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:05:31.039Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:31.039Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:05:31.039Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:05:31.040Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:05:31.040Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:05:31.040Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:31.040Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:05:31.349Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:05:31.349Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:05:31.349Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:05:31.349Z M7 CLIENT PASS panel within viewport 620, 255 / 801, 355
+2026-11-03T00:05:31.665Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:05:31.981Z M7 CLIENT PASS back closes panels
+2026-11-03T00:05:32.248Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:05:32.248Z M7 CLIENT SUITE PASS Player4 801, 355
+SOURCE 0.745.462.7451125_20261103T000517Z_Studio_0137B_last.log
+2026-11-03T00:05:26.805Z M6 CLIENT READY Player3
+2026-11-03T00:05:27.246Z Error: Players.Player3.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:05:31.032Z M7 CLIENT PASS render surface initialized 801, 355
+2026-11-03T00:05:31.032Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:05:31.032Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:31.033Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:05:31.033Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:31.034Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:05:31.348Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:05:31.348Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:05:31.348Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:05:31.348Z M7 CLIENT PASS panel within viewport 620, 255 / 801, 355
+2026-11-03T00:05:31.665Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:05:31.965Z M7 CLIENT PASS back closes panels
+2026-11-03T00:05:32.232Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:05:32.233Z M7 CLIENT SUITE PASS Player3 801, 355
+SOURCE 0.745.462.7451125_20261103T000517Z_Studio_815BB_last.log
+2026-11-03T00:05:28.690Z M6 CLIENT READY Player5
+2026-11-03T00:05:29.114Z Error: Players.Player5.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:05:32.914Z M7 CLIENT PASS render surface initialized 801, 355
+2026-11-03T00:05:32.915Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:05:32.915Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:32.915Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:05:32.915Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:32.915Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:05:33.232Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:05:33.232Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:05:33.232Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:05:33.232Z M7 CLIENT PASS panel within viewport 620, 255 / 801, 355
+2026-11-03T00:05:33.547Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:05:33.848Z M7 CLIENT PASS back closes panels
+2026-11-03T00:05:34.115Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:05:34.116Z M7 CLIENT SUITE PASS Player5 801, 355
+SOURCE 0.745.462.7451125_20261103T001101Z_Studio_6EEDA_last.log
+2026-11-03T00:11:12.358Z M6 CLIENT READY Player6
+2026-11-03T00:11:12.776Z Error: Players.Player6.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:11:19.432Z M7 CLIENT PASS render surface initialized 800, 600
+2026-11-03T00:11:19.432Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:11:19.432Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:11:19.432Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:11:19.432Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:11:19.432Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:11:19.432Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:11:19.432Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:11:19.432Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:19.432Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:11:19.433Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:11:19.433Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:11:19.433Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:11:19.433Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:19.433Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:11:21.590Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:11:21.590Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:11:21.590Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:11:21.590Z M7 CLIENT PASS panel within viewport 620, 536 / 833, 636
+2026-11-03T00:11:21.973Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:11:22.277Z M7 CLIENT PASS back closes panels
+2026-11-03T00:11:22.544Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:11:22.544Z M7 CLIENT SUITE PASS Player6 833, 636
+SOURCE 0.745.462.7451125_20261103T001102Z_Studio_B27F6_last.log
+2026-11-03T00:11:17.791Z M6 CLIENT READY Player7
+2026-11-03T00:11:18.303Z Error: Players.Player7.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:11:24.220Z M7 CLIENT PASS render surface initialized 800, 600
+2026-11-03T00:11:24.221Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:11:24.221Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:24.221Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:11:24.221Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:24.221Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:11:26.198Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:11:26.198Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:11:26.198Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:11:26.198Z M7 CLIENT PASS panel within viewport 620, 573 / 833, 673
+2026-11-03T00:11:26.711Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:11:27.021Z M7 CLIENT PASS back closes panels
+2026-11-03T00:11:27.288Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:11:27.288Z M7 CLIENT SUITE PASS Player7 833, 673
+SOURCE 0.745.462.7451125_20261103T001104Z_Studio_AED67_last.log
+2026-11-03T00:11:37.521Z M6 CLIENT READY Player10
+2026-11-03T00:11:38.166Z Error: Players.Player10.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:11:42.584Z M7 CLIENT PASS render surface initialized 833, 673
+2026-11-03T00:11:42.584Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:11:42.584Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:11:42.584Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:11:42.584Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:42.585Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:11:42.585Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:42.585Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:11:42.889Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:11:42.890Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:11:42.890Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:11:42.890Z M7 CLIENT PASS panel within viewport 620, 573 / 833, 673
+2026-11-03T00:11:43.201Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:11:43.518Z M7 CLIENT PASS back closes panels
+2026-11-03T00:11:43.784Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:11:43.784Z M7 CLIENT SUITE PASS Player10 833, 673
+SOURCE 0.745.462.7451125_20261103T001105Z_Studio_9C344_last.log
+2026-11-03T00:11:20.809Z M6 CLIENT READY Player8
+2026-11-03T00:11:21.574Z Error: Players.Player8.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:11:30.866Z M7 CLIENT PASS render surface initialized 800, 600
+2026-11-03T00:11:30.867Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:11:30.868Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:11:30.869Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:11:30.869Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:11:30.869Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:11:30.871Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:11:30.871Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:11:30.871Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:30.873Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:11:30.874Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:11:30.874Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:11:30.874Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:11:30.874Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:30.876Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:11:31.204Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:11:31.204Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:11:31.204Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:11:31.204Z M7 CLIENT PASS panel within viewport 620, 573 / 833, 673
+2026-11-03T00:11:31.590Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:11:31.898Z M7 CLIENT PASS back closes panels
+2026-11-03T00:11:32.148Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:11:32.149Z M7 CLIENT SUITE PASS Player8 833, 673
+SOURCE 0.745.462.7451125_20261103T001106Z_Studio_88C04_last.log
+2026-11-03T00:11:21.842Z M6 CLIENT READY Player9
+2026-11-03T00:11:22.466Z Error: Players.Player9.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:11:28.385Z M7 CLIENT PASS render surface initialized 800, 600
+2026-11-03T00:11:28.385Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:11:28.385Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:11:28.385Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:11:28.385Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:11:28.385Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:11:28.386Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:11:28.386Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:11:28.386Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:28.386Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:11:28.386Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:11:28.386Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:11:28.386Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:11:28.386Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:11:28.386Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:11:31.167Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:11:31.167Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:11:31.168Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:11:31.168Z M7 CLIENT PASS panel within viewport 620, 573 / 833, 673
+2026-11-03T00:11:31.552Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:11:31.919Z M7 CLIENT PASS back closes panels
+2026-11-03T00:11:32.186Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:11:32.186Z M7 CLIENT SUITE PASS Player9 833, 673
+SOURCE 0.745.462.7451125_20261103T002222Z_Studio_C6634_last.log
+2026-11-03T00:22:44.173Z M6 CLIENT READY Player14
+2026-11-03T00:22:44.886Z Error: Players.Player14.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:22:57.302Z M7 CLIENT PASS render surface initialized 800, 600
+2026-11-03T00:22:57.303Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:22:57.303Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:57.303Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:22:57.303Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:57.303Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:22:57.669Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:22:57.669Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:22:57.669Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:22:57.669Z M7 CLIENT PASS panel within viewport 620, 536 / 833, 636
+2026-11-03T00:22:58.295Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:22:58.687Z M7 CLIENT PASS back closes panels
+2026-11-03T00:22:58.964Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:22:58.964Z M7 CLIENT SUITE PASS Player14 833, 636
+SOURCE 0.745.462.7451125_20261103T002223Z_Studio_0816F_last.log
+2026-11-03T00:22:37.156Z M6 CLIENT READY Player12
+2026-11-03T00:22:43.088Z M7 CLIENT PASS render surface initialized 833, 673
+2026-11-03T00:22:43.088Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:22:43.088Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:43.088Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:22:43.088Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:22:43.089Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:22:43.089Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:43.089Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:22:43.432Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:22:43.432Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:22:43.432Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:22:43.432Z M7 CLIENT PASS panel within viewport 620, 573 / 833, 673
+2026-11-03T00:22:43.949Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:22:44.255Z M7 CLIENT PASS back closes panels
+2026-11-03T00:22:44.507Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:22:44.507Z M7 CLIENT SUITE PASS Player12 833, 673
+SOURCE 0.745.462.7451125_20261103T002224Z_Studio_62726_last.log
+2026-11-03T00:22:36.521Z M6 CLIENT READY Player11
+2026-11-03T00:22:37.961Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerPermissionsModule] Invalid value for enum CreatorType
+2026-11-03T00:22:37.962Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerList.Thunks.MakePlayerInfoRequests] Requested module experienced an error while loading
+2026-11-03T00:22:37.962Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerList.Components.Connection.PlayerServiceConnector] Requested module experienced an error while loading
+2026-11-03T00:22:37.962Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerList.Components.Connection.EventConnections] Requested module experienced an error while loading
+2026-11-03T00:22:37.962Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerList.Components.Presentation.PlayerListApp] Requested module experienced an error while loading
+2026-11-03T00:22:37.963Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerList.PlayerListSwitcher] Requested module experienced an error while loading
+2026-11-03T00:22:37.963Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerList.PlayerListController] Requested module experienced an error while loading
+2026-11-03T00:22:37.963Z Error: [Roblox][CoreGui.RobloxGui.Modules.PlayerList.PlayerListManager] Requested module experienced an error while loading
+2026-11-03T00:22:37.963Z Error: [Roblox][CoreGui.RobloxGui.Modules.TopBar.Components.GamepadConnector] Requested module experienced an error while loading
+2026-11-03T00:22:37.963Z Error: [Roblox][CoreGui.RobloxGui.Modules.TopBar.Components.TopBarScrim] Requested module experienced an error while loading
+2026-11-03T00:22:37.963Z Error: [Roblox][CoreGui.RobloxGui.Modules.TopBar] Requested module experienced an error while loading
+2026-11-03T00:22:39.952Z Error: [Roblox][CoreGui.RobloxGui.CoreScripts/InspectAndBuy] Requested module experienced an error while loading
+2026-11-03T00:22:39.978Z Error: [Roblox][Script Context.StarterScript] Script Context.StarterScript:507: Invalid value for enum CreatorType
+2026-11-03T00:22:49.151Z M7 CLIENT PASS render surface initialized 833, 731
+2026-11-03T00:22:49.152Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:22:49.152Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:22:49.152Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:22:49.153Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:22:49.153Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:22:49.153Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:22:49.153Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:22:49.153Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:49.153Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:22:49.153Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:22:49.155Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:22:49.155Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:22:49.155Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:49.155Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:22:49.463Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:22:49.463Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:22:49.464Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:22:49.464Z M7 CLIENT PASS panel within viewport 620, 572 / 833, 672
+2026-11-03T00:22:49.776Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:22:50.078Z M7 CLIENT PASS back closes panels
+2026-11-03T00:22:50.344Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:22:50.344Z M7 CLIENT SUITE PASS Player11 833, 672
+SOURCE 0.745.462.7451125_20261103T002225Z_Studio_B2E7F_last.log
+2026-11-03T00:22:45.096Z M6 CLIENT READY Player13
+2026-11-03T00:22:45.628Z Error: Players.Player13.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:22:49.311Z M7 CLIENT PASS render surface initialized 833, 614
+2026-11-03T00:22:49.311Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:22:49.311Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:22:49.311Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:22:49.311Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:22:49.311Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:22:49.311Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:22:49.311Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:22:49.311Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:49.312Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:22:49.312Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:22:49.312Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:22:49.312Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:22:49.312Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:22:49.312Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:22:49.628Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:22:49.629Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:22:49.629Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:22:49.629Z M7 CLIENT PASS panel within viewport 620, 514 / 833, 614
+2026-11-03T00:22:49.944Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:22:50.286Z M7 CLIENT PASS back closes panels
+2026-11-03T00:22:50.534Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:22:50.534Z M7 CLIENT SUITE PASS Player13 833, 614
+SOURCE 0.745.462.7451125_20261103T002226Z_Studio_82499_last.log
+2026-11-03T00:23:01.953Z M6 CLIENT READY Player15
+2026-11-03T00:23:03.044Z Error: Players.Player15.PlayerScripts.ChatScript:116: Error calling SetCore CoreGuiChatConnections: SetCore: CoreGuiChatConnections has not been registered by the CoreScripts
+2026-11-03T00:23:12.562Z M7 CLIENT PASS render surface initialized 800, 600
+2026-11-03T00:23:12.563Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:23:12.563Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:23:12.563Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:23:12.563Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:23:12.563Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:23:12.930Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:23:12.930Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:23:12.930Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:23:12.930Z M7 CLIENT PASS panel within viewport 620, 514 / 833, 614
+2026-11-03T00:23:13.274Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:23:13.578Z M7 CLIENT PASS back closes panels
+2026-11-03T00:23:13.828Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:23:13.829Z M7 CLIENT SUITE PASS Player15 833, 614

@@ -1,8 +1,10 @@
 local Players = game:GetService("Players")
 local RS = game:GetService("ReplicatedStorage")
 local Input = game:GetService("UserInputService")
+local UI = require(script.Parent.Interface)
 local Prompts = game:GetService("ProximityPromptService")
 game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
+game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
 local player = Players.LocalPlayer
 player.CameraMode = Enum.CameraMode.LockFirstPerson
 local remotes = RS:WaitForChild("DoubleLifeRemotes")
@@ -20,12 +22,13 @@ local goals = {
     Waiting = "До старта можно осматривать картины и заказывать сок. Поздний вход — со следующего раунда.",
 }
 local gui = Instance.new("ScreenGui")
-gui.Name, gui.ResetOnSpawn, gui.Parent = "DoubleLifeHUD", false, player:WaitForChild("PlayerGui")
+gui.Name, gui.ResetOnSpawn, gui.DisplayOrder, gui.Parent = "DoubleLifeHUD", false, 6, player:WaitForChild("PlayerGui")
 local function frame(parent, name, size, position)
     local f = Instance.new("Frame")
     f.Name, f.Size, f.Position = name, size, position
     f.BackgroundColor3, f.BackgroundTransparency = Color3.fromRGB(19, 21, 28), 0.12
     f.Parent = parent
+    UI.decorate(f,false)
     return f
 end
 local function text(parent, name, value, y, height, size)
@@ -40,22 +43,25 @@ local function text(parent, name, value, y, height, size)
 end
 local function button(parent, value, y, callback)
     local b = Instance.new("TextButton")
-    b.Text, b.Size, b.Position = value, UDim2.new(1, -24, 0, 30), UDim2.fromOffset(12, y)
+    b.Text, b.Size, b.Position = value, UDim2.new(1, -24, 0, 44), UDim2.fromOffset(12, y)
     b.BackgroundColor3, b.TextColor3, b.TextSize = Color3.fromRGB(61, 81, 85), Color3.new(1, 1, 1), 14
     b.Font, b.Parent = Enum.Font.Gotham, parent
+    b.TextWrapped=true; UI.decorate(b,true)
     b.Activated:Connect(callback)
     return b
 end
 local status = frame(gui, "StatusPanel", UDim2.fromOffset(390, 211), UDim2.fromOffset(14, 12))
-local phaseLabel = text(status, "Phase", "DOUBLE LIFE · M5", 8, 22, 16)
-local roleLabel = text(status, "Role", "Загрузка…", 32, 20)
-local goalLabel = text(status, "Goal", "", 55, 48, 13)
-local progressLabel = text(status, "Progress", "", 106, 34, 12)
-local notice = text(status, "Notice", "H — правила · B — уронить улику", 146, 60, 12)
+local phaseLabel = text(status, "Phase", "DOUBLE LIFE · ВЕЧЕРНИЙ ПРИЁМ", 8, 36, 14)
+local roleLabel = text(status, "Role", "Загрузка…", 46, 32)
+local goalLabel = text(status, "Goal", "", 86, 48, 13)
+local progressLabel = text(status, "Progress", "", 138, 34, 12)
+local notice = text(status, "Notice", "H — правила · B — уронить улику", 178, 60, 12)
 local visiblePrompts = {}
 local function fitStatus()
-    local compact = next(visiblePrompts) ~= nil
-    status.Size = UDim2.fromOffset(390, if compact then 54 else 211)
+    local viewport=gui.AbsoluteSize
+    local layout=UI.presentation.layout(viewport.X,viewport.Y)
+    local compact = next(visiblePrompts) ~= nil or layout.compact
+    status.Size = UDim2.fromOffset(layout.statusWidth, if compact then 86 else 241)
     goalLabel.Visible, progressLabel.Visible, notice.Visible = not compact, not compact, not compact
 end
 Prompts.PromptShown:Connect(function(prompt)
@@ -69,11 +75,14 @@ end)
 local panel = frame(gui, "CouncilPanel", UDim2.new(0.85, 0, 0.82, 0), UDim2.fromScale(0.5, 0.5))
 panel.AnchorPoint, panel.Visible = Vector2.new(0.5, 0.5), false
 panel.BackgroundTransparency = 0.02
+UI.bindPanel(panel)
 local constraint = Instance.new("UISizeConstraint")
 constraint.MaxSize, constraint.Parent = Vector2.new(620, 600), panel
 local scroll = Instance.new("ScrollingFrame")
+scroll.Active=true
 scroll.Size, scroll.BackgroundTransparency, scroll.BorderSizePixel = UDim2.fromScale(1, 1), 1, 0
 scroll.ScrollBarThickness, scroll.Parent = 6, panel
+UI.pager(gui,panel,scroll)
 local banner = frame(gui, "ActivityBanner", UDim2.new(0.92, 0, 0, 94), UDim2.new(0.5, 0, 1, -12))
 banner.AnchorPoint = Vector2.new(0.5, 1)
 local bannerLimit = Instance.new("UISizeConstraint")
@@ -107,7 +116,7 @@ local function renderPanel()
     panel.Visible = r.phase == "Council" or (r.phase == "Results" and not hideResults) or showRules or showEvents or showProfile
     local card = p.equipped and p.equipped.Card
     panel.BackgroundColor3 = if (showProfile or r.phase == "Results") and card == "TealCard" then Color3.fromRGB(23, 55, 57)
-        elseif (showProfile or r.phase == "Results") and card == "AmberCard" then Color3.fromRGB(65, 47, 24) else Color3.fromRGB(19, 21, 28)
+        elseif (showProfile or r.phase == "Results") and card == "AmberCard" then Color3.fromRGB(65, 47, 24) else UI.color("Ink")
     status.Visible = not panel.Visible
     banner.Visible = not panel.Visible
     local timer = scroll:FindFirstChild("CouncilTime")
@@ -120,6 +129,7 @@ local function renderPanel()
     for _, child in ipairs(scroll:GetChildren()) do child:Destroy() end
     local y = 12
     local function line(value, height, size)
+        height=UI.textHeight(value,panel.AbsoluteSize.X-32,height,size)
         text(scroll, "Line", value, y, height, size)
         y += height + 8
     end
@@ -132,7 +142,7 @@ local function renderPanel()
                 button(scroll, if attach then "✓ Приложить: пломба · сейф, кабинет" else "Приложить улику к голосу", y, function()
                     attach = not attach; renderPanel()
                 end)
-                y += 38
+                y += 50
             else attach = false end
             for _, member in ipairs(r.members) do
                 if member.id ~= player.UserId then
@@ -140,7 +150,7 @@ local function renderPanel()
                         action:FireServer("Vote", r.roundId, member.id, attach)
                     end)
                     b.Modal = true
-                    y += 38
+                    y += 50
                 end
             end
         else line(if r.voted then "Ваш голос принят." else "Вы присоединитесь к следующему раунду.", 28) end
@@ -182,9 +192,9 @@ local function renderPanel()
                 line(item.description, 54, 13)
                 if p.status == "Ready" and not equipped then
                     if item.owned then
-                        button(scroll, "Выбрать: " .. item.name, y, function() profileAction:FireServer("Equip", item.id, item.slot) end); y += 38
+                        button(scroll, "Выбрать: " .. item.name, y, function() profileAction:FireServer("Equip", item.id, item.slot) end); y += 50
                     elseif item.price then
-                        button(scroll, "Купить: " .. item.name, y, function() profileAction:FireServer("Buy", item.id) end); y += 38
+                        button(scroll, "Купить: " .. item.name, y, function() profileAction:FireServer("Buy", item.id) end); y += 50
                     end
                 end
             end
@@ -208,7 +218,7 @@ local function renderPanel()
                 .. reward.beforeLevel .. " → " .. reward.level .. " · мастерство " .. reward.beforeMastery .. " → " .. reward.mastery, 60, 16)
             if #reward.unlocked > 0 then line("Открыто: " .. table.concat(reward.unlocked, ", "), 50) end
         else line(profileMessages[p.reward and p.reward.reason or "Unavailable"] or "Награда не подтверждена.", 44) end
-        button(scroll, "Профиль, коллекция и Loadout [P]", y, function() showProfile = true; renderPanel() end); y += 38
+        button(scroll, "Профиль, коллекция и Loadout [P]", y, function() showProfile = true; renderPanel() end); y += 50
         line("Ваши цели: картины " .. last.paintings .. "/3 · сок получен " .. last.refreshments .. " · доставки " .. math.floor(last.servicePoints / 10)
             .. " · очки доставки " .. last.servicePoints .. " · мероприятий " .. last.activities.event.score, 64)
         line("Роли раскрываются только сейчас:", 24)
@@ -225,12 +235,13 @@ local function renderPanel()
                 button(scroll, eventNames[kind], y, function()
                     eventAction:FireServer("Start", r.roundId, kind)
                 end)
-                y += 38
+                y += 50
             end
         end
         if eventNotice ~= "" then line(eventNotice, 60) end
     else
         line("DOUBLE LIFE · правила", 26, 20)
+        line("Ваша цель: "..goals[last.role],72,15)
         line(rules, 390, 14)
         line("Мероприятия: владелец выбирает у синего пульта в бальном зале на этаже 1 (2 за раунд, перерыв 55 с). Любой может найти реликвию и отнести на постамент (G — положить) или двигаться/замирать на площадке. Уходить с площадки можно в любой момент.\n\nГостевые занятия иногда приводят к проверке охраны или короткому сбою света. Подсветка путей сохраняется. В ожидании следуйте трём шагам практики внизу экрана.", 210, 14)
     end
@@ -243,7 +254,8 @@ local function renderPanel()
         elseif r.phase ~= "Council" and r.phase ~= "Results" then showRules, showEvents = false, false; renderPanel() end
     end)
     modal.Modal = true
-    scroll.CanvasSize = UDim2.fromOffset(0, y + 44)
+    scroll.CanvasSize = UDim2.fromOffset(0, y + 56)
+    UI.focus(panel)
 end
 local function snapshot(value)
     local previous = last and last.round.roundId
@@ -301,5 +313,30 @@ Input.InputBegan:Connect(function(input, processed)
     elseif input.KeyCode == Enum.KeyCode.B and last then action:FireServer("DropEvidence", last.round.roundId)
     elseif input.KeyCode == Enum.KeyCode.G and last then eventAction:FireServer("DropRelic", last.round.roundId) end
 end)
+UI.action:Connect(function(command)
+    if command=="Rules" then showRules,showProfile,showEvents=true,false,false
+    elseif command=="Profile" and last and (last.round.phase=="Waiting" or last.round.phase=="Results") then
+        showProfile,showRules,showEvents=true,false,false
+    elseif command=="Close" or command=="Social" or command=="Shop" then
+        showRules,showProfile,showEvents=false,false,false; hideResults=true
+    else return end
+    renderPanel()
+end)
+player.PlayerGui:GetAttributeChangedSignal("MansionPanel"):Connect(function()
+    if player.PlayerGui:GetAttribute("MansionPanel")~="CouncilPanel" then
+        showRules,showProfile,showEvents=false,false,false; hideResults=true; renderPanel()
+    end
+end)
+local function resize()
+    local viewport=gui.AbsoluteSize
+    local layout=UI.presentation.layout(viewport.X,viewport.Y)
+    panel.Size=UDim2.fromOffset(layout.panelWidth,layout.panelHeight)
+    banner.Size=UDim2.new(1,-28,0,if layout.compact then 76 else 94)
+    banner.Position=UDim2.new(0.5,0,1,if layout.compact then -10 else -12)
+    activityLabel.TextSize=if layout.compact then 12 else 14
+    activityLabel.Size=UDim2.new(1,-24,1,-16)
+    panelKey=""; fitStatus(); renderPanel()
+end
+UI.watchViewport(gui,resize)
 local ok, state = pcall(function() return remotes:WaitForChild("GetState"):InvokeServer() end)
 if ok then snapshot(state) end

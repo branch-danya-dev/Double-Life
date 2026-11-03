@@ -1,0 +1,17 @@
+{
+  "name": "DoubleLifeM7Tests",
+  "globIgnorePaths": ["src/server/Main.server.luau"],
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {"DoubleLifeShared": {"$path": "src/shared"}},
+    "ServerScriptService": {
+      "DoubleLifeServer": {"$path": "src/server", "Main": {"$path": "tests/InactiveMain.server.luau", "$properties": {"Disabled": true}}},
+      "M6Tests": {"$path": "tests/m6", "MemoryStore": {"$path": "tests/MemoryStore.luau"}},
+      "M7Audit": {"$path": "tests/M7Audit.server.luau"}
+    },
+    "StarterPlayer": {"$properties": {"CharacterWalkSpeed": 16}, "StarterPlayerScripts": {
+      "DoubleLifeClient": {"$path": "src/client"}, "M6ClientAudit": {"$path": "tests/M6Client.client.luau"},
+      "M7ClientAudit": {"$path": "tests/M7Audit.client.luau"}
+    }}
+  }
+}

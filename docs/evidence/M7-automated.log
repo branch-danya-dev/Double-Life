@@ -1,0 +1,73 @@
+M7 verification UTC 2026-11-03T00:25:50.067290+00:00
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/run.luau
+PASS: 46 M1 policy and request assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/rounds.luau
+PASS: 254 M2 round, vote, role and generation assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/events.luau
+PASS: 87 M3 event, incident and practice assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/progression.luau
+PASS: 99 M4 progression, schema and catalogue assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/persistence.luau
+PASS: 38 M4 storage, concurrency and failure assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/reconnect.luau
+REPRO failed close:	Unavailable	closing	true	queue	2	token	old-connection
+REPRO same-server reconnect:	Ready	token	new-connection
+PASS: 54 M4.1 reconnect, lifecycle and fencing assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/social.luau
+PASS: 736 M5 matrix, team, physical interaction and analytics assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/commerce.luau
+PASS: 138 M5 commerce, durable receipt and failure assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/mansion.luau
+PASS: 279 M6 world schema, access graph, geometry clearance and timer assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/presentation.luau
+PASS: 65 M7 art, budgets, responsive UI and private feedback assertions; 1362 static art parts
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau-compile.exe --null src\client\Atmosphere.client.luau src\client\Hud.client.luau src\client\Interface.luau src\client\SocialHud.client.luau src\server\AnalyticsPolicy.luau src\server\CommerceCatalog.luau src\server\CommercePolicy.luau src\server\CommerceService.luau src\server\CommerceStore.luau src\server\DataStoreAdapter.luau src\server\Dossier.luau src\server\EventDirector.luau src\server\EventPolicy.luau src\server\EventWorld.luau src\server\Evidence.luau src\server\Game.luau src\server\GuardPolicy.luau src\server\GuardService.luau src\server\Interactions.luau src\server\Main.server.luau src\server\MansionArt.luau src\server\MansionArtPlan.luau src\server\MansionLayout.luau src\server\MarketplaceAdapter.luau src\server\MonetizationSettings.luau src\server\NpcMover.luau src\server\PersistenceSettings.luau src\server\PracticePolicy.luau src\server\ProfileSchema.luau src\server\ProfileService.luau src\server\ProfileSessions.luau src\server\ProfileStore.luau src\server\ProgressionCatalog.luau src\server\ProgressionPolicy.luau src\server\RequestLedger.luau src\server\Requests.luau src\server\RolePlan.luau src\server\Roles.luau src\server\RoundPolicy.luau src\server\RoundService.luau src\server\SessionClock.luau src\server\SocialPolicy.luau src\server\SocialService.luau src\server\Telemetry.luau src\server\World.luau src\server\WorldContract.luau src\server\WorldEvents.luau src\shared\Config.luau src\shared\Presentation.luau tests\ClientAudit.client.luau tests\FakeMarketplace.luau tests\InactiveMain.server.luau tests\M2Client.client.luau tests\M3Client.client.luau tests\M41Client.client.luau tests\M4Client.client.luau tests\M5Client.client.luau tests\M6Client.client.luau tests\M7Audit.client.luau tests\M7Audit.server.luau tests\M7Review.client.luau tests\MemoryStore.luau tests\commerce.luau tests\events.luau tests\m2\EdgeCases.luau tests\m2\Runner.server.luau tests\m3\Runner.server.luau tests\m41\Runner.server.luau tests\m4\Runner.server.luau tests\m4\StoreAudit.luau tests\m5\Runner.server.luau tests\m6\Runner.server.luau tests\m7load\Runner.server.luau tests\m7review\Runner.server.luau tests\mansion.luau tests\persistence.luau tests\presentation.luau tests\progression.luau tests\reconnect.luau tests\rounds.luau tests\run.luau tests\social.luau tests\studio\Playthrough.luau tests\studio\Runner.server.luau
+Compiled 7 KLOC into 521 KB bytecode (read 0.01s, parse 0.01s, compile 0.01s)
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau-analyze.exe src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau src/server/ProfileSessions.luau src/server/SocialPolicy.luau src/server/CommerceStore.luau src/server/CommercePolicy.luau src/server/CommerceCatalog.luau src/server/MonetizationSettings.luau src/server/AnalyticsPolicy.luau src/server/MansionLayout.luau src/server/WorldContract.luau src/server/MansionArtPlan.luau tests/run.luau tests/rounds.luau tests/events.luau tests/progression.luau tests/persistence.luau tests/reconnect.luau tests/social.luau tests/commerce.luau tests/mansion.luau tests/presentation.luau tests/MemoryStore.luau tests/FakeMarketplace.luau
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build default.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7.rbxlx
+Building project 'DoubleLife'
+Built project to DoubleLife-M7.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build atmosphere-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-tests.rbxlx
+Building project 'DoubleLifeM7Tests'
+Built project to DoubleLife-M7-tests.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build atmosphere-review.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-review.rbxlx
+Building project 'DoubleLifeM7Review'
+Built project to DoubleLife-M7-review.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build atmosphere-load.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-load.rbxlx
+Building project 'DoubleLifeM7Load'
+Built project to DoubleLife-M7-load.rbxlx
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-build.py G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7.rbxlx
+PASS: shipping artifact contains all services, keeps server modules private, excludes test fixtures
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-fixtures.py G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-tests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-review.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-load.rbxlx
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-tests.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-review.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M7-load.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-assets.py
+PASS: M7 authored source hashes, provenance, engine-only audio and zero external downloads
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-runtime-globals.py G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau-analyze.exe
+PASS: runtime scripts contain no undefined names outside explicit Roblox globals
+EXIT 0
+git -c core.autocrlf=false diff --exit-code 91a9a16 -- tests/run.luau tests/rounds.luau tests/events.luau tests/progression.luau tests/persistence.luau tests/reconnect.luau tests/social.luau tests/commerce.luau tests/mansion.luau
+EXIT 0
+git -c core.autocrlf=false diff --check
+EXIT 0
+M7 LOCAL CHECKS PASS: 1796 assertions (1731 unchanged + 65 presentation), compile, analyze, production + three fixture builds, shipping and provenance audits.

@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "name": "Double Life / M7 native art-deco kit",
+  "version": "1.0.0",
+  "engine": "Roblox Studio 0.745",
+  "baseCommit": "91a9a16e69242b2fc6ac6f67627ef4b0dc38996b",
+  "direction": "Art deco, warm evening reception, restrained mystery; user-approved",
+  "negativeDirection": "No jump scares, strobing, role-revealing effects or collision changes",
+  "authoredSources": [
+    {
+      "path": "src/server/MansionArtPlan.luau",
+      "sha256": "986813a5a734dfbd36ce6b249c45850ec100cb1bb36d2908c28a9669a0a1b0b8",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/server/MansionArt.luau",
+      "sha256": "fe05ab86579fb80187b53f3e1c9547a9bb9bb88ba0fec980ce4f644064d1ad51",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/server/EventWorld.luau",
+      "sha256": "c777831c2b34c42b09943f41472edd4d58d7930fba176834a2d394cdeb85f77b",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/server/NpcMover.luau",
+      "sha256": "6058ca8370afdf2d41d8ec5b115578f1c59d2e51ecf75f8f1acad39264d67d1e",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/shared/Presentation.luau",
+      "sha256": "0780853289223ca74409a60effff3540fc30aada40bcd141afb5d9d2d7a307d8",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/client/Interface.luau",
+      "sha256": "6e10687089fa9b76d438270fcfbb71c280b4e37560d3dca268ca4391135b0fc4",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/client/Atmosphere.client.luau",
+      "sha256": "bd0872fc0889648a249e5142e90770c9e45b2c5597d0389994cdfb6328163008",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/client/Hud.client.luau",
+      "sha256": "f68d1c37e2d0aeae8c70593b4d1fa62df0e7a559a6ab0e030180414b4abbb7d1",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    },
+    {
+      "path": "src/client/SocialHud.client.luau",
+      "sha256": "c39fa23f98138315c99eaf9b978702fc11f403ecbf55d23bac49dd258829dfe7",
+      "normalization": "UTF-8 LF",
+      "provenance": "Original code authored for this project",
+      "rights": "Project-original; no public license grant"
+    }
+  ],
+  "engineAudio": [
+    {
+      "uri": "rbxasset://sounds/action_jump_land.mp3",
+      "provenance": "Roblox engine content, observed in Studio 0.745",
+      "distribution": "Runtime reference only; no copied binary"
+    },
+    {
+      "uri": "rbxasset://sounds/action_swim.mp3",
+      "provenance": "Roblox engine content, observed in Studio 0.745",
+      "distribution": "Runtime reference only; no copied binary"
+    }
+  ],
+  "engineResources": {
+    "fonts": [
+      "Gotham",
+      "GothamMedium",
+      "GothamBold"
+    ],
+    "materials": [
+      "SmoothPlastic",
+      "Wood",
+      "WoodPlanks",
+      "Fabric",
+      "Marble",
+      "Metal",
+      "Glass",
+      "Grass",
+      "Neon"
+    ]
+  },
+  "externalDownloads": [],
+  "paidProviderJobs": [],
+  "meshTextureFiles": [],
+  "verification": [
+    "tests/presentation.luau",
+    "tests/check-assets.py",
+    "tests/M7Audit.server.luau",
+    "tests/M7Audit.client.luau"
+  ],
+  "budgets": {
+    "staticDecorParts": 1800,
+    "interactiveDecorParts": 260,
+    "lights": 22,
+    "animatedNPCs": 2,
+    "particles": 0
+  }
+}

@@ -1,0 +1,129 @@
+2026-11-03T00:05:48.385Z M7 REVIEW PASS calibrated blackout and restoration
+2026-11-03T00:05:48.385Z M7 REVIEW ready; isolated memory store; Waiting held; camera inspection is not movement evidence
+2026-11-03T00:05:48.385Z M7 REVIEW lighting 1.2000000476837158 0 0.462745, 0.431373, 0.403922 0.6499999761581421
+2026-11-03T00:05:48.386Z M7 PASS isolated memory adapter
+2026-11-03T00:05:49.416Z M7 REVIEW PASS isolated memory profile Ready
+2026-11-03T00:05:50.409Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:05:50.409Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:05:50.410Z M7 PASS static art survives round reset
+2026-11-03T00:05:50.410Z M7 PASS interactive art budget 82
+2026-11-03T00:05:50.410Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:05:50.410Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:05:50.410Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:05:50.410Z M7 PASS bounded animated NPCs
+2026-11-03T00:05:52.726Z M7 CLIENT PASS render surface initialized 801, 355
+2026-11-03T00:05:52.726Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:05:52.726Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:52.727Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:05:52.727Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:05:52.727Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:05:53.043Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:05:53.043Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:05:53.043Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:05:53.043Z M7 CLIENT PASS panel within viewport 620, 255 / 801, 355
+2026-11-03T00:05:53.358Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:05:53.660Z M7 CLIENT PASS back closes panels
+2026-11-03T00:05:53.927Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:05:53.927Z M7 CLIENT SUITE PASS LocalPlayer 801, 355
+2026-11-03T00:05:56.626Z M7 REVIEW view Приёмная
+2026-11-03T00:06:58.957Z M7 REVIEW scroll true true 389, 600 389, 798 0, 0
+2026-11-03T00:07:12.440Z M7 REVIEW scrolled 0, 198
+2026-11-03T00:08:14.232Z M7 REVIEW PASS calibrated blackout and restoration
+2026-11-03T00:08:14.232Z M7 REVIEW ready; isolated memory store; Waiting held; camera inspection is not movement evidence
+2026-11-03T00:08:14.232Z M7 REVIEW lighting 1.2000000476837158 0 0.462745, 0.431373, 0.403922 0.6499999761581421
+2026-11-03T00:08:14.232Z M7 PASS isolated memory adapter
+2026-11-03T00:08:15.163Z M7 REVIEW PASS isolated memory profile Ready
+2026-11-03T00:08:16.232Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:08:16.233Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:08:16.233Z M7 PASS static art survives round reset
+2026-11-03T00:08:16.233Z M7 PASS interactive art budget 82
+2026-11-03T00:08:16.233Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:08:16.233Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:08:16.233Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:08:16.233Z M7 PASS bounded animated NPCs
+2026-11-03T00:08:18.570Z M7 CLIENT PASS render surface initialized 801, 355
+2026-11-03T00:08:18.570Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:08:18.570Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:08:18.570Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:08:18.570Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:08:18.570Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:08:18.888Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:08:18.888Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:08:18.888Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:08:18.888Z M7 CLIENT PASS panel within viewport 620, 255 / 801, 355
+2026-11-03T00:08:19.203Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:08:19.519Z M7 CLIENT PASS back closes panels
+2026-11-03T00:08:19.770Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:08:19.770Z M7 CLIENT SUITE PASS LocalPlayer 801, 355
+2026-11-03T00:08:22.453Z M7 REVIEW view Приёмная
+2026-11-03T00:08:50.285Z M7 REVIEW scroll true true 620, 255 620, 798 0, 0
+2026-11-03T00:09:14.104Z M7 REVIEW scrolled 0, 198
+2026-11-03T00:10:14.667Z M7 REVIEW view Галерея
+2026-11-03T00:16:32.466Z M7 REVIEW blackout true
+2026-11-03T00:16:42.683Z M7 REVIEW blackout false
+2026-11-03T00:16:54.016Z M7 REVIEW view Бальный зал
+2026-11-03T00:17:11.833Z M7 REVIEW view Читальня
+2026-11-03T00:17:22.715Z M7 REVIEW view Променад
+2026-11-03T00:17:37.364Z M7 REVIEW view Кабинет
+2026-11-03T00:18:49.605Z M7 REVIEW PASS calibrated blackout and restoration
+2026-11-03T00:18:49.605Z M7 REVIEW ready; isolated memory store; Waiting held; camera inspection is not movement evidence
+2026-11-03T00:18:49.605Z M7 REVIEW lighting 1.2000000476837158 0 0.462745, 0.431373, 0.403922 0.5
+2026-11-03T00:18:49.610Z M7 PASS isolated memory adapter
+2026-11-03T00:18:50.965Z M7 REVIEW PASS isolated memory profile Ready
+2026-11-03T00:18:51.830Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T00:18:51.831Z M7 PASS exactly 22 lights after reset
+2026-11-03T00:18:51.831Z M7 PASS static art survives round reset
+2026-11-03T00:18:51.831Z M7 PASS interactive art budget 82
+2026-11-03T00:18:51.831Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T00:18:51.831Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:18:51.831Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T00:18:51.831Z M7 PASS bounded animated NPCs
+2026-11-03T00:18:54.796Z M7 CLIENT PASS render surface initialized 1274, 577
+2026-11-03T00:18:54.796Z M7 CLIENT PASS touch menu/drop targets
+2026-11-03T00:18:54.796Z M7 CLIENT PASS menu/settings within usable viewport MansionMenu
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Rules
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Profile
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Social
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Shop
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Settings
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:18:54.796Z M7 CLIENT PASS menu/settings within usable viewport AtmosphereSettings
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Sound
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Motion
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Contrast
+2026-11-03T00:18:54.796Z M7 CLIENT PASS unscaled touch target Close
+2026-11-03T00:18:54.796Z M7 CLIENT PASS quiet start / accessible motion setting
+2026-11-03T00:18:55.112Z M7 CLIENT PASS shared menu opens rules
+2026-11-03T00:18:55.112Z M7 CLIENT PASS rules paging buttons available
+2026-11-03T00:18:55.112Z M7 CLIENT PASS paging controls within viewport
+2026-11-03T00:18:55.112Z M7 CLIENT PASS panel within viewport 620, 477 / 1274, 577
+2026-11-03T00:18:55.429Z M7 CLIENT PASS one panel at a time
+2026-11-03T00:18:55.744Z M7 CLIENT PASS back closes panels
+2026-11-03T00:18:55.995Z M7 CLIENT PASS engine audio resources loaded
+2026-11-03T00:18:55.995Z M7 CLIENT SUITE PASS LocalPlayer 1274, 577
+2026-11-03T00:18:57.861Z M7 REVIEW view Приёмная
+2026-11-03T00:28:55.355Z M7 REVIEW view Галерея
+2026-11-03T00:29:10.403Z M7 REVIEW blackout true
+2026-11-03T00:29:18.187Z M7 REVIEW blackout false
+2026-11-03T00:30:31.219Z M7 REVIEW view Бальный зал
+2026-11-03T00:30:39.500Z M7 REVIEW view Читальня
+2026-11-03T00:30:49.934Z M7 REVIEW view Променад
+2026-11-03T00:31:01.399Z M7 REVIEW view Кабинет

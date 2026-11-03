@@ -30,18 +30,25 @@ jobs:
           luau tests/social.luau
           luau tests/commerce.luau
           luau tests/mansion.luau
+          luau tests/presentation.luau
           find src tests -name '*.luau' -print0 | xargs -0 luau-compile --null
           luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau tests/run.luau tests/rounds.luau tests/events.luau
           luau-analyze src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau tests/MemoryStore.luau tests/progression.luau tests/persistence.luau
           luau-analyze src/server/ProfileSessions.luau tests/reconnect.luau
           luau-analyze src/server/SocialPolicy.luau src/server/CommerceStore.luau src/server/CommercePolicy.luau src/server/CommerceCatalog.luau src/server/MonetizationSettings.luau src/server/AnalyticsPolicy.luau tests/FakeMarketplace.luau tests/social.luau tests/commerce.luau
           luau-analyze src/server/MansionLayout.luau src/server/WorldContract.luau tests/mansion.luau
+          luau-analyze src/server/MansionArtPlan.luau src/shared/Presentation.luau tests/presentation.luau
+          python3 tests/check-runtime-globals.py
       - name: Build and inspect artifacts
         run: |
-          rojo build default.project.json -o DoubleLife-M6.rbxlx
-          rojo build mansion-tests.project.json -o DoubleLife-M6-tests.rbxlx
-          python3 tests/check-build.py DoubleLife-M6.rbxlx
+          rojo build default.project.json -o DoubleLife-M7.rbxlx
+          rojo build atmosphere-tests.project.json -o DoubleLife-M7-tests.rbxlx
+          rojo build atmosphere-review.project.json -o DoubleLife-M7-review.rbxlx
+          rojo build atmosphere-load.project.json -o DoubleLife-M7-load.rbxlx
+          python3 tests/check-build.py DoubleLife-M7.rbxlx
+          python3 tests/check-fixtures.py DoubleLife-M7-tests.rbxlx DoubleLife-M7-review.rbxlx DoubleLife-M7-load.rbxlx
+          python3 tests/check-assets.py
       - uses: actions/upload-artifact@v4
         with:
-          name: DoubleLife-M6
+          name: DoubleLife-M7
           path: '*.rbxlx'
