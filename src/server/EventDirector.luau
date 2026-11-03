@@ -67,6 +67,30 @@ end
 function Director:participated(id)
     self:signal("EventParticipated", {eventId = self.policy.serial, kind = self.policy.kind, userId = id})
 end
+-- Trusted server actors use the same incident and music rules, never Player APIs.
+function Director:validMimic(actor)
+    return self.actors and actor and self.actors:get(actor.id)==actor and actor.kind=="Mimic"
+        and actor.role=="Guest" and self.rounds.policy.mimics[actor.id] and self.scope.alive
+        and self.scope.running and self.rounds.policy.phase=="Active" and actor.model.Parent~=nil
+end
+function Director:actorActivity(actor, key)
+    if not self:validMimic(actor) then return false end
+    if key~="Painting1" and key~="Painting2" and key~="Painting3" and key~="Social.TraceSpot" then return false end
+    local position=if self.world.objects[key] then self.world:approach(key) else self.world:point(key)
+    local root=actor.model:FindFirstChild("HumanoidRootPart")
+    if not root or (root.Position-position).Magnitude>6 then return false end
+    return self.policy:neutral(actor.id,"Guest",true,key,self.scope:now(),self.choose)
+end
+function Director:sampleMimic(actor)
+    if not self:validMimic(actor) then return false end
+    local root=actor.model:FindFirstChild("HumanoidRootPart")
+    if not root then return false end
+    local pos=root.Position
+    local offset=pos-self.scene.stage.Position
+    local inside=math.abs(offset.X)<self.scene.stage.Size.X/2 and math.abs(offset.Z)<self.scene.stage.Size.Z/2
+        and offset.Y>0 and offset.Y<7
+    return self.policy:sample(actor.id,pos.X,pos.Z,inside,self.scope:now())
+end
 function Director:spawnRelic()
     local position = self.scene.relicSpots[self.choose(1, #self.scene.relicSpots)]
     self.relic = self.world.block("EventRelic", Vector3.new(1.3, 1.8, 1.3), position, self.world.gold, Enum.Material.Neon)
@@ -106,9 +130,11 @@ function Director:reportFinish()
     if p.phase ~= "Finished" or self.reported == p.serial then return end
     self.reported, self.attention = p.serial, nil
     self:clearRelic()
-    self:signal("EventFinished", {eventId = p.serial, kind = p.kind, cancelled = p.cancelled, awards = table.clone(p.awards)})
+    local humanAwards={}
+    for id,points in pairs(p.awards) do if type(id)=="number" then humanAwards[id]=points end end
+    self:signal("EventFinished", {eventId = p.serial, kind = p.kind, cancelled = p.cancelled, awards = humanAwards})
     for id, points in pairs(p.awards) do
-        local player = Players:GetPlayerByUserId(id)
+        local player = if type(id)=="number" then Players:GetPlayerByUserId(id) else nil
         if player then self.tell(player, "Мероприятие завершено: +" .. points .. " сессионных очков.") end
     end
 end
@@ -171,7 +197,9 @@ function Director:tick()
     end
     local incident = p:advanceIncident(now)
     if incident == "Started" then
-        self:signal("GuestIncidentTriggered", {kind = p.incident.kind, userId = p.incident.source})
+        if type(p.incident.source)=="number" then
+            self:signal("GuestIncidentTriggered", {kind = p.incident.kind, userId = p.incident.source})
+        end
         if p.incident.kind == "Blackout" then self:setBlackout(true)
         else
             local spots = self.world:points("Guard.Incidents")

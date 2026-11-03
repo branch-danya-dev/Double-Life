@@ -1,8 +1,9 @@
 -- Pure state machine. Only this object can finish a round or resolve a ballot.
 local Round = {}
 Round.__index = Round
-function Round.new(config)
+function Round.new(config, minimumHumans)
     return setmetatable({config = config, phase = "Waiting", roundId = 0, remaining = 0,
+        minimumHumans = minimumHumans or 3, mimics = {},
         elapsed = 0, participants = {}, votes = {}, cast = {}, councilUsed = false}, Round)
 end
 function Round:countdown()
@@ -11,11 +12,12 @@ function Round:countdown()
     self.phase, self.remaining = "Countdown", self.config.COUNTDOWN_SECONDS
     self.elapsed, self.councilUsed, self.result = 0, false, nil
     self.participants, self.votes, self.cast, self.detained = {}, {}, {}, nil
+    self.mimics = {}
     return true
 end
 function Round:activate(ids, spy)
     local spies = if type(spy) == "table" then spy else {spy}
-    if self.phase ~= "Countdown" or #ids < 3 or #ids > 15 or #spies < 1 or #spies > 2 then return false end
+    if self.phase ~= "Countdown" or #ids < self.minimumHumans or #ids > 15 or #spies < 1 or #spies > 2 then return false end
     local team = {}
     for _, id in ipairs(spies) do
         if not table.find(ids, id) or team[id] then return false end
@@ -46,7 +48,7 @@ function Round:council(id)
 end
 function Round:vote(id, target, roundId)
     if self.phase ~= "Council" or roundId ~= self.roundId or not self.participants[id]
-        or not self.participants[target] or target == id or self.cast[id] then return false end
+        or not (self.participants[target] or self.mimics[target]) or target == id or self.cast[id] then return false end
     self.votes[id] = target
     self.cast[id] = true
     return true
@@ -55,12 +57,21 @@ function Round:majority()
     local count, totals = 0, {}
     for _ in pairs(self.participants) do count += 1 end
     for id, target in pairs(self.votes) do
-        if self.participants[id] and self.participants[target] then totals[target] = (totals[target] or 0) + 1 end
+        if self.participants[id] and (self.participants[target] or self.mimics[target]) then totals[target] = (totals[target] or 0) + 1 end
     end
     for target, votes in pairs(totals) do
         if votes > count / 2 then return target end
     end
     return nil
+end
+function Round:addMimic(id: string)
+    if type(id) ~= "string" or not string.match(id,"^m:%d+$") then return false end
+    self.mimics[id] = true
+    return true
+end
+function Round:removeMimic(id)
+    self.mimics[id] = nil
+    for voter,target in pairs(self.votes) do if target == id then self.votes[voter] = nil end end
 end
 function Round:leave(id)
     if not self.participants[id] then return false end
@@ -74,10 +85,10 @@ function Round:leave(id)
 end
 function Round:tick(dt, population)
     if self.phase == "Waiting" then
-        if population >= 3 then self:countdown(); return "Countdown" end
+        if population >= self.minimumHumans then self:countdown(); return "Countdown" end
         return nil
     end
-    if self.phase == "Countdown" and population < 3 then
+    if self.phase == "Countdown" and population < self.minimumHumans then
         self.phase, self.remaining = "Waiting", 0
         return "Waiting"
     end

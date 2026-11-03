@@ -3,7 +3,7 @@ local Policy = require(script.Parent.RoundPolicy)
 local RoundService = {}
 RoundService.__index = RoundService
 function RoundService.new(config, roles, tell, finished)
-    return setmetatable({policy = Policy.new(config), roles = roles, tell = tell,
+    return setmetatable({policy = Policy.new(config, 2), roles = roles, tell = tell,
         finished = finished, protocol = {}, roster = {}, reported = 0}, RoundService)
 end
 function RoundService:allows(player, neutral)
@@ -37,8 +37,8 @@ function RoundService:lockCharacter(player)
     local p = self.policy
     local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
     if root then
-        root.Anchored = p.phase == "Council" or p.phase == "Results"
-            or (p.phase == "Active" and p.detained ~= nil and p.detained.id == player.UserId)
+        root.Anchored = p.participants[player.UserId] == true and (p.phase == "Council" or p.phase == "Results"
+            or (p.phase == "Active" and p.detained ~= nil and p.detained.id == player.UserId))
     end
 end
 function RoundService:report()
@@ -65,7 +65,9 @@ function RoundService:callCouncil(player)
     return true
 end
 function RoundService:vote(player, target, roundId, attach)
-    if typeof(target) ~= "number" or target % 1 ~= 0 or typeof(attach) ~= "boolean" then return false end
+    local validTarget = (typeof(target) == "number" and target % 1 == 0)
+        or (typeof(target) == "string" and self.policy.mimics[target] == true)
+    if not validTarget or typeof(attach) ~= "boolean" then return false end
     local proof = if attach then self.session.evidence:description(player.UserId) else nil
     if attach and not proof then return false end
     if not self.policy:vote(player.UserId, target, roundId) then return false end
@@ -86,6 +88,10 @@ function RoundService:snapshot(player)
     for _, member in ipairs(self.roster) do
         if p.participants[member.id] then table.insert(members, {id = member.id, name = member.name}) end
     end
+    for id in pairs(p.mimics) do
+        local actor = self.session.actors:get(id)
+        if actor then table.insert(members, {id=id,name=actor.name .. " · персонаж"}) end
+    end
     for _, entry in pairs(self.protocol) do table.insert(protocol, entry) end
     local result
     if p.phase == "Results" then result = {winner = p.result.winner, reason = p.result.reason, roles = self.roster} end
@@ -99,9 +105,11 @@ function RoundService:snapshot(player)
 end
 function RoundService:tick(dt)
     local players = Players:GetPlayers()
-    local action, target = self.policy:tick(dt, #players)
+    local queue = self.session.queue
+    local eligible = if queue then queue:eligible() else players
+    local action, target = self.policy:tick(dt, #eligible)
     if action == "Start" then
-        local ids = self.roles:assign(players)
+        local ids = self.roles:assign(eligible)
         local spies = {}
         self.roster = {}
         for _, player in ipairs(players) do
@@ -112,21 +120,31 @@ function RoundService:tick(dt)
             end
         end
         self.policy:activate(ids, spies)
+        if queue then queue.policy:start(ids) end
         self.rebuild(true)
     elseif action == "Search" then
-        local player = target and Players:GetPlayerByUserId(target)
+        local player = if type(target)=="number" then Players:GetPlayerByUserId(target) else nil
+        local actor = target and self.session.actors:get(target)
         if player then self.session.dossier:search(player) end
         self.session.interactions:clear()
         for _, other in ipairs(players) do
-            self.tell(other, if player then "Досмотр: " .. player.Name .. ". Пауза для него — 12 с; роль не раскрывается."
+            self.tell(other, if player or actor then "Досмотр: " .. (if player then player.Name else actor.name) .. ". Пауза для него — 12 с; роль не раскрывается."
                 else "Большинства нет. Никто не задержан; игра продолжается.")
         end
     elseif action == "Reset" then
         self.roles:clear()
         self.roster, self.protocol = {}, {}
         self.policy.participants, self.policy.votes, self.policy.cast, self.policy.detained = {}, {}, {}, nil
+        self.policy.mimics = {}
+        if queue then queue.policy:reset() end
         self.rebuild(false)
     elseif action == "Countdown" or action == "Waiting" then
+        if queue then
+            if action=="Countdown" then
+                local ids={}; for _,p in ipairs(eligible) do table.insert(ids,p.UserId) end
+                queue.policy:select(ids)
+            else queue.policy.selected=nil end
+        end
         self.session.interactions:clear()
     end
     self:report()

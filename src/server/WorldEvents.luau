@@ -11,6 +11,8 @@ function Events.start(world, roles, interactions, guard, tell, config, scope, on
             if tokens[part] ~= token then return end
             -- Do not materialize a closed barrier through an R15/NPC standing in it.
             local models = world.npcs:GetChildren()
+            local mimics=world.map:FindFirstChild("Mimics")
+            if mimics then for _,model in ipairs(mimics:GetChildren()) do table.insert(models,model) end end
             for _, player in ipairs(game:GetService("Players"):GetPlayers()) do
                 if player.Character then table.insert(models, player.Character) end
             end
