@@ -1,0 +1,558 @@
+{
+  "dateUTC": "2026-11-03T21:11:07.365438+00:00",
+  "baseSHA": "49b8ef323a53243af908d07d3391cab7c391aecc",
+  "implementationSHA": "12b5a54da167f3f1b41c0a2138ea8bc66b320c5f",
+  "studioBuild": "DoubleLife-M1121-focused-v3.rbxlx",
+  "studioBuildSHA256": "b892e86043384a9e63c55f1e17bad195006dfc2a07a7c703b528770a2f354101",
+  "productionSourcesVerified": [
+    "src/client/Atmosphere.client.luau",
+    "src/client/ChatSetup.client.luau",
+    "src/client/Hud.client.luau",
+    "src/client/Interface.luau",
+    "src/client/LobbyHud.client.luau",
+    "src/client/MimicNames.client.luau",
+    "src/client/MimicPresentation.client.luau",
+    "src/client/PrologueHud.client.luau",
+    "src/client/SocialHud.client.luau",
+    "src/server/ActorPolicy.luau",
+    "src/server/ActorRegistry.luau",
+    "src/server/AnalyticsPolicy.luau",
+    "src/server/CommerceCatalog.luau",
+    "src/server/CommercePolicy.luau",
+    "src/server/CommerceService.luau",
+    "src/server/CommerceStore.luau",
+    "src/server/DataStoreAdapter.luau",
+    "src/server/Dossier.luau",
+    "src/server/EventDirector.luau",
+    "src/server/EventPolicy.luau",
+    "src/server/EventWorld.luau",
+    "src/server/Evidence.luau",
+    "src/server/Game.luau",
+    "src/server/GuardPolicy.luau",
+    "src/server/GuardService.luau",
+    "src/server/Interactions.luau",
+    "src/server/LobbyWorld.luau",
+    "src/server/MansionArt.luau",
+    "src/server/MansionArtPlan.luau",
+    "src/server/MansionLayout.luau",
+    "src/server/MarketplaceAdapter.luau",
+    "src/server/Matchmaking.luau",
+    "src/server/MatchPool.luau",
+    "src/server/MatchSettings.luau",
+    "src/server/MatchTransport.luau",
+    "src/server/MimicAnimation.luau",
+    "src/server/MimicAppearance.luau",
+    "src/server/MimicCrowd.luau",
+    "src/server/MimicCrowdPolicy.luau",
+    "src/server/MimicIdentity.luau",
+    "src/server/MimicLoadPolicy.luau",
+    "src/server/MimicRig.luau",
+    "src/server/MimicService.luau",
+    "src/server/MonetizationSettings.luau",
+    "src/server/NpcMover.luau",
+    "src/server/PersistenceSettings.luau",
+    "src/server/PracticePolicy.luau",
+    "src/server/ProfileSchema.luau",
+    "src/server/ProfileService.luau",
+    "src/server/ProfileSessions.luau",
+    "src/server/ProfileStore.luau",
+    "src/server/ProgressionCatalog.luau",
+    "src/server/ProgressionPolicy.luau",
+    "src/server/PrologueContent.luau",
+    "src/server/ProloguePolicy.luau",
+    "src/server/PrologueService.luau",
+    "src/server/PrologueWorld.luau",
+    "src/server/QueuePolicy.luau",
+    "src/server/RequestLedger.luau",
+    "src/server/Requests.luau",
+    "src/server/RetentionPolicy.luau",
+    "src/server/RolePlan.luau",
+    "src/server/Roles.luau",
+    "src/server/RoundPolicy.luau",
+    "src/server/RoundService.luau",
+    "src/server/SessionClock.luau",
+    "src/server/SocialPolicy.luau",
+    "src/server/SocialService.luau",
+    "src/server/Telemetry.luau",
+    "src/server/TuningConfig.luau",
+    "src/server/World.luau",
+    "src/server/WorldContract.luau",
+    "src/server/WorldEvents.luau",
+    "src/shared/Config.luau",
+    "src/shared/LobbyPresentation.luau",
+    "src/shared/Presentation.luau",
+    "src/shared/RoleGuide.luau"
+  ],
+  "logs": [
+    "0.745.462.7451125_20261103T204615Z_Studio_904BE_last.log",
+    "0.745.462.7451125_20261103T204620Z_Studio_7E581_last.log",
+    "0.745.462.7451125_20261103T205146Z_Studio_25A79_last.log",
+    "0.745.462.7451125_20261103T205342Z_Studio_C6740_last.log",
+    "0.745.462.7451125_20261103T210609Z_Studio_03B8F_last.log",
+    "0.745.462.7451125_20261103T210615Z_Studio_46D0A_last.log",
+    "0.745.462.7451125_20261103T210616Z_Studio_A5698_last.log"
+  ],
+  "images": [
+    {
+      "file": "prologue.jpg",
+      "sha256": "140194cf56a255dfd5fac96dcbde37c3db8aba76458a02afd1b625aa2e75c534",
+      "capturedUTC": "2026-11-03T20:49:29.836942+00:00"
+    },
+    {
+      "file": "lobby-name.jpg",
+      "sha256": "e499f7fd02259d06f90a31716965f8169155976930fd1dd88b0130e1bd2b5af1",
+      "capturedUTC": "2026-11-03T20:51:15.357156+00:00"
+    },
+    {
+      "file": "lobby-motion-01.jpg",
+      "sha256": "fc70f9b7e6735c0035a9797518a473e31d8e441cba2ee36fde04e11536f27800",
+      "capturedUTC": "2026-11-03T20:50:34.573151+00:00"
+    },
+    {
+      "file": "lobby-motion-02.jpg",
+      "sha256": "9c7e8fd4ff69a26fd0b91bf0e197ecb4d34dd3ed53c2b08dc11e2ea25c74f2b1",
+      "capturedUTC": "2026-11-03T20:50:37.649879+00:00"
+    },
+    {
+      "file": "lobby-motion-03.jpg",
+      "sha256": "88e15bb8db4e7059dabce895aed115bd410e960a658f86d4150e358f72ca4d90",
+      "capturedUTC": "2026-11-03T20:50:40.726175+00:00"
+    },
+    {
+      "file": "lobby-motion-04.jpg",
+      "sha256": "00ef086083d6b8bcf39981e931e3b170cade449588a1cc6b94e67abd9553de26",
+      "capturedUTC": "2026-11-03T20:50:43.806822+00:00"
+    },
+    {
+      "file": "lobby-motion-05.jpg",
+      "sha256": "48fa1b9b212dd67102384ee11209786e6945b89f8bc6d7a05ed088f2ed2cbf55",
+      "capturedUTC": "2026-11-03T20:50:46.889859+00:00"
+    },
+    {
+      "file": "lobby-motion-06.jpg",
+      "sha256": "a83b9cc258d88363b5bcdaebe9c1770b48a8b65cb82c3f72332a0231a12831ac",
+      "capturedUTC": "2026-11-03T20:50:49.967444+00:00"
+    },
+    {
+      "file": "match-ground.jpg",
+      "sha256": "e931977432d6bf8992da7532df64f5b249becabf42455930c7e1bf870ce884e3",
+      "capturedUTC": "2026-11-03T20:52:40.774221+00:00"
+    },
+    {
+      "file": "match-upper.jpg",
+      "sha256": "e63cd350bef0c4f8c854ab2369b33f9617ee2ccf6e5906309e80b67bfb7fc4f0",
+      "capturedUTC": "2026-11-03T20:52:54.257234+00:00"
+    },
+    {
+      "file": "council.jpg",
+      "sha256": "553aec55c8acd65bb9df48a4af575a72198525a73d15580a4f5117f22bc2dc35",
+      "capturedUTC": "2026-11-03T20:53:16.166842+00:00"
+    },
+    {
+      "file": "third-client-lobby.jpg",
+      "sha256": "478b7dca048c344b21cc449ba58f9cf6990bef196423f376a5bfdd3ef822efc2",
+      "capturedUTC": "2026-11-03T20:54:18.748433+00:00"
+    },
+    {
+      "file": "lobby-group.jpg",
+      "sha256": "87cdd3220e528cbe437ab6fdf678ead291827d4c0ac43cc1084f1c4591ffd708",
+      "capturedUTC": "2026-11-03T20:57:13.859723+00:00"
+    },
+    {
+      "file": "passage-01.jpg",
+      "sha256": "616de35e9df1709cf8347459cce7fd2c686a13630dd797b643fc6a96f04450f9",
+      "capturedUTC": "2026-11-03T21:09:35.759010+00:00"
+    },
+    {
+      "file": "passage-02.jpg",
+      "sha256": "704025ba41ae6b5d76b5b40cef0a1bf02bd4550fcf10bbdb24c2f86ed654ba4d",
+      "capturedUTC": "2026-11-03T21:09:37.830284+00:00"
+    },
+    {
+      "file": "passage-03.jpg",
+      "sha256": "f86fb3756094d2d1f0a0aae4c8528ead1b27cdbcf9b227d107e89ed4e5c6ee2a",
+      "capturedUTC": "2026-11-03T21:09:39.910674+00:00"
+    },
+    {
+      "file": "passage-04.jpg",
+      "sha256": "4eeb78adf08212d0f2e8f11aa6675c39b4cb6b1df8972d544827dd0785278ada",
+      "capturedUTC": "2026-11-03T21:09:41.978878+00:00"
+    },
+    {
+      "file": "passage-05.jpg",
+      "sha256": "540abfb61cf8c2e275873e995bd82115ae5bfd9a8f8a767d7ff9b71f3ef066ac",
+      "capturedUTC": "2026-11-03T21:09:44.050230+00:00"
+    },
+    {
+      "file": "passage-06.jpg",
+      "sha256": "edfb69a4db52d922de2c5c49085b52567c455329702c4bfe131cdce4f24c9840",
+      "capturedUTC": "2026-11-03T21:09:46.120804+00:00"
+    },
+    {
+      "file": "passage-07.jpg",
+      "sha256": "a96b75632764d7c8de33277fdf4f43aad8af6c182cee723838b8600b60e1f72c",
+      "capturedUTC": "2026-11-03T21:09:48.189798+00:00"
+    },
+    {
+      "file": "passage-08.jpg",
+      "sha256": "f5d43f7b3f23f0ed0288bc31993b06909c9aa77c7d330f8b294c36ecd039085b",
+      "capturedUTC": "2026-11-03T21:09:50.261360+00:00"
+    },
+    {
+      "file": "passage-09.jpg",
+      "sha256": "5302988a28722c9c6c8a6da7dcf8c3a7f6cd68b4d85ea4bc70ca94e59df457da",
+      "capturedUTC": "2026-11-03T21:09:52.340734+00:00"
+    },
+    {
+      "file": "passage-10.jpg",
+      "sha256": "4758b9e4f6b671985a28f5c2632d795842dc2a6457af99eb3a8f443b5525e7c7",
+      "capturedUTC": "2026-11-03T21:09:54.411653+00:00"
+    },
+    {
+      "file": "passage-11.jpg",
+      "sha256": "da7dddf0310ce0a084b68b855a26ed9184320c885323438b3479b5fcb3d271b2",
+      "capturedUTC": "2026-11-03T21:09:56.479587+00:00"
+    },
+    {
+      "file": "passage-12.jpg",
+      "sha256": "8fa98b2e9ef9909a72539e78113cec353c3f4732ce6623dd96ae66ec2dfc0a84",
+      "capturedUTC": "2026-11-03T21:09:58.549530+00:00"
+    },
+    {
+      "file": "passage-13.jpg",
+      "sha256": "0ee1bec662f128d55a1df367f87c0ae593555f88654d9c49818bea191cd9942d",
+      "capturedUTC": "2026-11-03T21:10:16.007647+00:00"
+    },
+    {
+      "file": "passage-14.jpg",
+      "sha256": "db2aa478c1faf5af54cae6f309aff6db3e94f8dfa100d8ed0a664811c635a8f2",
+      "capturedUTC": "2026-11-03T21:10:17.582625+00:00"
+    },
+    {
+      "file": "passage-15.jpg",
+      "sha256": "ff4e7692a3f36e858acfeec89217a66f17eb4e83fb2a7e1b338d29f50c803ef9",
+      "capturedUTC": "2026-11-03T21:10:19.156076+00:00"
+    },
+    {
+      "file": "passage-16.jpg",
+      "sha256": "21b42f214f4d6649625b23160838eed0e176dc6baef41e8a32520e3f09323de9",
+      "capturedUTC": "2026-11-03T21:10:20.725585+00:00"
+    },
+    {
+      "file": "passage-17.jpg",
+      "sha256": "e8a45269bfa6078024e179249e0e0d72e4e9c092c8db7944c94e174b6beb83ad",
+      "capturedUTC": "2026-11-03T21:10:22.309017+00:00"
+    },
+    {
+      "file": "passage-18.jpg",
+      "sha256": "31f196a4883db5aa5ed0daa501c281696fa9aaf8dc17f6144ccc0d75c80ef7df",
+      "capturedUTC": "2026-11-03T21:10:23.877004+00:00"
+    },
+    {
+      "file": "passage-19.jpg",
+      "sha256": "388584f9daa181bf8f2f87e852b6d52eb50640e086763a108d3081f9351912c9",
+      "capturedUTC": "2026-11-03T21:10:25.453341+00:00"
+    },
+    {
+      "file": "passage-20.jpg",
+      "sha256": "2ab6535e0d7cd64d3137b050d7197268cc6b95ddadc1a060e94eb884616a87ad",
+      "capturedUTC": "2026-11-03T21:10:27.022472+00:00"
+    },
+    {
+      "file": "passage-21.jpg",
+      "sha256": "6f6789ad908272a12968ebfe8992d43d7c7f293f61ed4eaf84450cd7e7b746da",
+      "capturedUTC": "2026-11-03T21:10:28.601454+00:00"
+    },
+    {
+      "file": "passage-22.jpg",
+      "sha256": "639203b035d533659d137f479592b9fe3f753bd683680358f5479f688fb7d4f3",
+      "capturedUTC": "2026-11-03T21:10:30.171658+00:00"
+    },
+    {
+      "file": "passage-23.jpg",
+      "sha256": "5030cf42f1c17e735d3f27f2a315e7f545b422a7d340fb46ffa544a8ae3ff37c",
+      "capturedUTC": "2026-11-03T21:10:31.743566+00:00"
+    },
+    {
+      "file": "passage-24.jpg",
+      "sha256": "eeed183f95f2a30356af26d33d67f2ab467870b2aa539f2d80c8f8d8f38a665f",
+      "capturedUTC": "2026-11-03T21:10:33.309936+00:00"
+    },
+    {
+      "file": "failed-v2-passage-02.jpg",
+      "sha256": "3204e5f1cbbb1409e13048d2ef94e91cfafeb7b6a70585ef90400e1dbb3f8507",
+      "capturedUTC": "2026-11-03T20:59:54.675128+00:00",
+      "outcome": "failed v2, not acceptance evidence"
+    },
+    {
+      "file": "failed-v2-passage-10.jpg",
+      "sha256": "577442befab316b00798123314d60d09fc80277544175e7d20d3cf36942404d3",
+      "capturedUTC": "2026-11-03T21:00:11.346606+00:00",
+      "outcome": "failed v2, not acceptance evidence"
+    },
+    {
+      "file": "failed-v2-passage-19.jpg",
+      "sha256": "1ee1e7216cd707a7e6b774e42af40a1b553e3fce7c69bebbc41e648db2d175ec",
+      "capturedUTC": "2026-11-03T21:00:43.150753+00:00",
+      "outcome": "failed v2, not acceptance evidence"
+    }
+  ],
+  "metrics": {
+    "main": {
+      "mimics": {
+        "maxWorkers": 2,
+        "failures": 1,
+        "orders": 2,
+        "upperArrivals": 4,
+        "matchActions": 15,
+        "actions": 147,
+        "jobs": 179
+      },
+      "crowd": {
+        "waits": 38,
+        "deferred": 0,
+        "maxPeople": 16,
+        "occupied": 539,
+        "detours": 48
+      },
+      "rig": {
+        "live": 3,
+        "pending": 0,
+        "requests": 19,
+        "maxPending": 1,
+        "timeouts": 0,
+        "tracks": 18,
+        "cacheHits": 23,
+        "failures": 0,
+        "deferred": 1,
+        "maxSeconds": 1.2494734999490902
+      }
+    },
+    "lobby": {
+      "minDistance": 5.535956106563785,
+      "overlaps": 0,
+      "samples": 10625,
+      "playerDrift": 0,
+      "minPair": 3.3527544477389655
+    },
+    "failedV2Passage": {
+      "minDistance": 3.3115077018737793,
+      "detoursBefore": 57,
+      "overlaps": 0,
+      "arrivals": 4,
+      "samples": 2549,
+      "detours": 12
+    },
+    "passage": {
+      "minDistance": 3.276718854904175,
+      "refusals": 0,
+      "detours": 10,
+      "overlaps": 0,
+      "arrivals": 6,
+      "samples": 2119,
+      "detoursBefore": 9,
+      "attempts": 6
+    }
+  },
+  "fullSuiteBuild": "DoubleLife-M1121-tests-v2.rbxlx",
+  "fullSuiteBuildSHA256": "fcc18add99e38e5f996178155739306a3fd43575f18bd14dbe9f453896050bdd",
+  "fullSuiteOutcome": "PASS; subsequent v2 Motion FAIL (4/6 attempts), superseded by separate focused v3 run",
+  "approachDiagnostics": [
+    {
+      "seconds": 17.032272895798087,
+      "to": {
+        "y": 21.883014678955078,
+        "x": -17.34603500366211,
+        "z": 24.05860710144043
+      },
+      "targetFloor": true,
+      "waypointCount": 47,
+      "running": true,
+      "reached": true,
+      "target": {
+        "y": 21.5,
+        "x": -18,
+        "z": 24
+      },
+      "alive": true,
+      "targetFree": true,
+      "from": {
+        "y": 3.883013963699341,
+        "x": 37.75269317626953,
+        "z": 26.7473087310791
+      }
+    },
+    {
+      "seconds": 5.265746483579278,
+      "to": {
+        "y": 21.883012771606445,
+        "x": -2.403599739074707,
+        "z": 28.129058837890625
+      },
+      "targetFloor": true,
+      "failure": "OccupiedFixedTarget",
+      "waypointCount": 7,
+      "running": true,
+      "reached": false,
+      "target": {
+        "y": 21.724853515625,
+        "x": -1.6900634765625,
+        "z": 24.25830078125
+      },
+      "alive": true,
+      "targetFree": false,
+      "from": {
+        "y": 21.883014678955078,
+        "x": -17.34603500366211,
+        "z": 24.05860710144043
+      }
+    },
+    {
+      "seconds": 3.71619825437665,
+      "to": {
+        "y": 21.883014678955078,
+        "x": 17.20770835876465,
+        "z": 23.984189987182617
+      },
+      "targetFloor": true,
+      "waypointCount": 9,
+      "running": true,
+      "reached": true,
+      "target": {
+        "y": 21.5,
+        "x": 18,
+        "z": 24
+      },
+      "alive": true,
+      "targetFree": true,
+      "from": {
+        "y": 21.883012771606445,
+        "x": -15.988507270812988,
+        "z": 23.36094856262207
+      }
+    },
+    {
+      "seconds": 3.568216610699892,
+      "to": {
+        "y": 21.883012771606445,
+        "x": -17.09429168701172,
+        "z": 23.996633529663086
+      },
+      "targetFloor": true,
+      "waypointCount": 8,
+      "running": true,
+      "reached": true,
+      "target": {
+        "y": 21.5,
+        "x": -18,
+        "z": 24
+      },
+      "alive": true,
+      "targetFree": true,
+      "from": {
+        "y": 21.883014678955078,
+        "x": 17.210119247436523,
+        "z": 23.984237670898438
+      }
+    },
+    {
+      "seconds": 3.8830146994441748,
+      "to": {
+        "y": 21.883014678955078,
+        "x": 17.363340377807617,
+        "z": 23.99956703186035
+      },
+      "targetFloor": true,
+      "waypointCount": 8,
+      "running": true,
+      "reached": true,
+      "target": {
+        "y": 21.5,
+        "x": 18,
+        "z": 24
+      },
+      "alive": true,
+      "targetFree": true,
+      "from": {
+        "y": 21.883012771606445,
+        "x": -17.875431060791016,
+        "z": 23.71163558959961
+      }
+    },
+    {
+      "seconds": 3.865884709171951,
+      "to": {
+        "y": 21.883012771606445,
+        "x": -16.963224411010742,
+        "z": 23.997547149658203
+      },
+      "targetFloor": true,
+      "waypointCount": 7,
+      "running": true,
+      "reached": true,
+      "target": {
+        "y": 21.5,
+        "x": -18,
+        "z": 24
+      },
+      "alive": true,
+      "targetFree": true,
+      "from": {
+        "y": 21.883014678955078,
+        "x": 17.365751266479492,
+        "z": 23.999568939208984
+      }
+    },
+    {
+      "seconds": 4.400259456597269,
+      "to": {
+        "y": 21.883014678955078,
+        "x": 17.270017623901367,
+        "z": 24.004676818847656
+      },
+      "targetFloor": true,
+      "waypointCount": 8,
+      "running": true,
+      "reached": true,
+      "target": {
+        "y": 21.5,
+        "x": 18,
+        "z": 24
+      },
+      "alive": true,
+      "targetFree": true,
+      "from": {
+        "y": 21.883012771606445,
+        "x": -17.033578872680664,
+        "z": 23.997711181640625
+      }
+    },
+    {
+      "seconds": 3.781225406564772,
+      "to": {
+        "y": 21.883012771606445,
+        "x": -17.258298873901367,
+        "z": 23.995384216308594
+      },
+      "targetFloor": true,
+      "waypointCount": 8,
+      "running": true,
+      "reached": true,
+      "target": {
+        "y": 21.5,
+        "x": -18,
+        "z": 24
+      },
+      "alive": true,
+      "targetFree": true,
+      "from": {
+        "y": 21.883014678955078,
+        "x": 17.270023345947266,
+        "z": 24.004676818847656
+      }
+    }
+  ],
+  "assertions": 4240,
+  "retainedAssertions": 4091,
+  "newAssertions": 149
+}

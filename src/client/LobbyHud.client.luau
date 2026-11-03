@@ -2,6 +2,7 @@ local Players=game:GetService("Players")
 local RS=game:GetService("ReplicatedStorage")
 local Input=game:GetService("UserInputService")
 local UI=require(script.Parent.Interface)
+local Presentation=require(RS:WaitForChild("DoubleLifeShared"):WaitForChild("LobbyPresentation"))
 local remotes=RS:WaitForChild("DoubleLifeRemotes")
 local gui=Instance.new("ScreenGui"); gui.Name,gui.ResetOnSpawn,gui.DisplayOrder,gui.Parent="LobbyHUD",false,7,Players.LocalPlayer:WaitForChild("PlayerGui")
 local frame=Instance.new("Frame"); frame.AnchorPoint,frame.Position,frame.Size=Vector2.new(1,0),UDim2.new(1,-12,0,110),UDim2.new(1,-24,0,132)
@@ -18,12 +19,10 @@ local function button(text,x,callback)
 end
 local join=button("Очередь · Q",0,toggle)
 button("В приёмную",0.5,function() remotes.QueueAction:FireServer("Lobby") end)
-local phases={Lobby="Приёмная",Queued="Ищем второго игрока",MatchReady="Матч готов",Active="Матч"}
 remotes.PersonalUpdate.OnClientEvent:Connect(function(kind,s)
     if kind~="Snapshot" or not s.queue then return end
     last=s.queue; frame.Visible=not s.round.participating and not (s.prologue and s.prologue.active)
-    label.Text=string.format("%s · людей здесь %d · персонажей %d\nOwner и Spy — реальные игроки. Старт от двух.",phases[last.state] or last.state,last.realHumans,last.lobbyMimics)
-    if last.transport=="MatchmakingFailed" or last.transport=="TransportFailed" then label.Text="Связь с подбором прервана. Повторяем поиск; вы остаётесь в приёмной." end
+    label.Text=Presentation.status(last)
     join.Text=if last.queued then "Выйти из очереди · Q" else "Встать в очередь · Q"
 end)
 Input.InputBegan:Connect(function(key,processed) if not processed and key.KeyCode==Enum.KeyCode.Q and frame.Visible then toggle() end end)

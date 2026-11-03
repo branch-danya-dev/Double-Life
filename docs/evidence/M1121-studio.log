@@ -1,0 +1,756 @@
+SOURCE 0.745.462.7451125_20261103T204615Z_Studio_904BE_last.log
+2026-11-03T20:46:19.875Z,4.875147,9440,6,Info [FLog::CreatorOutput] M112 WAIT ONE: start one client
+2026-11-03T20:46:25.612Z,10.612227,9440,6,Info [FLog::CreatorOutput] M112 PASS real Player wears exact catalogue preset 6
+2026-11-03T20:46:36.976Z,21.976175,9440,6,Info [FLog::CreatorOutput] M112 PASS one human does not start a match
+2026-11-03T20:46:36.976Z,21.976175,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T20:46:36.977Z,21.977171,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:1
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:1
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:1
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:1
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:1
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T20:46:36.978Z,21.978168,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T20:46:36.979Z,21.979164,9440,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T20:46:46.009Z,31.009331,53c0,6,Info [FLog::CreatorOutput] M112 CAPTURE READY PRIVATE PROLOGUE / R15 guide
+2026-11-03T20:49:29.953Z,194.953125,9440,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks PRIVATE PROLOGUE / R15 guide
+2026-11-03T20:50:11.800Z,236.800659,67dc,6,Info [FLog::CreatorOutput] M112 PASS physical upstairs delivery completed with R15 guide
+2026-11-03T20:50:12.583Z,237.583344,8068,6,Info [FLog::CreatorOutput] M112 PASS private scene and guide release tracks
+2026-11-03T20:50:23.350Z,248.350250,8068,6,Info [FLog::CreatorOutput] M112 CAPTURE READY LOBBY CROWD / stationary player / moving guests
+2026-11-03T20:50:58.765Z,283.765015,8068,6,Info [FLog::CreatorOutput] M112 CROWD METRICS {"minDistance":5.535956106563785,"overlaps":0,"samples":10625,"playerDrift":0,"minPair":3.3527544477389656}
+2026-11-03T20:50:58.765Z,283.765015,8068,6,Info [FLog::CreatorOutput] M112 PASS stationary player crowd has no body crossings
+2026-11-03T20:50:58.765Z,283.765015,8068,6,Info [FLog::CreatorOutput] M112 CAPTURE READY LOBBY / natural stop and nameplates
+2026-11-03T20:51:15.465Z,300.465607,9440,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks LOBBY / natural stop and nameplates
+2026-11-03T20:51:16.131Z,301.131073,8068,6,Info [FLog::CreatorOutput] M112 SOLO PASS: add second real client
+2026-11-03T20:52:06.245Z,351.245453,8068,6,Info [FLog::CreatorOutput] M112 PASS chat disabled in actual client
+2026-11-03T20:52:06.245Z,351.245453,8068,6,Info [FLog::CreatorOutput] M112 CLIENT METRICS Player1 {"maxMs":21.206200122833253,"seconds":9.999137190170586,"over50Ms":0,"samples":600,"p99Ms":18.18159967660904,"meanFps":60.0051773056795,"p95Ms":17.646199092268945,"viewport":"1274, 635","p50Ms":16.68900065124035,"chat":"PASS"}
+2026-11-03T20:52:06.346Z,351.346649,52fc,6,Info [FLog::CreatorOutput] M112 PASS chat disabled in actual client
+2026-11-03T20:52:06.347Z,351.347656,52fc,6,Info [FLog::CreatorOutput] M112 CLIENT METRICS Player2 {"maxMs":150.29500424861909,"seconds":13.327449117787183,"over50Ms":163,"samples":304,"p99Ms":68.11439990997315,"meanFps":22.81006645107151,"p95Ms":67.4050971865654,"viewport":"1274, 635","p50Ms":65.84519892930985,"chat":"PASS"}
+2026-11-03T20:52:06.347Z,351.347656,52fc,6,Info [FLog::CreatorOutput] M112 PASS Owner and Spy are actual Players
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:10
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:10
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:10
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:10
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:10
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:13
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:13
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:13
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:13
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:13
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T20:52:17.463Z,362.463379,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.464Z,362.464386,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.464Z,362.464386,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.464Z,362.464386,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.464Z,362.464386,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T20:52:17.464Z,362.464386,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:8
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:8
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:8
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:8
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:8
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:12
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:12
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:12
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:12
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:12
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:9
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:9
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:9
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:9
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:9
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:11
+2026-11-03T20:52:17.465Z,362.465393,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:11
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:11
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:11
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:11
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.466Z,362.466370,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.467Z,362.467377,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.467Z,362.467377,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.467Z,362.467377,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T20:52:17.467Z,362.467377,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T20:52:17.467Z,362.467377,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T20:52:17.467Z,362.467377,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:52:17.468Z,362.468384,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.469Z,362.469391,67dc,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:52:17.469Z,362.469391,67dc,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T20:52:17.469Z,362.469391,67dc,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T20:52:17.469Z,362.469391,67dc,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T20:52:17.469Z,362.469391,67dc,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T20:52:22.762Z,367.762024,8068,6,Info [FLog::CreatorOutput] M112 CAPTURE READY MATCH / ground floor
+2026-11-03T20:52:40.811Z,385.811401,9440,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks MATCH / ground floor
+2026-11-03T20:52:40.812Z,385.812408,9440,6,Info [FLog::CreatorOutput] M112 CAPTURE READY MATCH / upper floor
+2026-11-03T20:52:54.327Z,399.327606,8940,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks MATCH / upper floor
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS physical council prompt
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T20:53:08.860Z,413.860229,8068,6,Info [FLog::CreatorOutput] M112 CAPTURE READY COUNCIL / ordinary voting UI
+2026-11-03T20:53:09.877Z,414.877380,8940,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T20:53:09.877Z,414.877380,8940,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T20:53:09.877Z,414.877380,8940,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T20:53:09.877Z,414.877380,8940,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T20:53:09.877Z,414.877380,8940,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T20:53:09.877Z,414.877380,8940,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T20:53:10.877Z,415.877533,719c,6,Info [FLog::CreatorOutput] M112 PASS world clock pauses
+2026-11-03T20:53:33.059Z,438.059174,9440,6,Info [FLog::CreatorOutput] M112 TWO PASS: add third real client during the round
+2026-11-03T20:53:47.142Z,452.142639,8068,6,Info [FLog::CreatorOutput] M112 PASS late visitor has private prologue outside active match
+2026-11-03T20:53:58.043Z,463.043396,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:10
+2026-11-03T20:53:58.043Z,463.043396,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:10
+2026-11-03T20:53:58.043Z,463.043396,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:10
+2026-11-03T20:53:58.043Z,463.043396,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:10
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:10
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:13
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:13
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:13
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.044Z,463.044403,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:13
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:13
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:14
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:14
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:14
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:14
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:14
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:8
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:8
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:8
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.045Z,463.045380,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:8
+2026-11-03T20:53:58.046Z,463.046387,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:8
+2026-11-03T20:53:58.046Z,463.046387,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:12
+2026-11-03T20:53:58.046Z,463.046387,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:12
+2026-11-03T20:53:58.046Z,463.046387,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:12
+2026-11-03T20:53:58.046Z,463.046387,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.046Z,463.046387,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:12
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:12
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:9
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:9
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:9
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.047Z,463.047394,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:9
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:9
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:11
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:11
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:11
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:11
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:11
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.048Z,463.048370,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T20:53:58.049Z,463.049377,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:9
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:13
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:8
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:4
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:10
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:11
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:6
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:3
+2026-11-03T20:53:58.050Z,463.050385,8068,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:12
+2026-11-03T20:54:03.559Z,468.559692,9440,6,Info [FLog::CreatorOutput] M112 PASS repeated scene entry leaves one guide
+2026-11-03T20:54:03.559Z,468.559692,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:10
+2026-11-03T20:54:03.559Z,468.559692,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:10
+2026-11-03T20:54:03.559Z,468.559692,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:10
+2026-11-03T20:54:03.559Z,468.559692,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.559Z,468.559692,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:10
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:10
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:13
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:13
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:13
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:13
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:13
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:8
+2026-11-03T20:54:03.560Z,468.560699,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:8
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:8
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:8
+2026-11-03T20:54:03.561Z,468.561707,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:8
+2026-11-03T20:54:03.562Z,468.562714,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:12
+2026-11-03T20:54:03.562Z,468.562714,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:12
+2026-11-03T20:54:03.562Z,468.562714,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:12
+2026-11-03T20:54:03.562Z,468.562714,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.562Z,468.562714,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:12
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:12
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:16
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:16
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:16
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.563Z,468.563690,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:16
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:16
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:9
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:9
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:9
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.564Z,468.564697,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:9
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:9
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:11
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:11
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:11
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:11
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:11
+2026-11-03T20:54:03.565Z,468.565704,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T20:54:03.566Z,468.566711,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:03.567Z,468.567719,9440,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:03.568Z,468.568726,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.568Z,468.568726,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.568Z,468.568726,9440,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:03.568Z,468.568726,9440,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T20:54:03.568Z,468.568726,9440,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T20:54:03.568Z,468.568726,9440,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T20:54:03.568Z,468.568726,9440,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T20:54:46.340Z,511.340546,8068,6,Info [FLog::CreatorOutput] M112 PASS human Spy physical extraction
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS round reset releases R15 actors
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T20:54:59.905Z,524.905579,53c0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T20:54:59.906Z,524.906555,53c0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T20:54:59.906Z,524.906555,53c0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T20:54:59.906Z,524.906555,53c0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T20:54:59.906Z,524.906555,53c0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:59.906Z,524.906555,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:59.906Z,524.906555,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.906Z,524.906555,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.907Z,524.907593,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.908Z,524.908569,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:54:59.908Z,524.908569,53c0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T20:54:59.908Z,524.908569,53c0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T20:54:59.908Z,524.908569,53c0,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T20:54:59.908Z,524.908569,53c0,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:18
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:18
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:18
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.055Z,551.055481,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:18
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:18
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:19
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:19
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:19
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:19
+2026-11-03T20:55:26.056Z,551.056519,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:19
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:21
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:21
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:21
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:21
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:21
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:22
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:22
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:22
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.057Z,551.057495,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:22
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:22
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:17
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:17
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:17
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.058Z,551.058472,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:17
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:17
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:20
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:20
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:20
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:20
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:20
+2026-11-03T20:55:26.059Z,551.059509,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.060Z,551.060486,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T20:55:26.061Z,551.061523,0f18,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T20:56:08.303Z,593.303650,8068,6,Info [FLog::CreatorOutput] M112 PASS second physical round extraction
+2026-11-03T20:56:20.885Z,605.885376,719c,6,Info [FLog::CreatorOutput] M112 PASS second round releases actors
+2026-11-03T20:56:22.802Z,607.802429,53c0,6,Info [FLog::CreatorOutput] M112 PASS actual disconnect removes private scene and guide
+2026-11-03T20:56:22.803Z,607.803406,53c0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T20:56:22.803Z,607.803406,53c0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T20:56:22.803Z,607.803406,53c0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T20:56:22.803Z,607.803406,53c0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:56:22.803Z,607.803406,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T20:56:22.804Z,607.804443,53c0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:56:22.805Z,607.805420,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:56:22.805Z,607.805420,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:56:22.805Z,607.805420,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:56:22.805Z,607.805420,53c0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T20:56:22.805Z,607.805420,53c0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T20:56:22.805Z,607.805420,53c0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T20:56:22.805Z,607.805420,53c0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T20:56:22.806Z,607.806396,53c0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T20:56:22.806Z,607.806396,53c0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T20:56:22.806Z,607.806396,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T20:56:22.806Z,607.806396,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:56:22.806Z,607.806396,53c0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T20:56:22.806Z,607.806396,53c0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T20:56:22.807Z,607.807434,53c0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T20:56:22.807Z,607.807434,53c0,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T20:56:22.807Z,607.807434,53c0,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T20:56:22.807Z,607.807434,53c0,6,Info [FLog::CreatorOutput] M112 METRICS {"mimics":{"maxWorkers":2,"failures":1,"orders":2,"upperArrivals":4,"matchActions":15,"actions":147,"jobs":179},"crowd":{"waits":38,"deferred":0,"maxPeople":16,"occupied":539,"detours":48},"rig":{"live":3,"pending":0,"requests":19,"maxPending":1,"timeouts":0,"tracks":18,"cacheHits":23,"failures":0,"deferred":1,"maxSeconds":1.2494734999490902}}
+2026-11-03T20:56:22.807Z,607.807434,53c0,6,Info [FLog::CreatorOutput] M112 STUDIO SUITE PASS: actual 1/2/3 clients, all contexts, anti-clone, crowd, delivery, council, TWO rounds, replay, disconnect and cleanup
+2026-11-03T20:56:42.652Z,627.652039,8068,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT KaiMoss 1 false -251.49514770507812, 2.849999189376831, -22.243589401245117 -245, 3, -25
+2026-11-03T20:56:49.518Z,634.518555,8d84,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT AdaMorn 1 true -240.72915649414062, 3.5592129230499268, -24.259517669677734 -240.39999389648438, 3, -25
+2026-11-03T20:56:55.551Z,640.551697,8068,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT FelixVale 1 true -251.00167846679688, 3.189795732498169, -29.722152709960938 -250.5154266357422, 3, -30.515432357788086
+2026-11-03T20:56:55.584Z,640.584717,8068,6,Info [FLog::CreatorOutput] M112 GROUP CAPTURE READY: actual Player and four AI at lobby interest object
+2026-11-03T20:57:42.849Z,687.849060,8068,6,Info [FLog::CreatorOutput] M112 RESERVATIONS PASS: no orphan name, appearance or movement slot after churn
+2026-11-03T20:58:13.581Z,718.581543,9440,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":18.750079825520517,"to":{"y":21.91763687133789,"x":-17.142627716064454,"z":24.08884620666504},"targetFloor":true,"running":true,"reached":true,"waypoints":[{"valid":true,"deadlineReached":false,"to":{"y":3.917638063430786,"x":31,"z":26.5},"free":true,"reached":true,"from":{"y":3.917638063430786,"x":31,"z":26.5},"stopFree":true,"seconds":0,"point":{"y":1,"x":31,"z":26.5}},{"valid":true,"deadlineReached":false,"to":{"y":3.917637586593628,"x":32.8602409362793,"z":23.937929153442384},"free":true,"reached":true,"from":{"y":3.917638063430786,"x":31,"z":26.5},"stopFree":true,"seconds":0.33231985941529276,"point":{"y":1,"x":33.34994125366211,"z":23.263059616088868}},{"valid":true,"deadlineReached":false,"to":{"y":3.917638063430786,"x":35.21045684814453,"z":20.70035743713379},"free":true,"reached":true,"from":{"y":3.917637586593628,"x":32.8602409362793,"z":23.937929153442384},"stopFree":true,"seconds":0.41753639094
+2026-11-03T20:58:13.581Z,718.581543,9440,6,Info [FLog::CreatorOutput] M1121 LEGACY APPROACH true
+2026-11-03T20:58:13.581Z,718.581543,9440,6,Info [FLog::CreatorOutput] M1121 RESERVED APPROACH 1 -18, 21.5, 24 true
+2026-11-03T20:58:20.314Z,725.314392,8068,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":6.732472013914958,"to":{"y":21.91763687133789,"x":-1.2730302810668946,"z":21.190128326416017},"targetFloor":true,"failure":"OccupiedFixedTarget","running":true,"reached":false,"waypoints":[{"valid":true,"deadlineReached":false,"to":{"y":21.91763687133789,"x":-17.142627716064454,"z":24.08884620666504},"free":true,"reached":true,"from":{"y":21.91763687133789,"x":-17.142627716064454,"z":24.08884620666504},"stopFree":true,"seconds":0,"point":{"y":19,"x":-17.142627716064454,"z":24.08884620666504}},{"valid":true,"deadlineReached":false,"to":{"y":21.917634963989259,"x":-13.951054573059082,"z":24.094409942626954},"free":true,"reached":true,"from":{"y":21.91763687133789,"x":-17.142627716064454,"z":24.08884620666504},"stopFree":true,"seconds":0.34987372905015948,"point":{"y":19,"x":-13.142632484436036,"z":24.09500503540039}},{"valid":true,"deadlineReached":false,"to":{"y":21.917634963989259,"x":-9.951452255249024,"z
+2026-11-03T20:58:22.397Z,727.397888,9440,6,Info [FLog::CreatorOutput] M1121 APPROACH REGRESSION PASS: occupied fixed pixel refused; reserved approach succeeds
+2026-11-03T20:58:22.430Z,727.430420,8d84,6,Info [FLog::CreatorOutput] M112 MOTION CAPTURE READY: promenade, stationary real Player; continue to start six physical crossings
+2026-11-03T20:59:42.743Z,807.743347,53c0,6,Info [FLog::CreatorOutput] M112 MOTION START IN 5 SECONDS
+2026-11-03T21:00:30.225Z,855.225586,8d84,6,Info [FLog::CreatorOutput] M112 MOTION METRICS {"minDistance":3.3115077018737795,"detoursBefore":57,"overlaps":0,"arrivals":4,"samples":2549,"detours":12}
+2026-11-03T21:00:30.225Z,855.225586,8d84,6,Warning [FLog::CreatorWarning] Warning: M112 STUDIO FAIL ServerScriptService.M112Tests.Motion:134: ServerScriptService.M112Tests.Motion:121: physical human avoidance
+SOURCE 0.745.462.7451125_20261103T204620Z_Studio_7E581_last.log
+2026-11-03T20:46:24.540Z,4.540811,9214,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 1:Queued Подбор участников
+2026-11-03T20:46:45.890Z,25.890118,7cd4,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA PRIVATE PROLOGUE / R15 guide -612, 8.235237121582031, -19.925926208496094 65
+2026-11-03T20:50:11.931Z,231.931061,8b88,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 1:Lobby Приёмная
+2026-11-03T20:50:23.113Z,243.113831,78b8,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA LOBBY / stationary Player + 5 guests -293.06036376953125, 4.499999046325684, -14.421128273010254 84.99999237060547
+2026-11-03T20:50:58.646Z,278.646667,78b8,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA LOBBY / natural stop and nameplates -301.12847900390625, 11.541709899902344, -13.640813827514648 65
+2026-11-03T20:51:50.853Z,330.853516,78b8,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:MatchReady Матч готов
+2026-11-03T20:52:06.061Z,346.061493,9214,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:Active Матч идёт
+2026-11-03T20:52:22.642Z,362.642914,8b88,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA MATCH / ground floor -12.485560417175293, 5.089442729949951, -29.921045303344727 65
+2026-11-03T20:52:40.693Z,380.693207,9214,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA MATCH / upper floor -11.943528175354004, 5.089442729949951, -30.488677978515625 65
+2026-11-03T20:53:08.624Z,408.624939,8b88,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA COUNCIL / voting nicknames 4.384247303009033, 22.9999942779541, 25.064538955688477 65
+2026-11-03T20:53:46.539Z,446.539764,92d4,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 3:Active Матч идёт
+2026-11-03T20:54:57.391Z,517.391113,9214,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 3:Lobby Приёмная
+2026-11-03T20:54:59.936Z,519.936707,5f3c,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 3:Queued Подбор участников
+2026-11-03T20:55:00.452Z,520.452637,9214,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 3:MatchReady Матч готов
+2026-11-03T20:56:22.422Z,602.422852,78b8,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:Lobby Приёмная
+2026-11-03T20:56:55.365Z,635.365967,8b88,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA LOBBY / real Player + four distinct guests -245.23667907714844, 4.499999046325684, -18.255558013916016 65
+2026-11-03T20:57:13.814Z,653.814758,5f3c,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:Queued Подбор участников
+2026-11-03T20:58:22.195Z,722.195068,7cd4,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA PROMENADE / stationary Player / physical crossing -0.12016040086746216, 22.995637893676758, 24.135963439941406 84.99999237060547
+2026-11-03T20:59:35.592Z,795.592102,9214,6,Info [FLog::CreatorOutput] M1121 CAPTURE UI: proximity labels hidden; ordinary HUD retained
+SOURCE 0.745.462.7451125_20261103T205146Z_Studio_25A79_last.log
+2026-11-03T20:51:51.186Z,5.186946,5d08,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 2:MatchReady Матч готов
+2026-11-03T20:52:06.357Z,20.357948,9814,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 2:Active Матч идёт
+2026-11-03T20:53:46.835Z,120.835983,9814,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 3:Active Матч идёт
+2026-11-03T20:54:57.684Z,191.684464,7960,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 3:Queued Подбор участников
+2026-11-03T20:54:58.699Z,192.699402,7960,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 3:Lobby Приёмная
+2026-11-03T20:55:00.749Z,194.749023,9814,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 3:MatchReady Матч готов
+2026-11-03T20:56:22.730Z,276.730072,6b90,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 2:Lobby Приёмная
+SOURCE 0.745.462.7451125_20261103T205342Z_Studio_C6740_last.log
+2026-11-03T20:53:46.627Z,4.627205,90a8,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player3 3:Queued Подбор участников
+2026-11-03T20:53:57.907Z,15.907861,3b0c,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player3 3:Lobby Приёмная
+SOURCE 0.745.462.7451125_20261103T210609Z_Studio_03B8F_last.log
+2026-11-03T21:06:14.491Z,5.491002,8870,6,Info [FLog::CreatorOutput] M1121 FOCUSED WAIT: start exactly two real clients
+2026-11-03T21:06:43.453Z,34.453808,7b40,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT KaiMoss 1 true -250.3341522216797, 2.849999189376831, -24.667091369628906 -249.60000610351562, 3, -25
+2026-11-03T21:06:55.102Z,46.102436,6084,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT AdaMorn 1 true -240.8135986328125, 3.5592124462127686, -24.11085319519043 -240.39999389648438, 3, -25
+2026-11-03T21:07:06.036Z,57.036453,6084,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT EmilBrook 1 true -251.3605499267578, 3.287442922592163, -30.061626434326172 -250.5154266357422, 3, -30.515432357788086
+2026-11-03T21:07:19.352Z,70.352318,8870,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT FelixVale 1 true -245.95208740234375, 3.189795732498169, -32.9591178894043 -245, 3, -32.79999923706055
+2026-11-03T21:07:19.384Z,70.384209,707c,6,Info [FLog::CreatorOutput] M112 GROUP CAPTURE READY: actual Player and four AI at lobby interest object
+2026-11-03T21:08:12.367Z,123.367935,8870,6,Info [FLog::CreatorOutput] M112 RESERVATIONS PASS: no orphan name, appearance or movement slot after churn
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":17.032272895798088,"to":{"y":21.883014678955079,"x":-17.34603500366211,"z":24.05860710144043},"targetFloor":true,"waypointCount":47,"running":true,"reached":true,"target":{"y":21.5,"x":-18,"z":24},"alive":true,"targetFree":true,"from":{"y":3.883013963699341,"x":37.75269317626953,"z":26.7473087310791}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":3.883013963699341,"x":37.75269317626953,"z":26.7473087310791},"free":true,"reached":true,"from":{"y":3.883013963699341,"x":37.75269317626953,"z":26.7473087310791},"stopFree":true,"seconds":0,"point":{"y":1,"x":37.75269317626953,"z":26.7473087310791}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":3.883013963699341,"x":38.4117431640625,"z":23.513931274414064},"free":true,"reached":true,"from":{"y":3.883013963699341,"x":37.75269317626953,"z":26.7473087310791},"stopFree":true,"seconds":0.33341098204255106,"point":{"y":1,"x":38.551483154296878,"z":22.827877044677736}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":3.883013963699341,"x":39.12998962402344,"z":19.98942756652832},"free":true,"reached":true,"from":{"y":3.883013963699341,"x":38.4117431640625,"z":23.513931274414064},"stopFree":true,"seconds":0.33187679946422579,"point":{"y":1,"x":39.35027313232422,"z":18.908447265625}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":3.883013963699341,"x":40.02269744873047,"z":15.60908031463623},"free":true,"reached":true,"from":{"y":3.883013963699341,"x":39.12998962402344,"z":19.98942756652832},"stopFree":true,"seconds":0.45000743493437769,"point":{"y":1,"x":40.14906311035156,"z":14.98901653289795}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":3.883013963699341,"x":40.42542266845703,"z":13.633017539978028},"free":true,"reached":true,"from":{"y":3.883013963699341,"x":40.02269744873047,"z":15.60908031463623},"stopFree":true,"seconds":0.23519253451377154,"point":{"y":1,"x":40.563873291015628,"z":12.95365047454834}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":3.8830132484436037,"x":43.780941009521487,"z":13.023026466369629},"free":true,"reached":true,"from":{"y":3.883013963699341,"x":40.42542266845703,"z":13.633017539978028},"stopFree":true,"seconds":0.31547700613737109,"point":{"y":1,"x":44.56320571899414,"z":12.880474090576172}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":3.88301420211792,"x":47.44374465942383,"z":12.857380867004395},"free":true,"reached":true,"from":{"y":3.8830132484436037,"x":43.780941009521487,"z":13.023026466369629},"stopFree":true,"seconds":0.33425774332135918,"point":{"y":1,"x":48.562538146972659,"z":12.807296752929688}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 8 {"valid":true,"deadlineReached":false,"to":{"y":3.88301420211792,"x":51.91279602050781,"z":12.749725341796875},"free":true,"reached":true,"from":{"y":3.88301420211792,"x":47.44374465942383,"z":12.857380867004395},"stopFree":true,"seconds":0.449705570936203,"point":{"y":1,"x":52.561866760253909,"z":12.73412036895752}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 9 {"valid":true,"deadlineReached":false,"to":{"y":3.88301420211792,"x":54.22532272338867,"z":12.70457935333252},"free":true,"reached":true,"from":{"y":3.88301420211792,"x":51.91279602050781,"z":12.749725341796875},"stopFree":true,"seconds":0.21720324456691743,"point":{"y":1,"x":54.95670700073242,"z":12.690300941467286}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 10 {"valid":true,"deadlineReached":false,"to":{"y":3.8829047679901125,"x":56.17676544189453,"z":14.060893058776856},"free":true,"reached":true,"from":{"y":3.88301420211792,"x":54.22532272338867,"z":12.70457935333252},"stopFree":true,"seconds":0.21591614373028279,"point":{"y":1.0674108266830445,"x":57.175498962402347,"z":14.768253326416016}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 11 {"valid":true,"deadlineReached":false,"to":{"y":3.88301420211792,"x":57.98581314086914,"z":18.145048141479493},"free":true,"reached":true,"from":{"y":3.8829047679901125,"x":56.17676544189453,"z":14.060893058776856},"stopFree":true,"seconds":0.43195793963968756,"point":{"y":1.327947735786438,"x":58.198997497558597,"z":18.629610061645509}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 12 {"valid":true,"deadlineReached":false,"to":{"y":3.88301420211792,"x":58.32015609741211,"z":19.191102981567384},"free":true,"reached":true,"from":{"y":3.88301420211792,"x":57.98581314086914,"z":18.145048141479493},"stopFree":true,"seconds":0.11780847050249577,"point":{"y":1.330017328262329,"x":58.48126983642578,"z":19.694541931152345}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 13 {"valid":true,"deadlineReached":false,"to":{"y":4.984338283538818,"x":58.396305084228519,"z":22.55071449279785},"free":true,"reached":true,"from":{"y":3.88301420211792,"x":58.32015609741211,"z":19.191102981567384},"stopFree":true,"seconds":0.33418871741741898,"point":{"y":3.147127151489258,"x":58.41328430175781,"z":23.322303771972658}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 14 {"valid":true,"deadlineReached":false,"to":{"y":6.6239728927612309,"x":58.35834884643555,"z":25.830120086669923},"free":true,"reached":true,"from":{"y":4.984338283538818,"x":58.396305084228519,"z":22.55071449279785},"stopFree":true,"seconds":0.3321440350264311,"point":{"y":4.908895492553711,"x":58.34519958496094,"z":26.955419540405275}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 15 {"valid":true,"deadlineReached":false,"to":{"y":8.919418334960938,"x":58.279972076416019,"z":30.420989990234376},"free":true,"reached":true,"from":{"y":6.6239728927612309,"x":58.35834884643555,"z":25.830120086669923},"stopFree":true,"seconds":0.4669289607554674,"point":{"y":6.672609329223633,"x":58.27703857421875,"z":30.592544555664064}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 16 {"valid":true,"deadlineReached":false,"to":{"y":10.640957832336426,"x":58.21570587158203,"z":33.86405944824219},"free":true,"reached":true,"from":{"y":8.919418334960938,"x":58.279972076416019,"z":30.420989990234376},"stopFree":true,"seconds":0.3490157490596175,"point":{"y":8.438779830932618,"x":58.20878219604492,"z":34.2347412109375}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 17 {"valid":true,"deadlineReached":false,"to":{"y":12.280515670776368,"x":58.154273986816409,"z":37.14317321777344},"free":true,"reached":true,"from":{"y":10.640957832336426,"x":58.21570587158203,"z":33.86405944824219},"stopFree":true,"seconds":0.335017129778862,"point":{"y":10.208159446716309,"x":58.140403747558597,"z":37.88355255126953}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 18 {"valid":true,"deadlineReached":false,"to":{"y":14.002050399780274,"x":58.089744567871097,"z":40.58624267578125},"free":true,"reached":true,"from":{"y":12.280515670776368,"x":58.154273986816409,"z":37.14317321777344},"stopFree":true,"seconds":0.3489530812948942,"point":{"y":11.981904983520508,"x":58.07185363769531,"z":41.54136657714844}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 19 {"valid":true,"deadlineReached":false,"to":{"y":15.72358512878418,"x":58.02521514892578,"z":44.02931213378906},"free":true,"reached":true,"from":{"y":14.002050399780274,"x":58.089744567871097,"z":40.58624267578125},"stopFree":true,"seconds":0.35105871595442297,"point":{"y":13.76193904876709,"x":58.0030632019043,"z":45.2121467590332}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 20 {"valid":true,"deadlineReached":false,"to":{"y":17.855009078979493,"x":57.945335388183597,"z":48.29216003417969},"free":true,"reached":true,"from":{"y":15.72358512878418,"x":58.02521514892578,"z":44.02931213378906},"stopFree":true,"seconds":0.433027352206409,"point":{"y":15.44257926940918,"x":57.93389129638672,"z":48.90321731567383}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 21 {"valid":true,"deadlineReached":false,"to":{"y":19.5765438079834,"x":57.88080596923828,"z":51.7352294921875},"free":true,"reached":true,"from":{"y":17.855009078979493,"x":57.945335388183597,"z":48.29216003417969},"stopFree":true,"seconds":0.3499729484319687,"point":{"y":16.969547271728517,"x":57.86433410644531,"z":52.61488342285156}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 22 {"valid":true,"deadlineReached":false,"to":{"y":21.621986389160158,"x":57.80891799926758,"z":55.57134246826172},"free":true,"reached":true,"from":{"y":19.5765438079834,"x":57.88080596923828,"z":51.7352294921875},"stopFree":true,"seconds":0.45017111860215666,"point":{"y":18.500354766845704,"x":57.79460144042969,"z":56.33582305908203}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 23 {"valid":true,"deadlineReached":false,"to":{"y":21.809329986572267,"x":57.790069580078128,"z":56.57746887207031},"free":true,"reached":true,"from":{"y":21.621986389160158,"x":57.80891799926758,"z":55.57134246826172},"stopFree":true,"seconds":0.09889888018369675,"point":{"y":19,"x":57.767765045166019,"z":57.76776885986328}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 24 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":54.517189025878909,"z":58.12730026245117},"free":true,"reached":true,"from":{"y":21.809329986572267,"x":57.790069580078128,"z":56.57746887207031},"stopFree":true,"seconds":0.33473373018205168,"point":{"y":19,"x":53.82445526123047,"z":58.438819885253909}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 25 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":54.517189025878909,"z":58.12730026245117},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":54.517189025878909,"z":58.12730026245117},"stopFree":true,"seconds":0,"point":{"y":19,"x":53.62826156616211,"z":58.472206115722659}}
+2026-11-03T21:08:41.299Z,152.299072,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 26 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":50.91718673706055,"z":57.46234893798828},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":54.517189025878909,"z":58.12730026245117},"stopFree":true,"seconds":0.33213425800204279,"point":{"y":19,"x":49.81834411621094,"z":57.25379943847656}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 27 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":46.62455368041992,"z":56.21464538574219},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":50.91718673706055,"z":57.46234893798828},"stopFree":true,"seconds":0.4499541223049164,"point":{"y":19,"x":46.008426666259769,"z":56.03539276123047}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 28 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":43.36997604370117,"z":55.18690490722656},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":46.62455368041992,"z":56.21464538574219},"stopFree":true,"seconds":0.3168026637285948,"point":{"y":19,"x":42.198509216308597,"z":54.816986083984378}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 29 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":40.1587028503418,"z":54.16378402709961},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":43.36997604370117,"z":55.18690490722656},"stopFree":true,"seconds":0.3329278277233243,"point":{"y":19,"x":39.40212631225586,"z":53.922706604003909}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 30 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":38.666133880615237,"z":51.095455169677737},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":40.1587028503418,"z":54.16378402709961},"stopFree":true,"seconds":0.3173576844856143,"point":{"y":19,"x":38.187374114990237,"z":50.11162185668945}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 31 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":37.23827362060547,"z":47.05329132080078},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":38.666133880615237,"z":51.095455169677737},"stopFree":true,"seconds":0.4503317791968584,"point":{"y":19,"x":36.97262191772461,"z":46.300537109375}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 32 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":36.128631591796878,"z":43.63245391845703},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":37.23827362060547,"z":47.05329132080078},"stopFree":true,"seconds":0.3330903919413686,"point":{"y":19,"x":35.75786590576172,"z":42.48945236206055}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 33 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":34.76601791381836,"z":39.37486267089844},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":36.128631591796878,"z":43.63245391845703},"stopFree":true,"seconds":0.4324170295149088,"point":{"y":19,"x":34.543113708496097,"z":38.678367614746097}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 34 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":33.67302703857422,"z":35.94796371459961},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":34.76601791381836,"z":39.37486267089844},"stopFree":true,"seconds":0.333779439330101,"point":{"y":19,"x":33.32836151123047,"z":34.86728286743164}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 35 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":32.31526565551758,"z":31.68878746032715},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":33.67302703857422,"z":35.94796371459961},"stopFree":true,"seconds":0.4334689937531948,"point":{"y":19,"x":32.11360549926758,"z":31.056198120117189}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 36 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":31.646953582763673,"z":29.59213638305664},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":32.31526565551758,"z":31.68878746032715},"stopFree":true,"seconds":0.2341222269460559,"point":{"y":19,"x":31.445554733276368,"z":28.96030044555664}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 37 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":28.26873016357422,"z":28.759485244750978},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":31.646953582763673,"z":29.59213638305664},"stopFree":true,"seconds":0.3330211751163006,"point":{"y":19,"x":27.465532302856447,"z":28.561031341552736}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 38 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":24.495121002197267,"z":28.287738800048829},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":28.26873016357422,"z":28.759485244750978},"stopFree":true,"seconds":0.34991963393986227,"point":{"y":19,"x":23.485509872436525,"z":28.161762237548829}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 39 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":20.23166275024414,"z":27.838903427124025},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":24.495121002197267,"z":28.287738800048829},"stopFree":true,"seconds":0.4330575121566653,"point":{"y":19,"x":19.5054874420166,"z":27.762493133544923}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 40 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":16.65358543395996,"z":27.47724723815918},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":20.23166275024414,"z":27.838903427124025},"stopFree":true,"seconds":0.3330059088766575,"point":{"y":19,"x":15.525464057922364,"z":27.363224029541017}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 41 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":12.2056245803833,"z":27.03028678894043},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":16.65358543395996,"z":27.47724723815918},"stopFree":true,"seconds":0.4505616296082735,"point":{"y":19,"x":11.545440673828125,"z":26.96395492553711}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 42 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":8.627279281616211,"z":26.67123794555664},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":12.2056245803833,"z":27.03028678894043},"stopFree":true,"seconds":0.33328234031796458,"point":{"y":19,"x":7.565417289733887,"z":26.564685821533204}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 43 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":4.361665725708008,"z":26.243295669555665},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":8.627279281616211,"z":26.67123794555664},"stopFree":true,"seconds":0.43336106091737749,"point":{"y":19,"x":3.5853943824768068,"z":26.165414810180665}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 44 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":-7.591121673583984,"z":24.280712127685548},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":4.361665725708008,"z":26.243295669555665},"stopFree":true,"seconds":1.7163631087169052,"point":{"y":19,"x":-8.35467529296875,"z":24.967605590820314}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 45 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":-11.24204158782959,"z":24.50773048400879},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":-7.591121673583984,"z":24.280712127685548},"stopFree":true,"seconds":0.3332281820476055,"point":{"y":19,"x":-12.334697723388672,"z":24.568334579467775}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 46 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":-15.519405364990235,"z":24.222396850585939},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":-11.24204158782959,"z":24.50773048400879},"stopFree":true,"seconds":0.41662683244794609,"point":{"y":19,"x":-16.314720153808595,"z":24.169065475463868}}
+2026-11-03T21:08:41.300Z,152.300064,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 47 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":-17.34603500366211,"z":24.05860710144043},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":-15.519405364990235,"z":24.222396850585939},"stopFree":true,"seconds":0.21682673320174218,"point":{"y":19,"x":-18,"z":24}}
+2026-11-03T21:08:41.301Z,152.301071,6084,6,Info [FLog::CreatorOutput] M1121 LEGACY APPROACH true
+2026-11-03T21:08:41.301Z,152.301071,6084,6,Info [FLog::CreatorOutput] M1121 RESERVED APPROACH 1 -18, 21.5, 24 true
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":5.265746483579278,"to":{"y":21.883012771606447,"x":-2.403599739074707,"z":28.129058837890626},"targetFloor":true,"failure":"OccupiedFixedTarget","waypointCount":7,"running":true,"reached":false,"target":{"y":21.724853515625,"x":-1.6900634765625,"z":24.25830078125},"alive":true,"targetFree":false,"from":{"y":21.883014678955079,"x":-17.34603500366211,"z":24.05860710144043}}
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":-17.34603500366211,"z":24.05860710144043},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":-17.34603500366211,"z":24.05860710144043},"stopFree":true,"seconds":0,"point":{"y":19,"x":-17.34603500366211,"z":24.05860710144043}}
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-14.022151947021485,"z":24.102434158325197},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":-17.34603500366211,"z":24.05860710144043},"stopFree":true,"seconds":0.3331910166889429,"point":{"y":19,"x":-13.346360206604004,"z":24.109622955322267}}
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-10.425578117370606,"z":24.14724349975586},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-14.022151947021485,"z":24.102434158325197},"stopFree":true,"seconds":0.33330718614161017,"point":{"y":19,"x":-9.346685409545899,"z":24.1606388092041}}
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-6.5758819580078129,"z":24.196075439453126},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-10.425578117370606,"z":24.14724349975586},"stopFree":true,"seconds":0.3506563026458025,"point":{"y":19,"x":-5.347010612487793,"z":24.211654663085939}}
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-2.403599739074707,"z":28.129058837890626},"free":false,"reached":false,"from":{"y":21.883012771606447,"x":-6.5758819580078129,"z":24.196075439453126},"stopFree":true,"seconds":2.0677236951887609,"point":{"y":19,"x":-1.6900634765625,"z":24.25830078125}}
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-2.403599739074707,"z":28.129058837890626},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-2.403599739074707,"z":28.129058837890626},"stopFree":true,"seconds":0,"point":{"y":19,"x":-2.403599739074707,"z":28.129058837890626}}
+2026-11-03T21:08:46.566Z,157.566925,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-2.403599739074707,"z":28.129058837890626},"free":false,"reached":false,"from":{"y":21.883012771606447,"x":-2.403599739074707,"z":28.129058837890626},"stopFree":true,"seconds":1.433264878578484,"point":{"y":19,"x":-1.6900634765625,"z":24.25830078125}}
+2026-11-03T21:08:48.198Z,159.198669,8870,6,Info [FLog::CreatorOutput] M1121 APPROACH REGRESSION PASS: occupied fixed pixel refused; reserved approach succeeds
+2026-11-03T21:08:48.230Z,159.230682,3a64,6,Info [FLog::CreatorOutput] M112 MOTION CAPTURE READY: promenade, stationary real Player; continue to start six physical crossings
+2026-11-03T21:09:25.980Z,196.980652,3a64,6,Info [FLog::CreatorOutput] M112 MOTION START IN 5 SECONDS
+2026-11-03T21:09:34.712Z,205.712784,7b40,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":3.71619825437665,"to":{"y":21.883014678955079,"x":17.20770835876465,"z":23.984189987182618},"targetFloor":true,"waypointCount":9,"running":true,"reached":true,"target":{"y":21.5,"x":18,"z":24},"alive":true,"targetFree":true,"from":{"y":21.883012771606447,"x":-15.988507270812989,"z":23.36094856262207}}
+2026-11-03T21:09:34.712Z,205.712784,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-15.988507270812989,"z":23.36094856262207},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-15.988507270812989,"z":23.36094856262207},"stopFree":true,"seconds":0,"point":{"y":19,"x":-15.988507270812989,"z":23.36094856262207}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-12.69527530670166,"z":23.4217472076416},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-15.988507270812989,"z":23.36094856262207},"stopFree":true,"seconds":0.3158659916371107,"point":{"y":19,"x":-11.989213943481446,"z":23.43614387512207}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-9.076031684875489,"z":23.490598678588868},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-12.69527530670166,"z":23.4217472076416},"stopFree":true,"seconds":0.3347327094525099,"point":{"y":19,"x":-7.989920616149902,"z":23.51133918762207}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-4.789765357971191,"z":23.57145118713379},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-9.076031684875489,"z":23.490598678588868},"stopFree":true,"seconds":0.44887569081038239,"point":{"y":19,"x":-3.9906275272369386,"z":23.58653450012207}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":3.502310276031494,"z":23.168794631958009},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-4.789765357971191,"z":23.57145118713379},"stopFree":true,"seconds":1.1840627053752542,"point":{"y":19,"x":4.00795841217041,"z":23.736923217773439}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":7.061709403991699,"z":23.67697525024414},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":3.502310276031494,"z":23.168794631958009},"stopFree":true,"seconds":0.33219968527555468,"point":{"y":19,"x":8.007251739501954,"z":23.812116622924806}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":11.344783782958985,"z":23.859317779541017},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":7.061709403991699,"z":23.67697525024414},"stopFree":true,"seconds":0.43431366607546809,"point":{"y":19,"x":12.006545066833496,"z":23.887311935424806}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 8 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":14.940221786499024,"z":23.93891143798828},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":11.344783782958985,"z":23.859317779541017},"stopFree":true,"seconds":0.3328430335968733,"point":{"y":19,"x":16.00583839416504,"z":23.962505340576173}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 9 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":17.20770835876465,"z":23.984189987182618},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":14.940221786499024,"z":23.93891143798828},"stopFree":true,"seconds":0.21715051494538785,"point":{"y":19,"x":18,"z":24}}
+2026-11-03T21:09:34.713Z,205.713776,7b40,6,Info [FLog::CreatorOutput] M1121 CROSSING 1 1 true
+2026-11-03T21:09:40.295Z,211.295868,8870,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":3.568216610699892,"to":{"y":21.883012771606447,"x":-17.09429168701172,"z":23.996633529663087},"targetFloor":true,"waypointCount":8,"running":true,"reached":true,"target":{"y":21.5,"x":-18,"z":24},"alive":true,"targetFree":true,"from":{"y":21.883014678955079,"x":17.210119247436525,"z":23.984237670898439}}
+2026-11-03T21:09:40.295Z,211.295868,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":17.210119247436525,"z":23.984237670898439},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":17.210119247436525,"z":23.984237670898439},"stopFree":true,"seconds":0,"point":{"y":19,"x":17.210119247436525,"z":23.984237670898439}}
+2026-11-03T21:09:40.295Z,211.295868,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":13.887986183166504,"z":23.984329223632814},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":17.210119247436525,"z":23.984237670898439},"stopFree":true,"seconds":0.3169812774285674,"point":{"y":19,"x":13.210119247436524,"z":23.98602867126465}}
+2026-11-03T21:09:40.296Z,211.296875,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":10.268030166625977,"z":23.986955642700197},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":13.887986183166504,"z":23.984329223632814},"stopFree":true,"seconds":0.3327219896018505,"point":{"y":19,"x":9.210119247436524,"z":23.98781967163086}}
+2026-11-03T21:09:40.296Z,211.296875,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":6.418026924133301,"z":23.988967895507814},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":10.268030166625977,"z":23.986955642700197},"stopFree":true,"seconds":0.35050149261951449,"point":{"y":19,"x":5.210119247436523,"z":23.98961067199707}}
+2026-11-03T21:09:40.296Z,211.296875,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-6.174487590789795,"z":23.66596031188965},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":6.418026924133301,"z":23.988967895507814},"stopFree":true,"seconds":1.4494478963315488,"point":{"y":19,"x":-6.789878845214844,"z":23.994983673095704}}
+2026-11-03T21:09:40.296Z,211.296875,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-9.944658279418946,"z":23.936140060424806},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-6.174487590789795,"z":23.66596031188965},"stopFree":true,"seconds":0.3502297345548868,"point":{"y":19,"x":-10.789878845214844,"z":23.99677276611328}}
+2026-11-03T21:09:40.296Z,211.296875,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-13.610992431640625,"z":23.98356819152832},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-9.944658279418946,"z":23.936140060424806},"stopFree":true,"seconds":0.333170672878623,"point":{"y":19,"x":-14.789877891540528,"z":23.998563766479493}}
+2026-11-03T21:09:40.296Z,211.296875,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 8 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-17.09429168701172,"z":23.996633529663087},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-13.610992431640625,"z":23.98356819152832},"stopFree":true,"seconds":0.3180401213467121,"point":{"y":19,"x":-18,"z":24}}
+2026-11-03T21:09:40.296Z,211.296875,8870,6,Info [FLog::CreatorOutput] M1121 CROSSING 2 1 true
+2026-11-03T21:09:46.196Z,217.196640,6084,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":3.8830146994441749,"to":{"y":21.883014678955079,"x":17.363340377807618,"z":23.99956703186035},"targetFloor":true,"waypointCount":8,"running":true,"reached":true,"target":{"y":21.5,"x":18,"z":24},"alive":true,"targetFree":true,"from":{"y":21.883012771606447,"x":-17.875431060791017,"z":23.71163558959961}}
+2026-11-03T21:09:46.196Z,217.196640,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-17.875431060791017,"z":23.71163558959961},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-17.875431060791017,"z":23.71163558959961},"stopFree":true,"seconds":0,"point":{"y":19,"x":-17.875431060791017,"z":23.71163558959961}}
+2026-11-03T21:09:46.196Z,217.196640,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-14.579440116882325,"z":23.739208221435548},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-17.875431060791017,"z":23.71163558959961},"stopFree":true,"seconds":0.33306580036878588,"point":{"y":19,"x":-13.875560760498047,"z":23.743785858154298}}
+2026-11-03T21:09:46.196Z,217.196640,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-10.545636177062989,"z":23.770748138427736},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-14.579440116882325,"z":23.739208221435548},"stopFree":true,"seconds":0.43437859416007998,"point":{"y":19,"x":-9.875690460205079,"z":23.775936126708986}}
+2026-11-03T21:09:46.196Z,217.196640,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-6.949446678161621,"z":23.799501419067384},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-10.545636177062989,"z":23.770748138427736},"stopFree":true,"seconds":0.3326454348862171,"point":{"y":19,"x":-5.875820159912109,"z":23.808086395263673}}
+2026-11-03T21:09:46.196Z,217.196640,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":5.238336086273193,"z":24.62633514404297},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-6.949446678161621,"z":23.799501419067384},"stopFree":true,"seconds":1.5501676360145212,"point":{"y":19,"x":6.12379264831543,"z":23.904539108276368}}
+2026-11-03T21:09:46.196Z,217.196640,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":9.046520233154297,"z":24.08595085144043},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":5.238336086273193,"z":24.62633514404297},"stopFree":true,"seconds":0.34990210086107256,"point":{"y":19,"x":10.123663902282715,"z":23.936689376831056}}
+2026-11-03T21:09:46.197Z,217.197647,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":12.895389556884766,"z":23.99679183959961},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":9.046520233154297,"z":24.08595085144043},"stopFree":true,"seconds":0.35002441983669999,"point":{"y":19,"x":14.123534202575684,"z":23.968841552734376}}
+2026-11-03T21:09:46.197Z,217.197647,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 8 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":17.363340377807618,"z":23.99956703186035},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":12.895389556884766,"z":23.99679183959961},"stopFree":true,"seconds":0.4169333837926388,"point":{"y":19,"x":18,"z":24}}
+2026-11-03T21:09:46.197Z,217.197647,6084,6,Info [FLog::CreatorOutput] M1121 CROSSING 3 1 true
+2026-11-03T21:09:52.080Z,223.080078,8870,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":3.865884709171951,"to":{"y":21.883012771606447,"x":-16.963224411010743,"z":23.997547149658204},"targetFloor":true,"waypointCount":7,"running":true,"reached":true,"target":{"y":21.5,"x":-18,"z":24},"alive":true,"targetFree":true,"from":{"y":21.883014678955079,"x":17.365751266479493,"z":23.999568939208986}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":14.405524253845215,"z":23.67215919494629},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":17.365751266479493,"z":23.999568939208986},"stopFree":true,"seconds":0.449767030775547,"point":{"y":19,"x":13.365751266479493,"z":23.999618530273439}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":10.127961158752442,"z":23.95084571838379},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":14.405524253845215,"z":23.67215919494629},"stopFree":true,"seconds":0.45014480873942377,"point":{"y":19,"x":9.365751266479493,"z":23.99966812133789}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":6.094846248626709,"z":23.99222183227539},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":10.127961158752442,"z":23.95084571838379},"stopFree":true,"seconds":0.45006176363676789,"point":{"y":19,"x":5.365751266479492,"z":23.99971580505371}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-5.8816914558410648,"z":23.683605194091798},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":6.094846248626709,"z":23.99222183227539},"stopFree":true,"seconds":1.3325899690389634,"point":{"y":19,"x":-6.634248733520508,"z":23.999862670898439}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-9.975415229797364,"z":23.95665740966797},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-5.8816914558410648,"z":23.683605194091798},"stopFree":true,"seconds":0.43338356353342535,"point":{"y":19,"x":-10.634248733520508,"z":23.999910354614259}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-13.479899406433106,"z":23.98921775817871},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-9.975415229797364,"z":23.95665740966797},"stopFree":true,"seconds":0.3169746920466423,"point":{"y":19,"x":-14.634248733520508,"z":23.99995994567871}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-16.963224411010743,"z":23.997547149658204},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-13.479899406433106,"z":23.98921775817871},"stopFree":true,"seconds":0.31723348051309588,"point":{"y":19,"x":-18,"z":24}}
+2026-11-03T21:09:52.081Z,223.081085,8870,6,Info [FLog::CreatorOutput] M1121 CROSSING 4 1 true
+2026-11-03T21:09:58.496Z,229.496552,8870,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":4.400259456597269,"to":{"y":21.883014678955079,"x":17.270017623901368,"z":24.004676818847658},"targetFloor":true,"waypointCount":8,"running":true,"reached":true,"target":{"y":21.5,"x":18,"z":24},"alive":true,"targetFree":true,"from":{"y":21.883012771606447,"x":-17.033578872680665,"z":23.997711181640626}}
+2026-11-03T21:09:58.496Z,229.496552,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-17.033578872680665,"z":23.997711181640626},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-17.033578872680665,"z":23.997711181640626},"stopFree":true,"seconds":0,"point":{"y":19,"x":-17.033578872680665,"z":23.997711181640626}}
+2026-11-03T21:09:58.496Z,229.496552,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-13.755030632019043,"z":23.99643325805664},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-17.033578872680665,"z":23.997711181640626},"stopFree":true,"seconds":0.3155536400154233,"point":{"y":19,"x":-13.033578872680664,"z":23.99797248840332}}
+2026-11-03T21:09:58.496Z,229.496552,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-10.154293060302735,"z":23.997764587402345},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-13.755030632019043,"z":23.99643325805664},"stopFree":true,"seconds":0.33516810461878779,"point":{"y":19,"x":-9.033578872680664,"z":23.998233795166017}}
+2026-11-03T21:09:58.496Z,229.496552,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-5.684267044067383,"z":23.998397827148439},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-10.154293060302735,"z":23.997764587402345},"stopFree":true,"seconds":0.43136311415582898,"point":{"y":19,"x":-5.033578872680664,"z":23.99849510192871}}
+2026-11-03T21:09:58.497Z,229.497543,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":6.1651177406311039,"z":24.773637771606447},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-5.684267044067383,"z":23.998397827148439},"stopFree":true,"seconds":2.1013127425685527,"point":{"y":19,"x":6.966421127319336,"z":23.999279022216798}}
+2026-11-03T21:09:58.497Z,229.497543,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":9.869007110595704,"z":24.172283172607423},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":6.1651177406311039,"z":24.773637771606447},"stopFree":true,"seconds":0.349199952557683,"point":{"y":19,"x":10.966421127319336,"z":23.999540328979493}}
+2026-11-03T21:09:58.497Z,229.497543,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":14.245074272155762,"z":24.02399253845215},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":9.869007110595704,"z":24.172283172607423},"stopFree":true,"seconds":0.4351648949086666,"point":{"y":19,"x":14.966421127319336,"z":23.999801635742189}}
+2026-11-03T21:09:58.497Z,229.497543,8870,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 8 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":17.270017623901368,"z":24.004676818847658},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":14.245074272155762,"z":24.02399253845215},"stopFree":true,"seconds":0.31457294523715975,"point":{"y":19,"x":18,"z":24}}
+2026-11-03T21:09:58.497Z,229.497543,8870,6,Info [FLog::CreatorOutput] M1121 CROSSING 5 1 true
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 MOVE DIAGNOSTIC {"seconds":3.781225406564772,"to":{"y":21.883012771606447,"x":-17.258298873901368,"z":23.995384216308595},"targetFloor":true,"waypointCount":8,"running":true,"reached":true,"target":{"y":21.5,"x":-18,"z":24},"alive":true,"targetFree":true,"from":{"y":21.883014678955079,"x":17.270023345947267,"z":24.004676818847658}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 1 {"valid":true,"deadlineReached":false,"to":{"y":21.883014678955079,"x":17.270023345947267,"z":24.004676818847658},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":17.270023345947267,"z":24.004676818847658},"stopFree":true,"seconds":0,"point":{"y":19,"x":17.270023345947267,"z":24.004676818847658}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 2 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":14.037017822265625,"z":24.005779266357423},"free":true,"reached":true,"from":{"y":21.883014678955079,"x":17.270023345947267,"z":24.004676818847658},"stopFree":true,"seconds":0.3498912248760462,"point":{"y":19,"x":13.270023345947266,"z":24.004146575927736}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 3 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":10.440811157226563,"z":24.00418472290039},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":14.037017822265625,"z":24.005779266357423},"stopFree":true,"seconds":0.3331469530239701,"point":{"y":19,"x":9.270023345947266,"z":24.003616333007814}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 4 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":5.970499038696289,"z":24.00324058532715},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":10.440811157226563,"z":24.00418472290039},"stopFree":true,"seconds":0.4330236576497555,"point":{"y":19,"x":5.270023345947266,"z":24.00308609008789}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 5 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-6.115894317626953,"z":23.393848419189454},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":5.970499038696289,"z":24.00324058532715},"stopFree":true,"seconds":1.5499744033440948,"point":{"y":19,"x":-6.729976654052734,"z":24.001495361328126}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 6 {"valid":true,"deadlineReached":false,"to":{"y":21.883010864257814,"x":-9.742980003356934,"z":23.87592315673828},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-6.115894317626953,"z":23.393848419189454},"stopFree":true,"seconds":0.33420374896377327,"point":{"y":19,"x":-10.729976654052735,"z":24.000965118408204}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 7 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-13.591702461242676,"z":23.972320556640626},"free":true,"reached":true,"from":{"y":21.883010864257814,"x":-9.742980003356934,"z":23.87592315673828},"stopFree":true,"seconds":0.3498414047062397,"point":{"y":19,"x":-14.729976654052735,"z":24.00043487548828}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 WAYPOINT 8 {"valid":true,"deadlineReached":false,"to":{"y":21.883012771606447,"x":-17.258298873901368,"z":23.995384216308595},"free":true,"reached":true,"from":{"y":21.883012771606447,"x":-13.591702461242676,"z":23.972320556640626},"stopFree":true,"seconds":0.33178945258259776,"point":{"y":19,"x":-18,"z":24}}
+2026-11-03T21:10:04.295Z,235.295395,6084,6,Info [FLog::CreatorOutput] M1121 CROSSING 6 1 true
+2026-11-03T21:10:06.312Z,237.312592,3a64,6,Info [FLog::CreatorOutput] M112 MOTION METRICS {"minDistance":3.276718854904175,"refusals":0,"detours":10,"overlaps":0,"arrivals":6,"samples":2119,"detoursBefore":9,"attempts":6}
+2026-11-03T21:10:06.312Z,237.312592,3a64,6,Info [FLog::CreatorOutput] M112 MOTION PASS: six crossings, no stationary-human body intersections
+2026-11-03T21:10:06.312Z,237.312592,3a64,6,Info [FLog::CreatorOutput] M1121 WIDE PASS: six physical crossings with full-scene camera
+2026-11-03T21:10:06.312Z,237.312592,3a64,6,Info [FLog::CreatorOutput] M1121 FOCUSED PASS
+SOURCE 0.745.462.7451125_20261103T210615Z_Studio_46D0A_last.log
+2026-11-03T21:06:20.061Z,5.061655,4ec8,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 1:Queued Подбор участников
+2026-11-03T21:06:21.318Z,6.318640,846c,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:Queued Подбор участников
+2026-11-03T21:06:21.993Z,6.993896,9264,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:MatchReady Матч готов
+2026-11-03T21:06:22.307Z,7.307489,9264,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:Lobby Приёмная
+2026-11-03T21:07:19.536Z,64.536560,9264,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA LOBBY / real Player + four distinct guests -245.23699951171875, 4.724841117858887, -18.242895126342773 65
+2026-11-03T21:07:47.772Z,92.772842,9264,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player1 2:Active Матч идёт
+2026-11-03T21:08:48.383Z,153.383316,9264,6,Info [FLog::CreatorOutput] M1121 CAPTURE UI: proximity labels hidden; ordinary HUD retained
+2026-11-03T21:08:48.383Z,153.383316,9264,6,Info [FLog::CreatorOutput] M1121 CAPTURE CAMERA PROMENADE / stationary Player / physical crossing -2.1843042373657227, 23.22484016418457, 24.333824157714844 84.99999237060547
+SOURCE 0.745.462.7451125_20261103T210616Z_Studio_A5698_last.log
+2026-11-03T21:06:21.071Z,5.071281,1cc8,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 2:MatchReady Матч готов
+2026-11-03T21:06:22.888Z,6.888942,407c,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 2:Queued Подбор участников
+2026-11-03T21:06:23.672Z,7.672799,1cc8,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 2:Lobby Приёмная
+2026-11-03T21:07:47.772Z,91.772392,1cc8,6,Info [FLog::CreatorOutput] M1121 HUD PASS Player2 2:Active Матч идёт
