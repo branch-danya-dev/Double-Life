@@ -1,0 +1,202 @@
+{
+  "dateUTC": "2026-11-03T16:09:14.237116+00:00",
+  "implementationSHA": "dcc4589799d3e12273f499b21b2848910da6ffc7",
+  "studioBuild": "DoubleLife-M112-polish-tests-v7.rbxlx",
+  "studioBuildSHA256": "5478f8f1372afb4ed45b5be7fe74c7d3b3bc2650af7cb1969b2d1d3c35df77c6",
+  "productionSourcesVerified": [
+    "src/client/Atmosphere.client.luau",
+    "src/client/ChatSetup.client.luau",
+    "src/client/Hud.client.luau",
+    "src/client/Interface.luau",
+    "src/client/LobbyHud.client.luau",
+    "src/client/MimicNames.client.luau",
+    "src/client/MimicPresentation.client.luau",
+    "src/client/PrologueHud.client.luau",
+    "src/client/SocialHud.client.luau",
+    "src/server/ActorPolicy.luau",
+    "src/server/ActorRegistry.luau",
+    "src/server/AnalyticsPolicy.luau",
+    "src/server/CommerceCatalog.luau",
+    "src/server/CommercePolicy.luau",
+    "src/server/CommerceService.luau",
+    "src/server/CommerceStore.luau",
+    "src/server/DataStoreAdapter.luau",
+    "src/server/Dossier.luau",
+    "src/server/EventDirector.luau",
+    "src/server/EventPolicy.luau",
+    "src/server/EventWorld.luau",
+    "src/server/Evidence.luau",
+    "src/server/Game.luau",
+    "src/server/GuardPolicy.luau",
+    "src/server/GuardService.luau",
+    "src/server/Interactions.luau",
+    "src/server/LobbyWorld.luau",
+    "src/server/MansionArt.luau",
+    "src/server/MansionArtPlan.luau",
+    "src/server/MansionLayout.luau",
+    "src/server/MarketplaceAdapter.luau",
+    "src/server/Matchmaking.luau",
+    "src/server/MatchPool.luau",
+    "src/server/MatchSettings.luau",
+    "src/server/MatchTransport.luau",
+    "src/server/MimicAnimation.luau",
+    "src/server/MimicAppearance.luau",
+    "src/server/MimicCrowd.luau",
+    "src/server/MimicCrowdPolicy.luau",
+    "src/server/MimicIdentity.luau",
+    "src/server/MimicLoadPolicy.luau",
+    "src/server/MimicRig.luau",
+    "src/server/MimicService.luau",
+    "src/server/MonetizationSettings.luau",
+    "src/server/NpcMover.luau",
+    "src/server/PersistenceSettings.luau",
+    "src/server/PracticePolicy.luau",
+    "src/server/ProfileSchema.luau",
+    "src/server/ProfileService.luau",
+    "src/server/ProfileSessions.luau",
+    "src/server/ProfileStore.luau",
+    "src/server/ProgressionCatalog.luau",
+    "src/server/ProgressionPolicy.luau",
+    "src/server/PrologueContent.luau",
+    "src/server/ProloguePolicy.luau",
+    "src/server/PrologueService.luau",
+    "src/server/PrologueWorld.luau",
+    "src/server/QueuePolicy.luau",
+    "src/server/RequestLedger.luau",
+    "src/server/Requests.luau",
+    "src/server/RetentionPolicy.luau",
+    "src/server/RolePlan.luau",
+    "src/server/Roles.luau",
+    "src/server/RoundPolicy.luau",
+    "src/server/RoundService.luau",
+    "src/server/SessionClock.luau",
+    "src/server/SocialPolicy.luau",
+    "src/server/SocialService.luau",
+    "src/server/Telemetry.luau",
+    "src/server/TuningConfig.luau",
+    "src/server/World.luau",
+    "src/server/WorldContract.luau",
+    "src/server/WorldEvents.luau",
+    "src/shared/Config.luau",
+    "src/shared/Presentation.luau",
+    "src/shared/RoleGuide.luau"
+  ],
+  "logs": [
+    "0.745.462.7451125_20261103T154740Z_Studio_5AF0F_last.log",
+    "0.745.462.7451125_20261103T154745Z_Studio_C69F4_last.log",
+    "0.745.462.7451125_20261103T155255Z_Studio_1C66A_last.log",
+    "0.745.462.7451125_20261103T155824Z_Studio_001B1_last.log"
+  ],
+  "images": [
+    {
+      "file": "prologue.jpg",
+      "sha256": "24c8cc7b03d14eb8b6a2ec01bcaaa154e3628d803634d81fef452e0f8c6a7ea7",
+      "capturedUTC": "2026-11-03T15:49:04.461560+00:00"
+    },
+    {
+      "file": "lobby-name.jpg",
+      "sha256": "68c3fd46e543a2bd005d2c89ea4e39a77e1765623e35db66bb64a38467db244f",
+      "capturedUTC": "2026-11-03T15:52:04.882177+00:00"
+    },
+    {
+      "file": "lobby-motion-01.jpg",
+      "sha256": "e202cebf92db252e57bb49896cf414e8a6584d4ec4f2d2298ccae4081777d019",
+      "capturedUTC": "2026-11-03T15:50:29.878512+00:00"
+    },
+    {
+      "file": "lobby-motion-02.jpg",
+      "sha256": "10e9012655aa2ff6bce01e54f859671a829d639ab2c92f44098dd55a3a8db73e",
+      "capturedUTC": "2026-11-03T15:51:35.070647+00:00"
+    },
+    {
+      "file": "match-ground.jpg",
+      "sha256": "e05bcc1d338f43eb0ada0b9ae860ba2d8e192765633dbdaaeefea631cd903ea8",
+      "capturedUTC": "2026-11-03T15:54:06.130091+00:00"
+    },
+    {
+      "file": "match-upper.jpg",
+      "sha256": "09735b542a4dd6049c8a3a06bd44eadf41e23a4edba94d57b386bba4db61f459",
+      "capturedUTC": "2026-11-03T15:57:07.272570+00:00"
+    },
+    {
+      "file": "council.jpg",
+      "sha256": "fe77028f1ba00000d821e7eb3a4e14373e90323e114ff1f225aa0788f6a9b5d7",
+      "capturedUTC": "2026-11-03T15:57:39.530534+00:00"
+    },
+    {
+      "file": "lobby-group.jpg",
+      "sha256": "d44f6a65479fc924bcdc3e0e1835e67d1b8b3fa5ba203f4f9beb95f8d07979cf",
+      "capturedUTC": "2026-11-03T16:02:01.862041+00:00"
+    },
+    {
+      "file": "passage-01.jpg",
+      "sha256": "7c909f9535163d38433db2711231a25034f1b920481ac834ab22d7bb0d8ba7b9",
+      "capturedUTC": "2026-11-03T16:03:30.637739+00:00"
+    },
+    {
+      "file": "passage-02.jpg",
+      "sha256": "9975d62807bb18c5d39cd3dee7a015714469bdb893a5d59c33e8c88d438954a7",
+      "capturedUTC": "2026-11-03T16:03:35.967407+00:00"
+    },
+    {
+      "file": "passage-03.jpg",
+      "sha256": "d12929ba8a0dbe80a61bb976ba64ec8a34832d25b2a90068059b84afb8c498b3",
+      "capturedUTC": "2026-11-03T16:03:43.695183+00:00"
+    },
+    {
+      "file": "passage-04.jpg",
+      "sha256": "bcee794c70551148dbe486bee5c7e35ff5cec01ef6c376e3f0be3bb0c8368eb0",
+      "capturedUTC": "2026-11-03T16:03:48.854477+00:00"
+    }
+  ],
+  "metrics": {
+    "main": {
+      "mimics": {
+        "maxWorkers": 2,
+        "failures": 1,
+        "orders": 6,
+        "upperArrivals": 11,
+        "matchActions": 31,
+        "actions": 201,
+        "jobs": 271
+      },
+      "crowd": {
+        "waits": 74,
+        "deferred": 0,
+        "maxPeople": 16,
+        "occupied": 1047,
+        "detours": 85
+      },
+      "rig": {
+        "live": 3,
+        "pending": 0,
+        "requests": 19,
+        "maxPending": 1,
+        "timeouts": 0,
+        "tracks": 18,
+        "cacheHits": 23,
+        "failures": 0,
+        "deferred": 1,
+        "maxSeconds": 1.3499749999609776
+      }
+    },
+    "lobby": {
+      "minDistance": 5.688233982898214,
+      "overlaps": 0,
+      "samples": 29165,
+      "playerDrift": 0,
+      "minPair": 2.348112870596071
+    },
+    "passage": {
+      "minDistance": 3.323867082595825,
+      "detoursBefore": 88,
+      "overlaps": 0,
+      "arrivals": 6,
+      "samples": 2496,
+      "detours": 13
+    }
+  },
+  "assertions": 4091,
+  "retainedAssertions": 3869,
+  "newAssertions": 222
+}

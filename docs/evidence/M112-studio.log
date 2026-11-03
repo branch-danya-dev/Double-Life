@@ -1,0 +1,578 @@
+SOURCE 0.745.462.7451125_20261103T154740Z_Studio_5AF0F_last.log
+2026-11-03T15:47:45.174Z,5.174229,51ec,6,Info [FLog::CreatorOutput] M112 WAIT ONE: start one client
+2026-11-03T15:47:51.092Z,11.092559,9798,6,Info [FLog::CreatorOutput] M112 PASS real Player wears exact catalogue preset 6
+2026-11-03T15:48:02.437Z,22.437450,51ec,6,Info [FLog::CreatorOutput] M112 PASS one human does not start a match
+2026-11-03T15:48:02.437Z,22.437450,51ec,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T15:48:02.437Z,22.437450,51ec,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T15:48:02.437Z,22.437450,51ec,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T15:48:02.437Z,22.437450,51ec,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:48:02.437Z,22.437450,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:1
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:1
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:1
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:48:02.438Z,22.438452,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:1
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:1
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:6
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:6
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:6
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:6
+2026-11-03T15:48:02.439Z,22.439451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:6
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T15:48:02.440Z,22.440451,51ec,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T15:48:11.037Z,31.037500,6a34,6,Info [FLog::CreatorOutput] M112 CAPTURE READY PRIVATE PROLOGUE / R15 guide
+2026-11-03T15:49:04.719Z,84.719872,6a34,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks PRIVATE PROLOGUE / R15 guide
+2026-11-03T15:49:46.350Z,126.350792,9798,6,Info [FLog::CreatorOutput] M112 PASS physical upstairs delivery completed with R15 guide
+2026-11-03T15:49:47.133Z,127.133560,6a34,6,Info [FLog::CreatorOutput] M112 PASS private scene and guide release tracks
+2026-11-03T15:49:58.099Z,138.099335,9798,6,Info [FLog::CreatorOutput] M112 CAPTURE READY LOBBY CROWD / stationary player / moving guests
+2026-11-03T15:51:35.312Z,235.312378,8be4,6,Info [FLog::CreatorOutput] M112 CROWD METRICS {"minDistance":5.688233982898214,"overlaps":0,"samples":29165,"playerDrift":0,"minPair":2.348112870596071}
+2026-11-03T15:51:35.312Z,235.312378,8be4,6,Info [FLog::CreatorOutput] M112 PASS stationary player crowd has no body crossings
+2026-11-03T15:51:35.312Z,235.312378,8be4,6,Info [FLog::CreatorOutput] M112 CAPTURE READY LOBBY / natural stop and nameplates
+2026-11-03T15:52:05.027Z,265.027496,9798,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks LOBBY / natural stop and nameplates
+2026-11-03T15:52:05.712Z,265.712402,8be4,6,Info [FLog::CreatorOutput] M112 SOLO PASS: add second real client
+2026-11-03T15:53:15.158Z,335.158630,4938,6,Info [FLog::CreatorOutput] M112 PASS chat disabled in actual client
+2026-11-03T15:53:15.158Z,335.158630,4938,6,Info [FLog::CreatorOutput] M112 CLIENT METRICS Player1 {"maxMs":123.62480163574219,"seconds":40.09799366816878,"over50Ms":600,"samples":600,"p99Ms":73.38690012693405,"meanFps":14.963342180292213,"p95Ms":67.76539981365204,"viewport":"1274, 635","p50Ms":66.66159629821778,"chat":"PASS"}
+2026-11-03T15:53:15.259Z,335.259430,6a34,6,Info [FLog::CreatorOutput] M112 PASS chat disabled in actual client
+2026-11-03T15:53:15.259Z,335.259430,6a34,6,Info [FLog::CreatorOutput] M112 CLIENT METRICS Player2 {"maxMs":98.67019951343537,"seconds":10.06683680973947,"over50Ms":1,"samples":600,"p99Ms":18.223799765110017,"meanFps":59.60164164174307,"p95Ms":17.65809953212738,"viewport":"1274, 635","p50Ms":16.64000004529953,"chat":"PASS"}
+2026-11-03T15:53:15.259Z,335.259430,6a34,6,Info [FLog::CreatorOutput] M112 PASS Owner and Spy are actual Players
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:10
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:10
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:10
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:10
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:10
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:13
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:13
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:13
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.376Z,346.376495,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:13
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:13
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:8
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:8
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:8
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.377Z,346.377502,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:8
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:8
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:12
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:12
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:12
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.378Z,346.378479,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:12
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:12
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:11
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:11
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:11
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.379Z,346.379486,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:11
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:11
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:9
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:9
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:9
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:9
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:9
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.380Z,346.380493,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:4
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:4
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:4
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:4
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:4
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T15:53:26.381Z,346.381500,9798,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T15:53:30.690Z,350.690033,9798,6,Info [FLog::CreatorOutput] M112 CAPTURE READY MATCH / ground floor
+2026-11-03T15:54:06.324Z,386.324341,6a34,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks MATCH / ground floor
+2026-11-03T15:54:06.324Z,386.324341,6a34,6,Info [FLog::CreatorOutput] M112 CAPTURE READY MATCH / upper floor
+2026-11-03T15:57:07.533Z,567.533630,9798,6,Info [FLog::CreatorOutput] M112 PASS client R15 clothing and playing tracks MATCH / upper floor
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS physical council prompt
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.165Z,585.165344,9798,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T15:57:25.166Z,585.166382,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.166Z,585.166382,9798,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T15:57:25.166Z,585.166382,9798,6,Info [FLog::CreatorOutput] M112 PASS clean council participant nickname
+2026-11-03T15:57:25.166Z,585.166382,9798,6,Info [FLog::CreatorOutput] M112 PASS council identity stable
+2026-11-03T15:57:25.166Z,585.166382,9798,6,Info [FLog::CreatorOutput] M112 CAPTURE READY COUNCIL / ordinary voting UI
+2026-11-03T15:57:26.182Z,586.182617,4938,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T15:57:26.182Z,586.182617,4938,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T15:57:26.182Z,586.182617,4938,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T15:57:26.182Z,586.182617,4938,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T15:57:26.182Z,586.182617,4938,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T15:57:26.182Z,586.182617,4938,6,Info [FLog::CreatorOutput] M112 PASS council freezes R15 animation and body
+2026-11-03T15:57:27.182Z,587.182861,6a34,6,Info [FLog::CreatorOutput] M112 PASS world clock pauses
+2026-11-03T15:57:49.364Z,609.364624,6a34,6,Info [FLog::CreatorOutput] M112 TWO PASS: add third real client during the round
+2026-11-03T15:58:29.845Z,649.845337,97a0,6,Info [FLog::CreatorOutput] M112 PASS late visitor has private prologue outside active match
+2026-11-03T15:58:43.862Z,663.862976,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:10
+2026-11-03T15:58:43.862Z,663.862976,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:10
+2026-11-03T15:58:43.862Z,663.862976,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:10
+2026-11-03T15:58:43.862Z,663.862976,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.862Z,663.862976,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:10
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:10
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:13
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:13
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:13
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:13
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:13
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:14
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:14
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:14
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.864Z,663.864014,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:14
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:14
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.864Z,663.864990,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T15:58:43.865Z,663.865967,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:8
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:8
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:8
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:8
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:8
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:12
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:12
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:12
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.867Z,663.867004,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:12
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:12
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:11
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:11
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:11
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.867Z,663.867981,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:11
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:11
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:9
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:9
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:9
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.869Z,663.869019,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:9
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:9
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:43.869Z,663.869995,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:9
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:13
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:5
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:2
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:8
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:11
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:10
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:3
+2026-11-03T15:58:43.870Z,663.870972,6a34,6,Info [FLog::CreatorOutput] M112 PASS actor appearance stays stable m:12
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS repeated scene entry leaves one guide
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:10
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:10
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:10
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.496Z,669.496399,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:10
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:10
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:13
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:13
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:13
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:13
+2026-11-03T15:58:49.497Z,669.497375,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:13
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.498Z,669.498413,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:8
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:8
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:8
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:8
+2026-11-03T15:58:49.499Z,669.499390,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:8
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:16
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:16
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:16
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:16
+2026-11-03T15:58:49.500Z,669.500427,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:16
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:12
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:12
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:12
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:12
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:12
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:11
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:11
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:11
+2026-11-03T15:58:49.501Z,669.501404,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:11
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:11
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:9
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:9
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:9
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.502Z,669.502441,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:9
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:9
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T15:58:49.503Z,669.503418,6a34,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T15:59:32.477Z,712.477478,4938,6,Info [FLog::CreatorOutput] M112 PASS human Spy physical extraction
+2026-11-03T15:59:46.042Z,726.042358,6a34,6,Info [FLog::CreatorOutput] M112 PASS round reset releases R15 actors
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:59:46.043Z,726.043335,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T15:59:46.044Z,726.044373,6a34,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:22
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:22
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:22
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:22
+2026-11-03T16:00:12.225Z,752.225525,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:22
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:19
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:19
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:19
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:19
+2026-11-03T16:00:12.226Z,752.226562,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:19
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:21
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:21
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:21
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:21
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:21
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T16:00:12.227Z,752.227539,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:20
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:20
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:20
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.228Z,752.228516,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:20
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:20
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:18
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:18
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:18
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.229Z,752.229553,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:18
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:18
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:17
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:17
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:17
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:17
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:17
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:00:12.230Z,752.230530,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:00:12.231Z,752.231567,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.231Z,752.231567,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.231Z,752.231567,97a0,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:00:12.231Z,752.231567,97a0,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T16:00:12.231Z,752.231567,97a0,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T16:00:12.231Z,752.231567,97a0,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T16:00:12.231Z,752.231567,97a0,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T16:00:54.325Z,794.325134,9798,6,Info [FLog::CreatorOutput] M112 PASS second physical round extraction
+2026-11-03T16:01:06.906Z,806.906677,9798,6,Info [FLog::CreatorOutput] M112 PASS second round releases actors
+2026-11-03T16:01:08.806Z,808.806641,6a34,6,Info [FLog::CreatorOutput] M112 PASS actual disconnect removes private scene and guide
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:5
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:5
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:5
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:5
+2026-11-03T16:01:08.807Z,808.807678,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:5
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:2
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:2
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:2
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:2
+2026-11-03T16:01:08.808Z,808.808655,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:2
+2026-11-03T16:01:08.809Z,808.809692,6a34,6,Info [FLog::CreatorOutput] M112 PASS complete R15 m:3
+2026-11-03T16:01:08.809Z,808.809692,6a34,6,Info [FLog::CreatorOutput] M112 PASS ready cached tracks m:3
+2026-11-03T16:01:08.809Z,808.809692,6a34,6,Info [FLog::CreatorOutput] M112 PASS distinct neighbours m:3
+2026-11-03T16:01:08.809Z,808.809692,6a34,6,Info [FLog::CreatorOutput] M112 PASS same clean nickname in actor and plate
+2026-11-03T16:01:08.809Z,808.809692,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human nickname impersonation
+2026-11-03T16:01:08.810Z,808.810669,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:01:08.810Z,808.810669,6a34,6,Info [FLog::CreatorOutput] M112 PASS no human outfit clone
+2026-11-03T16:01:08.810Z,808.810669,6a34,6,Info [FLog::CreatorOutput] M112 PASS fictional Guest m:3
+2026-11-03T16:01:08.810Z,808.810669,6a34,6,Info [FLog::CreatorOutput] M112 PASS no mimic profile m:3
+2026-11-03T16:01:08.810Z,808.810669,6a34,6,Info [FLog::CreatorOutput] M112 PASS one bounded track set per live actor
+2026-11-03T16:01:08.811Z,808.811157,6a34,6,Info [FLog::CreatorOutput] M112 PASS bounded avatar and path workers
+2026-11-03T16:01:08.811Z,808.811157,6a34,6,Info [FLog::CreatorOutput] M112 METRICS {"mimics":{"maxWorkers":2,"failures":1,"orders":6,"upperArrivals":11,"matchActions":31,"actions":201,"jobs":271},"crowd":{"waits":74,"deferred":0,"maxPeople":16,"occupied":1047,"detours":85},"rig":{"live":3,"pending":0,"requests":19,"maxPending":1,"timeouts":0,"tracks":18,"cacheHits":23,"failures":0,"deferred":1,"maxSeconds":1.3499749999609776}}
+2026-11-03T16:01:08.811Z,808.811157,6a34,6,Info [FLog::CreatorOutput] M112 STUDIO SUITE PASS: actual 1/2/3 clients, all contexts, anti-clone, crowd, delivery, council, TWO rounds, replay, disconnect and cleanup
+2026-11-03T16:01:19.423Z,819.423157,6a34,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT KaiMoss 1 true -250.4435577392578, 2.849999189376831, -24.830936431884766 -249.60000610351562, 3, -25
+2026-11-03T16:01:24.956Z,824.956238,6a34,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT NoelAsh 1 true -240.82725524902344, 3.0579605102539062, -24.16645622253418 -240.39999389648438, 3, -25
+2026-11-03T16:01:34.172Z,834.172485,97a0,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT EmilBrook 1 false -247.12612915039062, 3.287442207336426, -21.015174865722656 -250.5154266357422, 3, -30.515432357788086
+2026-11-03T16:01:44.222Z,844.222534,6a34,6,Info [FLog::CreatorOutput] M112 GATHER ATTEMPT AdaMorn 1 true -251.4500274658203, 3.559213399887085, -30.01365089416504 -250.5154266357422, 3, -30.515432357788086
+2026-11-03T16:01:44.254Z,844.254578,8be4,6,Info [FLog::CreatorOutput] M112 GROUP CAPTURE READY: actual Player and four AI at lobby interest object
+2026-11-03T16:02:30.620Z,890.620117,97a0,6,Info [FLog::CreatorOutput] M112 RESERVATIONS PASS: no orphan name, appearance or movement slot after churn
+2026-11-03T16:03:01.634Z,921.634399,4938,6,Info [FLog::CreatorOutput] M112 MOTION CAPTURE READY: promenade, stationary real Player; continue to start six physical crossings
+2026-11-03T16:03:20.950Z,940.950623,8be4,6,Info [FLog::CreatorOutput] M112 MOTION START IN 5 SECONDS
+2026-11-03T16:04:07.565Z,987.565491,6a34,6,Info [FLog::CreatorOutput] M112 MOTION METRICS {"minDistance":3.323867082595825,"detoursBefore":88,"overlaps":0,"arrivals":6,"samples":2496,"detours":13}
+2026-11-03T16:04:07.565Z,987.565491,6a34,6,Info [FLog::CreatorOutput] M112 MOTION PASS: six crossings, no stationary-human body intersections
+2026-11-03T16:07:10.442Z,1170.442383,6a34,6,Warning [FLog::CreatorWarning] Warning: M112 WIDE FAIL ServerScriptService.M112WideReview:25: physical approach
+SOURCE 0.745.462.7451125_20261103T154745Z_Studio_C69F4_last.log
+SOURCE 0.745.462.7451125_20261103T155255Z_Studio_1C66A_last.log
+SOURCE 0.745.462.7451125_20261103T155824Z_Studio_001B1_last.log
