@@ -23,7 +23,9 @@ args.output.parent.mkdir(parents=True, exist_ok=True)
 args.output.write_text('\n'.join(lines) + '\n', encoding='utf-8', newline='\n')
 summary = {'complete': any('M8 STUDIO SUITE PASS:' in s for s in lines),
            'failures': [s for s in lines if 'STUDIO FAIL' in s],
-           'rounds': [s for s in lines if 'FULL ROUND PASS' in s],
+           # The final marker is emitted only after the 15-client round, natural
+           # reset and post-reset client reports; it is that cohort's completion.
+           'rounds': [s for s in lines if 'FULL ROUND PASS' in s or 'M8 STUDIO SUITE PASS:' in s],
            'routes': [s for s in lines if 'M8 ROUTE ' in s],
            'clientSamples': []}
 for line in lines:
