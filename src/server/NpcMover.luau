@@ -108,13 +108,27 @@ function Mover:move(position, deadline, cancelled)
                 if index >= current then blocked = true end
             end)
             local arrived = true
-            for index, waypoint in ipairs(path:GetWaypoints()) do
+            local waypoints=path:GetWaypoints()
+            local skipped=0
+            for index, waypoint in ipairs(waypoints) do
                 current = index
                 if not valid() or blocked then arrived = false; break end
                 if waypoint.Action == Enum.PathWaypointAction.Jump then self.humanoid.Jump = true end
                 if self.crowd then
+                    -- Engine paths ignore soft actor bodies. A waypoint inside a
+                    -- person is not a destination to return to after a detour.
+                    -- Only shortcut a bounded, level, statically clear segment.
+                    local probe=Vector3.new(waypoint.Position.X,self.root.Position.Y,waypoint.Position.Z)
+                    if index<#waypoints and skipped<3 and not self.crowd:free(probe,self,3.2) then
+                        local nextPoint=waypoints[index+1].Position
+                        local flat=Vector3.new(nextPoint.X,self.root.Position.Y,nextPoint.Z)
+                        if math.abs(nextPoint.Y-waypoint.Position.Y)<1.5 and self.crowd:clear(self.root.Position,flat) then
+                            skipped+=1; continue
+                        end
+                    end
                     local reached=self.crowd:walk(self,waypoint.Position,math.min(deadline,self.scope:now()+8),function() return valid() and not blocked end)
                     if not reached then arrived=false; break end
+                    skipped=0
                     continue
                 end
                 self.destination = waypoint.Position

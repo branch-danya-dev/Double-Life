@@ -30,7 +30,7 @@
     },
     {
       "path": "src/server/NpcMover.luau",
-      "sha256": "aa7ba9c16494e64aa75b8615b302c1b6a21bd63594e5875e8fb33cfea71ee7af",
+      "sha256": "e9f15f0127ea2ffcad34bbcec0ab1c110c87cfe00ff1ed78b648397476d2d430",
       "normalization": "UTF-8 LF",
       "provenance": "Original code authored for this project",
       "rights": "Project-original; no public license grant"

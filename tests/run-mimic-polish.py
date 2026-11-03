@@ -3,7 +3,7 @@ from pathlib import Path
 import argparse, subprocess, tempfile
 p=argparse.ArgumentParser(description=__doc__); p.add_argument('--luau',default='luau'); a=p.parse_args()
 root=Path(__file__).resolve().parents[1]
-sources={name:(root/f'src/server/{name}.luau').read_text(encoding='utf-8') for name in ['MimicIdentity','MimicCrowd','RoundService']}
+sources={name:(root/f'src/server/{name}.luau').read_text(encoding='utf-8') for name in ['MimicIdentity','MimicCrowd','RoundService','NpcMover']}
 wrapper='local sources={}\n'+''.join(f'sources.{name}=[====[{source}]====]\n' for name,source in sources.items())
 wrapper+='''require('./mimic-polish-runtime').run(function(name,modules,extra)
     local env=setmetatable(extra or {},{__index=getfenv()})

@@ -42,6 +42,7 @@ remote.OnClientInvoke=function(c)
             local hit=workspace:Raycast(target,offset,filter)
             if hit and hit.Distance<offset.Magnitude-0.5 then offset=chooseOffset(root) end
             camera.CFrame=CFrame.lookAt(target+offset,target)
+            if c.camera then camera.CFrame=c.camera end
         end
         for _,v in ipairs(player.Character:GetDescendants()) do if v:IsA("BasePart") then v.LocalTransparencyModifier=0 end end
     end)

@@ -61,7 +61,7 @@ function Suite.run(load)
     mt.__index=function(a,k) if k=='Magnitude' then return math.sqrt(a.X*a.X+a.Y*a.Y+a.Z*a.Z) elseif k=='Unit' then local l=a.Magnitude; return V.new(a.X/l,a.Y/l,a.Z/l) end end
     local time,root,target,minimum=0,{Position=V.new(0,3,0),Parent=true},nil,100
     local env={Vector3=V,CFrame={new=function(p) return p end},workspace={GetPartBoundsInBox=function() return {} end,Blockcast=function() return nil end,Raycast=function(_,p) return {Position=V.new(p.X,0,p.Z),Normal={Y=1}} end},
-        task={wait=function(dt) time+=dt; if target then local d=target-root.Position; root.Position+=d.Unit*math.min(d.Magnitude,0.9) end; minimum=math.min(minimum,P.distance(root.Position,v(5,3,0))) end}}
+        task={wait=function(dt) time+=dt; if target then local delta=target-root.Position; local d=V.new(delta.X,0,delta.Z); if d.Magnitude>0.001 then root.Position+=d.Unit*math.min(d.Magnitude,0.9) end end; minimum=math.min(minimum,P.distance(root.Position,v(5,3,0))) end}}
     local Crowd=load('MimicCrowd',{MimicCrowdPolicy=P},env); local crowd=Crowd.new()
     crowd.people=people
     local mover={root=root,preset=1,scope={now=function() return time end},humanoid={MoveTo=function(_,p) target=p end}}
@@ -85,6 +85,21 @@ function Suite.run(load)
     env.workspace.GetPartBoundsInBox=function() return {} end
     env.workspace.Raycast=function() return nil end
     check(crowd:slot(V.new(0,3,0),'none',1)==nil,'no floor defers, no broken fallback')
+    env.workspace.Raycast=function(_,p) return {Position=V.new(p.X,0,p.Z),Normal={Y=1}} end
+    env.task.spawn=function(f) f() end
+    env.Vector2={new=function(x,z) return {Magnitude=math.sqrt(x*x+z*z)} end}
+    env.Enum={PathStatus={Success='Success'},PathWaypointAction={Jump='Jump'}}
+    env.game={GetService=function() return {CreatePath=function()
+        return {Status='Success',ComputeAsync=function() end,Destroy=function() end,
+            Blocked={Connect=function() return {Disconnect=function() end} end},
+            GetWaypoints=function() return {{Position=V.new(0,0,0)},{Position=V.new(4,0,0)},{Position=V.new(8,0,0)},{Position=V.new(12,0,0)}} end}
+    end} end}
+    local Mover=load('NpcMover',{},env)
+    time=0; root.Position=V.new(0,3,0); target=nil; minimum=100
+    local routed=setmetatable({root=root,preset=1,crowd=crowd,humanoid={Health=100,MoveTo=function(_,p) target=p end},
+        scope={alive=true,running=true,now=function() return time end},metrics={computes=0,failures=0,timeouts=0,arrivals=0,computeSeconds=0}},Mover)
+    check(routed:move(V.new(12,3,0),30,function() return false end),'actual path skips occupied intermediate waypoints and reaches goal')
+    check(minimum>=3.2 and routed.metrics.computes==1,'one path, safe physical route past stationary player')
     print('M11.2 identity and crowd runtime:',n,'assertions PASS')
 end
 return Suite

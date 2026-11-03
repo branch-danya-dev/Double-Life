@@ -13,6 +13,31 @@ function Motion.run()
         repeat if f() then return end; task.wait(0.1) until os.clock()>deadline
         error('M112 motion timeout')
     end
+    -- Gather at an existing lobby interest point by walking, using production
+    -- slots and paths. This is an ordinary context, not a posed avatar catalogue.
+    untilReady(function() return rt.mimics:count('Lobby')==4 and not rt.mimics.creating end,60)
+    untilReady(function()
+        for _,a in pairs(rt.mimics.values) do a.next=math.huge end
+        return rt.mimics.busy==0
+    end,70)
+    local gathering=game:GetService('RunService').Heartbeat:Connect(function()
+        for _,a in pairs(rt.mimics.values) do a.next=math.huge end
+    end)
+    local first=players[1]; local point=rt.lobby.spots[2]
+    call(first,{kind='Walk',position=point})
+    local sample
+    for _,a in pairs(rt.mimics.values) do if a.context=='Lobby' then
+        sample=a; a.working=true; rt.mimics.busy+=1
+        local target=rt.mimics.crowd:slot(point,a.mover,a.preset)
+        local reached=target and a.mover:move(target,a.mover.scope:now()+50,function() return false end)
+        rt.mimics.crowd:release(a.mover); a.working=false; rt.mimics.busy-=1
+        assert(reached,'physical lobby gathering'); a.mover:lookAt(point)
+    end end
+    call(first,{kind='Manual'})
+    print('M112 GROUP CAPTURE READY: actual Player and four AI at lobby interest object')
+    view:InvokeClient(first,{model=sample.mover.model,label='LOBBY / real Player + four distinct guests',center=point+Vector3.new(0,1,0),wide=true})
+    gathering:Disconnect()
+    for _,a in pairs(rt.mimics.values) do a.next=0 end
     for _,p in ipairs(players) do call(p,{kind='Queue',action='Register'}) end
     untilReady(function() return rt.rounds.policy.phase=='Active' and rt.mimics:count('Match')==6 end,120)
     untilReady(function()
@@ -32,7 +57,6 @@ function Motion.run()
     print('M112 RESERVATIONS PASS: no orphan name, appearance or movement slot after churn')
     local a
     for _,v in pairs(rt.mimics.values) do if v.context=='Match' then a=v; break end end
-    local first=players[1]
     call(first,{kind='Walk',position=Vector3.new(0,21.5,24)})
     a.working=true; rt.mimics.busy+=1
     local function walk(point)
@@ -41,9 +65,10 @@ function Motion.run()
     local ok=walk(Vector3.new(-18,21.5,24)); assert(ok,'physical route to promenade')
     call(first,{kind='Manual'})
     print('M112 MOTION CAPTURE READY: promenade, stationary real Player; continue to start six physical crossings')
-    view:InvokeClient(first,{model=a.mover.model,label='PROMENADE / stationary Player / physical crossing',center=Vector3.new(0,23,24)})
-    print('M112 MOTION START IN 25 SECONDS: camera CFrame.lookAt(Vector3.new(0,27,30),Vector3.new(0,22,24))')
-    task.wait(25)
+    view:InvokeClient(first,{model=a.mover.model,label='PROMENADE / stationary Player / physical crossing',center=Vector3.new(0,23,24),
+        camera=CFrame.lookAt(Vector3.new(0,27,30),Vector3.new(0,22,24))})
+    print('M112 MOTION START IN 5 SECONDS')
+    task.wait(5)
     local result={samples=0,overlaps=0,minDistance=100,arrivals=0,detoursBefore=rt.mimics.crowd.metrics.detours}
     local monitor=game:GetService('RunService').Heartbeat:Connect(function()
         local p=first.Character.HumanoidRootPart.Position; local q=a.mover.root.Position

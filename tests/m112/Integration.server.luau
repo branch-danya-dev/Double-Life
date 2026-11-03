@@ -198,6 +198,7 @@ local function run()
     auditRigs()
     print("M112 METRICS",Http:JSONEncode({rig=Rig.metrics,mimics=rt.mimics.metrics,crowd=rt.mimics.crowd.metrics}))
     print("M112 STUDIO SUITE PASS: actual 1/2/3 clients, all contexts, anti-clone, crowd, delivery, council, TWO rounds, replay, disconnect and cleanup")
+    require(script.Parent.Motion).run()
 end
 local ok,err=xpcall(run,debug.traceback)
 if not ok then warn("M112 STUDIO FAIL",err) end
