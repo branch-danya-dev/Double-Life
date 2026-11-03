@@ -1,0 +1,136 @@
+{
+  "complete": false,
+  "failures": [
+    "2026-11-03T07:21:50.022Z M8 STUDIO FAIL ServerScriptService.M8Tests.Runner:50: ServerScriptService.M8Tests.Runner:24: Players.Player2.PlayerScripts.M6ClientAudit:44: physical route blocked -0.02111712656915188, 21.724836349487305, 51.567710876464844 -> 8, 21.5, 72"
+  ],
+  "rounds": [
+    "2026-11-03T07:13:54.842Z M8 THREE FULL ROUND PASS",
+    "2026-11-03T07:17:30.834Z M8 FIVE FULL ROUND PASS"
+  ],
+  "routes": [
+    "2026-11-03T07:13:43.608Z M8 ROUTE extraction 20.05s window-to-exit 24.65s",
+    "2026-11-03T07:17:19.667Z M8 ROUTE extraction 20.28s window-to-exit 24.77s"
+  ],
+  "clientSamples": [
+    {
+      "label": "2026-11-03T07:13:45.107Z M8 CLIENT METRICS 3 Results Player1",
+      "metrics": {
+        "maxMs": 68.32890212535858,
+        "seconds": 39.99743885546923,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 67.96179711818695,
+        "meanFps": 15.000960490697928,
+        "p95Ms": 67.65799969434738,
+        "viewport": "1274, 635",
+        "p50Ms": 66.6809007525444,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:13:45.175Z M8 CLIENT METRICS 3 Results Player2",
+      "metrics": {
+        "maxMs": 70.90640068054199,
+        "seconds": 39.997880540788174,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 67.99119710922241,
+        "meanFps": 15.000794839320173,
+        "p95Ms": 67.6112025976181,
+        "viewport": "1274, 672",
+        "p50Ms": 66.65810197591782,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:13:45.257Z M8 CLIENT METRICS 3 Results Player3",
+      "metrics": {
+        "maxMs": 22.864099591970444,
+        "seconds": 10.002181219868362,
+        "over50Ms": 0,
+        "samples": 600,
+        "p99Ms": 18.199799582362175,
+        "meanFps": 59.98691553479937,
+        "p95Ms": 17.740000039339066,
+        "viewport": "1274, 672",
+        "p50Ms": 16.650399193167686,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:16:37.235Z M8 CLIENT METRICS 5 Active Player1",
+      "metrics": {
+        "maxMs": 68.57959926128387,
+        "seconds": 39.99836793541908,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 67.98449903726578,
+        "meanFps": 15.000612049190439,
+        "p95Ms": 67.70409643650055,
+        "viewport": "1274, 635",
+        "p50Ms": 66.63569808006287,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:16:37.302Z M8 CLIENT METRICS 5 Active Player2",
+      "metrics": {
+        "maxMs": 71.35099917650223,
+        "seconds": 39.99845877289772,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.03160160779953,
+        "meanFps": 15.00057798243341,
+        "p95Ms": 67.5773024559021,
+        "viewport": "1274, 672",
+        "p50Ms": 66.63910299539566,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:16:37.370Z M8 CLIENT METRICS 5 Active Player3",
+      "metrics": {
+        "maxMs": 69.39280033111572,
+        "seconds": 39.99806725978851,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 68.42619925737381,
+        "meanFps": 15.000724812601169,
+        "p95Ms": 67.91319698095322,
+        "viewport": "1274, 672",
+        "p50Ms": 66.64799898862839,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:16:37.434Z M8 CLIENT METRICS 5 Active Player4",
+      "metrics": {
+        "maxMs": 68.95879656076431,
+        "seconds": 39.99752278625965,
+        "over50Ms": 600,
+        "samples": 600,
+        "p99Ms": 67.95620173215866,
+        "meanFps": 15.000929012686706,
+        "p95Ms": 67.644402384758,
+        "viewport": "1274, 635",
+        "p50Ms": 66.65849685668945,
+        "chat": "PASS"
+      }
+    },
+    {
+      "label": "2026-11-03T07:16:37.535Z M8 CLIENT METRICS 5 Active Player5",
+      "metrics": {
+        "maxMs": 18.203599378466606,
+        "seconds": 9.998915808275342,
+        "over50Ms": 0,
+        "samples": 600,
+        "p99Ms": 17.941299825906754,
+        "meanFps": 60.00650585570744,
+        "p95Ms": 17.509400844573975,
+        "viewport": "1274, 672",
+        "p50Ms": 16.64930023252964,
+        "chat": "PASS"
+      }
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "Double Life / M7 native art-deco kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engine": "Roblox Studio 0.745",
   "baseCommit": "91a9a16e69242b2fc6ac6f67627ef4b0dc38996b",
   "direction": "Art deco, warm evening reception, restrained mystery; user-approved",
@@ -58,7 +58,7 @@
     },
     {
       "path": "src/client/Hud.client.luau",
-      "sha256": "f68d1c37e2d0aeae8c70593b4d1fa62df0e7a559a6ab0e030180414b4abbb7d1",
+      "sha256": "344c3bce46324bc855d5308c1b6f51cb01ef88cb181ebdd69a4f53e3e9c446b1",
       "normalization": "UTF-8 LF",
       "provenance": "Original code authored for this project",
       "rights": "Project-original; no public license grant"
@@ -116,5 +116,6 @@
     "lights": 22,
     "animatedNPCs": 2,
     "particles": 0
-  }
+  },
+  "revisionNote": "M8: chat startup and compact role guidance; original art unchanged"
 }

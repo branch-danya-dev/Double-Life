@@ -19,10 +19,11 @@ function Policy.round(role, connection)
 end
 function Policy.action(record, key)
     if not record or record.left or record.finished then return false end
+    if key == "ServicePickup" and record.role ~= "Staff" then return false end
     -- Exact bounded action keys from trusted server hooks, never a client action id.
     local allowed = {Painting = true, Refreshment = true, Delivery = true, Relic = true, Music = true,
         Incident = true, Window = true, Safe = true, Journal = true, Council = true, Vote = true,
-        Access = true, Collection = true, Trace = true}
+        Access = true, Collection = true, Trace = true, ServicePickup = true}
     if not allowed[key] or record.actions[key] then return false end
     record.actions[key] = true
     return true

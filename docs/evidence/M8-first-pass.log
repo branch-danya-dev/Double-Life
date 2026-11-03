@@ -1,0 +1,160 @@
+2026-11-03T07:12:23.042Z M8 COHORT WAIT 3 start exactly this many local clients
+2026-11-03T07:12:23.043Z M7 PASS isolated memory adapter
+2026-11-03T07:12:25.046Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T07:12:25.046Z M7 PASS exactly 22 lights after reset
+2026-11-03T07:12:25.047Z M7 PASS interactive art budget 82
+2026-11-03T07:12:25.047Z M7 PASS static art survives round reset
+2026-11-03T07:12:25.048Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:12:25.048Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:12:25.048Z M7 PASS bounded animated NPCs
+2026-11-03T07:12:25.048Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T07:12:35.803Z M8 CLIENT CHAT PASS Player1
+2026-11-03T07:12:36.750Z M8 CLIENT CHAT PASS Player2
+2026-11-03T07:12:37.229Z M8 CLIENT CHAT PASS Player3
+2026-11-03T07:12:42.061Z M8 PASS exact cohort 3
+2026-11-03T07:12:54.244Z M8 PASS static identity preserved; old round destroyed
+2026-11-03T07:12:54.361Z M8 PASS real participant privacy Player1
+2026-11-03T07:12:54.478Z M8 PASS real participant privacy Player2
+2026-11-03T07:12:54.594Z M8 PASS real participant privacy Player3
+2026-11-03T07:12:56.193Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T07:12:56.193Z M7 PASS exactly 22 lights after reset
+2026-11-03T07:12:56.193Z M7 PASS static art survives round reset
+2026-11-03T07:12:56.194Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:12:56.194Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:12:56.194Z M7 PASS bounded animated NPCs
+2026-11-03T07:12:56.194Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T07:12:56.194Z M7 PASS interactive art budget 82
+2026-11-03T07:12:58.595Z M8 WALK Player3 Painting1 3.93s 56.2studs
+2026-11-03T07:13:01.327Z M8 PASS guest can communicate without chat
+2026-11-03T07:13:12.810Z M8 WALK Player2 StudyWindow 11.42s 174.1studs
+2026-11-03T07:13:20.375Z M8 WALK Player2 Safe 1.30s 17.2studs
+2026-11-03T07:13:23.560Z M8 PASS independent path works without owner permission
+2026-11-03T07:13:24.575Z M8 WALK Player2 Social.Egress 0.95s 12.1studs
+2026-11-03T07:13:40.959Z M8 WALK Player2 MainExit 14.12s 215.0studs
+2026-11-03T07:13:43.608Z M8 PASS real carry fits 60 seconds
+2026-11-03T07:13:43.608Z M8 ROUTE extraction 20.05s window-to-exit 24.65s
+2026-11-03T07:13:44.726Z M8 REWARD 3 Player1 Owner {"reason":"InsufficientActivity"}
+2026-11-03T07:13:44.841Z M8 REWARD 3 Player2 Spy {"beforeMastery":1,"xp":65,"reason":"Awarded","roleXp":40,"unlocked":["Рычажный инструмент","Лупа архивиста"],"mastery":2,"level":2,"beforeLevel":1,"tokens":24}
+2026-11-03T07:13:44.943Z M8 REWARD 3 Player3 Guest {"reason":"InsufficientActivity"}
+2026-11-03T07:13:45.042Z M8 PASS idle owner cannot farm tokens
+2026-11-03T07:13:45.107Z M8 CLIENT METRICS 3 Results Player1 {"maxMs":68.32890212535858,"seconds":39.99743885546923,"over50Ms":600,"samples":600,"p99Ms":67.96179711818695,"meanFps":15.000960490697928,"p95Ms":67.65799969434738,"viewport":"1274, 635","p50Ms":66.6809007525444,"chat":"PASS"}
+2026-11-03T07:13:45.107Z M8 PASS chat absent in 3 Results Player1
+2026-11-03T07:13:45.175Z M8 CLIENT METRICS 3 Results Player2 {"maxMs":70.90640068054199,"seconds":39.997880540788177,"over50Ms":600,"samples":600,"p99Ms":67.99119710922241,"meanFps":15.000794839320174,"p95Ms":67.6112025976181,"viewport":"1274, 672","p50Ms":66.65810197591782,"chat":"PASS"}
+2026-11-03T07:13:45.175Z M8 PASS chat absent in 3 Results Player2
+2026-11-03T07:13:45.257Z M8 CLIENT METRICS 3 Results Player3 {"maxMs":22.864099591970445,"seconds":10.002181219868362,"over50Ms":0,"samples":600,"p99Ms":18.199799582362176,"meanFps":59.98691553479937,"p95Ms":17.740000039339067,"viewport":"1274, 672","p50Ms":16.650399193167688,"chat":"PASS"}
+2026-11-03T07:13:45.257Z M8 PASS chat absent in 3 Results Player3
+2026-11-03T07:13:45.258Z M8 METRICS 3 Results {"players":3,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":1962,"world":{"lastResetMs":3.690199984703213,"resets":2,"buildMs":22.358299989718945,"artParts":1362},"game":{"maxRebuildMs":24.869800021406264,"maxHeartbeatMs":1369.8934316635132},"guard":{"timeouts":0,"computes":7,"arrivals":6,"failures":0,"computeSeconds":0.5597483999445103},"parts":1731}
+2026-11-03T07:13:45.258Z M8 PASS outcome Spy
+2026-11-03T07:13:45.259Z M8 METRICS Spy {"players":3,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":1962,"world":{"lastResetMs":3.690199984703213,"resets":2,"buildMs":22.358299989718945,"artParts":1362},"game":{"maxRebuildMs":24.869800021406264,"maxHeartbeatMs":1369.8934316635132},"guard":{"timeouts":0,"computes":7,"arrivals":6,"failures":0,"computeSeconds":0.5597483999445103},"parts":1731}
+2026-11-03T07:13:54.842Z M8 PASS round reset without rebuilding level
+2026-11-03T07:13:54.842Z M8 THREE FULL ROUND PASS
+2026-11-03T07:13:54.843Z M8 COHORT WAIT 5 start exactly this many local clients
+2026-11-03T07:13:56.775Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T07:13:56.776Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:13:56.776Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:13:56.776Z M7 PASS bounded animated NPCs
+2026-11-03T07:13:56.776Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T07:13:56.776Z M7 PASS exactly 22 lights after reset
+2026-11-03T07:13:56.776Z M7 PASS interactive art budget 82
+2026-11-03T07:13:56.776Z M7 PASS static art survives round reset
+2026-11-03T07:15:33.886Z M8 CLIENT CHAT PASS Player4
+2026-11-03T07:15:34.685Z M8 CLIENT CHAT PASS Player5
+2026-11-03T07:15:39.587Z M8 PASS exact cohort 5
+2026-11-03T07:15:51.854Z M8 PASS static identity preserved; old round destroyed
+2026-11-03T07:15:51.971Z M8 PASS real participant privacy Player1
+2026-11-03T07:15:52.086Z M8 PASS real participant privacy Player2
+2026-11-03T07:15:52.188Z M8 PASS real participant privacy Player3
+2026-11-03T07:15:52.304Z M8 PASS real participant privacy Player4
+2026-11-03T07:15:52.403Z M8 PASS real participant privacy Player5
+2026-11-03T07:15:53.803Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T07:15:53.803Z M7 PASS exactly 22 lights after reset
+2026-11-03T07:15:53.804Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:15:53.804Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:15:53.804Z M7 PASS bounded animated NPCs
+2026-11-03T07:15:53.804Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T07:15:53.804Z M7 PASS interactive art budget 82
+2026-11-03T07:15:53.804Z M7 PASS static art survives round reset
+2026-11-03T07:15:57.654Z M8 WALK Player4 Service.Pantry 5.17s 76.2studs
+2026-11-03T07:16:02.602Z M8 WALK Player5 Service.Target2 10.05s 151.4studs
+2026-11-03T07:16:08.853Z M8 WALK Player5 Service.Target2 0.48s 4.8studs
+2026-11-03T07:16:19.787Z M8 WALK Player4 Service.Target2 10.87s 168.8studs
+2026-11-03T07:16:21.719Z M8 PASS staff completes upstairs delivery without speech
+2026-11-03T07:16:28.986Z M8 WALK Player5 Painting1 7.22s 110.4studs
+2026-11-03T07:16:31.986Z M8 WALK Player5 Painting2 1.05s 13.7studs
+2026-11-03T07:16:35.251Z M8 WALK Player5 Painting3 1.30s 16.7studs
+2026-11-03T07:16:37.235Z M8 CLIENT METRICS 5 Active Player1 {"maxMs":68.57959926128388,"seconds":39.99836793541908,"over50Ms":600,"samples":600,"p99Ms":67.98449903726578,"meanFps":15.000612049190439,"p95Ms":67.70409643650055,"viewport":"1274, 635","p50Ms":66.63569808006287,"chat":"PASS"}
+2026-11-03T07:16:37.235Z M8 PASS chat absent in 5 Active Player1
+2026-11-03T07:16:37.302Z M8 CLIENT METRICS 5 Active Player2 {"maxMs":71.35099917650223,"seconds":39.99845877289772,"over50Ms":600,"samples":600,"p99Ms":68.03160160779953,"meanFps":15.00057798243341,"p95Ms":67.5773024559021,"viewport":"1274, 672","p50Ms":66.63910299539566,"chat":"PASS"}
+2026-11-03T07:16:37.302Z M8 PASS chat absent in 5 Active Player2
+2026-11-03T07:16:37.370Z M8 CLIENT METRICS 5 Active Player3 {"maxMs":69.39280033111572,"seconds":39.99806725978851,"over50Ms":600,"samples":600,"p99Ms":68.42619925737381,"meanFps":15.000724812601169,"p95Ms":67.91319698095322,"viewport":"1274, 672","p50Ms":66.64799898862839,"chat":"PASS"}
+2026-11-03T07:16:37.370Z M8 PASS chat absent in 5 Active Player3
+2026-11-03T07:16:37.434Z M8 CLIENT METRICS 5 Active Player4 {"maxMs":68.95879656076431,"seconds":39.99752278625965,"over50Ms":600,"samples":600,"p99Ms":67.95620173215866,"meanFps":15.000929012686706,"p95Ms":67.644402384758,"viewport":"1274, 635","p50Ms":66.65849685668946,"chat":"PASS"}
+2026-11-03T07:16:37.435Z M8 PASS chat absent in 5 Active Player4
+2026-11-03T07:16:37.535Z M8 CLIENT METRICS 5 Active Player5 {"maxMs":18.203599378466607,"seconds":9.998915808275342,"over50Ms":0,"samples":600,"p99Ms":17.941299825906755,"meanFps":60.00650585570744,"p95Ms":17.509400844573976,"viewport":"1274, 672","p50Ms":16.64930023252964,"chat":"PASS"}
+2026-11-03T07:16:37.535Z M8 PASS chat absent in 5 Active Player5
+2026-11-03T07:16:37.536Z M8 METRICS 5 Active {"players":5,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":1960,"world":{"lastResetMs":3.962900023907423,"resets":4,"buildMs":22.358299989718945,"artParts":1362},"game":{"maxRebuildMs":24.869800021406264,"maxHeartbeatMs":1369.8934316635132},"guard":{"timeouts":0,"computes":5,"arrivals":4,"failures":0,"computeSeconds":0.3747366999159567},"parts":1730}
+2026-11-03T07:16:48.768Z M8 WALK Player2 StudyWindow 11.18s 173.3studs
+2026-11-03T07:16:56.217Z M8 WALK Player2 Safe 1.25s 16.9studs
+2026-11-03T07:16:59.384Z M8 PASS independent path works without owner permission
+2026-11-03T07:17:00.517Z M8 WALK Player2 Social.Egress 1.05s 13.4studs
+2026-11-03T07:17:17.000Z M8 WALK Player2 MainExit 14.17s 215.4studs
+2026-11-03T07:17:19.667Z M8 PASS real carry fits 60 seconds
+2026-11-03T07:17:19.667Z M8 ROUTE extraction 20.28s window-to-exit 24.77s
+2026-11-03T07:17:20.783Z M8 REWARD 5 Player1 Owner {"reason":"InsufficientActivity"}
+2026-11-03T07:17:20.885Z M8 REWARD 5 Player2 Spy {"beforeMastery":2,"xp":65,"reason":"Awarded","roleXp":40,"unlocked":[],"mastery":2,"level":2,"beforeLevel":2,"tokens":24}
+2026-11-03T07:17:20.999Z M8 REWARD 5 Player3 CounterAgent {"reason":"InsufficientActivity"}
+2026-11-03T07:17:21.116Z M8 REWARD 5 Player4 Staff {"reason":"InsufficientActivity"}
+2026-11-03T07:17:21.233Z M8 REWARD 5 Player5 Guest {"beforeMastery":1,"xp":55,"reason":"Awarded","roleXp":30,"unlocked":["Рычажный инструмент","Лупа архивиста"],"mastery":2,"level":2,"beforeLevel":1,"tokens":21}
+2026-11-03T07:17:21.350Z M8 PASS active guest earns persistent reward
+2026-11-03T07:17:21.467Z M8 PASS AFK owner no reward after full round
+2026-11-03T07:17:21.467Z M8 PASS outcome Spy
+2026-11-03T07:17:21.468Z M8 METRICS Spy {"players":5,"service":{"timeouts":0,"computes":0,"arrivals":0,"failures":0,"computeSeconds":0},"instances":1962,"world":{"lastResetMs":3.962900023907423,"resets":4,"buildMs":22.358299989718945,"artParts":1362},"game":{"maxRebuildMs":24.869800021406264,"maxHeartbeatMs":1369.8934316635132},"guard":{"timeouts":0,"computes":10,"arrivals":8,"failures":0,"computeSeconds":0.9069505999214016},"parts":1731}
+2026-11-03T07:17:30.834Z M8 COHORT WAIT 8 start exactly this many local clients
+2026-11-03T07:17:30.834Z M8 FIVE FULL ROUND PASS
+2026-11-03T07:17:30.834Z M8 PASS round reset without rebuilding level
+2026-11-03T07:17:32.799Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T07:17:32.800Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:17:32.800Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:17:32.800Z M7 PASS bounded animated NPCs
+2026-11-03T07:17:32.800Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T07:17:32.800Z M7 PASS exactly 22 lights after reset
+2026-11-03T07:17:32.800Z M7 PASS interactive art budget 82
+2026-11-03T07:17:32.800Z M7 PASS static art survives round reset
+2026-11-03T07:19:44.183Z M8 CLIENT CHAT PASS Player6
+2026-11-03T07:19:45.984Z M8 CLIENT CHAT PASS Player7
+2026-11-03T07:19:47.133Z M8 CLIENT CHAT PASS Player8
+2026-11-03T07:19:51.878Z M8 PASS exact cohort 8
+2026-11-03T07:20:04.211Z M8 PASS static identity preserved; old round destroyed
+2026-11-03T07:20:04.328Z M8 PASS real participant privacy Player1
+2026-11-03T07:20:04.444Z M8 PASS real participant privacy Player2
+2026-11-03T07:20:04.561Z M8 PASS real participant privacy Player3
+2026-11-03T07:20:04.677Z M8 PASS real participant privacy Player4
+2026-11-03T07:20:04.795Z M8 PASS real participant privacy Player5
+2026-11-03T07:20:04.911Z M8 PASS real participant privacy Player6
+2026-11-03T07:20:05.026Z M8 PASS real participant privacy Player7
+2026-11-03T07:20:05.144Z M8 PASS real participant privacy Player8
+2026-11-03T07:20:05.144Z M8 PASS two spies/two agents at eight
+2026-11-03T07:20:06.179Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:20:06.179Z M7 PASS animated rig retains R6 ground contact
+2026-11-03T07:20:06.179Z M7 PASS art budget / collision exclusion 1362
+2026-11-03T07:20:06.179Z M7 PASS bounded animated NPCs
+2026-11-03T07:20:06.179Z M7 PASS evening lighting / atmospheric grade
+2026-11-03T07:20:06.179Z M7 PASS exactly 22 lights after reset
+2026-11-03T07:20:06.179Z M7 PASS interactive art budget 82
+2026-11-03T07:20:06.179Z M7 PASS static art survives round reset
+2026-11-03T07:20:16.461Z M8 WALK Player2 StudyWindow 11.25s 174.6studs
+2026-11-03T07:20:17.677Z M8 WALK Player1 OwnerConsole 12.42s 189.5studs
+2026-11-03T07:20:25.175Z M8 WALK Player2 Safe 1.22s 17.2studs
+2026-11-03T07:20:36.392Z M8 PASS council starts
+2026-11-03T07:20:38.409Z M8 PASS carry and events paused
+2026-11-03T07:21:00.575Z M8 PASS silent majority recovers dossier
+2026-11-03T07:21:09.356Z M8 WALK Player7 Service.Target2 8.72s 132.2studs
+2026-11-03T07:21:36.740Z M8 PASS NPC reaches upper floor
+2026-11-03T07:21:39.373Z M8 WALK Player5 Events.Stage 2.57s 37.9studs
+2026-11-03T07:21:39.906Z M8 WALK Player3 Events.Stage 3.07s 44.3studs
+2026-11-03T07:21:46.756Z M8 WALK Player1 Events.Stage 9.88s 152.9studs
+2026-11-03T07:21:47.624Z M8 WALK Player4 Social.TraceSpot 10.78s 166.2studs
+2026-11-03T07:21:47.723Z M8 WALK Player8 Social.TraceSpot 10.88s 166.9studs
+2026-11-03T07:21:48.707Z M8 WALK Player6 Social.TraceSpot 11.85s 179.6studs
+2026-11-03T07:21:50.022Z M8 STUDIO FAIL ServerScriptService.M8Tests.Runner:50: ServerScriptService.M8Tests.Runner:24: Players.Player2.PlayerScripts.M6ClientAudit:44: physical route blocked -0.02111712656915188, 21.724836349487305, 51.567710876464844 -> 8, 21.5, 72
+2026-11-03T07:21:50.022Z M8 WALK Player7 Events.Stage 13.23s 181.2studs

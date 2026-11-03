@@ -39,6 +39,9 @@ function Requests.start(world, roles, interactions, guard, tell, update, config,
             tell(player, if request then "Заказ принят. Ещё раз нажмите: взять сок. Доставка: " .. self.targets[request.target].name else "Нет свободных заказов.")
         elseif self.ledger:pickup(request, player.UserId, scope:now()) then
             self:carry(player.UserId, player.Character)
+            -- A completed service job has two validated stages, like window + safe.
+            -- Repeated pickup fails in the ledger; ProfilePolicy also deduplicates the key.
+            self.onTask(player, "ServicePickup", 1)
             self:dispatch(request)
             tell(player, "Несите сок: " .. self.targets[request.target].name .. ". У столика удерживайте F.")
         else
