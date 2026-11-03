@@ -61,12 +61,13 @@ function Service:create(context)
     end)
 end
 function Service:tick(dt)
+    local settings=self.rt.settings or Settings
     self.lobbyClock:advance(dt)
     local phase=self.rt.rounds.policy.phase
     local humans=#game:GetService("Players"):GetPlayers()
     local matchHumans=0; for _ in pairs(self.rt.rounds.policy.participants) do matchHumans+=1 end
-    if phase=="Active" and not self.matchGoal then self.matchGoal=Policy.mimicCount(matchHumans,Settings.targetSize,Settings.maxMimics) end
-    local desired={Lobby=Policy.mimicCount(humans,Settings.lobbyDensity,Settings.maxMimics),
+    if phase=="Active" and not self.matchGoal then self.matchGoal=Policy.mimicCount(matchHumans,settings.targetSize,settings.maxMimics) end
+    local desired={Lobby=Policy.mimicCount(humans,settings.lobbyDensity,settings.maxMimics),
         Match=if phase=="Active" or phase=="Council" then self.matchGoal or 0 else 0}
     local now=os.clock()
     if not self.creating and now>=self.nextCreate then
@@ -98,7 +99,7 @@ function Service:tick(dt)
             if dancing then events:sampleMimic(a.actor) end
         end
         if freeze then mover:stop() end
-        if paused or freeze or a.working or scope:now()<a.next or self.busy>=Settings.aiWorkers then continue end
+        if paused or freeze or a.working or scope:now()<a.next or self.busy>=settings.aiWorkers then continue end
         if a.context=="Lobby" and not a.retiring then
             local staying=0
             for _,other in pairs(self.values) do if other.context=="Lobby" and not other.retiring then staying+=1 end end

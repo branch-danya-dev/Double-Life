@@ -35,6 +35,8 @@ jobs:
           python3 tests/run-staff-delivery.py
           luau tests/matchmaking.luau
           luau tests/prologue.luau
+          luau tests/retention.luau
+          python3 tests/run-telemetry.py
           python3 tests/run-matchmaking.py
           find src tests -name '*.luau' -print0 | xargs -0 luau-compile --null
           luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau tests/run.luau tests/rounds.luau tests/events.luau
@@ -47,6 +49,7 @@ jobs:
           luau-analyze tests/staff-delivery.luau
           luau-analyze src/server/ActorPolicy.luau src/server/QueuePolicy.luau src/server/MatchPool.luau src/server/MatchSettings.luau tests/matchmaking.luau
           luau-analyze src/server/PrologueContent.luau src/server/ProloguePolicy.luau tests/prologue.luau
+          luau-analyze src/server/RetentionPolicy.luau src/server/TuningConfig.luau tests/TelemetrySink.luau tests/retention.luau
           python3 tests/check-runtime-globals.py
       - name: Build and inspect artifacts
         run: |
@@ -58,11 +61,12 @@ jobs:
           rojo build playtests-staff.project.json -o DoubleLife-M8-staff.rbxlx
           rojo build matchmaking-tests.project.json -o DoubleLife-M9-tests.rbxlx
           rojo build prologue-tests.project.json -o DoubleLife-M10-tests.rbxlx
+          rojo build retention-tests.project.json -o DoubleLife-M11-tests.rbxlx
           python3 tests/check-chat.py DoubleLife-M8.rbxlx DoubleLife-M8-playtests.rbxlx DoubleLife-M8-staff.rbxlx
           python3 tests/check-build.py DoubleLife-M8.rbxlx
-          python3 tests/check-fixtures.py DoubleLife-M8-tests.rbxlx DoubleLife-M8-review.rbxlx DoubleLife-M8-load.rbxlx DoubleLife-M8-playtests.rbxlx DoubleLife-M8-staff.rbxlx DoubleLife-M9-tests.rbxlx DoubleLife-M10-tests.rbxlx
+          python3 tests/check-fixtures.py DoubleLife-M8-tests.rbxlx DoubleLife-M8-review.rbxlx DoubleLife-M8-load.rbxlx DoubleLife-M8-playtests.rbxlx DoubleLife-M8-staff.rbxlx DoubleLife-M9-tests.rbxlx DoubleLife-M10-tests.rbxlx DoubleLife-M11-tests.rbxlx
           python3 tests/check-assets.py
       - uses: actions/upload-artifact@v4
         with:
-          name: DoubleLife-M10
+          name: DoubleLife-M11
           path: '*.rbxlx'

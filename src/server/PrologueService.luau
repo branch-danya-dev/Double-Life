@@ -9,7 +9,7 @@ local Events=require(script.Parent.EventPolicy)
 local Config=require(game:GetService("ReplicatedStorage").DoubleLifeShared.Config)
 local Service={}; Service.__index=Service
 function Service.new(rt,remote,tell,enabled)
-    local self=setmetatable({rt=rt,records={},slots={},seen={},last={},tell=tell,enabled=enabled},Service)
+    local self=setmetatable({rt=rt,records={},slots={},seen={},last={},tell=tell,enabled=enabled,settings=rt.settings},Service)
     if enabled then rt.queue.hold=function(p) return not self.records[p] or self.records[p].loading or self:active(p) end end
     if enabled then
         rt.queue.onAccept=function(p) return self:accept(p) end
@@ -18,7 +18,7 @@ function Service.new(rt,remote,tell,enabled)
             -- This reservation already carried explicit consent on the source
             -- server. A slow admission check may finish after local bootstrap.
             local r=self.records[p]
-            if self:active(p) then r.policy:leave("Match"); self:cleanup(p); self:back(p) end
+            if self:active(p) then self.rt.telemetry:lesson(p,"Interrupted"); r.policy:leave("Match"); self:cleanup(p); self:back(p) end
             rt.queue.policy:consent(p.UserId,true)
         end
     end
@@ -28,9 +28,10 @@ function Service.new(rt,remote,tell,enabled)
         if action=="Replay" then self:start(p)
         elseif action=="Skip" or action=="Lobby" then self:leave(p,action)
         elseif action=="Accept" then self:accept(p)
-        elseif action=="Defer" then
+        elseif action=="Defer" and self.settings.allowInvite then
             local r=self.records[p]; if r and self:active(p) and rt.queue:snapshot(p).state=="MatchReady" then r.policy.deferred=true end
         elseif action=="Decline" then
+            rt.telemetry:decision(p,false)
             local r=self.records[p]; if r and r.policy then r.policy.deferred=false end
             rt.queue:cancel(p)
         end
@@ -50,6 +51,8 @@ function Service:add(p)
             if e and e.loaded and self.rt.queue.joined[p.UserId] then break end
             task.wait(0.1)
         until p.Parent~=Players or os.clock()>=deadline
+        if self.records[p]~=r or p.Parent~=Players then return end
+        if self.settings.prologueOfferSeconds>0 then task.wait(self.settings.prologueOfferSeconds) end
         if self.records[p]~=r or p.Parent~=Players then return end
         r.loading=false
         local e=self.rt.profiles:entry(p)
@@ -99,17 +102,20 @@ function Service:mark(p,state)
     r.pending=self.rt.profiles:onboarding(p,state)
 end
 function Service:leave(p,kind)
+    if kind=="Skip" and not self.settings.allowSkip then return false end
     local r=self.records[p]
     if not self:active(p) or not r.policy:leave(kind) then return false end
+    self.rt.telemetry:lesson(p,if kind=="Skip" then "Skipped" else "Interrupted")
     if kind=="Skip" then self:mark(p,"Skipped") else self.rt.queue:cancel(p) end
     self:cleanup(p); self:back(p)
     if kind=="Skip" then self.rt.queue.policy:consent(p.UserId,true) end
     return true
 end
 function Service:accept(p)
-    if self.rt.queue:snapshot(p).state~="MatchReady" then return false end
+    if not self.settings.allowInvite or self.rt.queue:snapshot(p).state~="MatchReady" then return false end
+    self.rt.telemetry:decision(p,true)
     local r=self.records[p]
-    if self:active(p) then r.policy:leave("Match"); self:cleanup(p); self:back(p) end
+    if self:active(p) then self.rt.telemetry:lesson(p,"Interrupted"); r.policy:leave("Match"); self:cleanup(p); self:back(p) end
     return self.rt.queue.policy:consent(p.UserId,true)
 end
 function Service:refresh(r)
@@ -141,6 +147,7 @@ function Service:start(p)
         r.interactions:bind(prompt,function() self:act(p,step.key) end,true)
     end
     self:refresh(r)
+    self.rt.telemetry:lesson(p,"Started")
     self.rt.queue.policy:consent(p.UserId,false)
     self.rt.mimics:addPractice(r.scene,r.scope,p,function(actor) if r.scope and r.scope.alive then r.guide=actor end end)
     if p.Character then p.Character:PivotTo(CFrame.new(self:position(p))) end
@@ -148,9 +155,12 @@ function Service:start(p)
 end
 function Service:advance(p,key)
     local r=self.records[p]
+    local step=r.policy.step
     if not r.policy:act(key) then return false end
+    self.rt.telemetry:lesson(p,"Checkpoint",step)
     self.rt.mimics:greetPractice(p)
     if r.policy.state=="Completed" then
+        self.rt.telemetry:lesson(p,"Completed")
         self:mark(p,"Completed"); self:cleanup(p); self:back(p); self.rt.queue.policy:consent(p.UserId,true)
     elseif r.policy.deferred and self.rt.queue:snapshot(p).state=="MatchReady" then self:accept(p)
     else self:refresh(r) end
@@ -159,6 +169,7 @@ end
 function Service:resetCharacter(p)
     local r=self.records[p]
     if not self:active(p) then return end
+    self.rt.telemetry:lesson(p,"Reset")
     r.policy:resetCharacter(); self:clearCarry(r)
     r.ledger,r.request,r.music=Ledger.new(Config),nil,nil
     r.interactions:clear(); self:refresh(r)
@@ -209,7 +220,7 @@ function Service:tick(dt)
     for p,r in pairs(self.records) do
         if not self:active(p) then continue end
         r.scope:advance(dt)
-        if r.policy:tick()=="Timeout" then self.rt.queue:cancel(p); self:cleanup(p); self:back(p); continue end
+        if r.policy:tick()=="Timeout" then self.rt.telemetry:lesson(p,"Interrupted"); self.rt.queue:cancel(p); self:cleanup(p); self:back(p); continue end
         if r.music then
             local now=r.scope:now(); local transition=r.music:advance(now)
             local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
@@ -240,7 +251,7 @@ function Service:snapshot(p)
     if r and r.mark and e and e.profile and e.profile.onboarding.state==r.mark then
         saved=if self.rt.profiles.adapter.mode=="FakeMemory" then "Подтверждено в тестовой памяти" else "Сохранение подтверждено"
     elseif r and r.pending then saved="Ожидаем подтверждения; пока только эта сессия" end
-    return {active=active,available=self.enabled,state=r and r.policy and r.policy.state or "Lobby",step=active and r.policy.step or 0,
+    return {active=active,available=self.enabled,allowSkip=self.settings.allowSkip,allowInvite=self.settings.allowInvite,state=r and r.policy and r.policy.state or "Lobby",step=active and r.policy.step or 0,
         total=#Content.steps,chapter=step and step.chapter,text=step and step.text,action=step and step.action,
         target=step and r.scene:point(step.target),object=step and r.scene:object(step.target),scene=active and r.scene.root,
         saved=saved,deferred=active and r.policy.deferred or false,elapsed=active and os.clock()-r.policy.started or 0,

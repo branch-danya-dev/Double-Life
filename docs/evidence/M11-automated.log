@@ -1,0 +1,122 @@
+M11 verification UTC 2026-11-03T11:14:22.010966+00:00
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/run.luau
+PASS: 46 M1 policy and request assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/rounds.luau
+PASS: 254 M2 round, vote, role and generation assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/events.luau
+PASS: 87 M3 event, incident and practice assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/progression.luau
+PASS: 99 M4 progression, schema and catalogue assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/persistence.luau
+PASS: 38 M4 storage, concurrency and failure assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/reconnect.luau
+REPRO failed close:	Unavailable	closing	true	queue	2	token	old-connection
+REPRO same-server reconnect:	Ready	token	new-connection
+PASS: 54 M4.1 reconnect, lifecycle and fencing assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/social.luau
+PASS: 736 M5 matrix, team, physical interaction and analytics assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/commerce.luau
+PASS: 138 M5 commerce, durable receipt and failure assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/mansion.luau
+PASS: 279 M6 world schema, access graph, geometry clearance and timer assertions
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/presentation.luau
+PASS: 65 M7 art, budgets, responsive UI and private feedback assertions; 1362 static art parts
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/balance.luau
+M8 balance/diagnostics:	343	assertions PASS
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/matchmaking.luau
+M9 actors/queue/multi-server:	447	assertions PASS
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/prologue.luau
+M10 prologue, isolation, consent and persistence:	191	assertions PASS
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe tests/retention.luau
+M11 retention traces, quality and tuning:	226	assertions PASS
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/run-staff-delivery.py --luau G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe
+M8.1 staff delivery:	80	assertions PASS
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/run-matchmaking.py --luau G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe
+M9-M11 actual matchmaking runtime:	81	assertions PASS
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/run-telemetry.py --luau G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau.exe
+M11 actual telemetry runtime:	23	assertions PASS
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau-compile.exe --null src\client\Atmosphere.client.luau src\client\ChatSetup.client.luau src\client\Hud.client.luau src\client\Interface.luau src\client\LobbyHud.client.luau src\client\PrologueHud.client.luau src\client\SocialHud.client.luau src\server\ActorPolicy.luau src\server\ActorRegistry.luau src\server\AnalyticsPolicy.luau src\server\CommerceCatalog.luau src\server\CommercePolicy.luau src\server\CommerceService.luau src\server\CommerceStore.luau src\server\DataStoreAdapter.luau src\server\Dossier.luau src\server\EventDirector.luau src\server\EventPolicy.luau src\server\EventWorld.luau src\server\Evidence.luau src\server\Game.luau src\server\GuardPolicy.luau src\server\GuardService.luau src\server\Interactions.luau src\server\LobbyWorld.luau src\server\Main.server.luau src\server\MansionArt.luau src\server\MansionArtPlan.luau src\server\MansionLayout.luau src\server\MarketplaceAdapter.luau src\server\MatchPool.luau src\server\MatchSettings.luau src\server\MatchTransport.luau src\server\Matchmaking.luau src\server\MimicRig.luau src\server\MimicService.luau src\server\MonetizationSettings.luau src\server\NpcMover.luau src\server\PersistenceSettings.luau src\server\PracticePolicy.luau src\server\ProfileSchema.luau src\server\ProfileService.luau src\server\ProfileSessions.luau src\server\ProfileStore.luau src\server\ProgressionCatalog.luau src\server\ProgressionPolicy.luau src\server\PrologueContent.luau src\server\ProloguePolicy.luau src\server\PrologueService.luau src\server\PrologueWorld.luau src\server\QueuePolicy.luau src\server\RequestLedger.luau src\server\Requests.luau src\server\RetentionPolicy.luau src\server\RolePlan.luau src\server\Roles.luau src\server\RoundPolicy.luau src\server\RoundService.luau src\server\SessionClock.luau src\server\SocialPolicy.luau src\server\SocialService.luau src\server\Telemetry.luau src\server\TuningConfig.luau src\server\World.luau src\server\WorldContract.luau src\server\WorldEvents.luau src\shared\Config.luau src\shared\Presentation.luau src\shared\RoleGuide.luau tests\ClientAudit.client.luau tests\FakeMarketplace.luau tests\InactiveMain.server.luau tests\M2Client.client.luau tests\M3Client.client.luau tests\M41Client.client.luau tests\M4Client.client.luau tests\M5Client.client.luau tests\M6Client.client.luau tests\M7Audit.client.luau tests\M7Audit.server.luau tests\M7Review.client.luau tests\M8Audit.client.luau tests\MemoryStore.luau tests\PlaytestMetrics.luau tests\TelemetrySink.luau tests\balance.luau tests\commerce.luau tests\events.luau tests\m10\Runner.server.luau tests\m11\Runner.server.luau tests\m2\EdgeCases.luau tests\m2\Runner.server.luau tests\m3\Runner.server.luau tests\m41\Runner.server.luau tests\m4\Runner.server.luau tests\m4\StoreAudit.luau tests\m5\Runner.server.luau tests\m6\Runner.server.luau tests\m7load\Runner.server.luau tests\m7review\Runner.server.luau tests\m8\Runner.server.luau tests\m9\Runner.server.luau tests\mansion.luau tests\matchmaking-runtime.luau tests\matchmaking.luau tests\persistence.luau tests\presentation.luau tests\progression.luau tests\prologue.luau tests\reconnect.luau tests\retention.luau tests\rounds.luau tests\run.luau tests\social.luau tests\staff-delivery.luau tests\studio\Playthrough.luau tests\studio\Runner.server.luau tests\telemetry-runtime.luau
+Compiled 10 KLOC into 749 KB bytecode (read 0.01s, parse 0.01s, compile 0.02s)
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau-analyze.exe src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau src/server/ProfileSessions.luau src/server/SocialPolicy.luau src/server/CommerceStore.luau src/server/CommercePolicy.luau src/server/CommerceCatalog.luau src/server/MonetizationSettings.luau src/server/AnalyticsPolicy.luau src/server/MansionLayout.luau src/server/WorldContract.luau src/server/MansionArtPlan.luau src/server/ActorPolicy.luau src/server/QueuePolicy.luau src/server/MatchPool.luau src/server/MatchSettings.luau src/server/PrologueContent.luau src/server/ProloguePolicy.luau src/server/RetentionPolicy.luau src/server/TuningConfig.luau tests/run.luau tests/rounds.luau tests/events.luau tests/progression.luau tests/persistence.luau tests/reconnect.luau tests/social.luau tests/commerce.luau tests/mansion.luau tests/presentation.luau tests/balance.luau tests/matchmaking.luau tests/prologue.luau tests/retention.luau tests/MemoryStore.luau tests/FakeMarketplace.luau tests/staff-delivery.luau
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build default.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11.rbxlx
+Building project 'DoubleLife'
+Built project to DoubleLife-M11.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build atmosphere-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-tests.rbxlx
+Building project 'DoubleLifeM7Tests'
+Built project to DoubleLife-M11-tests.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build atmosphere-review.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-review.rbxlx
+Building project 'DoubleLifeM7Review'
+Built project to DoubleLife-M11-review.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build atmosphere-load.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-load.rbxlx
+Building project 'DoubleLifeM7Load'
+Built project to DoubleLife-M11-load.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build playtests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-playtests.rbxlx
+Building project 'DoubleLifeM8Playtests'
+Built project to DoubleLife-M11-playtests.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build playtests-staff.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-staff.rbxlx
+Building project 'DoubleLifeM8StaffRegression'
+Built project to DoubleLife-M11-staff.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build matchmaking-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-matchmaking-tests.rbxlx
+Building project 'DoubleLifeM9Tests'
+Built project to DoubleLife-M11-matchmaking-tests.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build prologue-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-prologue-tests.rbxlx
+Building project 'DoubleLifeM10Tests'
+Built project to DoubleLife-M11-prologue-tests.rbxlx
+EXIT 0
+G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\rojo\rojo.exe build retention-tests.project.json -o G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-retention-tests.rbxlx
+Building project 'DoubleLifeM11Tests'
+Built project to DoubleLife-M11-retention-tests.rbxlx
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-build.py G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11.rbxlx
+PASS: shipping artifact contains all services, keeps server modules private, excludes test fixtures
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-fixtures.py G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-tests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-review.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-load.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-playtests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-staff.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-matchmaking-tests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-prologue-tests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-retention-tests.rbxlx
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-tests.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-review.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-load.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-playtests.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-staff.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-matchmaking-tests.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-prologue-tests.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+PASS: G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-retention-tests.rbxlx: unique inert Main; fixture Runner owns isolated-memory startup
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-assets.py
+PASS: M7 authored source hashes, provenance, engine-only audio and zero external downloads
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-chat.py G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-playtests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-staff.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-matchmaking-tests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-prologue-tests.rbxlx G:\Codex\2026-11-02\github-issue-2-double-life-feat\outputs\DoubleLife-M11-retention-tests.rbxlx
+PASS: all project definitions and supplied artifacts disable legacy loading, channels, commands and four chat surfaces
+EXIT 0
+C:/Users/keara/AppData/Local/Programs/Python/Python312/python.exe tests/check-runtime-globals.py G:\Codex\2026-11-01\issue-1-https-github-com-branch\work\tools\luau\luau-analyze.exe
+PASS: runtime scripts contain no undefined names outside explicit Roblox globals
+EXIT 0
+git -c core.autocrlf=false diff --exit-code 20d6717 -- tests/run.luau tests/rounds.luau tests/events.luau tests/progression.luau tests/persistence.luau tests/reconnect.luau tests/social.luau tests/commerce.luau tests/mansion.luau tests/presentation.luau tests/balance.luau tests/staff-delivery.luau
+EXIT 0
+git -c core.autocrlf=false diff --check
+EXIT 0
+M11 LOCAL CHECKS PASS: 3187 assertions (2916 retained + 226 retention + 23 telemetry runtime + 22 matchmaking instrumentation), compile, analyze, production + eight fixture builds, shipping and provenance audits.

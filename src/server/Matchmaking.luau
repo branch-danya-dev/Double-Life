@@ -6,8 +6,9 @@ local Settings=require(script.Parent.MatchSettings)
 local Transport=require(script.Parent.MatchTransport)
 local Service={}; Service.__index=Service
 function Service.new(rt, remote)
-    local self=setmetatable({rt=rt,policy=Queue.new(Settings,os.clock),settings=Settings,tokens={},players={},
-        sending={},last={},approved={},arrived={},joined={},transport=Transport.new(Settings),status="Local",errors=0},Service)
+    local settings=rt.settings or Settings
+    local self=setmetatable({rt=rt,policy=Queue.new(settings,os.clock),settings=settings,tokens={},players={},
+        sending={},last={},approved={},arrived={},joined={},transport=Transport.new(settings),status="Local",errors=0},Service)
     remote.OnServerEvent:Connect(function(p,action)
         if os.clock()<(self.last[p] or 0) then return end
         self.last[p]=os.clock()+0.5
@@ -15,7 +16,7 @@ function Service.new(rt, remote)
         elseif action=="Cancel" then self:cancel(p)
         elseif action=="Accept" then
             if self.onAccept then self.onAccept(p) else self.policy:consent(p.UserId,true) end
-        elseif action=="Decline" then self:cancel(p)
+        elseif action=="Decline" then if rt.telemetry then rt.telemetry:decision(p,false) end; self:cancel(p)
         elseif action=="Lobby" and not rt.rounds.policy.participants[p.UserId] and p.Character then
             if not self.onLobby or not self.onLobby(p) then p.Character:PivotTo(CFrame.new(rt.lobby:position(1))) end
         end
@@ -25,11 +26,11 @@ function Service.new(rt, remote)
             local attempt=self.sending[p]
             local ok,data=pcall(function() return options:GetTeleportData() end)
             if attempt and ok and type(data)=="table" and data.matchId==attempt.id and data.ticket==attempt.token then
-                self.sending[p]=nil; self.status="TransportFailed"; self.errors+=1; self:cancel(p); self:register(p)
+                self.sending[p]=nil; self.status="TransportFailed"; self.errors+=1; self:notice(p,true); self:cancel(p); self:register(p)
             end
         end)
         task.spawn(function()
-            while rt.alive do self:poll(); task.wait(Settings.retrySeconds) end
+            while rt.alive do self:poll(); task.wait(self.settings.retrySeconds) end
         end)
     end
     return self
@@ -38,7 +39,9 @@ function Service:register(p)
     if p.Parent~=Players then return false end
     if self.policy.entries[p.UserId] then return false end
     self.tokens[p.UserId]=self.tokens[p.UserId] or Http:GenerateGUID(false)
-    return self.policy:register(p.UserId,not (self.hold and self.hold(p)))
+    local ok=self.policy:register(p.UserId,not (self.hold and self.hold(p)))
+    if ok and self.rt.telemetry then self.rt.telemetry:registered(p) end
+    return ok
 end
 function Service:add(p)
     self.players[p.UserId]=p
@@ -59,15 +62,21 @@ function Service:add(p)
                 accepted=t and t.token==td.ticket and t.server==game.JobId and t.arrived==true
             end
             if p.Parent~=Players then return end
-            if accepted then self.tokens[p.UserId]=td.ticket; self.arrived[p.UserId]=true else self.status="ArrivalRejected"; self.errors+=1 end
+            if accepted then self.tokens[p.UserId]=td.ticket; self.arrived[p.UserId]=true
+            else self.status="ArrivalRejected"; self.errors+=1; self:notice(p,false) end
         end
     end
     self:register(p)
     self.joined[p.UserId]=true
-    if self.arrived[p.UserId] and self.onArrival then self.onArrival(p) end
+    if self.arrived[p.UserId] then
+        if self.rt.telemetry then self.rt.telemetry:arrival(p) end
+        if self.onArrival then self.onArrival(p) end
+    end
 end
+function Service:notice(p,transport) if self.rt.telemetry then self.rt.telemetry:failure(p,transport) end end
 function Service:cancel(p)
     if not self.policy:cancel(p.UserId) then return false end
+    if self.rt.telemetry then self.rt.telemetry:cancelled(p,false) end
     self.sending[p]=nil
     self.approved[p.UserId]=nil
     if self.transport.enabled then
@@ -92,7 +101,7 @@ function Service:poll()
     if self.busy then return end
     for p,attempt in pairs(self.sending) do
         if os.clock()>=attempt.deadline then
-            self.sending[p]=nil; self.status="TransportFailed"; self.errors+=1
+            self.sending[p]=nil; self.status="TransportFailed"; self.errors+=1; self:notice(p,true)
             self:cancel(p); self:register(p)
         end
     end
@@ -108,14 +117,15 @@ function Service:poll()
     end
     local ok,state=pcall(function() return self.transport:update(function(s)
         s=s or Pool.empty(); Pool.prune(s,now)
-        for id,r in pairs(registrations) do Pool.register(s,id,game.JobId,r.token,now,Settings,r.consent) end
-        Pool.match(s,matchId,now,Settings)
+        for id,r in pairs(registrations) do Pool.register(s,id,game.JobId,r.token,now,self.settings,r.consent) end
+        Pool.match(s,matchId,now,self.settings)
         for id in pairs(s.matches) do Pool.consume(s,id,game.JobId,present,now) end
         return s
     end) end)
     self.busy=false
     if not ok then
         self.status="MatchmakingFailed"; self.errors+=1; self.approved={}
+        for id in pairs(registrations) do self:notice(self.players[id],false) end
         for _,r in pairs(self.policy.entries) do r.remoteReady=nil end
         return
     end
@@ -128,11 +138,21 @@ function Service:poll()
         local entry=self.policy.entries[id]
         if entry then entry.remoteReady=m~=nil and t.token==token end
         if p and p.Parent==Players and self.policy.entries[id] and self.tokens[id]==token and t and t.token==token and m then
+            -- Observe the reservation before TeleportAsync can remove the source
+            -- Player; waiting for the next heartbeat can miss this boundary.
+            if self.rt.telemetry then
+                local remote=m.target~=game.JobId
+                for _,uid in ipairs(m.ids) do
+                    local ticket=state.tickets[tostring(uid)]
+                    if self.arrived[uid] or (ticket and ticket.server~=game.JobId) then remote=true end
+                end
+                self.rt.telemetry:matched(p,remote)
+            end
             if m.target==game.JobId and m.committed then approved[id]=true
             elseif m.target~=game.JobId and entry.consent and Pool.consented(state,m.id) and not self.sending[p] then
-                self.sending[p]={id=m.id,token=token,deadline=os.clock()+Settings.assignmentLease}
+                self.sending[p]={id=m.id,token=token,deadline=os.clock()+self.settings.assignmentLease}
                 local sent=pcall(function() self.transport:send(p,m.target,m.id,token) end)
-                if not sent then self.sending[p]=nil; self.status="TransportFailed"; self.errors+=1; self:cancel(p); self:register(p) end
+                if not sent then self.sending[p]=nil; self.status="TransportFailed"; self.errors+=1; self:notice(p,true); self:cancel(p); self:register(p) end
             end
         end
     end
