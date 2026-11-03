@@ -83,7 +83,7 @@ function Mover:move(position, deadline, cancelled)
     end
     for _ = 1, 2 do
         if not valid() then self:stop(); return false end
-        if self:near(position, 2.5) then self:stop(); return true end
+        if self:near(position, if self.crowd then 1.25 else 2.5) and (not self.crowd or self.crowd:free(self.root.Position,self,3.2)) then self:stop(); return true end
         -- Never queue an unbounded number of ComputeAsync jobs if the engine stalls.
         if self.computing then self:stop(); return false end
         -- Mansion ramps are continuous: jumping can pick rail tops as shortcut waypoints.
@@ -108,10 +108,29 @@ function Mover:move(position, deadline, cancelled)
                 if index >= current then blocked = true end
             end)
             local arrived = true
-            for index, waypoint in ipairs(path:GetWaypoints()) do
+            local waypoints=path:GetWaypoints()
+            local skipped=0
+            for index, waypoint in ipairs(waypoints) do
                 current = index
                 if not valid() or blocked then arrived = false; break end
                 if waypoint.Action == Enum.PathWaypointAction.Jump then self.humanoid.Jump = true end
+                if self.crowd then
+                    -- Engine paths ignore soft actor bodies. A waypoint inside a
+                    -- person is not a destination to return to after a detour.
+                    -- Only shortcut a bounded, level, statically clear segment.
+                    local probe=Vector3.new(waypoint.Position.X,self.root.Position.Y,waypoint.Position.Z)
+                    if index<#waypoints and skipped<3 and not self.crowd:free(probe,self,3.2) then
+                        local nextPoint=waypoints[index+1].Position
+                        local flat=Vector3.new(nextPoint.X,self.root.Position.Y,nextPoint.Z)
+                        if math.abs(nextPoint.Y-waypoint.Position.Y)<1.5 and self.crowd:clear(self.root.Position,flat) then
+                            skipped+=1; continue
+                        end
+                    end
+                    local reached=self.crowd:walk(self,waypoint.Position,math.min(deadline,self.scope:now()+8),function() return valid() and not blocked end)
+                    if not reached then arrived=false; break end
+                    skipped=0
+                    continue
+                end
                 self.destination = waypoint.Position
                 self.humanoid:MoveTo(waypoint.Position)
                 local waypointDeadline = math.min(deadline, self.scope:now() + 3)
@@ -121,7 +140,7 @@ function Mover:move(position, deadline, cancelled)
             end
             connection:Disconnect()
             path:Destroy()
-            if arrived and self:near(position, 3) then self.metrics.arrivals += 1; self:stop(); return true end
+            if arrived and self:near(position, if self.crowd then 1.25 else 3) and (not self.crowd or self.crowd:free(self.root.Position,self,3.2)) then self.metrics.arrivals += 1; self:stop(); return true end
         else
             path:Destroy()
         end

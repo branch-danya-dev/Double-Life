@@ -90,7 +90,7 @@ function RoundService:snapshot(player)
     end
     for id in pairs(p.mimics) do
         local actor = self.session.actors:get(id)
-        if actor then table.insert(members, {id=id,name=actor.name .. " · персонаж"}) end
+        if actor then table.insert(members, {id=id,name=actor.name}) end
     end
     for _, entry in pairs(self.protocol) do table.insert(protocol, entry) end
     local result
