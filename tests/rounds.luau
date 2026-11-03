@@ -54,7 +54,7 @@ check(r:tick(0, 5) == "Countdown" and not r.councilUsed and next(r.votes) == nil
 check(next(r.cast) == nil, "new round restores each participant's single ballot")
 check(r:activate({1, 2, 3, 4, 5}, 3), "new roles allowed next round")
 check(not r:extract(2), "old spy has no privilege")
-check(r:tick(420, 5) == "Results" and r.result.winner == "Defenders", "timeout defenders win")
+check(r:tick(Config.ROUND_SECONDS, 5) == "Results" and r.result.winner == "Defenders", "timeout defenders win")
 check(not r:leave(3), "disconnect after result cannot finish twice")
 for n = 3, 5 do
     local tied = active(n)

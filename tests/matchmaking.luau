@@ -47,7 +47,7 @@ do
     for i=1,8 do r:addMimic("m:"..i) end
     r:tick(30,2); r:council(1); r:vote(1,2,r.roundId)
     check(r:majority()==nil,"one human cannot unilaterally convict the opponent")
-    r:tick(25,2); r:tick(420,2)
+    r:tick(25,2); r:tick(Config.ROUND_SECONDS,2)
     check(r.result.winner=="Defenders","mimics cannot prevent timeout")
 end
 do

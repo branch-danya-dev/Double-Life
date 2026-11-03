@@ -1,0 +1,379 @@
+{
+  "base": "2e72a95ab046264893460a8f0f22231b24b3749a",
+  "implementation": "138ef07430c69040c5294150fb7dbbcf4723e044",
+  "studioBuild": "DoubleLife-M120-final.rbxlx",
+  "buildSha256": "5f1750e97083d13cd2fe6ababce95a1a6d1ca9da06854198f71fa6ec74c244ab",
+  "productionSources": [
+    {
+      "path": "src/client/Atmosphere.client.luau",
+      "sha256": "bd0872fc0889648a249e5142e90770c9e45b2c5597d0389994cdfb6328163008"
+    },
+    {
+      "path": "src/client/ChatSetup.client.luau",
+      "sha256": "23a5a80ac324c411512b16eed98be688fc34a107f05a3aeeefc1251a75545f2c"
+    },
+    {
+      "path": "src/client/Hud.client.luau",
+      "sha256": "cd99ecfdffe5c15fb8f1334e342061472338d97abbf336dd26b625a2c5295f04"
+    },
+    {
+      "path": "src/client/Interface.luau",
+      "sha256": "6e10687089fa9b76d438270fcfbb71c280b4e37560d3dca268ca4391135b0fc4"
+    },
+    {
+      "path": "src/client/LobbyHud.client.luau",
+      "sha256": "2024848a6d8c8ff88a2c5aa423785f21a24d0fcf40ad5c1c9677eb295da8fec4"
+    },
+    {
+      "path": "src/client/MimicNames.client.luau",
+      "sha256": "255896900726f408976220c8e368125056f54ee41581e2ab69be9721da50caa7"
+    },
+    {
+      "path": "src/client/MimicPresentation.client.luau",
+      "sha256": "72e307e6f124d8ab5dcc47380db33b63d10d0ebabc48c480f6a2a7a60bfab519"
+    },
+    {
+      "path": "src/client/PrologueHud.client.luau",
+      "sha256": "9504ed588e6997708b6f5856a6d4b3a62ae6a856fe97e73e7fe4a274b99025d9"
+    },
+    {
+      "path": "src/client/SocialHud.client.luau",
+      "sha256": "1221ba74ce70d01a0066755f13dcbbadbef5597b081c092e126fe783c4b7098a"
+    },
+    {
+      "path": "src/server/ActorPolicy.luau",
+      "sha256": "e9500c149e172e3dc9c581fefd4f5d0bbc12f8057b00c8fea7ee052102eba716"
+    },
+    {
+      "path": "src/server/ActorRegistry.luau",
+      "sha256": "5f6ca5eb5714828d5a966df53e6df4bf2a3e84fc3408fc4cb5878df05e756d50"
+    },
+    {
+      "path": "src/server/AnalyticsPolicy.luau",
+      "sha256": "66b7c94142ff6fee7636e2657bc18e117b1d3de04e41c6d2d25e11aafc7a8905"
+    },
+    {
+      "path": "src/server/CommerceCatalog.luau",
+      "sha256": "95feefc3b328b30197c2866de63b210b80a3e6afc78c36da6c3782f8d2513051"
+    },
+    {
+      "path": "src/server/CommercePolicy.luau",
+      "sha256": "e7a834066ad6477a01d467bd9643362db976ed6337b662d91836e46b9237dc6a"
+    },
+    {
+      "path": "src/server/CommerceService.luau",
+      "sha256": "e2a70a9c079e850f7c3a92a1ec036bde49f1dc280349342d26c09aa029113995"
+    },
+    {
+      "path": "src/server/CommerceStore.luau",
+      "sha256": "18cac3329b6b187cbbe01107589c01097065e2d6bd3756b62f4fc5a1eb12384d"
+    },
+    {
+      "path": "src/server/DataStoreAdapter.luau",
+      "sha256": "79425a4fd48db95af43f906abfdb72a155e7fa195642afb1555efa93672a76d2"
+    },
+    {
+      "path": "src/server/Dossier.luau",
+      "sha256": "5925b498ec09d741fe4aa34195410f75cc47778cf6e91e5721733f5701f85ffa"
+    },
+    {
+      "path": "src/server/EventDirector.luau",
+      "sha256": "b0d05ac92ac35c931f39e29c0905c8557d1a5e5941629f52bef50a88148618c3"
+    },
+    {
+      "path": "src/server/EventPolicy.luau",
+      "sha256": "8aa1dcb78bb46f85d4de7633327b86be1f7a62ca2392cf558f97dc0eb0b73107"
+    },
+    {
+      "path": "src/server/EventWorld.luau",
+      "sha256": "c777831c2b34c42b09943f41472edd4d58d7930fba176834a2d394cdeb85f77b"
+    },
+    {
+      "path": "src/server/Evidence.luau",
+      "sha256": "4e39ed1cef506c8118162923fc25447901a8ab56c5556e0172bec0d476e5daba"
+    },
+    {
+      "path": "src/server/Game.luau",
+      "sha256": "d42f058283277573c3cd7f2acd5af45da0dd8ba6b1af1320f68883a59f8477ce"
+    },
+    {
+      "path": "src/server/GuardPolicy.luau",
+      "sha256": "8a62f059c091f7a58a630b3232950360094a64376df1738e354e3925a72a44eb"
+    },
+    {
+      "path": "src/server/GuardService.luau",
+      "sha256": "f81e220ffcd8e09a434a196155c17ec279291b2100ab765d42ffd5ed8fdde09b"
+    },
+    {
+      "path": "src/server/Interactions.luau",
+      "sha256": "b082a781045a2455ce8eda8a67bc1935214dcc39319a36342ea67d127c72cdf3"
+    },
+    {
+      "path": "src/server/LobbyWorld.luau",
+      "sha256": "1cc979ef760e35759d980ff9fc15959da935a5efa88f1b1dfd9155b064f88a51"
+    },
+    {
+      "path": "src/server/MansionArt.luau",
+      "sha256": "fe05ab86579fb80187b53f3e1c9547a9bb9bb88ba0fec980ce4f644064d1ad51"
+    },
+    {
+      "path": "src/server/MansionArtPlan.luau",
+      "sha256": "986813a5a734dfbd36ce6b249c45850ec100cb1bb36d2908c28a9669a0a1b0b8"
+    },
+    {
+      "path": "src/server/MansionLayout.luau",
+      "sha256": "0b8d6b91db292bf53f3cd6aa87ecce863ba30ee0beb2d4aac6800d6987f7ca63"
+    },
+    {
+      "path": "src/server/MarketplaceAdapter.luau",
+      "sha256": "526e1dcb34938cedc7802a34956c225e8a69d2186925792576e848cdf9acd240"
+    },
+    {
+      "path": "src/server/Matchmaking.luau",
+      "sha256": "bb5f5127c6ad57d802e60c7d143651d5e2b91e1d9dbd0f8195d38582f21e8414"
+    },
+    {
+      "path": "src/server/MatchPool.luau",
+      "sha256": "317028ac5771507aeb1b705d014663179ebeba47abde18b66e0f6f497560e7cd"
+    },
+    {
+      "path": "src/server/MatchSettings.luau",
+      "sha256": "3b2dbd5a0d5ae2c801475d016b6d58da8edfdb090384d5833766d4a73393d0c2"
+    },
+    {
+      "path": "src/server/MatchTransport.luau",
+      "sha256": "cb13edc5cf13cf34468cdf680285ac9c8220e806ee9bad2d593ab139d46ef314"
+    },
+    {
+      "path": "src/server/MimicAnimation.luau",
+      "sha256": "e03e3f619330fddaf7c9dc9bd16e94aa44193d5419c79a65c081286dd5e9341a"
+    },
+    {
+      "path": "src/server/MimicAppearance.luau",
+      "sha256": "817aa37d86d6cbfc477574eb8facdb667711dca8aa2505d65ef271847eb64855"
+    },
+    {
+      "path": "src/server/MimicCrowd.luau",
+      "sha256": "b8504d0ace7420d794b18c8aa61ecd00f05ded82b1bd404825b8896b52d44df9"
+    },
+    {
+      "path": "src/server/MimicCrowdPolicy.luau",
+      "sha256": "8f9ac5ebea92d09c528f2d954002cb52cc84b7b9f8f96863abaa673468c4cf7b"
+    },
+    {
+      "path": "src/server/MimicIdentity.luau",
+      "sha256": "c729daa697aa536d267f5ad336cde01fbd709dd33dd350b5b7159fc1df5d9bd8"
+    },
+    {
+      "path": "src/server/MimicLoadPolicy.luau",
+      "sha256": "dadf7276b3d597b5623380174729b5e739216a58af9554ba390124ea2826b8f4"
+    },
+    {
+      "path": "src/server/MimicRig.luau",
+      "sha256": "3730e525d72e2ecf4c8031a8def25e4aea0e8754beadcfa14da74e260714e2fc"
+    },
+    {
+      "path": "src/server/MimicService.luau",
+      "sha256": "4bef21f6bc662937087d072fd8be9ba78c53133e2f8f2bd5bd19dbf6ff19edea"
+    },
+    {
+      "path": "src/server/MonetizationSettings.luau",
+      "sha256": "ce29fa92cf2ac75356b6c84f289f14fb8ce1209c7efc0ee095351c925f59b71e"
+    },
+    {
+      "path": "src/server/NpcMover.luau",
+      "sha256": "e9f15f0127ea2ffcad34bbcec0ab1c110c87cfe00ff1ed78b648397476d2d430"
+    },
+    {
+      "path": "src/server/PersistenceSettings.luau",
+      "sha256": "7196a0e1b95b66cefccef6eba4146c5d57b136afcb1964e67b35eb9eeceba760"
+    },
+    {
+      "path": "src/server/PracticePolicy.luau",
+      "sha256": "9db9d81c35044098a6d5b4047407d618e1b76dbe11a07aafc0087f5566aa988f"
+    },
+    {
+      "path": "src/server/ProfileSchema.luau",
+      "sha256": "36dc75fb9fbab41d12ac461470c6b2b9daa5f3f6515361a6a65f1dd2cb7ab531"
+    },
+    {
+      "path": "src/server/ProfileService.luau",
+      "sha256": "2ec1afc77ba772f29ea02aabbc79770be7f118ff7eed23b5bbeb7d71146678a9"
+    },
+    {
+      "path": "src/server/ProfileSessions.luau",
+      "sha256": "4d5bc16e83f5e879f7a9066da6e671536a68fe9134444f56290c6d74481a3233"
+    },
+    {
+      "path": "src/server/ProfileStore.luau",
+      "sha256": "e6b4b50fb5fb9d0d899385302949bc8b14a0f5da422ed54f3d125128e9321da0"
+    },
+    {
+      "path": "src/server/ProgressionCatalog.luau",
+      "sha256": "a73a75efa735084d9d2a94973da1ea4055f445bbff075c43a9ec3f4dd573ab04"
+    },
+    {
+      "path": "src/server/ProgressionPolicy.luau",
+      "sha256": "e1816b204a66be5ce4d917ff2484ab6d2adeac579cb0b41aefacf1c3a2eeef0b"
+    },
+    {
+      "path": "src/server/PrologueContent.luau",
+      "sha256": "3d037b56335abfc5fa3b086b776bad6faf68e16761d28d21edf50c8696a0aecf"
+    },
+    {
+      "path": "src/server/ProloguePolicy.luau",
+      "sha256": "823cb7be6f1621e1cfde4226ead74f61569ed0e5d404cae763a27e483ef9bc0d"
+    },
+    {
+      "path": "src/server/PrologueService.luau",
+      "sha256": "ee288cc9adbd973f3fa6e0063515947ca069e0c93d670ccfcdd95c1885ddbcb1"
+    },
+    {
+      "path": "src/server/PrologueWorld.luau",
+      "sha256": "3db19cdb38790144e6af4180c70ef457f3beaabe038ca03e13a50735bb0ea05a"
+    },
+    {
+      "path": "src/server/QueuePolicy.luau",
+      "sha256": "48bbfd13455f7e3228decdfae89e90cbdc2e64fb483f465ee89aecb33c7d9aeb"
+    },
+    {
+      "path": "src/server/RequestLedger.luau",
+      "sha256": "23dcb60ac0f1204a456a35dbac5e64e82ec400f4d16a53029c60656ebaf93e54"
+    },
+    {
+      "path": "src/server/Requests.luau",
+      "sha256": "cb1a488b29b7b2ad8530333d73f97638fd67d58d6dd07b6437f38a300a8410f6"
+    },
+    {
+      "path": "src/server/RetentionPolicy.luau",
+      "sha256": "33dc64de45a080123d8e8551bd533d3e87007d6e6d74f35d1b20a568846b36de"
+    },
+    {
+      "path": "src/server/RolePlan.luau",
+      "sha256": "e233142798ade9d8413cd9ed9d0865dff2e3b5fbb42e50a43db53d765aa717a5"
+    },
+    {
+      "path": "src/server/Roles.luau",
+      "sha256": "8d0be7753987d1a0b8b1e0a947f10f217cafe250e60653783150b300b8a80275"
+    },
+    {
+      "path": "src/server/RoundPolicy.luau",
+      "sha256": "a37c8908857638d6291993465f3a8f100e306a17725496f461de87b31c9cbb15"
+    },
+    {
+      "path": "src/server/RoundService.luau",
+      "sha256": "c86222bca9b4a61a34a51a54bfbe6dab90a17cd58f80b80f63d2c3534232adf6"
+    },
+    {
+      "path": "src/server/SessionClock.luau",
+      "sha256": "e9ee54aafac358bb9c5e8935867891a3fbaa05630616cf460cfca10f50c394c7"
+    },
+    {
+      "path": "src/server/SocialPolicy.luau",
+      "sha256": "935fa612729418dc9b18a94f8c8185bd471f20e5c9f35ceb7556c86e824a99ae"
+    },
+    {
+      "path": "src/server/SocialService.luau",
+      "sha256": "494ef21c92e65c02bf6079f4e4cbd158593da72787c8b7422e5e2590ded31c1f"
+    },
+    {
+      "path": "src/server/Telemetry.luau",
+      "sha256": "a0ce75d71216fbf4cef3c0b556797e834e12232f3d7ecbe1b909c73da90051fe"
+    },
+    {
+      "path": "src/server/TuningConfig.luau",
+      "sha256": "01eb878a964a590a42f164cb6ed02cae0cd72258f125451193dec35f803ab230"
+    },
+    {
+      "path": "src/server/World.luau",
+      "sha256": "4e3ceb9e72be702fb0c92857317269615533adc3df74db9d685cdd3b82598a24"
+    },
+    {
+      "path": "src/server/WorldContract.luau",
+      "sha256": "8ece51dd6c35442981d962abbbfc4a991ffb117a9a149be984306e827bac9473"
+    },
+    {
+      "path": "src/server/WorldEvents.luau",
+      "sha256": "1ccae17ac73c1466bab819ff1937d9b75b3ece35e63d2a0091eab675c56bfc51"
+    },
+    {
+      "path": "src/shared/Config.luau",
+      "sha256": "6afe8a0869d953f92f5906bb58ea542230bac78c5039a4e50c126488960269db"
+    },
+    {
+      "path": "src/shared/LobbyPresentation.luau",
+      "sha256": "c12de24ecc8f6934bd466476e36fc916ce81eb183cba376a42183e0f91c5b942"
+    },
+    {
+      "path": "src/shared/Presentation.luau",
+      "sha256": "0780853289223ca74409a60effff3540fc30aada40bcd141afb5d9d2d7a307d8"
+    },
+    {
+      "path": "src/shared/RoleGuide.luau",
+      "sha256": "dfe15d63965b6a5316ba15853aecd9063272826761b883280cc6eb3e868ed300"
+    },
+    {
+      "path": "src/shared/RoundTime.luau",
+      "sha256": "bcb8c728bd95cc1834a4c905734ccb65ed92d2fa987f56e6997cec8f01cf3425"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/evidence/M12-0/final-start-01.jpg",
+      "capturedAtUTC": "2026-11-03T21:36:09.013Z",
+      "sha256": "2a5c1d4dfa28147270b178786b05cccb7eb6e8cfc9570bcf87713fdc04b2898c"
+    },
+    {
+      "path": "docs/evidence/M12-0/final-start-02.jpg",
+      "capturedAtUTC": "2026-11-03T21:36:09.595Z",
+      "sha256": "bd672e7c8e88d32e78dd460fe4d2bd506dc6574652cc721dfdf85309b7834ee1"
+    },
+    {
+      "path": "docs/evidence/M12-0/final-council-02.jpg",
+      "capturedAtUTC": "2026-11-03T21:36:51.181Z",
+      "sha256": "2e5528c13ec2ba855d4d3163e97dbb9f87513973f0f7b8be89aec145850b386f"
+    },
+    {
+      "path": "docs/evidence/M12-0/final-council-03.jpg",
+      "capturedAtUTC": "2026-11-03T21:37:14.184Z",
+      "sha256": "5815ba56206046fe2be335d66f4c60d145085c0ee11f7187ebc4dc928d227a66"
+    },
+    {
+      "path": "docs/evidence/M12-0/final-result-one-1.jpg",
+      "capturedAtUTC": "2026-11-03T21:37:47.984Z",
+      "sha256": "3d50c3907e2eeda327207292d8281f4bd843e6a3fecef64d581244172c09468a"
+    },
+    {
+      "path": "docs/evidence/M12-0/final-result-one-6.jpg",
+      "capturedAtUTC": "2026-11-03T21:38:00.889Z",
+      "sha256": "85c98f082b9e0d6366065c1b2ed4289f0709a24a47373732cd62270b33e37256"
+    },
+    {
+      "path": "docs/evidence/M12-0/final-repeat-start-3.jpg",
+      "capturedAtUTC": "2026-11-03T21:38:37.911Z",
+      "sha256": "118305579acba273cb5d5a10c4ba98e32a8b90039422655bc2945292941191d3"
+    },
+    {
+      "path": "docs/evidence/M12-0/final-reset-two.jpg",
+      "capturedAtUTC": "2026-11-03T21:40:48.912Z",
+      "sha256": "7c6d389e6b7f4f9d208bb9752ef294290db8bd852c312502eb892dfe71167d42"
+    }
+  ],
+  "studioLogs": [
+    "0.745.462.7451125_20261103T213449Z_Studio_16878_last.log",
+    "0.745.462.7451125_20261103T213455Z_Studio_F3EC4_last.log",
+    "0.745.462.7451125_20261103T213456Z_Studio_DA010_last.log"
+  ],
+  "logs": [
+    {
+      "path": "docs/evidence/M120-studio-final.log",
+      "sha256": "b757b64481f5eda19864539e3610266ef1673478debf0dd26356a86cff9bf2d6"
+    },
+    {
+      "path": "docs/evidence/M120-automated.log",
+      "sha256": "a17f2c5a6a0ba6313d55b65943b4360a62218c8b0534007c50b43d4c422cbf38"
+    }
+  ],
+  "captureMethod": "Native Roblox Studio window capture through @oai/sky; original JPEG bytes, no compositing or image edits.",
+  "limitations": "1200-second timeout is virtual dt on production policy in CLI/Studio; physical run covers two early extractions. No physical twenty-minute run or human playtest."
+}

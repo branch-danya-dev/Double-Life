@@ -5,6 +5,8 @@ local UI = require(script.Parent.Interface)
 local Prompts = game:GetService("ProximityPromptService")
 game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
 local RoleGuide = require(RS:WaitForChild("DoubleLifeShared"):WaitForChild("RoleGuide"))
+local Config = require(RS.DoubleLifeShared.Config)
+local RoundTime = require(RS.DoubleLifeShared.RoundTime)
 local player = Players.LocalPlayer
 player.CameraMode = Enum.CameraMode.LockFirstPerson
 local remotes = RS:WaitForChild("DoubleLifeRemotes")
@@ -101,7 +103,7 @@ local profileMessages = {Ready = "Сохранено", Saving = "Сохраня�
     Pending = "Награда ожидает подтверждения сохранения", Awarded = "Награда сохранена", InsufficientActivity = "Недостаточно активности для постоянной награды",
     NotParticipant = "За этот раунд постоянной награды нет"}
 local eventNames = {Relic = "Пропавшая реликвия", Music = "Музыка остановилась"}
-local rules = "В приёмной и матчах часть гостей управляется ИИ. Для начала матча нужны хотя бы два человека; владельца и шпионов играют люди.\n\n7 минут: шпион выносит досье через главный выход; остальные побеждают, если время истекло или ушли все шпионы. Досье возвращается в сейф через 60 с активного времени переноски, даже в движении.\n\nРоль видите только вы. Общие занятия: 3 картины в галерее, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины оставшихся реальных игроков. Персонажи не голосуют, но их можно досматривать.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nКабинет и пульт — этаж 2. Независимый путь: двор → западная лестница → архив → терраса → окно. Обратно: кнопка изнутри → любая лестница → приёмная → выход во дворе. E удерживается по подсказке. H — закрыть правила."
+local rules = string.format("В приёмной и матчах часть гостей управляется ИИ. Для начала матча нужны хотя бы два человека; владельца и шпионов играют люди.\n\nДо %d минут активной игры на весь матч; собрание приостанавливает этот срок. Шпион выносит досье через главный выход; остальные побеждают, если время истекло или ушли все шпионы. Досье возвращается в сейф через 60 с активного времени переноски, даже в движении.\n\nРоль видите только вы. Общие занятия: 3 картины в галерее, сок у столиков. Персонал: два действия у стойки, затем F у нужного столика. Никто не обязан ждать заказ на месте.\n\nВладелец после 30 с может один раз созвать собрание у пульта (C). На 25 с мир и игровой таймер замирают. Выберите другого участника. Один неизменяемый голос; пропуск — воздержание. Нужны голоса более половины оставшихся реальных игроков. Персонажи не голосуют, но их можно досматривать.\n\nДосмотр задерживает на 12 с и возвращает досье в сейф, если оно было. Никто не выбывает, роли не объявляются. Пломба у сейфа — только след события: подберите E, приложите к голосу или уроните B.\n\nКабинет и пульт — этаж 2. Независимый путь: двор → западная лестница → архив → терраса → окно. Обратно: кнопка изнутри → любая лестница → приёмная → выход во дворе. E удерживается по подсказке. H — закрыть правила.", Config.ROUND_SECONDS / 60)
 local function renderPanel()
     if not last then return end
     local r = last.round
@@ -121,7 +123,7 @@ local function renderPanel()
     status.Visible = not panel.Visible and not teaching
     banner.Visible = not panel.Visible and not teaching
     local timer = scroll:FindFirstChild("CouncilTime")
-    if timer then timer.Text = "Собрание · осталось " .. r.remaining .. " с" end
+    if timer then timer.Text = RoundTime.council(r) end
     local limits = scroll:FindFirstChild("EventLimit")
     local owner = last.activities.owner
     if limits and owner then limits.Text = "Осталось запусков: " .. owner.usesLeft .. "/2 · перерыв: " .. owner.cooldown .. " с" end
@@ -135,8 +137,8 @@ local function renderPanel()
         y += height + 8
     end
     if r.phase == "Council" then
-        text(scroll, "CouncilTime", "Собрание · осталось " .. r.remaining .. " с", y, 24, 18)
-        y += 32
+        text(scroll, "CouncilTime", RoundTime.council(r), y, 48, 18)
+        y += 56
         line("Большинство всех участников: " .. (math.floor(#r.members / 2) + 1) .. ". Один голос, за себя нельзя. Не выбирать — воздержаться. Досмотр 12 с; никто не выбывает.", 56, 14)
         if r.participating and not r.voted then
             if last.evidence then
@@ -266,8 +268,7 @@ local function snapshot(value)
     local r = value.round
     if r.phase ~= "Waiting" and r.phase ~= "Results" then showProfile = false end
     if r.phase ~= "Active" or not value.activities.owner then showEvents = false end
-    local minutes, seconds = math.floor(r.remaining / 60), r.remaining % 60
-    phaseLabel.Text = (phases[r.phase] or r.phase) .. " · " .. string.format("%d:%02d", minutes, seconds)
+    phaseLabel.Text = (phases[r.phase] or r.phase) .. " · " .. RoundTime.format(RoundTime.remaining(r))
     roleLabel.Text = "Ваша роль: " .. names[value.role] .. (if value.hasDossier then " · досье у вас" else "")
     goalLabel.Text = goals[value.role]
     if r.search and r.search.id == player.UserId then goalLabel.Text = "Досмотр: осталось " .. r.search.remaining .. " с. Затем продолжайте свою цель." end

@@ -45,6 +45,9 @@ jobs:
           python3 tests/run-mimic-polish.py
           python3 tests/check-mimic-polish.py
           luau tests/visual-gate.luau
+          luau tests/match-duration.luau
+          python3 tests/run-match-duration.py
+          luau-analyze src/shared/RoundTime.luau tests/m120/Timeline.luau tests/match-duration.luau tests/match-duration-runtime.luau
           find src tests -name '*.luau' -print0 | xargs -0 luau-compile --null
           luau-analyze src/server/GuardPolicy.luau src/server/RequestLedger.luau src/server/RoundPolicy.luau src/server/RolePlan.luau src/server/SessionClock.luau src/server/EventPolicy.luau src/server/PracticePolicy.luau tests/run.luau tests/rounds.luau tests/events.luau
           luau-analyze src/server/ProgressionCatalog.luau src/server/ProfileSchema.luau src/server/ProgressionPolicy.luau src/server/ProfileStore.luau tests/MemoryStore.luau tests/progression.luau tests/persistence.luau
@@ -90,7 +93,10 @@ jobs:
           rojo build mimic-motion-tests.project.json -o DoubleLife-M1121-motion-tests.rbxlx
           python3 tests/check-fixtures.py DoubleLife-M1121-motion-tests.rbxlx
           python3 tests/check-chat.py DoubleLife-M1121-motion-tests.rbxlx
+          rojo build match-duration-tests.project.json -o DoubleLife-M120-tests.rbxlx
+          python3 tests/check-fixtures.py DoubleLife-M120-tests.rbxlx
+          python3 tests/check-chat.py DoubleLife-M120-tests.rbxlx
       - uses: actions/upload-artifact@v4
         with:
-          name: DoubleLife-M11-2-1
+          name: DoubleLife-M12-0
           path: '*.rbxlx'
