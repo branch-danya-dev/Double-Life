@@ -39,9 +39,6 @@ function Requests.start(world, roles, interactions, guard, tell, update, config,
             tell(player, if request then "Заказ принят. Ещё раз нажмите: взять сок. Доставка: " .. self.targets[request.target].name else "Нет свободных заказов.")
         elseif self.ledger:pickup(request, player.UserId, scope:now()) then
             self:carry(player.UserId, player.Character)
-            -- A completed service job has two validated stages, like window + safe.
-            -- Repeated pickup fails in the ledger; ProfilePolicy also deduplicates the key.
-            self.onTask(player, "ServicePickup", 1)
             self:dispatch(request)
             tell(player, "Несите сок: " .. self.targets[request.target].name .. ". У столика удерживайте F.")
         else
@@ -115,6 +112,9 @@ function Requests:complete(request, executor)
     end
     local staff = if executor ~= 0 then Players:GetPlayerByUserId(executor) else nil
     if staff then
+        -- Confirm both stages only after this executor delivers this request.
+        -- The ledger consumes it once; progression deduplicates types per round.
+        self.onTask(staff, "ServicePickup", 1)
         self.onTask(staff, "Delivery", self.config.REQUEST_POINTS)
         self.update:FireClient(staff, "ServicePoints", self.ledger.scores[executor])
         self.tell(staff, "Доставлено. +" .. self.config.REQUEST_POINTS .. " сессионных очков.")

@@ -126,24 +126,64 @@ local function run()
     cohort(5)
     spy, guest, owner = role("Spy"), role("Guest"), role("Owner")
     local staff = role("Staff")
+    local staffBefore = snapshot(staff).profile
     together({function() walk(guest, "Service.Target2") end, function() walk(staff, "Service.Pantry") end})
     prompt(guest, "Service.Target2", "Заказать сок сюда", true)
     prompt(staff, "Service.Pantry", "Принять заказ / взять сок", true)
     prompt(staff, "Service.Pantry", "Принять заказ / взять сок", true)
+    check(not rt.profiles.round[staff.UserId].actions.ServicePickup, "pickup waits for delivery confirmation")
     walk(guest, "Service.Target2", Vector3.new(0,0,6))
     prompt(staff, "Service.Target2", "Доставить сок")
     check((rt.requests.ledger.scores[staff.UserId] or 0) > 0, "staff completes upstairs delivery without speech")
+    prompt(staff, "Service.Target2", "Доставить сок", true)
+    check(rt.requests.ledger.scores[staff.UserId] == Config.REQUEST_POINTS, "repeat delivery prompt cannot duplicate session points")
     for _, id in ipairs({"Painting1", "Painting2", "Painting3"}) do prompt(guest, id, "Осмотреть") end
     reports("5 Active")
     extract(spy)
     rewards("5")
     check(snapshot(staff).profile.reward.reason == "Awarded", "one completed staff job receives progression")
     check(snapshot(staff).profile.reward.tokens == 19, "staff receives ordinary participation tokens")
+    local staffAfter = snapshot(staff).profile
+    check(staffAfter.reputationXp - staffBefore.reputationXp == 50 and staffAfter.tokens - staffBefore.tokens == 19
+        and staffAfter.stats.played - staffBefore.stats.played == 1, "one delivery settles once for 50 XP and 19 tokens")
     check(snapshot(guest).profile.reward.reason == "Awarded", "active guest earns persistent reward")
     check(snapshot(owner).profile.reward.reason == "InsufficientActivity", "AFK owner no reward after full round")
     endRound("Spy")
     print("M8 FIVE FULL ROUND PASS")
-    if staffOnly then print("M8 STAFF REGRESSION PASS"); return end
+    if staffOnly then
+        print("M8 STAFF REGRESSION PASS")
+        -- A second real round reproduces the exploit sequence without delivery.
+        -- Only the focused fixture runs it; the full M8 cohort sequence is unchanged.
+        cohort(5)
+        spy, guest, staff = role("Spy"), role("Guest"), role("Staff")
+        staffBefore = snapshot(staff).profile
+        together({function() walk(guest, "Service.Target2") end, function() walk(staff, "Service.Pantry") end})
+        prompt(guest, "Service.Target2", "Заказать сок сюда", true)
+        prompt(staff, "Service.Pantry", "Принять заказ / взять сок", true)
+        prompt(staff, "Service.Pantry", "Принять заказ / взять сок", true)
+        prompt(staff, "Service.Pantry", "Принять заказ / взять сок", true)
+        local abandoned = rt.requests.ledger:assigned(staff.UserId)
+        check(abandoned and abandoned.state == "Carrying", "negative case really carries an undelivered order")
+        prompt(staff, "Painting1", "Осмотреть")
+        walk(staff, "Social.TraceSpot")
+        walk(staff, "Service.Pantry")
+        local record = rt.profiles.round[staff.UserId]
+        waitFor(function() return record.active >= 45 end, 50, "real activity threshold")
+        check(record.moving >= 12, "negative case has enough real movement")
+        check(record.actions.Painting and not record.actions.ServicePickup and not record.actions.Delivery,
+            "painting plus abandoned tray cannot fabricate completed work")
+        print("M8 STAFF NEGATIVE ACTIVITY", Http:JSONEncode({active=record.active,moving=record.moving,actions=record.actions}))
+        extract(spy)
+        rewards("5 undelivered")
+        staffAfter = snapshot(staff).profile
+        check(staffAfter.reward.reason == "InsufficientActivity", "undelivered pickup plus painting receives no reward")
+        check(staffAfter.tokens == staffBefore.tokens and staffAfter.reputationXp == staffBefore.reputationXp
+            and staffAfter.stats.played == staffBefore.stats.played, "negative round does not change persistent progress")
+        endRound("Spy")
+        reports("5 undelivered reset")
+        print("M8 STAFF DELIVERY GATE PASS: successful and undelivered rounds; real timers, movement, FakeMemory")
+        return
+    end
 
     cohort(8)
     local spies, agents = {}, {}
