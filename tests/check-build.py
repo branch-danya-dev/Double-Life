@@ -25,6 +25,8 @@ assert not {'M8Tests', 'M8ClientAudit', 'M8Metrics', 'M8AuditDriver'} & names
 assert not {'M9Tests', 'M9TestDriver'} & names
 assert not {'M10Tests', 'M10TestDriver'} & names
 assert not {'M11Tests', 'TelemetrySink'} & names
+assert not {'M111Tests', 'M111Review', 'M111Context', 'BeforeM11Rig'} & names
+assert {'MimicAppearance', 'MimicLoadPolicy', 'MimicAnimation', 'MimicPresentation'} <= names
 assert {'RetentionPolicy', 'TuningConfig'} <= names
 assert {'PrologueService', 'ProloguePolicy', 'PrologueContent', 'PrologueWorld', 'PrologueHud'} <= names
 assert {'ActorRegistry', 'ActorPolicy', 'Matchmaking', 'MatchPool', 'MatchTransport', 'QueuePolicy', 'LobbyWorld', 'MimicRig', 'MimicService', 'LobbyHud'} <= names
@@ -36,6 +38,7 @@ server = next(i for i in items if i.get('class') == 'ServerScriptService')
 server_names = {i.findtext('Properties/string[@name="Name"]') for i in server.iter('Item')}
 assert required - {'Hud', 'SocialHud', 'Config', 'Presentation', 'Atmosphere', 'Interface'} <= server_names
 sources = '\n'.join(i.findtext('Properties/*[@name="Source"]') or '' for i in items)
+assert 'M111Review' not in sources and 'M111ContextView' not in sources
 assert 'M2TestDriver' not in sources and 'M1TestDriver' not in sources
 assert 'M3TestDriver' not in sources
 assert 'M4TestDriver' not in sources

@@ -1,0 +1,272 @@
+SOURCE 0.745.462.7451125_20261103T131413Z_Studio_05BE9_last.log
+2026-11-03T13:14:18.504Z M111 WAIT ONE: start one client
+2026-11-03T13:14:34.965Z M111 PASS one human does not start a match
+2026-11-03T13:14:34.965Z M111 PASS complete R15 m:4
+2026-11-03T13:14:34.965Z M111 PASS ready cached tracks m:4
+2026-11-03T13:14:34.965Z M111 PASS distinct neighbours m:4
+2026-11-03T13:14:34.965Z M111 PASS fictional Guest m:4
+2026-11-03T13:14:34.965Z M111 PASS no mimic profile m:4
+2026-11-03T13:14:34.966Z M111 PASS complete R15 m:5
+2026-11-03T13:14:34.966Z M111 PASS ready cached tracks m:5
+2026-11-03T13:14:34.966Z M111 PASS distinct neighbours m:5
+2026-11-03T13:14:34.966Z M111 PASS fictional Guest m:5
+2026-11-03T13:14:34.966Z M111 PASS no mimic profile m:5
+2026-11-03T13:14:34.966Z M111 PASS complete R15 m:1
+2026-11-03T13:14:34.966Z M111 PASS ready cached tracks m:1
+2026-11-03T13:14:34.966Z M111 PASS distinct neighbours m:1
+2026-11-03T13:14:34.966Z M111 PASS fictional Guest m:1
+2026-11-03T13:14:34.966Z M111 PASS no mimic profile m:1
+2026-11-03T13:14:34.966Z M111 PASS complete R15 m:6
+2026-11-03T13:14:34.966Z M111 PASS ready cached tracks m:6
+2026-11-03T13:14:34.966Z M111 PASS distinct neighbours m:6
+2026-11-03T13:14:34.966Z M111 PASS fictional Guest m:6
+2026-11-03T13:14:34.967Z M111 PASS no mimic profile m:6
+2026-11-03T13:14:34.967Z M111 PASS complete R15 m:3
+2026-11-03T13:14:34.967Z M111 PASS ready cached tracks m:3
+2026-11-03T13:14:34.967Z M111 PASS distinct neighbours m:3
+2026-11-03T13:14:34.967Z M111 PASS fictional Guest m:3
+2026-11-03T13:14:34.967Z M111 PASS no mimic profile m:3
+2026-11-03T13:14:34.967Z M111 PASS complete R15 m:2
+2026-11-03T13:14:34.967Z M111 PASS ready cached tracks m:2
+2026-11-03T13:14:34.967Z M111 PASS distinct neighbours m:2
+2026-11-03T13:14:34.967Z M111 PASS fictional Guest m:2
+2026-11-03T13:14:34.967Z M111 PASS no mimic profile m:2
+2026-11-03T13:14:34.968Z M111 PASS one bounded track set per live actor
+2026-11-03T13:14:34.968Z M111 PASS bounded avatar and path workers
+2026-11-03T13:14:43.565Z M111 CAPTURE READY PRIVATE PROLOGUE / R15 guide
+2026-11-03T13:15:08.764Z M111 PASS client R15 clothing and playing tracks PRIVATE PROLOGUE / R15 guide
+2026-11-03T13:15:50.545Z M111 PASS physical upstairs delivery completed with R15 guide
+2026-11-03T13:15:51.279Z M111 PASS private scene and guide release tracks
+2026-11-03T13:15:51.279Z M111 CAPTURE READY LOBBY / mixed R15 guests
+2026-11-03T13:16:17.561Z M111 PASS client R15 clothing and playing tracks LOBBY / mixed R15 guests
+2026-11-03T13:16:18.228Z M111 SOLO PASS: add second real client
+2026-11-03T13:17:08.492Z M111 PASS chat disabled in actual client
+2026-11-03T13:17:08.492Z M111 CLIENT METRICS Player1 {"maxMs":173.81350696086884,"seconds":31.76682468224317,"over50Ms":429,"samples":600,"p99Ms":72.55859673023224,"meanFps":18.88762902813464,"p95Ms":67.78249889612198,"viewport":"1274, 635","p50Ms":66.31579995155335,"chat":"PASS"}
+2026-11-03T13:17:08.593Z M111 PASS chat disabled in actual client
+2026-11-03T13:17:08.593Z M111 CLIENT METRICS Player2 {"maxMs":166.93539917469026,"seconds":12.18245677370578,"over50Ms":41,"samples":600,"p99Ms":67.20360368490219,"meanFps":49.25114951320989,"p95Ms":66.38039648532868,"viewport":"1274, 635","p50Ms":16.74560084939003,"chat":"PASS"}
+2026-11-03T13:17:08.594Z M111 PASS Owner and Spy are actual Players
+2026-11-03T13:17:19.309Z M111 PASS complete R15 m:10
+2026-11-03T13:17:19.309Z M111 PASS ready cached tracks m:10
+2026-11-03T13:17:19.309Z M111 PASS distinct neighbours m:10
+2026-11-03T13:17:19.309Z M111 PASS fictional Guest m:10
+2026-11-03T13:17:19.309Z M111 PASS no mimic profile m:10
+2026-11-03T13:17:19.309Z M111 PASS complete R15 m:13
+2026-11-03T13:17:19.309Z M111 PASS ready cached tracks m:13
+2026-11-03T13:17:19.310Z M111 PASS distinct neighbours m:13
+2026-11-03T13:17:19.310Z M111 PASS fictional Guest m:13
+2026-11-03T13:17:19.310Z M111 PASS no mimic profile m:13
+2026-11-03T13:17:19.310Z M111 PASS complete R15 m:5
+2026-11-03T13:17:19.310Z M111 PASS ready cached tracks m:5
+2026-11-03T13:17:19.310Z M111 PASS distinct neighbours m:5
+2026-11-03T13:17:19.310Z M111 PASS fictional Guest m:5
+2026-11-03T13:17:19.310Z M111 PASS no mimic profile m:5
+2026-11-03T13:17:19.310Z M111 PASS complete R15 m:2
+2026-11-03T13:17:19.310Z M111 PASS ready cached tracks m:2
+2026-11-03T13:17:19.311Z M111 PASS distinct neighbours m:2
+2026-11-03T13:17:19.311Z M111 PASS fictional Guest m:2
+2026-11-03T13:17:19.311Z M111 PASS no mimic profile m:2
+2026-11-03T13:17:19.311Z M111 PASS complete R15 m:8
+2026-11-03T13:17:19.311Z M111 PASS ready cached tracks m:8
+2026-11-03T13:17:19.311Z M111 PASS distinct neighbours m:8
+2026-11-03T13:17:19.311Z M111 PASS fictional Guest m:8
+2026-11-03T13:17:19.311Z M111 PASS no mimic profile m:8
+2026-11-03T13:17:19.312Z M111 PASS complete R15 m:12
+2026-11-03T13:17:19.312Z M111 PASS ready cached tracks m:12
+2026-11-03T13:17:19.312Z M111 PASS distinct neighbours m:12
+2026-11-03T13:17:19.312Z M111 PASS fictional Guest m:12
+2026-11-03T13:17:19.312Z M111 PASS no mimic profile m:12
+2026-11-03T13:17:19.312Z M111 PASS complete R15 m:11
+2026-11-03T13:17:19.313Z M111 PASS ready cached tracks m:11
+2026-11-03T13:17:19.313Z M111 PASS distinct neighbours m:11
+2026-11-03T13:17:19.313Z M111 PASS fictional Guest m:11
+2026-11-03T13:17:19.313Z M111 PASS no mimic profile m:11
+2026-11-03T13:17:19.313Z M111 PASS complete R15 m:6
+2026-11-03T13:17:19.313Z M111 PASS ready cached tracks m:6
+2026-11-03T13:17:19.313Z M111 PASS distinct neighbours m:6
+2026-11-03T13:17:19.313Z M111 PASS fictional Guest m:6
+2026-11-03T13:17:19.313Z M111 PASS no mimic profile m:6
+2026-11-03T13:17:19.314Z M111 PASS complete R15 m:9
+2026-11-03T13:17:19.314Z M111 PASS ready cached tracks m:9
+2026-11-03T13:17:19.314Z M111 PASS distinct neighbours m:9
+2026-11-03T13:17:19.314Z M111 PASS fictional Guest m:9
+2026-11-03T13:17:19.314Z M111 PASS no mimic profile m:9
+2026-11-03T13:17:19.314Z M111 PASS complete R15 m:4
+2026-11-03T13:17:19.314Z M111 PASS ready cached tracks m:4
+2026-11-03T13:17:19.314Z M111 PASS distinct neighbours m:4
+2026-11-03T13:17:19.314Z M111 PASS fictional Guest m:4
+2026-11-03T13:17:19.314Z M111 PASS no mimic profile m:4
+2026-11-03T13:17:19.314Z M111 PASS one bounded track set per live actor
+2026-11-03T13:17:19.314Z M111 PASS bounded avatar and path workers
+2026-11-03T13:17:22.025Z M111 CAPTURE READY MATCH / ground floor
+2026-11-03T13:17:40.925Z M111 PASS client R15 clothing and playing tracks MATCH / ground floor
+2026-11-03T13:17:42.591Z M111 CAPTURE READY MATCH / upper floor
+2026-11-03T13:19:08.322Z M111 PASS client R15 clothing and playing tracks MATCH / upper floor
+2026-11-03T13:19:22.903Z M111 PASS physical council prompt
+2026-11-03T13:19:23.903Z M111 PASS council freezes R15 animation and body
+2026-11-03T13:19:23.904Z M111 PASS council freezes R15 animation and body
+2026-11-03T13:19:23.904Z M111 PASS council freezes R15 animation and body
+2026-11-03T13:19:23.904Z M111 PASS council freezes R15 animation and body
+2026-11-03T13:19:23.904Z M111 PASS council freezes R15 animation and body
+2026-11-03T13:19:23.904Z M111 PASS council freezes R15 animation and body
+2026-11-03T13:19:24.920Z M111 PASS world clock pauses
+2026-11-03T13:19:46.986Z M111 TWO PASS: add third real client during the round
+2026-11-03T13:20:23.369Z M111 PASS late visitor has private prologue outside active match
+2026-11-03T13:20:43.684Z M111 PASS complete R15 m:10
+2026-11-03T13:20:43.684Z M111 PASS ready cached tracks m:10
+2026-11-03T13:20:43.684Z M111 PASS distinct neighbours m:10
+2026-11-03T13:20:43.684Z M111 PASS fictional Guest m:10
+2026-11-03T13:20:43.684Z M111 PASS no mimic profile m:10
+2026-11-03T13:20:43.685Z M111 PASS complete R15 m:13
+2026-11-03T13:20:43.685Z M111 PASS ready cached tracks m:13
+2026-11-03T13:20:43.685Z M111 PASS distinct neighbours m:13
+2026-11-03T13:20:43.686Z M111 PASS fictional Guest m:13
+2026-11-03T13:20:43.686Z M111 PASS no mimic profile m:13
+2026-11-03T13:20:43.686Z M111 PASS complete R15 m:14
+2026-11-03T13:20:43.687Z M111 PASS ready cached tracks m:14
+2026-11-03T13:20:43.687Z M111 PASS distinct neighbours m:14
+2026-11-03T13:20:43.687Z M111 PASS fictional Guest m:14
+2026-11-03T13:20:43.687Z M111 PASS no mimic profile m:14
+2026-11-03T13:20:43.687Z M111 PASS complete R15 m:2
+2026-11-03T13:20:43.687Z M111 PASS ready cached tracks m:2
+2026-11-03T13:20:43.687Z M111 PASS distinct neighbours m:2
+2026-11-03T13:20:43.687Z M111 PASS fictional Guest m:2
+2026-11-03T13:20:43.687Z M111 PASS no mimic profile m:2
+2026-11-03T13:20:43.687Z M111 PASS complete R15 m:8
+2026-11-03T13:20:43.688Z M111 PASS ready cached tracks m:8
+2026-11-03T13:20:43.688Z M111 PASS distinct neighbours m:8
+2026-11-03T13:20:43.688Z M111 PASS fictional Guest m:8
+2026-11-03T13:20:43.688Z M111 PASS no mimic profile m:8
+2026-11-03T13:20:43.688Z M111 PASS complete R15 m:12
+2026-11-03T13:20:43.688Z M111 PASS ready cached tracks m:12
+2026-11-03T13:20:43.688Z M111 PASS distinct neighbours m:12
+2026-11-03T13:20:43.689Z M111 PASS fictional Guest m:12
+2026-11-03T13:20:43.689Z M111 PASS no mimic profile m:12
+2026-11-03T13:20:43.689Z M111 PASS complete R15 m:11
+2026-11-03T13:20:43.689Z M111 PASS ready cached tracks m:11
+2026-11-03T13:20:43.690Z M111 PASS distinct neighbours m:11
+2026-11-03T13:20:43.690Z M111 PASS fictional Guest m:11
+2026-11-03T13:20:43.690Z M111 PASS no mimic profile m:11
+2026-11-03T13:20:43.690Z M111 PASS complete R15 m:6
+2026-11-03T13:20:43.690Z M111 PASS ready cached tracks m:6
+2026-11-03T13:20:43.690Z M111 PASS distinct neighbours m:6
+2026-11-03T13:20:43.690Z M111 PASS fictional Guest m:6
+2026-11-03T13:20:43.690Z M111 PASS no mimic profile m:6
+2026-11-03T13:20:43.691Z M111 PASS complete R15 m:9
+2026-11-03T13:20:43.691Z M111 PASS ready cached tracks m:9
+2026-11-03T13:20:43.691Z M111 PASS distinct neighbours m:9
+2026-11-03T13:20:43.691Z M111 PASS fictional Guest m:9
+2026-11-03T13:20:43.691Z M111 PASS no mimic profile m:9
+2026-11-03T13:20:43.692Z M111 PASS complete R15 m:4
+2026-11-03T13:20:43.692Z M111 PASS ready cached tracks m:4
+2026-11-03T13:20:43.692Z M111 PASS distinct neighbours m:4
+2026-11-03T13:20:43.692Z M111 PASS fictional Guest m:4
+2026-11-03T13:20:43.692Z M111 PASS no mimic profile m:4
+2026-11-03T13:20:43.692Z M111 PASS one bounded track set per live actor
+2026-11-03T13:20:43.692Z M111 PASS bounded avatar and path workers
+2026-11-03T13:20:43.692Z M111 PASS actor appearance stays stable m:10
+2026-11-03T13:20:43.692Z M111 PASS actor appearance stays stable m:13
+2026-11-03T13:20:43.692Z M111 PASS actor appearance stays stable m:2
+2026-11-03T13:20:43.692Z M111 PASS actor appearance stays stable m:8
+2026-11-03T13:20:43.692Z M111 PASS actor appearance stays stable m:4
+2026-11-03T13:20:43.693Z M111 PASS actor appearance stays stable m:11
+2026-11-03T13:20:43.693Z M111 PASS actor appearance stays stable m:6
+2026-11-03T13:20:43.693Z M111 PASS actor appearance stays stable m:9
+2026-11-03T13:20:43.693Z M111 PASS actor appearance stays stable m:12
+2026-11-03T13:20:49.201Z M111 PASS repeated scene entry leaves one guide
+2026-11-03T13:20:49.201Z M111 PASS complete R15 m:10
+2026-11-03T13:20:49.201Z M111 PASS ready cached tracks m:10
+2026-11-03T13:20:49.201Z M111 PASS distinct neighbours m:10
+2026-11-03T13:20:49.201Z M111 PASS fictional Guest m:10
+2026-11-03T13:20:49.201Z M111 PASS no mimic profile m:10
+2026-11-03T13:20:49.202Z M111 PASS complete R15 m:13
+2026-11-03T13:20:49.202Z M111 PASS ready cached tracks m:13
+2026-11-03T13:20:49.202Z M111 PASS distinct neighbours m:13
+2026-11-03T13:20:49.202Z M111 PASS fictional Guest m:13
+2026-11-03T13:20:49.202Z M111 PASS no mimic profile m:13
+2026-11-03T13:20:49.202Z M111 PASS complete R15 m:2
+2026-11-03T13:20:49.203Z M111 PASS ready cached tracks m:2
+2026-11-03T13:20:49.203Z M111 PASS distinct neighbours m:2
+2026-11-03T13:20:49.203Z M111 PASS fictional Guest m:2
+2026-11-03T13:20:49.203Z M111 PASS no mimic profile m:2
+2026-11-03T13:20:49.203Z M111 PASS complete R15 m:8
+2026-11-03T13:20:49.203Z M111 PASS ready cached tracks m:8
+2026-11-03T13:20:49.203Z M111 PASS distinct neighbours m:8
+2026-11-03T13:20:49.203Z M111 PASS fictional Guest m:8
+2026-11-03T13:20:49.203Z M111 PASS no mimic profile m:8
+2026-11-03T13:20:49.204Z M111 PASS complete R15 m:16
+2026-11-03T13:20:49.204Z M111 PASS ready cached tracks m:16
+2026-11-03T13:20:49.204Z M111 PASS distinct neighbours m:16
+2026-11-03T13:20:49.204Z M111 PASS fictional Guest m:16
+2026-11-03T13:20:49.204Z M111 PASS no mimic profile m:16
+2026-11-03T13:20:49.204Z M111 PASS complete R15 m:12
+2026-11-03T13:20:49.204Z M111 PASS ready cached tracks m:12
+2026-11-03T13:20:49.204Z M111 PASS distinct neighbours m:12
+2026-11-03T13:20:49.204Z M111 PASS fictional Guest m:12
+2026-11-03T13:20:49.205Z M111 PASS no mimic profile m:12
+2026-11-03T13:20:49.205Z M111 PASS complete R15 m:11
+2026-11-03T13:20:49.205Z M111 PASS ready cached tracks m:11
+2026-11-03T13:20:49.205Z M111 PASS distinct neighbours m:11
+2026-11-03T13:20:49.205Z M111 PASS fictional Guest m:11
+2026-11-03T13:20:49.205Z M111 PASS no mimic profile m:11
+2026-11-03T13:20:49.206Z M111 PASS complete R15 m:6
+2026-11-03T13:20:49.206Z M111 PASS ready cached tracks m:6
+2026-11-03T13:20:49.206Z M111 PASS distinct neighbours m:6
+2026-11-03T13:20:49.206Z M111 PASS fictional Guest m:6
+2026-11-03T13:20:49.206Z M111 PASS no mimic profile m:6
+2026-11-03T13:20:49.206Z M111 PASS complete R15 m:9
+2026-11-03T13:20:49.206Z M111 PASS ready cached tracks m:9
+2026-11-03T13:20:49.206Z M111 PASS distinct neighbours m:9
+2026-11-03T13:20:49.206Z M111 PASS fictional Guest m:9
+2026-11-03T13:20:49.206Z M111 PASS no mimic profile m:9
+2026-11-03T13:20:49.207Z M111 PASS complete R15 m:4
+2026-11-03T13:20:49.207Z M111 PASS ready cached tracks m:4
+2026-11-03T13:20:49.207Z M111 PASS distinct neighbours m:4
+2026-11-03T13:20:49.207Z M111 PASS fictional Guest m:4
+2026-11-03T13:20:49.207Z M111 PASS no mimic profile m:4
+2026-11-03T13:20:49.207Z M111 PASS one bounded track set per live actor
+2026-11-03T13:20:49.207Z M111 PASS bounded avatar and path workers
+2026-11-03T13:21:32.047Z M111 PASS human Spy physical extraction
+2026-11-03T13:21:45.664Z M111 PASS round reset releases R15 actors
+2026-11-03T13:21:45.665Z M111 PASS complete R15 m:2
+2026-11-03T13:21:45.665Z M111 PASS ready cached tracks m:2
+2026-11-03T13:21:45.665Z M111 PASS distinct neighbours m:2
+2026-11-03T13:21:45.665Z M111 PASS fictional Guest m:2
+2026-11-03T13:21:45.665Z M111 PASS no mimic profile m:2
+2026-11-03T13:21:45.665Z M111 PASS complete R15 m:6
+2026-11-03T13:21:45.666Z M111 PASS ready cached tracks m:6
+2026-11-03T13:21:45.666Z M111 PASS distinct neighbours m:6
+2026-11-03T13:21:45.666Z M111 PASS fictional Guest m:6
+2026-11-03T13:21:45.666Z M111 PASS no mimic profile m:6
+2026-11-03T13:21:45.666Z M111 PASS complete R15 m:4
+2026-11-03T13:21:45.666Z M111 PASS ready cached tracks m:4
+2026-11-03T13:21:45.666Z M111 PASS distinct neighbours m:4
+2026-11-03T13:21:45.666Z M111 PASS fictional Guest m:4
+2026-11-03T13:21:45.666Z M111 PASS no mimic profile m:4
+2026-11-03T13:21:45.666Z M111 PASS one bounded track set per live actor
+2026-11-03T13:21:45.667Z M111 PASS bounded avatar and path workers
+2026-11-03T13:21:47.532Z M111 PASS actual disconnect removes private scene and guide
+2026-11-03T13:21:47.532Z M111 PASS complete R15 m:2
+2026-11-03T13:21:47.532Z M111 PASS ready cached tracks m:2
+2026-11-03T13:21:47.532Z M111 PASS distinct neighbours m:2
+2026-11-03T13:21:47.532Z M111 PASS fictional Guest m:2
+2026-11-03T13:21:47.533Z M111 PASS no mimic profile m:2
+2026-11-03T13:21:47.533Z M111 PASS complete R15 m:6
+2026-11-03T13:21:47.533Z M111 PASS ready cached tracks m:6
+2026-11-03T13:21:47.533Z M111 PASS distinct neighbours m:6
+2026-11-03T13:21:47.533Z M111 PASS fictional Guest m:6
+2026-11-03T13:21:47.533Z M111 PASS no mimic profile m:6
+2026-11-03T13:21:47.534Z M111 PASS complete R15 m:4
+2026-11-03T13:21:47.534Z M111 PASS ready cached tracks m:4
+2026-11-03T13:21:47.534Z M111 PASS distinct neighbours m:4
+2026-11-03T13:21:47.534Z M111 PASS fictional Guest m:4
+2026-11-03T13:21:47.534Z M111 PASS no mimic profile m:4
+2026-11-03T13:21:47.534Z M111 PASS one bounded track set per live actor
+2026-11-03T13:21:47.534Z M111 PASS bounded avatar and path workers
+2026-11-03T13:21:47.534Z M111 METRICS {"mimics":{"maxWorkers":2,"failures":1,"orders":6,"upperArrivals":10,"matchActions":33,"actions":119,"jobs":126},"rig":{"live":3,"pending":0,"requests":18,"maxPending":1,"timeouts":0,"tracks":18,"cacheHits":17,"failures":0,"deferred":1,"maxSeconds":1.2493543999735267}}
+2026-11-03T13:21:47.534Z M111 STUDIO SUITE PASS: actual 1/2/3 clients, all contexts, delivery, council, extraction, replay, disconnect and cleanup
+SOURCE 0.745.462.7451125_20261103T131419Z_Studio_F423E_last.log
+2026-11-03T13:14:29.168Z M8 CLIENT CHAT PASS Player1
+SOURCE 0.745.462.7451125_20261103T131648Z_Studio_E8193_last.log
+2026-11-03T13:16:58.183Z M8 CLIENT CHAT PASS Player2
+SOURCE 0.745.462.7451125_20261103T132017Z_Studio_D1FB2_last.log
+2026-11-03T13:20:27.741Z M8 CLIENT CHAT PASS Player3

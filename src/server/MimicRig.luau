@@ -1,92 +1,159 @@
--- Original fictional guests: generated appearance, no real user's avatar/name.
+-- Validated R15 only. A cold failure defers admission; a warm failure reuses
+-- the identical completed template. No hand-built body or facial geometry.
+local Players=game:GetService("Players")
+local Content=game:GetService("ContentProvider")
 local Mover=require(script.Parent.NpcMover)
-local Rig={}
-local names={"MiraVell","LeonArden","NikaFane","FelixVale","AdaMorn","OscarReed","VeraLinden","MaxElvar","LinaOrrel","IrisVoss","TheoWren","RinaCole"}
-function Rig.new(parent,serial,position,scope)
-    local name=names[(serial-1)%#names+1]..(if serial>#names then tostring(math.floor((serial-1)/#names)+1) else "")
-    local color=Color3.fromHSV((serial*0.137)%1,0.3,0.28)
-    -- Local motor rig is the deterministic fallback if the avatar service fails.
-    local mover=Mover.new(parent,name,position,color,scope)
-    local description=Instance.new("HumanoidDescription")
-    description.HeadColor=Color3.fromRGB(184+serial%5*10,145+serial%4*12,112+serial%3*15)
-    description.LeftArmColor,description.RightArmColor=description.HeadColor,description.HeadColor
-    description.TorsoColor,description.LeftLegColor,description.RightLegColor=color,color,color
-    description.HeightScale,description.WidthScale=0.95+serial%3*0.04,0.9+serial%3*0.05
-    local ok,model,done,abandoned=false,nil,false,false
-    if not Rig.pending then
-        Rig.pending=true
+local Catalog=require(script.Parent.MimicAppearance)
+local LoadPolicy=require(script.Parent.MimicLoadPolicy)
+local Motion=require(script.Parent.MimicAnimation)
+local Rig={templates={},descriptions={},policy=LoadPolicy.new(os.clock),
+    metrics={requests=0,failures=0,timeouts=0,cacheHits=0,deferred=0,live=0,tracks=0,pending=0,maxPending=0,maxSeconds=0}}
+local bodyParts={"Head","UpperTorso","LowerTorso","LeftUpperArm","LeftLowerArm","LeftHand","RightUpperArm","RightLowerArm","RightHand",
+    "LeftUpperLeg","LeftLowerLeg","LeftFoot","RightUpperLeg","RightLowerLeg","RightFoot"}
+function Rig.description(id)
+    assert(Catalog.presets[id],"Unknown avatar preset")
+    if not Rig.descriptions[id] then
+        local p=Catalog.presets[id]; local d=Instance.new("HumanoidDescription")
+        for _,key in ipairs({"Shirt","Pants","HairAccessory","HatAccessory","Head","HeightScale","WidthScale","DepthScale","HeadScale","BodyTypeScale","ProportionScale"}) do d[key]=p[key] end
+        for key,value in pairs(Catalog.body[p.body]) do d[key]=value end
+        local skin=Color3.fromRGB(table.unpack(p.skin))
+        for _,key in ipairs({"HeadColor","TorsoColor","LeftArmColor","RightArmColor","LeftLegColor","RightLegColor"}) do d[key]=skin end
+        Rig.descriptions[id]=d
+    end
+    return Rig.descriptions[id]:Clone()
+end
+function Rig.validate(model,id)
+    if not model or not model:IsA("Model") then return false,"Model" end
+    local h=model:FindFirstChildOfClass("Humanoid"); local root=model:FindFirstChild("HumanoidRootPart")
+    if not h or h.RigType~=Enum.HumanoidRigType.R15 or not root then return false,"R15" end
+    for _,name in ipairs(bodyParts) do if not model:FindFirstChild(name) then return false,name end end
+    local motors,accessories=0,0
+    for _,v in ipairs(model:GetDescendants()) do
+        if v:IsA("Motor6D") and v.Part0 and v.Part1 then motors+=1
+        elseif v:IsA("AnimationConstraint") and v.Attachment0 and v.Attachment1
+            and v.Attachment0:IsDescendantOf(model) and v.Attachment1:IsDescendantOf(model) then motors+=1 end
+        if v:IsA("Accessory") and v:FindFirstChild("Handle") then accessories+=1 end
+    end
+    if motors<15 or accessories<1 then return false,"JointsAccessories:"..motors..":"..accessories end
+    if not model:FindFirstChildOfClass("Shirt") or not model:FindFirstChildOfClass("Pants") then return false,"Clothing" end
+    local applied=h:GetAppliedDescription(); local p=Catalog.presets[id]
+    -- Layered hair is normalized into AccessoryDescription by Roblox and may
+    -- disappear from the legacy HairAccessory string. Verify its actual ID.
+    local hair=false
+    for _,a in ipairs(applied:GetAccessories(true)) do
+        if a.AssetId==tonumber(p.HairAccessory) and a.AccessoryType==Enum.AccessoryType.Hair then hair=true end
+    end
+    local valid=applied.Shirt==p.Shirt and applied.Pants==p.Pants and hair
+    applied:Destroy()
+    return valid,if valid then "R15Ready" else "AppliedDescription"
+end
+local function template(id,scope,refresh)
+    if Rig.templates[id] and not refresh then Rig.metrics.cacheHits+=1; return Rig.templates[id]:Clone(),"Cache" end
+    local token=Rig.policy:begin(id)
+    if token then
+        Rig.metrics.requests+=1; Rig.metrics.pending+=1
+        Rig.metrics.maxPending=math.max(Rig.metrics.maxPending,Rig.metrics.pending)
         task.spawn(function()
-            ok,model=pcall(function()
-                return game:GetService("Players"):CreateHumanoidModelFromDescriptionAsync(description,Enum.HumanoidRigType.R15)
+            local model,description
+            local ok,why=pcall(function()
+                description=Rig.description(id)
+                if Rig.testDelay then task.wait(Rig.testDelay) end
+                if Rig.testFailure then error("InjectedAvatarFailure") end
+                model=Players:CreateHumanoidModelFromDescriptionAsync(description,Enum.HumanoidRigType.R15)
+                local valid,reason=Rig.validate(model,id)
+                assert(valid,"InvalidR15Template:"..reason)
+                for _,v in ipairs(model:GetDescendants()) do if v:IsA("LuaSourceContainer") then v:Destroy() end end
+                local failed=false
+                Content:PreloadAsync({model},function(_,status) if status~=Enum.AssetFetchStatus.Success then failed=true end end)
+                assert(not failed,"AvatarContentUnavailable")
             end)
-            description:Destroy(); Rig.pending=false; done=true
-            if abandoned and ok then model:Destroy() end
-        end)
-        local deadline=os.clock()+3
-        while not done and scope.alive and os.clock()<deadline do task.wait(0.1) end
-        if not done then abandoned=true; ok=false end
-    else description:Destroy() end
-    if ok and scope.alive then
-        mover.model:Destroy()
-        model.Name=name
-        model:PivotTo(CFrame.new(position))
-        for _,p in ipairs(model:GetDescendants()) do
-            if p:IsA("BasePart") then p.CollisionGroup="DoubleLifeActors"; p.CanQuery=false end
-            if p:IsA("Script") or p:IsA("LocalScript") then p:Destroy() end
-        end
-        model.Parent=parent
-        mover.model,mover.root,mover.humanoid=model,model.HumanoidRootPart,model:FindFirstChildOfClass("Humanoid")
-        mover.humanoid.WalkSpeed=10+serial%3
-        mover.humanoid.DisplayDistanceType=Enum.HumanoidDisplayDistanceType.None
-        mover.root:SetNetworkOwner(nil)
-        local torso=model:FindFirstChild("UpperTorso")
-        if torso then
-            local shirt=Instance.new("Part"); shirt.Name,shirt.Size,shirt.Color="EveningWaistcoat",Vector3.new(1,1.3,0.08),Color3.fromRGB(225,210,180)
-            shirt.CanCollide,shirt.CanQuery,shirt.Massless=false,false,true
-            shirt.CFrame,shirt.Parent=torso.CFrame*CFrame.new(0,0,-0.53),model
-            local weld=Instance.new("WeldConstraint"); weld.Part0,weld.Part1,weld.Parent=torso,shirt,shirt
-        end
-        local sign=Instance.new("BillboardGui"); sign.Size,sign.StudsOffset,sign.MaxDistance,sign.Parent=UDim2.fromOffset(180,40),Vector3.new(0,2.5,0),35,model.Head
-        local label=Instance.new("TextLabel"); label.Size,label.BackgroundTransparency,label.TextSize,label.TextColor3,label.Parent=UDim2.fromScale(1,1),1,13,Color3.fromRGB(241,224,186),sign
-        mover.label=label
-    elseif ok then model:Destroy() end
-    mover.label.Text=name.." · персонаж"
-    mover.model:SetAttribute("MimicName",name)
-    mover.model:SetAttribute("MansionNPC",true)
-    local head=mover.model:FindFirstChild("Head")
-    if head then
-        local function detail(name,size,offset,tint,ball)
-            local p=Instance.new("Part")
-            p.Name,p.Size,p.Color=name,size,tint
-            p.CanCollide,p.CanQuery,p.Massless=false,false,true
-            if ball then p.Shape=Enum.PartType.Ball end
-            p.CFrame,p.Parent=head.CFrame*CFrame.new(offset),mover.model
-            local weld=Instance.new("WeldConstraint"); weld.Part0,weld.Part1,weld.Parent=head,p,p
-        end
-        local dark=Color3.fromRGB(25+serial%4*12,20+serial%3*10,18+serial%2*8)
-        detail("OriginalHair",Vector3.new(head.Size.X*1.03,0.45,head.Size.Z*1.03),Vector3.new(0,head.Size.Y/2-0.1,0),dark,true)
-        for _,x in ipairs({-0.23,0.23}) do
-            detail("Eye",Vector3.new(0.1,0.13,0.05),Vector3.new(x,0.05,-head.Size.Z/2-0.025),Color3.fromRGB(35,30,28),true)
-        end
-        detail("Smile",Vector3.new(0.22,0.04,0.04),Vector3.new(0,-0.2,-head.Size.Z/2-0.025),dark,false)
-        if serial%3==0 then detail("HairBun",Vector3.new(0.6,0.6,0.6),Vector3.new(0,0.35,head.Size.Z/2),dark,true) end
-    end
-    local joints={}
-    for _,j in ipairs(mover.model:GetDescendants()) do
-        if j:IsA("Motor6D") then table.insert(joints,{joint=j,base=j.C0,name=j.Name}) end
-    end
-    function mover:animate(now,gesture)
-        local walking=self.root.AssemblyLinearVelocity.Magnitude>1
-        for _,j in ipairs(joints) do
-            if j.joint.Parent then
-                local limb=string.find(j.name,"Hip") or string.find(j.name,"Shoulder") or string.find(j.name,"Arm") or string.find(j.name,"Leg")
-                local side=if string.find(j.name,"Left") then 1 else -1
-                local angle=if walking and limb then math.sin(now*7)*0.35*side else math.sin(now*1.6)*0.025
-                if gesture and (string.find(j.name,"RightShoulder") or string.find(j.name,"Right Arm")) then angle=-1.2+math.sin(now*5)*0.2 end
-                j.joint.C0=j.base*CFrame.Angles(angle,0,0)
+            if description then description:Destroy() end
+            if ok then
+                if Rig.templates[id] then Rig.templates[id]:Destroy() end
+                model.Archivable=true; Rig.templates[id]=model
+            else
+                if model then model:Destroy() end
+                Rig.metrics.failures+=1
+                warn("Mimic avatar deferred",id,tostring(why):match("[^\n]+"))
             end
+            Rig.metrics.pending-=1; Rig.policy:finish(token,ok)
+        end)
+        while Rig.policy.pending==token and scope.alive and not Rig.policy:expired(token) do task.wait(0.1) end
+        if Rig.policy.pending==token and Rig.policy:expired(token) then Rig.metrics.timeouts+=1 end
+    end
+    if Rig.templates[id] then Rig.metrics.cacheHits+=1; return Rig.templates[id]:Clone(),"Cache" end
+    Rig.metrics.deferred+=1; return nil,"Deferred"
+end
+function Rig.configureForTest(failure,delaySeconds)
+    assert(game:GetService("RunService"):IsStudio(),"Avatar injection is Studio-only")
+    Rig.testFailure=failure==true
+    Rig.testDelay=delaySeconds and math.clamp(delaySeconds,0,12) or nil
+end
+function Rig.new(parent,serial,position,scope,id,refresh)
+    id=id or Catalog.pick(Catalog.seed,serial,{})
+    local began=os.clock(); local model,source=template(id,scope,refresh)
+    if not model then return nil,source end
+    if not scope.alive or not parent.Parent then model:Destroy(); return nil,"Cancelled" end
+    local p=Catalog.presets[id]
+    local name=p.name..(if serial>#Catalog.presets then tostring(math.floor((serial-1)/#Catalog.presets)+1) else "")
+    local h=model:FindFirstChildOfClass("Humanoid"); local root=model.HumanoidRootPart
+    local visibility={}
+    model.Name=name; model.PrimaryPart=root
+    model:SetAttribute("MimicName",name); model:SetAttribute("MimicReady",false)
+    for _,v in ipairs(model:GetDescendants()) do
+        if v:IsA("BasePart") then
+            visibility[v]=v.Transparency; v.Transparency=1; v.CollisionGroup="DoubleLifeActors"; v.CanQuery=false
+            if v.Parent:IsA("Accessory") then v.CanCollide=false; v.Massless=true end
+        elseif v:IsA("Decal") then visibility[v]=v.Transparency; v.Transparency=1 end
+    end
+    root.Anchored=true; model:PivotTo(CFrame.new(position)); model.Parent=parent
+    local motion=Motion.new(model,serial)
+    local deadline=os.clock()+5
+    while motion and not motion:ready() and scope.alive and model.Parent and os.clock()<deadline do task.wait(0.1) end
+    if motion and not motion:ready() and scope.alive and model.Parent then
+        motion:fallback(); deadline=os.clock()+2
+        while not motion:ready() and scope.alive and model.Parent and os.clock()<deadline do task.wait(0.1) end
+    end
+    if not motion or not motion:ready() or not scope.alive or not model.Parent then
+        if motion then motion:destroy() end; model:Destroy(); Rig.metrics.deferred+=1; return nil,"AnimationDeferred"
+    end
+    h.WalkSpeed=10+serial%3; h.DisplayDistanceType=Enum.HumanoidDisplayDistanceType.None
+    motion:update(0,false,false)
+    for v,alpha in pairs(visibility) do if v.Parent then v.Transparency=alpha end end
+    root.Anchored=false; root:SetNetworkOwner(nil)
+    local sign=Instance.new("BillboardGui"); sign.Size,sign.StudsOffset,sign.MaxDistance,sign.Parent=UDim2.fromOffset(180,40),Vector3.new(0,2.5,0),35,model.Head
+    local label=Instance.new("TextLabel"); label.Size,label.BackgroundTransparency,label.TextSize,label.TextColor3,label.Parent=UDim2.fromScale(1,1),1,13,Color3.fromRGB(241,224,186),sign
+    label.Text=name.." · персонаж"
+    model:SetAttribute("MimicName",name); model:SetAttribute("MansionNPC",true)
+    model:SetAttribute("AppearanceId",id); model:SetAttribute("AppearanceStyle",p.style)
+    local mover=setmetatable({model=model,root=root,humanoid=h,label=label,scope=scope,motion=motion,preset=id,source=source,
+        metrics={computes=0,failures=0,timeouts=0,arrivals=0,computeSeconds=0}},Mover)
+    local attachment=Instance.new("Attachment"); attachment.Parent=root
+    local facing=Instance.new("AlignOrientation"); facing.Mode=Enum.OrientationAlignmentMode.OneAttachment
+    facing.Attachment0,facing.MaxTorque,facing.MaxAngularVelocity,facing.Responsiveness=attachment,3000,1.5,5
+    facing.Enabled=false; facing.Parent=root
+    function mover:lookAt(point)
+        local flat=Vector3.new(point.X,self.root.Position.Y,point.Z)
+        if (flat-self.root.Position).Magnitude>1 then
+            facing.CFrame=CFrame.lookAt(self.root.Position,flat).Rotation; facing.Enabled=true; self.humanoid.AutoRotate=false
         end
     end
+    function mover:animate(_,gesture,paused)
+        local velocity=self.root.AssemblyLinearVelocity
+        local speed=Vector2.new(velocity.X,velocity.Z).Magnitude
+        if speed>0.8 or self.destination then facing.Enabled=false; self.humanoid.AutoRotate=true end
+        self.motion:update(speed,gesture,paused)
+    end
+    local cleaned=false
+    local function cleanup()
+        if cleaned then return end; cleaned=true
+        motion:destroy(); Rig.metrics.live-=1; Rig.metrics.tracks-=6
+    end
+    model.Destroying:Connect(cleanup)
+    function mover:destroy() cleanup(); self.model:Destroy() end
+    Rig.metrics.live+=1; Rig.metrics.tracks+=6
+    Rig.metrics.maxSeconds=math.max(Rig.metrics.maxSeconds,os.clock()-began)
+    model:SetAttribute("MimicReady",true)
     return mover,name
 end
 return Rig

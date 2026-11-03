@@ -2,9 +2,10 @@ local Policy=require(script.Parent.ActorPolicy)
 local Settings=require(script.Parent.MatchSettings)
 local Clock=require(script.Parent.SessionClock)
 local Rig=require(script.Parent.MimicRig)
+local Appearance=require(script.Parent.MimicAppearance)
 local Service={}; Service.__index=Service
 function Service.new(rt)
-    return setmetatable({rt=rt,values={},serial=0,busy=0,creating=false,nextCreate=0,lastTick=0,
+    return setmetatable({rt=rt,values={},serial=0,busy=0,creating=false,nextCreate=0,lastTick=0,used={},practice={},
         lobbyClock=Clock.new(),metrics={jobs=0,actions=0,matchActions=0,upperArrivals=0,orders=0,failures=0,maxWorkers=0}},Service)
 end
 function Service:count(context)
@@ -15,7 +16,9 @@ function Service:remove(a)
     self.rt.rounds.policy:removeMimic(a.actor.id)
     if a.context=="Match" and self.rt.events then self.rt.events.policy:remove(a.actor.id) end
     if a.context=="Match" and self.rt.requests then self.rt.requests.ledger:remove(a.actor.id,self.rt.scope:now()) end
-    a.mover.model:Destroy(); self.values[a.actor.id]=nil
+    a.mover:destroy(); self.values[a.actor.id]=nil
+    local used=self.used[a.appearanceContext]
+    if used then used[a.preset]=nil; if next(used)==nil then self.used[a.appearanceContext]=nil end end
 end
 function Service:reset()
     self.matchGoal=nil
@@ -24,40 +27,48 @@ function Service:reset()
 end
 function Service:addPractice(scene,scope,owner,ready)
     self.serial+=1; local serial=self.serial
-    task.spawn(function()
-        local ok,mover,name=pcall(Rig.new,scene.world.npcs,serial,scene.world:spawn(2),scope)
-        if not ok then self.metrics.failures+=1; return end
-        if not scope.alive then mover.model:Destroy(); return end
-        local actor=self.rt.actors:addMimic(mover.model,name)
-        self.values[actor.id]={actor=actor,mover=mover,context="Prologue",owner=owner,scene=scene,index=serial,next=0,seen={},gesture=0}
-        ready(actor)
-    end)
+    self.practice[owner]={scene=scene,scope=scope,owner=owner,ready=ready,serial=serial}
 end
 function Service:removePractice(owner)
+    self.practice[owner]=nil
     local list={}; for _,a in pairs(self.values) do if a.context=="Prologue" and a.owner==owner then table.insert(list,a) end end
     for _,a in ipairs(list) do self:remove(a) end
 end
 function Service:greetPractice(owner)
-    for _,a in pairs(self.values) do if a.owner==owner then a.gesture=a.mover.scope:now()+3 end end
+    for _,a in pairs(self.values) do if a.owner==owner then a.gesture=a.mover.scope:now()+3; a.gestureKind="Wave" end end
 end
-function Service:create(context)
-    self.creating=true; self.serial+=1
-    local serial=self.serial
-    local scope=if context=="Lobby" then self.lobbyClock else self.rt.scope
-    local parent=self.rt.lobby.root
+function Service:create(context,request)
+    self.creating=true
+    if not request then self.serial+=1 end
+    local serial=if request then request.serial else self.serial
+    local scope=if request then request.scope elseif context=="Lobby" then self.lobbyClock else self.rt.scope
+    local appearanceContext=if request then request.scene else context
+    local used=self.used[appearanceContext] or {}; self.used[appearanceContext]=used
+    local function release(id)
+        used[id]=nil
+        if next(used)==nil and self.used[appearanceContext]==used then self.used[appearanceContext]=nil end
+    end
+    local preset=Appearance.pick(Appearance.seed,serial,used)
+    if not preset then self.creating=false; return end
+    used[preset]=true -- Reserve before an engine yield; no duplicate neighbours.
+    local parent=if request then request.scene.world.npcs else self.rt.lobby.root
     if context=="Match" then
         parent=self.rt.world.map:FindFirstChild("Mimics")
         if not parent then parent=Instance.new("Folder"); parent.Name,parent.Parent="Mimics",self.rt.world.map end
     end
-    local pos=if context=="Lobby" then self.rt.lobby.entrance else self.rt.world:point("Service.Home")+Vector3.new(4,0,0)
+    local x,z=Appearance.matchOffset(preset)
+    local pos=if request then request.scene.world:spawn(2) elseif context=="Lobby" then self.rt.lobby.entrance else self.rt.world:point("Service.Home")+Vector3.new(x,0,z)
     task.spawn(function()
-        local ok,mover,name=pcall(Rig.new,parent,serial,pos,scope)
+        local ok,mover,name=pcall(Rig.new,parent,serial,pos,scope,preset)
         self.creating=false
-        if not ok then self.metrics.failures+=1; return end
-        if not scope.alive or (context=="Match" and self.rt.rounds.policy.phase~="Active" and self.rt.rounds.policy.phase~="Council") then mover.model:Destroy(); return end
+        if not ok or not mover then release(preset); self.metrics.failures+=1; return end
+        if not scope.alive or (request and self.practice[request.owner]~=request)
+            or (context=="Match" and self.rt.rounds.policy.phase~="Active" and self.rt.rounds.policy.phase~="Council") then mover:destroy(); release(preset); return end
         local actor=self.rt.actors:addMimic(mover.model,name)
-        self.values[actor.id]={actor=actor,mover=mover,context=context,index=serial,next=scope:now()+serial%3,seen={},gesture=0}
+        self.values[actor.id]={actor=actor,mover=mover,context=context,index=serial,next=scope:now()+Appearance.pause(serial,0),seen={},gesture=0,
+            appearanceContext=appearanceContext,preset=preset,owner=request and request.owner,scene=request and request.scene}
         if context=="Match" then self.rt.rounds.policy:addMimic(actor.id) end
+        if request then self.practice[request.owner]=nil; request.ready(actor) end
     end)
 end
 function Service:tick(dt)
@@ -71,8 +82,15 @@ function Service:tick(dt)
         Match=if phase=="Active" or phase=="Council" then self.matchGoal or 0 else 0}
     local now=os.clock()
     if not self.creating and now>=self.nextCreate then
-        for _,context in ipairs({"Match","Lobby"}) do
+        local lesson
+        for owner,r in pairs(self.practice) do
+            if not r.scope.alive then self.practice[owner]=nil
+            elseif not lesson or r.serial<lesson.serial then lesson=r end
+        end
+        if lesson then self.nextCreate=now+2; self:create("Prologue",lesson)
+        else for _,context in ipairs({"Match","Lobby"}) do
             if self:count(context)<desired[context] then self.nextCreate=now+2; self:create(context); break end
+        end
         end
     end
     if now-self.lastTick<0.1 then return end
@@ -91,13 +109,14 @@ function Service:tick(dt)
             if mover.root:GetNetworkOwnershipAuto() or mover.root:GetNetworkOwner()~=nil then mover.root:SetNetworkOwner(nil) end
             for _,p in ipairs(game:GetService("Players"):GetPlayers()) do
                 local root=p.Character and p.Character:FindFirstChild("HumanoidRootPart")
-                if root and (root.Position-mover.root.Position).Magnitude<7 and now>(a.nextGreeting or 0) then
-                    a.gesture=scope:now()+1.5; a.nextGreeting=now+18
+                if root and not a.working and (root.Position-mover.root.Position).Magnitude<7 and now>(a.nextGreeting or 0) then
+                    a.gesture=scope:now()+1.5; a.gestureKind="Wave"; a.nextGreeting=now+18+a.preset%7
+                    mover:lookAt(root.Position); break
                 end
             end
-            mover:animate(now,scope:now()<a.gesture)
             if dancing then events:sampleMimic(a.actor) end
         end
+        mover:animate(now,if scope:now()<a.gesture then a.gestureKind else false,paused or freeze)
         if freeze then mover:stop() end
         if paused or freeze or a.working or scope:now()<a.next or self.busy>=settings.aiWorkers then continue end
         if a.context=="Lobby" and not a.retiring then
@@ -112,6 +131,10 @@ function Service:tick(dt)
                 local pos,id
                 if a.context=="Lobby" then
                     pos=if retiring then self.rt.lobby.entrance else self.rt.lobby.spots[a.index%#self.rt.lobby.spots+1]
+                    if not retiring then
+                        local x,z=Appearance.lobbyOffset(a.preset)
+                        pos+=Vector3.new(x,0,z)
+                    end
                 elseif a.context=="Prologue" then
                     local ids={"Painting1","Service.Target2","Events.Stage","Social.TraceSpot"}
                     id=ids[a.index%#ids+1]; pos=a.scene.world:approach(id)
@@ -124,7 +147,9 @@ function Service:tick(dt)
                     return not scope.alive or not self.values[a.actor.id] or (dancing and events.policy.beat=="Freeze")
                 end) then
                     if retiring then self:remove(a); return end
-                    a.gesture=scope:now()+2; self.metrics.actions+=1
+                    if a.context=="Lobby" then mover:lookAt(self.rt.lobby.spots[a.index%#self.rt.lobby.spots+1]+Vector3.new(0,0,-5)) end
+                    a.gesture=scope:now()+2; a.gestureKind=if a.index%3==0 then "Point" elseif dancing then "Cheer" else false
+                    self.metrics.actions+=1
                     if a.context=="Match" then
                         self.metrics.matchActions+=1
                         if mover.root.Position.Y>15 then self.metrics.upperArrivals+=1 end
@@ -138,7 +163,7 @@ function Service:tick(dt)
                 a.index+=1
             end)
             if not ok then self.metrics.failures+=1 end
-            a.working=false; self.busy-=1; a.next=scope:now()+3+a.index%5
+            a.working=false; self.busy-=1; a.next=scope:now()+Appearance.pause(a.preset,a.index)
         end)
     end
 end
